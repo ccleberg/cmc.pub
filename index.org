@@ -1,0 +1,19 @@
+#+title: cleberg.net
+#+OPTIONS: toc:nil
+
+#+BEGIN_QUOTE
+Do AIs dream in electric sheep?
+
+He hoped it had nanosecond nightmares.
+#+END_QUOTE
+
+** Pages
+
+- [[./blog/][Blog]]
+- [[./services/][Services]]
+- [[./wiki/][Wiki]]
+
+** Contact
+
+- hello [at] cleberg.net
+- [[https://git.cleberg.net][Source Code]]

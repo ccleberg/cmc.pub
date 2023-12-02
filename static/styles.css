@@ -1,0 +1,169 @@
+@media (prefers-reduced-motion:no-preference) {
+    :root { 
+	scroll-behavior: smooth;
+    }
+}
+
+body { 
+    background-color: hsl(0, 0%, 100%); 
+    color: hsl(0, 0%, 5%); 
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size: 1rem; 
+    line-height: 1.5; 
+    max-width: 45em; 
+    margin: 0 auto; 
+    padding: 0 1rem; 
+}
+
+a, a:visited { 
+    color: hsl(240, 100%, 35%); 
+    text-decoration: none; 
+}
+
+a:hover { 
+    background-color: hsl(240, 100%, 35%); 
+    color: hsl(0, 0%, 100%); 
+}
+
+#preamble { 
+    padding: 1rem 0; 
+}
+
+#preamble nav a { 
+    margin-right: 0.5rem; 
+}
+
+#postamble { 
+    border-top: 1px solid #000; 
+    margin-top: 1rem; 
+}
+
+img { 
+    width: 100%; 
+}
+
+table { 
+    border-collapse: collapse; 
+}
+
+thead, th, tr, td { 
+    border: 1px solid hsl(0, 100%, 5%); 
+    padding: 0.25rem; 
+}
+
+pre > code, time, code { 
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
+    font-size: 1rem; 
+}
+
+pre { 
+    padding: 0.5rem; 
+    margin: 0.5rem 0; 
+    border: 1px solid #0d0d0d; 
+    overflow-x:	auto; 
+}
+
+:not(pre)>code { 
+    background-color: hsl(240, 100%, 85%); 
+    border: 1px solid
+	    hsl(240, 100%, 85%); 
+    border-radius: 0; 
+    color: hsl(0, 0%, 5%); 
+    padding: 0
+	     0.25rem; 
+}
+
+aside { 
+    background-color: hsl(0, 0%, 85%); 
+    padding: 1rem; 
+}
+
+blockquote { 
+    background-color: hsl(0, 0%, 85%); 
+    border-left: 5px solid hsl(240, 100%, 35%); 
+    color: hsl(0, 0%, 5%); 
+    padding: 1rem; 
+    margin: 1rem 0; 
+}
+
+blockquote p { 
+    margin: 0; 
+}
+
+.footnote-definition { 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: top; 
+    margin: 1rem 0; 
+}
+
+.footnote-definition sup { 
+    font-size: inherit; 
+    top: 0; 
+    line-height: inherit;
+    padding-right: .5rem; 
+}
+
+.footnote-definition sup::after { 
+    content: "."; 
+}
+
+.footnote-definition p { 
+    display: inline-block; 
+    margin: 0; 
+}
+
+@media (prefers-color-scheme: dark) {
+    body { 
+	background-color: hsl(0, 0%, 5%);
+	color: hsl(0, 0%, 75%); 
+    }
+
+    nav, footer { 
+	border-color: hsl(0, 0%, 75%); 
+    }
+
+    h1, h2, h3, h4, h5, h6 { 
+	color: hsl(0, 0%, 85%); 
+    }
+
+    a, a:visited { 
+	color: hsl(120, 100%, 45%); 
+    }
+
+    a:hover { 
+	background-color: hsl(120, 100%, 45%); 
+	color: hsl(0, 0%, 5%); 
+    }
+    :not(pre)>code { 
+	background-color: hsl(120, 100%, 35%); 
+	border: 1px solid hsl(120, 100%, 35%); 
+	border-radius: 0; 
+	color: hsl(0, 0%, 5%);
+        padding: 0 0.25rem; 
+    }
+
+    aside { 
+	background-color: hsl(0, 0%, 15%); 
+	padding: 1rem; 
+    }
+
+    blockquote { 
+	background-color: hsl(0, 0%, 15%); 
+	border-left: 5px solid hsl(120, 100%, 25%); 
+	color: hsl(0, 0%, 85%); 
+    }
+
+    pre { 
+	border: 1px solid hsl(0, 0%, 35%); 
+    }
+
+    table { 
+	color: hsl(0, 0%, 75%); 
+	border-color: hsl(0, 0%, 35%); 
+    }
+
+    thead, th, tr, td { 
+	border: 1px solid hsl(0, 0%, 35%); 
+    }
+}

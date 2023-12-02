@@ -1,0 +1,50 @@
+#+title: README
+
+* Overview
+
+This project uses [[https://orgmode.org/][org-mode]] to structure all documents, including the index page
+and sub-pages such as blog posts.
+
+* Configuration
+
+If you want to replicate this project structure, you'll need to customize your
+=.emacs= file appropriately.
+
+My =.emacs= file below show a handful of project-related settings
+
+#+BEGIN_SRC lisp
+;; Project publishing settings
+(setq org-publish-project-alist
+      '(("cleberg.net"
+	 :base-directory "~/Source/cleberg.net/"
+	 :publishing-function org-html-publish-to-html
+	 :publishing-directory "~/Source/cleberg.net/public/"
+	 :auto-sitemap t
+	 :recursive t
+	 :section-numbers nil
+	 :with-toc nil
+	 :with-author nil
+	 :html-validation-link nil
+	 :with-tags t
+	 :html-head "<link rel=stylesheet href=/static/styles.css>"
+	 :html-preamble "<nav><a href=/>Home</a><a href=/blog/>Blog</a><a href=/notes/>Notes</a><a href=/services/>Services</a></nav>")
+
+	("static"
+	 :base-directory "~/Source/cleberg.net/static/"
+	 :base-extension "css\\|el"
+	 :publishing-directory "~/Source/cleberg.net/public/static/"
+	 :publishing-function org-publish-attachment)
+	("website" :components ("cleberg.net" "static"))))
+#+END_SRC
+
+If you're within emacs while changing =.emacs=, you'll need to reload the
+configuration with =M-x load-file= and hit enter to reload the current file
+(=.emacs=).
+
+* Building
+
+When ready to publish, open any of the =.org= files in the project and execute
+=M-x org-publish-current-project=.
+
+If you want to force emacs to re-publish all files, including files without
+changes, execute =C-u M-x org-publish-current-project=.
