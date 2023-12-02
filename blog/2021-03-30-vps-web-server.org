@@ -364,7 +364,7 @@ Now, test your domains by going to `https://example.com`.
 
 To enable better security on your server, you'll need to enable a basic
 firewall. For Ubuntu, we'll use
-[the uncomplicated firewall](https://0x4b1d.org/blog/secure-your-network-with-the-uncomplicated-firewall.html).
+[the uncomplicated firewall](https://cleberg.net/blog/secure-your-network-with-the-uncomplicated-firewall.html).
 
 Now, add the following rules to the firewall allow SSH, Apache, and HTTP(S)
 connections. If you need to, you can enable different ports for specifics

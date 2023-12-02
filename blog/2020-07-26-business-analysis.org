@@ -48,7 +48,7 @@ map_LNK
 #+END_SRC
 
 #+CAPTION: Blank Map
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/01_blank_map-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/01_blank_map-min.png]]
 
 Now that we have defined our city and created the map, we need to go get the
 business data. The Foursquare API will limit the results to 100 per API call, so
@@ -191,7 +191,7 @@ nearby_venues
 #+END_SRC
 
 #+CAPTION: Clean Data
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/02_clean_data-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/02_clean_data-min.png]]
 
 * Visualize the Data
 
@@ -217,7 +217,7 @@ for lat, lng, name, categories in zip(nearby_venues['lat'], nearby_venues['lng']
 map_LNK
 #+END_SRC
 
-![Initial data map](https://img.0x4b1d.org/blog/20200726-ibm-data-science/03_data_map-min.png "Initial data map")
+![Initial data map](https://img.cleberg.net/blog/20200726-ibm-data-science/03_data_map-min.png "Initial data map")
 
 * Clustering: /k-means/
 
@@ -306,7 +306,7 @@ map_clusters
 #+END_SRC
 
 #+CAPTION: Clustered Map
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/04_clusters-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/04_clusters-min.png]]
 
 * Investigate Clusters
 
@@ -326,7 +326,7 @@ for x in range(0,6):
 #+END_SRC
 
 #+CAPTION: Venues per Cluster
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/05_venues_per_cluster-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/05_venues_per_cluster-min.png]]
 
 Our last piece of analysis is to summarize the categories of businesses within
 each cluster. With these results, we can clearly see that restaurants, coffee
@@ -355,10 +355,10 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 #+END_SRC
 
 #+CAPTION: Venues per Cluster, pt. 1
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/06_categories_per_cluster_pt1-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/06_categories_per_cluster_pt1-min.png]]
 
 #+CAPTION: Venues per Cluster, pt. 2
-[[https://img.0x4b1d.org/blog/20200726-ibm-data-science/07_categories_per_cluster_pt2-min.png]]
+[[https://img.cleberg.net/blog/20200726-ibm-data-science/07_categories_per_cluster_pt2-min.png]]
 
 * Discussion
 

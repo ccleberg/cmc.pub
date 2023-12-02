@@ -88,7 +88,7 @@ settings, add/modify synced files, and add/modify connected devices.
 
 Here's an example web GUI dashboard:
 
-![Syncthing Dashboard](https://img.0x4b1d.org/blog/20221020-syncthing/syncthing_gui.png "Syncthing Dashboard")
+![Syncthing Dashboard](https://img.cleberg.net/blog/20221020-syncthing/syncthing_gui.png "Syncthing Dashboard")
 
 ### Remote Devices
 

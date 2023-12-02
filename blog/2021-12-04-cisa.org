@@ -43,7 +43,7 @@ commitment and quality of an employee, so I am accepting it too.
 The CISA is broken down into five sections, each weighted with a percentage of
 test questions that may appear.
 
-![CISA exam sections](https://img.0x4b1d.org/blog/20211204-i-passed-the-cisa/cisa-exam-sections.png)
+![CISA exam sections](https://img.cleberg.net/blog/20211204-i-passed-the-cisa/cisa-exam-sections.png)
 
 Since the exam contains 150 questions, here's how those sections break down:
 
@@ -144,7 +144,7 @@ answered incorrectly and learned from my mistakes**.
 |        5        |    55     |   85    |     140     |   61%   |
 | **Grand Total** |  **228**  | **479** |   **707**   | **68%** |
 
-![CISA practice question results](https://img.0x4b1d.org/blog/20211204-i-passed-the-cisa/cisa-practice-questions-results.png)
+![CISA practice question results](https://img.cleberg.net/blog/20211204-i-passed-the-cisa/cisa-practice-questions-results.png)
 
 ## Results
 

@@ -103,7 +103,7 @@ In order to test the results, let's curl the contents of our site. To start,
 I'll curl the site normally:
 
 ```sh
-curl https://0x4b1d.org
+curl https://cleberg.net
 ```
 
 The HTML contents of the page come back successfully:
@@ -115,7 +115,7 @@ The HTML contents of the page come back successfully:
 Next, let's include a banned referrer:
 
 ```sh
-curl --referer https://news.ycombinator.com https://0x4b1d.org
+curl --referer https://news.ycombinator.com https://cleberg.net
 ```
 
 This time, I'm met with a 403 Forbidden response page. That means we are 

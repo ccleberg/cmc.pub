@@ -18,7 +18,7 @@ later and update this post with more content.
 Take a look below at my current multi-window set-up in byobu while I write this
 blog post:
 
-![byobu](https://img.0x4b1d.org/blog/20230623-byobu/byobu.png "byobu")
+![byobu](https://img.cleberg.net/blog/20230623-byobu/byobu.png "byobu")
 
 ## Keybindings
 

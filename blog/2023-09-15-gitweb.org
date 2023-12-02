@@ -15,7 +15,7 @@ and display information for all repositories in a chosen directory.
 
 See below for the final result:
 
-![Gitweb](https://img.0x4b1d.org/blog/20230915-gitweb/gitweb.png "Gitweb")
+![Gitweb](https://img.cleberg.net/blog/20230915-gitweb/gitweb.png "Gitweb")
 
 ## Install Dependencies
 

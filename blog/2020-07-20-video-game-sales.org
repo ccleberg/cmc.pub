@@ -38,7 +38,7 @@ df
 #+END_SRC
 
 #+CAPTION: Dataframe Results
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/01_dataframe-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/01_dataframe-min.png]]
 
 * Explore the Data
 
@@ -48,7 +48,7 @@ df.describe()
 #+END_SRC
 
 #+CAPTION: df.describe()
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/02_describe-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/02_describe-min.png]]
 
 #+BEGIN_SRC python
 # This function shows the rows and columns of NaN values. For example, df[179,3] = nan
@@ -66,7 +66,7 @@ sns.catplot(x='Platform', y='Global_Sales', data=df, jitter=False).set_xticklabe
 #+END_SRC
 
 #+CAPTION: Plot of Global Sales by Platform
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/03_plot-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/03_plot-min.png]]
 
 #+BEGIN_SRC python
 # This function plots the global sales by genre
@@ -74,7 +74,7 @@ sns.catplot(x='Genre', y='Global_Sales', data=df, jitter=False).set_xticklabels(
 #+END_SRC
 
 #+CAPTION: Plot of Global Sales by Genre
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/04_plot-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/04_plot-min.png]]
 
 #+BEGIN_SRC python
 # This function plots the global sales by year
@@ -82,7 +82,7 @@ sns.lmplot(x='Year', y='Global_Sales', data=df).set_xticklabels(rotation=45)
 #+END_SRC
 
 #+CAPTION: Plot of Global Sales by Year
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/05_plot-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/05_plot-min.png]]
 
 #+BEGIN_SRC python
 # This function plots four different lines to show sales from different regions.
@@ -111,7 +111,7 @@ plt.show()
 #+END_SRC
 
 #+CAPTION: Plot of Regional Sales by Year
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/06_plot-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/06_plot-min.png]]
 
 * Investigate Outliers
 
@@ -138,7 +138,7 @@ df3.describe()
 #+END_SRC
 
 #+CAPTION: Descriptive Statistics of 2006 Sales
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/07_2006_stats-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/07_2006_stats-min.png]]
 
 #+BEGIN_SRC python
 # Plot the results of the previous dataframe (games from 2006) - we can see the year's results were largely carried by Wii Sports
@@ -146,7 +146,7 @@ sns.catplot(x="Genre", y="Global_Sales", data=df3, jitter=False).set_xticklabels
 #+END_SRC
 
 #+CAPTION: Plot of 2006 Sales
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/08_plot-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/08_plot-min.png]]
 
 #+BEGIN_SRC python
 # We can see 4 outliers in the graph above, so let's get the top 5 games from that dataframe
@@ -155,7 +155,7 @@ df3.sort_values(by=['Global_Sales'], ascending=False).head(5)
 #+END_SRC
 
 #+CAPTION: Outliers of 2006 Sales
-[[https://img.0x4b1d.org/blog/20200720-data-exploration-video-game-sales/09_outliers-min.png]]
+[[https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/09_outliers-min.png]]
 
 * Discussion
 

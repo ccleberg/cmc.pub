@@ -145,4 +145,4 @@ I have no need for a food log or calorie tracker at the moment.
 
 You can see an example of a dashboard with placeholder data here:
 
-![wger dashboard](https://img.0x4b1d.org/blog/20230128-wger/wger.png "wger dashboard")
+![wger dashboard](https://img.cleberg.net/blog/20230128-wger/wger.png "wger dashboard")

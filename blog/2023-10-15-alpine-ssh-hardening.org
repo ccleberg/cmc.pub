@@ -56,5 +56,5 @@ ssh-audit localhost
 If everything succeeded, the results will show as all green. If anything is
 yellow, orange, or red, you may need to tweak additional settings.
 
-![ssh audit](https://img.0x4b1d.org/blog/20231015-ssh-hardening/ssh-audit.png
+![ssh audit](https://img.cleberg.net/blog/20231015-ssh-hardening/ssh-audit.png
 "ssh-audit")

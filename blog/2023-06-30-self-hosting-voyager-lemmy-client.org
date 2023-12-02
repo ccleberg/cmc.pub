@@ -120,5 +120,5 @@ sudo systemctl restart nginx.service
 
 The site will now be available at the `server_name` you specified above!
 
-You can visit my instance at [voyager.0x4b1d.org](https://voyager.0x4b1d.org) 
+You can visit my instance at [voyager.cleberg.net](https://voyager.cleberg.net) 
 for an example.

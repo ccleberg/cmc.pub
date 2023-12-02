@@ -15,7 +15,7 @@ done so far in my homelab is fairly low-budget.
 * Hardware
 
 #+CAPTION: HomeLab Diagram
-[[https://img.0x4b1d.org/blog/20200503-homelab/homelab-min.png]]
+[[https://img.cleberg.net/blog/20200503-homelab/homelab-min.png]]
 
 ** Raspberry Pi 4
 

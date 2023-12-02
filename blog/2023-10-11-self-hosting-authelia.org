@@ -437,10 +437,10 @@ sudo systemctl restart nginx.service
 When visiting the protected domain, you will now be redirected to your 
 authentication domain and presented with the Authelia login portal.
 
-![Authelia Portal](https://img.0x4b1d.org/blog/20231010-authelia/authelia_portal.png "Authelia Portal")
+![Authelia Portal](https://img.cleberg.net/blog/20231010-authelia/authelia_portal.png "Authelia Portal")
 
 Once you've successfully authenticated, you can visit your authentication domain 
 directly and see that you're currently authenticated to any domain protected by 
 Authelia.
 
-![Authelia Success](https://img.0x4b1d.org/blog/20231010-authelia/authelia_success.png "Authelia Success")
+![Authelia Success](https://img.cleberg.net/blog/20231010-authelia/authelia_success.png "Authelia Success")

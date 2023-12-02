@@ -133,7 +133,7 @@ sudo ufw allow 22
 sudo ufw enable
 ```
 
-![ufw](https://img.0x4b1d.org/blog/20220324-hardening-a-public-facing-home-server/ufw.png)
+![ufw](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ufw.png)
 
 ### `ssh`
 
@@ -203,7 +203,7 @@ will not include all the details in this post. To see how to configure MFA for
 `ssh`, see my other post:
 [Enabling MFA for SSH](/blog/enable-totp-mfa-for-ssh/).
 
-![SSH MFA](https://img.0x4b1d.org/blog/20220324-hardening-a-public-facing-home-server/ssh_mfa.png)
+![SSH MFA](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ssh_mfa.png)
 
 ### `fail2ban`
 
@@ -223,7 +223,7 @@ sudo fail2ban-client status sshd
 This should be used as a last-resort defense and shouldn't be a replacement for
 the security measures mentioned above.
 
-![fail2ban](https://img.0x4b1d.org/blog/20220324-hardening-a-public-facing-home-server/fail2ban.png)
+![fail2ban](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/fail2ban.png)
 
 ## Switch
 

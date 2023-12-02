@@ -29,7 +29,7 @@ collect your trophies. However, if you want to play the game as it was truly
 intended, you should try to play it without using the map.
 
 #+CAPTION: Zork Map
-[[https://img.0x4b1d.org/blog/20201229-zork/zork_map.png]]
+[[https://img.cleberg.net/blog/20201229-zork/zork_map.png]]
 
 /[[https://www.filfre.net/2012/01/exploring-zork-part-1/][Map Source]]/
 
@@ -50,7 +50,7 @@ adventures before, try to use simple commands like "go west," "look around," or
 "hit troll with elvish sword."
 
 #+CAPTION: Zork Screen, pt. 1
-[[https://img.0x4b1d.org/blog/20201229-zork/zork_01.png]]
+[[https://img.cleberg.net/blog/20201229-zork/zork_01.png]]
 
 In this second screenshot, we see the player has entered the house and found the
 trophy case in the living room. The lantern and sword in this room allow the
@@ -58,14 +58,14 @@ player to explore dark areas and attack enemies. If you don't use the lantern,
 you won't be able to see anything in dark areas, and you may be eaten by a grue.
 
 #+CAPTION: Zork Screen, pt. 2
-[[https://img.0x4b1d.org/blog/20201229-zork/zork_02.png]]
+[[https://img.cleberg.net/blog/20201229-zork/zork_02.png]]
 
 Finally, we see that the player has found the first treasure: a jewel-encrusted
 egg. These treasures can be taken back to the house and placed in the trophy
 case or carried until you feel like you want to put things away.
 
 #+CAPTION: Zork Screen, pt 3.
-[[https://img.0x4b1d.org/blog/20201229-zork/zork_03.png]]
+[[https://img.cleberg.net/blog/20201229-zork/zork_03.png]]
 
 * Conclusion
 

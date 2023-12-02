@@ -25,7 +25,7 @@ These steps can be necessary for an audit (and may even be performed by the same
 associates), but they are not data analytics.
 
 #+CAPTION: The Intelligence Cycle
-[[https://img.0x4b1d.org/blog/20190909-data-analysis-in-auditing/intelligence_cycle-min.png]]
+[[https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/intelligence_cycle-min.png]]
 
 * Current Use of Analytics in Auditing
 
@@ -81,7 +81,7 @@ analytics so that the results can be as comprehensive as possible:
   or else the system cannot be sustained.
 
 #+CAPTION: The Delta Model
-[[https://img.0x4b1d.org/blog/20190909-data-analysis-in-auditing/delta-min.png]]
+[[https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/delta-min.png]]
 
 * Finding the Proper KPIs
 
@@ -200,10 +200,10 @@ a story/ about the data and why the results matter. For example, *Figure 4*
 shows a part of the explanation the author gives to illustrate his point.
 
 #+CAPTION: Entry-Level Visualization
-[[https://img.0x4b1d.org/blog/20190909-data-analysis-in-auditing/vis_example-min.png]]
+[[https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/vis_example-min.png]]
 
 #+CAPTION: Visualization Explanation
-[[https://img.0x4b1d.org/blog/20190909-data-analysis-in-auditing/vis_example_explanation-min.png]]
+[[https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/vis_example_explanation-min.png]]
 
 * Wrap-Up
 
