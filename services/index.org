@@ -12,5 +12,5 @@
 - [[https://office.cleberg.net][Office]] - The world's smallest office suite
 - [[https://search.cleberg.net][SearXNG]] - A privacy-respecting, open metasearch engine
 
-See the [[https://git.cleberg.net/?p=cleberg.net.git][git log]] for this page if you want to see changes that have been made.
+See the [[https://git.cleberg.net/?p=cleberg.net.git;a=history;f=services/index.org;h=71ed6bcae7e52a8103f980f1821ca291ef3010ba;hb=HEAD][git log]] for this page if you want to see changes that have been made.
 			
