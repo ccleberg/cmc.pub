@@ -19,6 +19,7 @@ PUB-DIR is when the output will be placed."
 	:with-author nil
 	:html-validation-link nil
 	:with-tags t
+	:html-htmlize-output-type 'inline-css
         :html-head-include-default-style nil
         :html-head-include-scripts nil
 	:html-head "<link rel=stylesheet href=/static/styles.min.css>"
