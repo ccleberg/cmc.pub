@@ -1,0 +1,38 @@
+;; Publish org files to HTML
+
+;; Project publishing settings
+(setq org-publish-project-alist
+      '(("cleberg.net"
+	:base-directory "~/Source/cleberg.net/"
+	:publishing-function org-html-publish-to-html
+	:publishing-directory "~/Source/cleberg.net/public/"
+	:auto-sitemap t
+	:recursive t
+	:section-numbers nil
+	:with-author nil
+	:html-validation-link nil
+	:with-tags t
+        :html-head-include-default-style nil
+        :html-head-include-scripts nil
+	:html-head "<link rel=stylesheet href=/static/styles.css>"
+	:html-preamble "<nav><a href=/>Home</a><a href=/blog/>Blog</a><a href=/services/>Services</a><a href=/wiki/>Wiki</a></nav>")
+
+	("rss"
+	 :base-directory "~/Source/cleberg.net/blog/"
+	 :base-extension "org"
+	 :html-link-home "https://cleberg.net/"
+	 :html-link-use-abs-url t
+	 :rss-extension "xml"
+	 :publishing-directory "~/Source/cleberg.net/public/"
+	 :publishing-function (org-rss-publish-to-rss)
+	 :section-numbers nil
+	 :exclude ("index.org"))
+
+	("static"
+	:base-directory "~/Source/cleberg.net/static/"
+	:base-extension "css\\|el"
+	:publishing-directory "~/Source/cleberg.net/public/static/"
+	:publishing-function org-publish-attachment)
+	("website" :components ("cleberg.net" "rss" "static"))))
+
+(provide 'publish)

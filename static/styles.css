@@ -102,6 +102,7 @@ code {
 }
 
 pre {
+    background-color: #3c3836;
     margin: 0.5rem 0;
     overflow-x: auto;
 }
