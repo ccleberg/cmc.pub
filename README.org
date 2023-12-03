@@ -24,3 +24,12 @@ When ready to publish, open any of the =.org= files in the project and execute
 
 If you want to force emacs to re-publish all files, including files without
 changes, execute =C-u M-x org-publish-current-project=.
+
+The resulting files will be published to the =public/= directory within the 
+repository, which is ignored via the =.gitignore= file. If you wish to publish 
+the files remotely, you can change the =:publishing-directory= variable in 
+=publish.el= or do a sync step outside of emacs:
+
+#+begin_src sh
+scp -r public/* ubuntu:/var/www/cleberg.net/
+#+end_src
