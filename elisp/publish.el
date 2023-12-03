@@ -21,7 +21,7 @@ PUB-DIR is when the output will be placed."
 	:with-tags t
         :html-head-include-default-style nil
         :html-head-include-scripts nil
-	:html-head "<link rel=stylesheet href=/static/styles.css.min>"
+	:html-head "<link rel=stylesheet href=/static/styles.min.css>"
 	:html-preamble "<nav><a href=/>Home</a><a href=/blog/>Blog</a><a href=/services/>Services</a><a href=/wiki/>Wiki</a></nav>")
 
 	("rss"
