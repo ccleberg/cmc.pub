@@ -1,54 +1,59 @@
-+++
-date = 2023-10-11T02:53:29+00:00
-title = "Self-Hosting Authelia"
-description = "A simple tutorial to get Authelia running on a self-hosted server."
-+++
+#+title: Self-Hosting Authelia
+#+date:  2023-10-11
 
-## Overview
+** Overview
+:PROPERTIES:
+:CUSTOM_ID: overview
+:END:
+[[https://www.authelia.com/][Authelia]] is an open-source authentication service that allows you to place a
+portal between end users on the internet and self-hosted services on your
+server.
 
-[Authelia](https://www.authelia.com/) is an open-source authentication service 
-that allows you to place a portal between end users on the internet and 
-self-hosted services on your server.
-
-You can require one factor (username+password) or two factor authentication for 
+You can require one factor (username+password) or two factor authentication for
 any such user before allowing them to access a specific service on your domain.
 
-This guide will walk through a standard installation of Authelia for 
-`example.com`, using `auth.example.com` as Authelia's authentication domain and 
-`teddit.example.com` as the website we want to protect behind the authentication 
+This guide will walk through a standard installation of Authelia for
+=example.com=, using =auth.example.com= as Authelia's authentication domain and
+=teddit.example.com= as the website we want to protect behind the authentication
 portal.
 
-## Prerequisites
-
+** Prerequisites
+:PROPERTIES:
+:CUSTOM_ID: prerequisites
+:END:
 This guide assumes you have the following already set-up:
 
 - A registered domain with DNS pointing to your server.
-- A subdomain for Authelia (`auth.example.com`) and a subdomain to protect via 
-Authelia (`app.example.com`).
+- A subdomain for Authelia (=auth.example.com=) and a subdomain to
+  protect via Authelia (=app.example.com=).
 - A working Nginx web server.
 - Docker and docker-compose installed.
 
-## Installation
-
-This guide will walk through each installation step one-by-one, starting with 
-the container and finishing by cleaning up external access via an Nginx reverse 
+** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
+This guide will walk through each installation step one-by-one, starting with
+the container and finishing by cleaning up external access via an Nginx reverse
 proxy.
 
-### Docker-Compose
+*** Docker-Compose
+:PROPERTIES:
+:CUSTOM_ID: docker-compose
+:END:
+To start, create a directory for Authelia and create a
+=docker-compose.yml= file.
 
-To start, create a directory for Authelia and create a `docker-compose.yml` 
-file.
-
-```sh
+#+begin_src sh
 mkdir ~/authelia
 nano ~/authelia/docker-compose.yml
-```
+#+end_src
 
-Within this file, paste the following content. If you prefer a different local 
-port, modify the port on the left side of the colon on the `9091:9091` line. Be 
-sure to modify the `TZ` variable to your timezone.
+Within this file, paste the following content. If you prefer a different local
+port, modify the port on the left side of the colon on the =9091:9091= line. Be
+sure to modify the =TZ= variable to your timezone.
 
-```yml
+#+begin_src yml
 version: '3.3'
 
 services:
@@ -61,50 +66,52 @@ services:
       - 9091:9091
     environment:
       - TZ=America/Chicago
-```
+#+end_src
 
 Start the container with docker-compose:
 
-```sh
+#+begin_src sh
 sudo docker-compose up -d
-```
+#+end_src
 
-After the first start, the container will automatically exit and require you to 
+After the first start, the container will automatically exit and require you to
 modify the app's configuration files before continuing. Read on to learn more.
 
-### Authelia Configuration
+*** Authelia Configuration
+:PROPERTIES:
+:CUSTOM_ID: authelia-configuration
+:END:
+To configure Authelia before we restart the container, we need to open the
+=config= directory and modify the files. Start by editing the
+=configuration.yml= file, where all of Authelia's settings are stored.
 
-To configure Authelia before we restart the container, we need to open the 
-`config` directory and modify the files. Start by editing the 
-`configuration.yml` file, where all of Authelia's settings are stored.
-
-My personal preference is to copy the original configuration file to a backup 
+My personal preference is to copy the original configuration file to a backup
 file and edit a fresh copy.
 
-```sh
+#+begin_src sh
 sudo cp ~/authelia/config/configuration.yml ~/authelia/config/configuration.yml.bk
 sudo nano ~/authelia/config/configuration.yml
-```
+#+end_src
 
-Within the blank `configuration.yml` file, paste the following information. You 
-will need to make quite a few updates, so be sure to read each line carefully 
+Within the blank =configuration.yml= file, paste the following information. You
+will need to make quite a few updates, so be sure to read each line carefully
 and modify as necessary.
 
 The major required changes are:
 
-- Any instances of `example.com` should be replaced by your domain.
-- `jwt_secret` - Use the `pwgen 40 1` command to generate a secret for yourself.
-- `access_control` - Set the Authelia domain to bypass here, as well as any 
-subdomains you want to protect.
-- `session` > `secret` - Use the `pwgen 40 1` command to generate a secret for 
-yourself.
-- `regulation` - Set the variables here to restrict login attempts and bans.
-- `storage` > `encryption_key` - Use the `pwgen 40 1` command to generate a 
-secret for yourself.
-- `smtp` - If you have access to an SMTP service, set up the information here to 
-active outgoing emails.
+- Any instances of =example.com= should be replaced by your domain.
+- =jwt_secret= - Use the =pwgen 40 1= command to generate a secret for yourself.
+- =access_control= - Set the Authelia domain to bypass here, as well as any
+  subdomains you want to protect.
+- =session= > =secret= - Use the =pwgen 40 1= command to generate a secret for
+  yourself.
+- =regulation= - Set the variables here to restrict login attempts and bans.
+- =storage= > =encryption_key= - Use the =pwgen 40 1= command to generate a
+  secret for yourself.
+- =smtp= - If you have access to an SMTP service, set up the information here to
+  active outgoing emails.
 
-```yml
+#+begin_src yml
 # yamllint disable rule:comments-indentation
 ---
 ###############################################################################
@@ -193,25 +200,27 @@ notifier:
       skip_verify: false
       minimum_version: TLS1.2
 ...
-```
+#+end_src
 
-### Authelia Users
-
+*** Authelia Users
+:PROPERTIES:
+:CUSTOM_ID: authelia-users
+:END:
 Next, create the users file for authentication.
 
-```sh
+#+begin_src sh
 sudo nano ~/authelia/config/users_database.yml
-```
+#+end_src
 
-Within the file, you will need to create an entry for each user that needs 
-access to Authelia. The `my_username` entry will be the username used on the 
+Within the file, you will need to create an entry for each user that needs
+access to Authelia. The =my_username= entry will be the username used on the
 login page.
 
-To generate the password, go to [Argon2 Hash Generator](https://argon2.online), 
-generate a random salt, and make sure the rest of the settings match the 
-`authentication_backend` section of `configuration.yml` file.
+To generate the password, go to [[https://argon2.online][Argon2 Hash Generator]], generate a random salt,
+and make sure the rest of the settings match the =authentication_backend=
+section of =configuration.yml= file.
 
-```yml
+#+begin_src yml
 users:
   my_username:
     displayname: "My User"
@@ -222,225 +231,233 @@ users:
     groups:
       - admins
       - dev
-```
+#+end_src
 
 Once the app is configured, restart the container from scratch.
 
-```sh
+#+begin_src sh
 cd ~/authelia
 sudo docker-compose down && sudo docker-compose up -d
-```
+#+end_src
 
-### Nginx: Authelia Domain
-
-Once the container is running and configured, the final step is to configure 
+*** Nginx: Authelia Domain
+:PROPERTIES:
+:CUSTOM_ID: nginx-authelia-domain
+:END:
+Once the container is running and configured, the final step is to configure
 external access to the server via Nginx reverse proxy.
 
 Start by creating the Authelia domain.
 
-```sh
+#+begin_src sh
 sudo nano /etc/nginx/sites-available/auth
-```
+#+end_src
 
-Within this file, paste the following information and be sure to update 
-`example.com` to your domain. Make sure the `$upstream_authelia` variable 
+Within this file, paste the following information and be sure to update
+=example.com= to your domain. Make sure the =$upstream_authelia= variable
 matches the location of your Authelia container.
 
-```conf
+#+begin_src conf
 server {
-	if ($host ~ ^[^.]+\.example\.com$) {
-		return 301 https://$host$request_uri;
-	}
+    if ($host ~ ^[^.]+\.example\.com$) {
+        return 301 https://$host$request_uri;
+    }
 
-	listen [::]:80;
-	listen 80;
-	server_name auth.example.com;
-	return 404;
+    listen [::]:80;
+    listen 80;
+    server_name auth.example.com;
+    return 404;
 }
 
 server {
-	listen [::]:443 ssl http2;
-	listen 443 ssl http2;
-	server_name auth.example.com;
-	access_log  /var/log/nginx/auth.access.log;
-	error_log   /var/log/nginx/auth.error.log;
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+    server_name auth.example.com;
+    access_log  /var/log/nginx/auth.access.log;
+    error_log   /var/log/nginx/auth.error.log;
 
-	ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-	include /etc/letsencrypt/options-ssl-nginx.conf;
-	ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
-	location / {
-		set $upstream_authelia http://127.0.0.1:9091;
-		proxy_pass $upstream_authelia;
-		client_body_buffer_size 128k;
+    location / {
+        set $upstream_authelia http://127.0.0.1:9091;
+        proxy_pass $upstream_authelia;
+        client_body_buffer_size 128k;
 
-		proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
 
-		send_timeout 5m;
-		proxy_read_timeout 360;
-		proxy_send_timeout 360;
-		proxy_connect_timeout 360;
+        send_timeout 5m;
+        proxy_read_timeout 360;
+        proxy_send_timeout 360;
+        proxy_connect_timeout 360;
 
-		proxy_set_header Host $host;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header X-Forwarded-Proto $scheme;
-		proxy_set_header X-Forwarded-Host $http_host;
-		proxy_set_header X-Forwarded-Uri $request_uri;
-		proxy_set_header X-Forwarded-Ssl on;
-		proxy_redirect  http://  $scheme://;
-		proxy_http_version 1.1;
-		proxy_set_header Connection "";
-		proxy_cache_bypass $cookie_session;
-		proxy_no_cache $cookie_session;
-		proxy_buffers 64 256k;
-	}
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $http_host;
+        proxy_set_header X-Forwarded-Uri $request_uri;
+        proxy_set_header X-Forwarded-Ssl on;
+        proxy_redirect  http://  $scheme://;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_cache_bypass $cookie_session;
+        proxy_no_cache $cookie_session;
+        proxy_buffers 64 256k;
+    }
 
 }
-```
+#+end_src
 
-Next, symlink the file and restart Nginx. If there are errors, be sure to 
+Next, symlink the file and restart Nginx. If there are errors, be sure to
 resolve those before moving on.
 
-```sh
+#+begin_src sh
 sudo ln -s /etc/nginx/sites-available/auth /etc/nginx/sites-enabled/auth
 sudo systemctl restart nginx.service
-```
+#+end_src
 
-### Nginx: Protected Domain(s)
+*** Nginx: Protected Domain(s)
+:PROPERTIES:
+:CUSTOM_ID: nginx-protected-domains
+:END:
+Now that Authelia is accessible externally, you need to configure the domain you
+intend to protect with Authelia. In this example, I'm protecting
+=teddit.example.com=.
 
-Now that Authelia is accessible externally, you need to configure the domain you 
-intend to protect with Authelia. In this example, I'm protecting 
-`teddit.example.com`.
-
-Similar to the process above, paste the content and update the relevant 
+Similar to the process above, paste the content and update the relevant
 variables.
 
-```sh
+#+begin_src sh
 sudo nano /etc/nginx/sites-available/teddit
-```
+#+end_src
 
-```conf
+#+begin_src conf
 server {
-	if ($host ~ ^[^.]+\.example\.com$) {
-		return 301 https://$host$request_uri;
-	}
+    if ($host ~ ^[^.]+\.example\.com$) {
+        return 301 https://$host$request_uri;
+    }
 
-	listen [::]:80;
-	listen 80;
-	server_name teddit.example.com;
-	return 404;
+    listen [::]:80;
+    listen 80;
+    server_name teddit.example.com;
+    return 404;
 }
 
 server {
-	listen [::]:443 ssl http2;
-	listen 443 ssl http2;
-	server_name teddit.example.com;
-	access_log  /var/log/nginx/teddit.access.log;
-	error_log   /var/log/nginx/teddit.error.log;
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+    server_name teddit.example.com;
+    access_log  /var/log/nginx/teddit.access.log;
+    error_log   /var/log/nginx/teddit.error.log;
 
-	add_header X-Content-Type-Options "nosniff";
-	add_header X-XSS-Protection "1; mode=block";
-	add_header X-Frame-Options "DENY";
-	add_header Strict-Transport-Security "max-age=63072000; includeSubDomains";
-	add_header Referrer-Policy "no-referrer";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Frame-Options "DENY";
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains";
+    add_header Referrer-Policy "no-referrer";
 
-	ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-	include /etc/letsencrypt/options-ssl-nginx.conf;
-	ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
-	location /authelia {
-		internal;
-		set $upstream_authelia http://127.0.0.1:9091/api/verify;
-		proxy_pass_request_body off;
-		proxy_pass $upstream_authelia;
-		proxy_set_header Content-Length "";
+    location /authelia {
+        internal;
+        set $upstream_authelia http://127.0.0.1:9091/api/verify;
+        proxy_pass_request_body off;
+        proxy_pass $upstream_authelia;
+        proxy_set_header Content-Length "";
 
-		proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
-		client_body_buffer_size 128k;
-		proxy_set_header Host $host;
-		proxy_set_header X-Original-URL $scheme://$http_host$request_uri;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $remote_addr;
-		proxy_set_header X-Forwarded-Proto $scheme;
-		proxy_set_header X-Forwarded-Host $http_host;
-		proxy_set_header X-Forwarded-Uri $request_uri;
-		proxy_set_header X-Forwarded-Ssl on;
-		proxy_redirect  http://  $scheme://;
-		proxy_http_version 1.1;
-		proxy_set_header Connection "";
-		proxy_cache_bypass $cookie_session;
-		proxy_no_cache $cookie_session;
-		proxy_buffers 4 32k;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+        client_body_buffer_size 128k;
+        proxy_set_header Host $host;
+        proxy_set_header X-Original-URL $scheme://$http_host$request_uri;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $http_host;
+        proxy_set_header X-Forwarded-Uri $request_uri;
+        proxy_set_header X-Forwarded-Ssl on;
+        proxy_redirect  http://  $scheme://;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_cache_bypass $cookie_session;
+        proxy_no_cache $cookie_session;
+        proxy_buffers 4 32k;
 
-		send_timeout 5m;
-		proxy_read_timeout 240;
-		proxy_send_timeout 240;
-		proxy_connect_timeout 240;
-	}
+        send_timeout 5m;
+        proxy_read_timeout 240;
+        proxy_send_timeout 240;
+        proxy_connect_timeout 240;
+    }
 
-	location / {
-		set $upstream_teddit http://127.0.0.1:8686;
-		proxy_pass $upstream_teddit;
+    location / {
+        set $upstream_teddit http://127.0.0.1:8686;
+        proxy_pass $upstream_teddit;
 
-		auth_request /authelia;
-		auth_request_set $target_url https://$http_host$request_uri;
-		auth_request_set $user $upstream_http_remote_user;
-		auth_request_set $email $upstream_http_remote_email;
-		auth_request_set $groups $upstream_http_remote_groups;
-		proxy_set_header Remote-User $user;
-		proxy_set_header Remote-Email $email;
-		proxy_set_header Remote-Groups $groups;
+        auth_request /authelia;
+        auth_request_set $target_url https://$http_host$request_uri;
+        auth_request_set $user $upstream_http_remote_user;
+        auth_request_set $email $upstream_http_remote_email;
+        auth_request_set $groups $upstream_http_remote_groups;
+        proxy_set_header Remote-User $user;
+        proxy_set_header Remote-Email $email;
+        proxy_set_header Remote-Groups $groups;
 
-		error_page 401 =302 https://auth.example.com/?rd=$target_url;
+        error_page 401 =302 https://auth.example.com/?rd=$target_url;
 
-		client_body_buffer_size 128k;
+        client_body_buffer_size 128k;
 
-		proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
 
-		send_timeout 5m;
-		proxy_read_timeout 360;
-		proxy_send_timeout 360;
-		proxy_connect_timeout 360;
+        send_timeout 5m;
+        proxy_read_timeout 360;
+        proxy_send_timeout 360;
+        proxy_connect_timeout 360;
 
-		proxy_set_header Host $host;
-		proxy_set_header Upgrade $http_upgrade;
-		proxy_set_header Connection upgrade;
-		proxy_set_header Accept-Encoding gzip;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header X-Forwarded-Proto $scheme;
-		proxy_set_header X-Forwarded-Host $http_host;
-		proxy_set_header X-Forwarded-Uri $request_uri;
-		proxy_set_header X-Forwarded-Ssl on;
-		proxy_redirect  http://  $scheme://;
-		proxy_http_version 1.1;
-		proxy_set_header Connection "";
-		proxy_cache_bypass $cookie_session;
-		proxy_no_cache $cookie_session;
-		proxy_buffers 64 256k;
-	}
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $http_host;
+        proxy_set_header X-Forwarded-Uri $request_uri;
+        proxy_set_header X-Forwarded-Ssl on;
+        proxy_redirect  http://  $scheme://;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_cache_bypass $cookie_session;
+        proxy_no_cache $cookie_session;
+        proxy_buffers 64 256k;
+    }
 }
-```
+#+end_src
 
 Same as before, symlink the file and restart Nginx.
 
-```sh
+#+begin_src sh
 sudo ln -s /etc/nginx/sites-available/teddit /etc/nginx/sites-enabled/teddit
 sudo systemctl restart nginx.service
-```
+#+end_src
 
-## Results
-
-When visiting the protected domain, you will now be redirected to your 
+** Results
+:PROPERTIES:
+:CUSTOM_ID: results
+:END:
+When visiting the protected domain, you will now be redirected to your
 authentication domain and presented with the Authelia login portal.
 
-![Authelia Portal](https://img.cleberg.net/blog/20231010-authelia/authelia_portal.png "Authelia Portal")
+#+caption: Authelia Portal
+[[https://img.cleberg.net/blog/20231010-authelia/authelia_portal.png]]
 
-Once you've successfully authenticated, you can visit your authentication domain 
-directly and see that you're currently authenticated to any domain protected by 
+Once you've successfully authenticated, you can visit your authentication domain
+directly and see that you're currently authenticated to any domain protected by
 Authelia.
 
-![Authelia Success](https://img.cleberg.net/blog/20231010-authelia/authelia_success.png "Authelia Success")
+#+caption: Authelia Success
+[[https://img.cleberg.net/blog/20231010-authelia/authelia_success.png]]

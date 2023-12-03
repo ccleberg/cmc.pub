@@ -1,104 +1,113 @@
-+++
-date = 2022-06-04
-title = "Dynamic DNS with Njalla API"
-description = "Learn how to update Njalla DNS records automatically with a simple Python script."
-draft = false
-+++
+#+title: Dynamic DNS with Njalla API
+#+date:  2022-06-04
 
-## Njalla's API
+** Njalla's API
+:PROPERTIES:
+:CUSTOM_ID: njallas-api
+:END:
+As noted in my recent post about [[/blog/ditching-cloudflare/][switching
+to Njalla from Cloudflare]], I was searching for a way to replace my
+very easy-to-use bash script to [[/blog/cloudflare-dns-api/][update
+Cloudflare's DNS via their API]].
 
-As noted in my recent post about
-[switching to Njalla from Cloudflare](/blog/ditching-cloudflare/), I was
-searching for a way to replace my very easy-to-use bash script to
-[update Cloudflare's DNS via their API](/blog/cloudflare-dns-api/).
+To reiterate what I said in those posts, this is a common necessity for
+those of us who have non-static IP addresses that can change at any
+moment due to ISP policy.
 
-To reiterate what I said in those posts, this is a common necessity for those of
-us who have non-static IP addresses that can change at any moment due to ISP
-policy.
+In order to keep a home server running smoothly, the server admin needs
+to have a process to constantly monitor their public IP address and
+update their domain's DNS records if it changes.
 
-In order to keep a home server running smoothly, the server admin needs to have
-a process to constantly monitor their public IP address and update their
-domain's DNS records if it changes.
+This post explains how to use Python to update Njalla's DNS records
+whenever a machine's public IP address changes.
 
-This post explains how to use Python to update Njalla's DNS records whenever a
-machine's public IP address changes.
+*** Creating a Token
+:PROPERTIES:
+:CUSTOM_ID: creating-a-token
+:END:
+To use Njalla's API, you will first need to create a token that will be
+used to authenticate you every time you call the API. Luckily, this is
+very easy to do if you have an account with Njalla.
 
-### Creating a Token
+Simply go the [[https://njal.la/settings/api/][API Settings]] page and
+click the =Add Token= button. Next, enter a name for the token and click
+=Add=.
 
-To use Njalla's API, you will first need to create a token that will be used to
-authenticate you every time you call the API. Luckily, this is very easy to do
-if you have an account with Njalla.
+Finally, click the =Manage= button next to your newly created token and
+copy the =API Token= field.
 
-Simply go the [API Settings](https://njal.la/settings/api/) page and click the
-`Add Token` button. Next, enter a name for the token and click `Add`.
+*** Finding the Correct API Request
+:PROPERTIES:
+:CUSTOM_ID: finding-the-correct-api-request
+:END:
+Once you have a token, you're ready to call the Njalla API for any
+number of requests. For a full listing of available requests, see the
+[[https://njal.la/api/][Njalla API Documentation]].
 
-Finally, click the `Manage` button next to your newly created token and copy the
-`API Token` field.
+For this demo, we are using the =list-records= and =edit-record=
+requests.
 
-### Finding the Correct API Request
+The =list-records= request requires the following payload to be sent
+when calling the API:
 
-Once you have a token, you're ready to call the Njalla API for any number of
-requests. For a full listing of available requests, see the
-[Njalla API Documentation](https://njal.la/api/).
-
-For this demo, we are using the `list-records` and `edit-record` requests.
-
-The `list-records` request requires the following payload to be sent when
-calling the API:
-
-```txt
+#+begin_src txt
 params: {
     domain: string
 }
-```
+#+end_src
 
-The `edit-record` request requires the following payload to be sent when calling
-the API:
+The =edit-record= request requires the following payload to be sent when
+calling the API:
 
-```txt
+#+begin_src txt
 params: {
     domain: string
     id: int
     content: string
 }
-```
+#+end_src
 
-## Server Set-Up
+** Server Set-Up
+:PROPERTIES:
+:CUSTOM_ID: server-set-up
+:END:
+To create this script, we will be using Python. By default, I use Python
+3 on my servers, so please note that I did not test this in Python 2,
+and I do not know if Python 2 will work for this.
 
-To create this script, we will be using Python. By default, I use Python 3 on my
-servers, so please note that I did not test this in Python 2, and I do not know
-if Python 2 will work for this.
+*** Creating the Script
+:PROPERTIES:
+:CUSTOM_ID: creating-the-script
+:END:
+First, find a suitable place to create your script. Personally, I just
+create a directory called =ddns= in my home directory:
 
-### Creating the Script
-
-First, find a suitable place to create your script. Personally, I just create a
-directory called `ddns` in my home directory:
-
-```sh
+#+begin_src sh
 mkdir ~/ddns
-```
+#+end_src
 
 Next, create a Python script file:
 
-```sh
+#+begin_src sh
 nano ~/ddns/ddns.py
-```
+#+end_src
 
-The following code snippet is quite long, so I won't go into depth on each part.
-However, I suggest you read through the entire script before running it; it is
-quite simple and contains comments to help explain each code block.
+The following code snippet is quite long, so I won't go into depth on
+each part. However, I suggest you read through the entire script before
+running it; it is quite simple and contains comments to help explain
+each code block.
 
-:warning: **Note**: You will need to update the following variables for this to
-work:
+:warning: *Note*: You will need to update the following variables for
+this to work:
 
--   `token`: This is the Njalla API token you created earlier.
--   `user_domain`: This is the top-level domain you want to modify.
--   `include_subdomains`: Set this to `True` if you also want to modify
-    subdomains found under the TLD.
--   `subdomains`: If `include_subdomains` = `True`, you can include your list of
-    subdomains to be modified here.
+- =token=: This is the Njalla API token you created earlier.
+- =user_domain=: This is the top-level domain you want to modify.
+- =include_subdomains=: Set this to =True= if you also want to modify
+  subdomains found under the TLD.
+- =subdomains=: If =include_subdomains= = =True=, you can include your
+  list of subdomains to be modified here.
 
-```python
+#+begin_src python
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Import Python modules
@@ -177,29 +186,33 @@ for record in data['records']:
                       'does not match Njalla\'s value of',
                       record['content'], '. Updating...')
                 update_record(user_domain, record['id'], ipv6)
-```
+#+end_src
 
-### Running the Script
+*** Running the Script
+:PROPERTIES:
+:CUSTOM_ID: running-the-script
+:END:
+Once you've created the script and are ready to test it, run the
+following command:
 
-Once you've created the script and are ready to test it, run the following
-command:
-
-```sh
+#+begin_src sh
 python3 ~/ddns/ddns.py
-```
+#+end_src
 
-### Setting the Script to Run Automatically
+*** Setting the Script to Run Automatically
+:PROPERTIES:
+:CUSTOM_ID: setting-the-script-to-run-automatically
+:END:
+To make sure the scripts run automatically, add it to the =cron= file so
+that it will run on a schedule. To do this, open the =cron= file:
 
-To make sure the scripts run automatically, add it to the `cron` file so that it
-will run on a schedule. To do this, open the `cron` file:
-
-```sh
+#+begin_src sh
 crontab -e
-```
+#+end_src
 
-In the cron file, paste the following at the bottom of the editor in order to
-check the IP every five minutes:
+In the cron file, paste the following at the bottom of the editor in
+order to check the IP every five minutes:
 
-```sh
+#+begin_src sh
 */5 * * * * python3 /home/<your_username>/ddns/ddns.py
-```
+#+end_src

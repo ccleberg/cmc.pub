@@ -1,23 +1,25 @@
-+++
-date = 2023-09-20T01:12:51+00:00
-title = "Useful SQL Scripts for Auditing Logical Access"
-description = "A handful of SQL scripts in different dialects to gather user permissions on a database."
-+++
+#+title: Useful SQL Scripts for Auditing Logical Access
+#+date:  2023-09-20
 
-## Overview
+** Overview
+:PROPERTIES:
+:CUSTOM_ID: overview
+:END:
+When you have to scope a database into your engagement, you may be
+curious how to best extract the information from the database. While
+there are numerous different methods to extract this type of
+information, I'm going to show an example of how to gather all users and
+privileges from three main database types: Oracle, Microsoft SQL, and
+MySQL.
 
-When you have to scope a database into your engagement, you may be curious 
-how to best extract the information from the database. While there are 
-numerous different methods to extract this type of information, I'm going to 
-show an example of how to gather all users and privileges from three main 
-database types: Oracle, Microsoft SQL, and MySQL.
+** Oracle
+:PROPERTIES:
+:CUSTOM_ID: oracle
+:END:
+You can use the following SQL script to see all users and their
+privileges in an Oracle database:
 
-## Oracle
-
-You can use the following SQL script to see all users and their privileges 
-in an Oracle database:
-
-```sql
+#+begin_src sql
 SELECT
     grantee AS "User",
     privilege AS "Privilege"
@@ -33,38 +35,43 @@ FROM
     dba_tab_privs
 WHERE
     grantee IN (SELECT DISTINCT grantee FROM dba_tab_privs);
-```
+#+end_src
 
-This script queries the `dba_sys_privs` and `dba_tab_privs` views to 
-retrieve system and table-level privileges respectively. It then combines 
-the results using `UNION ALL` to show all users and their associated 
-privileges. Please note that this method does not extract information from 
-the `dba_role_privs` table - use the method below for that data.
+This script queries the =dba_sys_privs= and =dba_tab_privs= views to
+retrieve system and table-level privileges respectively. It then
+combines the results using =UNION ALL= to show all users and their
+associated privileges. Please note that this method does not extract
+information from the =dba_role_privs= table - use the method below for
+that data.
 
-Please note that you might need appropriate privileges (e.g., DBA privileges)
-to access these views, and you should exercise caution when querying system 
-tables in a production Oracle database.
+Please note that you might need appropriate privileges (e.g., DBA
+privileges) to access these views, and you should exercise caution when
+querying system tables in a production Oracle database.
 
-### Alternative Oracle Query
-
-You can also extract each table's information separately and perform 
-processing outside the database to explore and determine the information 
+*** Alternative Oracle Query
+:PROPERTIES:
+:CUSTOM_ID: alternative-oracle-query
+:END:
+You can also extract each table's information separately and perform
+processing outside the database to explore and determine the information
 necessary for the audit:
 
-```sql
+#+begin_src sql
 SELECT * FROM sys.dba_role_privs;
 SELECT * FROM sys.dba_sys_privs;
 SELECT * FROM sys.dba_tab_privs;
 SELECT * FROM sys.dba_users; 
-```
+#+end_src
 
-## Microsoft SQL
+** Microsoft SQL
+:PROPERTIES:
+:CUSTOM_ID: microsoft-sql
+:END:
+You can use the following SQL script to see all users and their
+privileges in a Microsoft SQL Server database
+([[https://stackoverflow.com/a/30040784][source]]):
 
-You can use the following SQL script to see all users and their privileges 
-in a Microsoft SQL Server database
-([source](https://stackoverflow.com/a/30040784)):
-
-```sql
+#+begin_src sql
 /*
 Security Audit Report
 1) List all access provisioned to a sql user or windows user/group directly 
@@ -209,42 +216,47 @@ ORDER BY
     perm.[permission_name],
     perm.[state_desc],
     obj.type_desc--perm.[class_desc]
-```
+#+end_src
 
-## MySQL
+** MySQL
+:PROPERTIES:
+:CUSTOM_ID: mysql
+:END:
+You can use the following SQL script to see all users and their
+privileges in a MySQL database:
 
-You can use the following SQL script to see all users and their privileges 
-in a MySQL database:
-
-```shell
+#+begin_src shell
 mysql -u root -p
-```
+#+end_src
 
 Find all users and hosts with access to the database:
 
-```sql
+#+begin_src sql
 SELECT * FROM information_schema.user_privileges;
-```
+#+end_src
 
-This script retrieves user information and their associated database-level 
-privileges from the `information_schema.user_privileges` table in MySQL. It 
-lists various privileges such as SELECT, INSERT, UPDATE, DELETE, CREATE, and 
-more for each user and database combination.
+This script retrieves user information and their associated
+database-level privileges from the =information_schema.user_privileges=
+table in MySQL. It lists various privileges such as SELECT, INSERT,
+UPDATE, DELETE, CREATE, and more for each user and database combination.
 
-Please note that you may need appropriate privileges (e.g., `SELECT` 
-privileges on `information_schema.user_privileges`) to access this 
-information in a MySQL database. Additionally, some privileges like GRANT 
-OPTION, EXECUTE, EVENT, and TRIGGER may not be relevant for all users and 
-databases.
+Please note that you may need appropriate privileges (e.g., =SELECT=
+privileges on =information_schema.user_privileges=) to access this
+information in a MySQL database. Additionally, some privileges like
+GRANT OPTION, EXECUTE, EVENT, and TRIGGER may not be relevant for all
+users and databases.
 
-### Alternative MySQL Query
+*** Alternative MySQL Query
+:PROPERTIES:
+:CUSTOM_ID: alternative-mysql-query
+:END:
+You can also grab individual sets of data from MySQL if you prefer to
+join them after extraction. I have marked the queries below with
+=SELECT ...= and excluded most =WHERE= clauses for brevity. You should
+determine the relevant privileges in-scope and query for those
+privileges to reduce the length of time to query.
 
-You can also grab individual sets of data from MySQL if you prefer to join them 
-after extraction. I have marked the queries below with `SELECT ...` and excluded 
-most `WHERE` clauses for brevity. You should determine the relevant privileges 
-in-scope and query for those privileges to reduce the length of time to query.
-
-```sql
+#+begin_src sql
 -- Global Permissions
 SELECT ... FROM mysql.user;
 
@@ -263,4 +275,4 @@ WHERE db = @db_name;
 -- Password Configuration
 SHOW GLOBAL VARIABLES LIKE 'validate_password%'; 
 SHOW VARIABLES LIKE 'validate_password%';
-```
+#+end_src

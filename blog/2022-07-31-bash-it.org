@@ -1,116 +1,126 @@
-+++
-date = 2022-07-31
-title = "Upgrade Bash with Bash-It & Ble.sh"
-description = "In this post, I walk through the Bash-It and Ble.sh projects, their features, and how they help users power-up their bash shell."
-+++
+#+title: Upgrade Bash with Bash-It & Ble.sh
+#+date:  2022-07-31
 
-## Bash
+** Bash
+:PROPERTIES:
+:CUSTOM_ID: bash
+:END:
+For those who are not familiar,
+[[https://en.wikipedia.org/wiki/Bash_(Unix_shell)][Bash]] is a Unix
+shell that is used as the default login shell for most Linux
+distributions. This shell and command processor should be familiar if
+you've used Linux (or older version of macOS) before.
 
-For those who are not familiar, 
-[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) is a Unix shell that is 
-used as the default login shell for most Linux distributions. This shell and 
-command processor should be familiar if you've used Linux (or older version of 
-macOS) before.
+However, bash is not the only option. There are numerous other shells
+that exist. Here are some popular examples:
 
-However, bash is not the only option.
-There are numerous other shells that exist.
-Here are some popular examples:
+- [[https://en.wikipedia.org/wiki/Z_shell][zsh]]
+- [[https://en.wikipedia.org/wiki/Fish_(Unix_shell)][fish]]
+- [[https://github.com/ibara/oksh][oksh]]
+- [[https://wiki.gentoo.org/wiki/Mksh][mksh]]
+- [[https://en.wikipedia.org/wiki/Debian_Almquist_shell][dash]]
 
-- [zsh](https://en.wikipedia.org/wiki/Z_shell)
-- [fish](https://en.wikipedia.org/wiki/Fish_(Unix_shell))
-- [oksh](https://github.com/ibara/oksh)
-- [mksh](https://wiki.gentoo.org/wiki/Mksh)
-- [dash](https://en.wikipedia.org/wiki/Debian_Almquist_shell)
+While each shell has its differences, bash is POSIX compliant and the
+default for many Linux users. Because of this, I am going to explore a
+program called =bash-it= below that helps bash users increase the
+utility of their shell without installing a completely new shell.
 
-While each shell has its differences, bash is POSIX compliant and the default 
-for many Linux users. Because of this, I am going to explore a program called 
-`bash-it` below that helps bash users increase the utility of their shell 
-without installing a completely new shell.
-
-### Installation
-
-First, if bash is not already installed on your system, you can [download bash 
-from GNU](https://www.gnu.org/software/bash/) or use your package manager to 
-install it.
+*** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
+First, if bash is not already installed on your system, you can
+[[https://www.gnu.org/software/bash/][download bash from GNU]] or use
+your package manager to install it.
 
 For example, this is how you can install bash on Fedora Linux:
 
-```sh
+#+begin_src sh
 sudo dnf install bash
-```
+#+end_src
 
-If you are not using bash as your default shell, use the `chsh` command to 
-change your shell:
+If you are not using bash as your default shell, use the =chsh= command
+to change your shell:
 
-```sh
+#+begin_src sh
 chsh
-```
+#+end_src
 
-You should see a prompt like the one below. If the brackets (`[]`) contain 
-`bash` already, you're done, and you can simply continue by hitting the Enter 
-key.
+You should see a prompt like the one below. If the brackets (=[]=)
+contain =bash= already, you're done, and you can simply continue by
+hitting the Enter key.
 
-If the brackets contain another shell path (e.g. `/usr/bin/zsh`), enter the path 
-to the bash program on your system (it's most likely located at 
-`/usr/bin/bash`).
+If the brackets contain another shell path (e.g. =/usr/bin/zsh=), enter
+the path to the bash program on your system (it's most likely located at
+=/usr/bin/bash=).
 
-```sh
+#+begin_src sh
 Changing shell for <user>.
 New shell [/usr/bin/bash]:
-```
+#+end_src
 
-You must log out or restart the machine in order for the login shell to be 
-refreshed. You can do it now or wait until you're finished customizing the 
-shell.
+You must log out or restart the machine in order for the login shell to
+be refreshed. You can do it now or wait until you're finished
+customizing the shell.
 
-```sh
+#+begin_src sh
 sudo reboot now
-```
+#+end_src
 
-## Bash-it
+** Bash-it
+:PROPERTIES:
+:CUSTOM_ID: bash-it
+:END:
+As noted on the [[https://github.com/Bash-it/bash-it][Bash-it]]
+repository:
 
-As noted on the [Bash-it](https://github.com/Bash-it/bash-it) repository:
+#+begin_quote
+Bash-it is a collection of community Bash commands and scripts for Bash
+3.2+. (And a shameless ripoff of oh-my-zsh 😃)
 
-> Bash-it is a collection of community Bash commands and scripts for Bash 3.2+. 
-> (And a shameless ripoff of oh-my-zsh 😃)
+#+end_quote
 
-Bash-it makes it easy to install plugins, set up aliases for common commands, 
-and easily change the visual theme of your shell.
+Bash-it makes it easy to install plugins, set up aliases for common
+commands, and easily change the visual theme of your shell.
 
-### Installation
+*** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation-1
+:END:
+To install the framework, simply copy the repository files and use the
+=install.sh= script provided. If you want, you can (and should!) inspect
+the contents of the installation script before you run it.
 
-To install the framework, simply copy the repository files and use the 
-`install.sh` script provided. If you want, you can (and should!) inspect the 
-contents of the installation script before you run it.
-
-```sh
+#+begin_src sh
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
-```
+#+end_src
 
-If you didn't restart your session after making bash the default, and are 
-currently working within another shell, be sure to enter a bash session before 
-using `bash-it`:
+If you didn't restart your session after making bash the default, and
+are currently working within another shell, be sure to enter a bash
+session before using =bash-it=:
 
-```sh
+#+begin_src sh
 bash
-```
+#+end_src
 
-### Aliases
+*** Aliases
+:PROPERTIES:
+:CUSTOM_ID: aliases
+:END:
+Bash-it contains a number of aliases for common commands to help improve
+efficiency in the terminal. To list all available options, use the
+following command:
 
-Bash-it contains a number of aliases for common commands to help improve 
-efficiency in the terminal. To list all available options, use the following 
-command:
-
-```sh
+#+begin_src sh
 bash-it show aliases
-```
+#+end_src
 
 This will provide you a list that looks like the following text block.
-Within this screen, you will be able to see all available options and which 
-ones are currently enabled.
+Within this screen, you will be able to see all available options and
+which ones are currently enabled.
 
-```txt
+#+begin_src txt
 Alias                Enabled?   Description
 ag                   [ ]        the silver searcher (ag) aliases
 ansible              [ ]        ansible abbreviations
@@ -123,32 +133,35 @@ clipboard            [ ]        xclip shortcuts
 composer             [ ]        common composer abbreviations
 curl                 [x]        Curl aliases for convenience.
 ...
-```
+#+end_src
 
 To enable an alias, do:
 
-```sh
+#+begin_src sh
 bash-it enable alias  <alias name> [alias name]... -or- $ bash-it enable alias all
-```
+#+end_src
 
 To disable an alias, do:
 
-```sh
+#+begin_src sh
 bash-it disable alias <alias name> [alias name]... -or- $ bash-it disable alias all
-```
+#+end_src
 
-### Plugins
+*** Plugins
+:PROPERTIES:
+:CUSTOM_ID: plugins
+:END:
+Similar to aliases, plugins are available with bash-it. You can find a
+complete list of plugins in the same way as aliases. Simply execute the
+following:
 
-Similar to aliases, plugins are available with bash-it. You can find a complete 
-list of plugins in the same way as aliases. Simply execute the following:
-
-```sh
+#+begin_src sh
 bash-it show plugins
-```
+#+end_src
 
 You will see the following output showing enabled and disabled plugins:
 
-```txt
+#+begin_src txt
 Plugin               Enabled?   Description
 alias-completion     [ ]
 autojump             [ ]        Autojump configuration, see https://github.com/wting/autojump for more details
@@ -159,79 +172,87 @@ battery              [x]        display info about your battery charge level
 blesh                [ ]        load ble.sh, the Bash line editor!
 boot2docker          [ ]        Helpers to get Docker setup correctly for boot2docker
 browser              [ ]        render commandline output in your browser
-```
+#+end_src
 
 To enable a plugin, do:
 
-```sh
+#+begin_src sh
 bash-it enable plugin  <plugin name> [plugin name]... -or- $ bash-it enable plugin all
-```
+#+end_src
 
 To disable a plugin, do:
 
-```sh
+#+begin_src sh
 bash-it disable plugin <plugin name> [plugin name]... -or- $ bash-it disable plugin all
-```
+#+end_src
 
-### Themes
-
-There are quite a few pre-defined 
-[themes](https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes) 
+*** Themes
+:PROPERTIES:
+:CUSTOM_ID: themes
+:END:
+There are quite a few pre-defined
+[[https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes][themes]]
 available with bash-it.
 
 To list all themes:
 
-```sh
+#+begin_src sh
 ls ~/.bash_it/themes/
-```
+#+end_src
 
-To use a new theme, you'll need to edit `.bashrc` and alter the `BASH_IT_THEME` 
-variable to your desired theme. For example, I am using the `zork` theme.
+To use a new theme, you'll need to edit =.bashrc= and alter the
+=BASH_IT_THEME= variable to your desired theme. For example, I am using
+the =zork= theme.
 
-```sh
+#+begin_src sh
 nano ~/.bashrc
-```
+#+end_src
 
-```sh
+#+begin_src sh
 export BASH_IT_THEME='zork'
-```
+#+end_src
 
-Once you save your changes, you just need to exit your terminal and create a new 
-one in order to see your changes to the `.bashrc` file. You can also `source` 
-the file to see changes, but I recommend starting a completely new shell 
-instead.
+Once you save your changes, you just need to exit your terminal and
+create a new one in order to see your changes to the =.bashrc= file. You
+can also =source= the file to see changes, but I recommend starting a
+completely new shell instead.
 
-## ble.sh
+** ble.sh
+:PROPERTIES:
+:CUSTOM_ID: ble.sh
+:END:
+One big feature I was missing in Bash that both =zsh= and =fish= have is
+an autosuggestion feature. To explain: as you type, an autosuggestion
+feature in the shell will offer suggestions in a lighter font color
+beyond the characters already typed. Once you see the command you want,
+you can click the right arrow and have the shell auto-complete that line
+for you.
 
-One big feature I was missing in Bash that both `zsh` and `fish` have is an 
-autosuggestion feature. To explain: as you type, an autosuggestion feature in 
-the shell will offer suggestions in a lighter font color beyond the characters 
-already typed. Once you see the command you want, you can click the right arrow 
-and have the shell auto-complete that line for you.
-
-Luckily, the [Bash Line Editor](https://github.com/akinomyoga/ble.sh) (ble.sh) 
-exists! This program provides a wonderful autosuggestions feature perfectly, 
-among other features that I haven't tested yet.
+Luckily, the [[https://github.com/akinomyoga/ble.sh][Bash Line Editor]]
+(ble.sh) exists! This program provides a wonderful autosuggestions
+feature perfectly, among other features that I haven't tested yet.
 
 In order to install ble.sh, execute the following:
 
-```sh
+#+begin_src sh
 git clone --recursive https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
 echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
-```
+#+end_src
 
-Again, exit the terminal and open a new one in order to see the newly-configured 
-shell.
+Again, exit the terminal and open a new one in order to see the
+newly-configured shell.
 
-## Restart the Session
+** Restart the Session
+:PROPERTIES:
+:CUSTOM_ID: restart-the-session
+:END:
+Finally, as mentioned above, you'll need to restart the session to
+ensure that your user is using bash by default.
 
-Finally, as mentioned above, you'll need to restart the session to ensure that 
-your user is using bash by default.
+You will also need to exit and re-open a shell (e.g., terminal or
+terminal tab) any time you make changes to the =.bashrc= file.
 
-You will also need to exit and re-open a shell (e.g., terminal or terminal tab) 
-any time you make changes to the `.bashrc` file.
-
-```sh
+#+begin_src sh
 sudo reboot now
-```
+#+end_src

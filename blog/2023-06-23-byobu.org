@@ -1,43 +1,48 @@
-+++
-date = 2023-06-23T19:15:28
-title = "Byobu"
-description = "A quick look at byobu, a text based window manager."
-+++
+#+title: Byobu
+#+date:  2023-06-23
 
-## Byobu
+** Byobu
+:PROPERTIES:
+:CUSTOM_ID: byobu
+:END:
+[[https://www.byobu.org][byobu]] is a command-line tool that allows you
+to use numerous screens within a single terminal emulator instance. More
+specifically, it's a text based window manager, using either =screen= or
+=tmux=.
 
-[byobu](https://www.byobu.org) is a command-line tool that allows you to use
-numerous screens within a single terminal emulator instance. More specifically,
-it's a text based window manager, using either `screen` or `tmux`.
+This post is mostly just a self-reference as I explore byobu, so I may
+come back later and update this post with more content.
 
-This post is mostly just a self-reference as I explore byobu, so I may come back
-later and update this post with more content.
+*** Screenshot
+:PROPERTIES:
+:CUSTOM_ID: screenshot
+:END:
+Take a look below at my current multi-window set-up in byobu while I
+write this blog post:
 
-### Screenshot
+#+caption: byobu
+[[https://img.cleberg.net/blog/20230623-byobu/byobu.png]]
 
-Take a look below at my current multi-window set-up in byobu while I write this
-blog post:
+** Keybindings
+:PROPERTIES:
+:CUSTOM_ID: keybindings
+:END:
+You can open the help menu with either of the following commands; they
+will both open the same manpage:
 
-![byobu](https://img.cleberg.net/blog/20230623-byobu/byobu.png "byobu")
-
-## Keybindings
-
-You can open the help menu with either of the following commands; they will both
-open the same manpage:
-
-```sh
+#+begin_src sh
 byobu --help
 # or
 man byobu
-```
+#+end_src
 
-While the manpage contains a ton of information about the functionality of
-byobu (such as status notifications, sessions, and windows), the first location
-to explore should be the keybindings section.
+While the manpage contains a ton of information about the functionality
+of byobu (such as status notifications, sessions, and windows), the
+first location to explore should be the keybindings section.
 
 The keybindings are configured as follows:
 
-```txt
+#+begin_src txt
 byobu  keybindings  can be user defined in /usr/share/byobu/keybindings/ (or 
 within .screenrc if byobu-export was used). The common key bindings are:
 
@@ -65,4 +70,4 @@ Ctrl-a R - Reload profile
 Ctrl-a ! - Toggle key bindings on and off
 Ctrl-a k - Kill the current window
 Ctrl-a ~ - Save the current window's scrollback buffer
-```
+#+end_src

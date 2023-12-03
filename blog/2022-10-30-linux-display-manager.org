@@ -1,78 +1,85 @@
-+++
-date = 2022-10-30
-title = "How to Disable or Change the Display Manager on Void Linux"
-description = "Learn how to change the default dm on Void Linux or disable it completely."
-+++
+#+title: How to Disable or Change the Display Manager on Void Linux
+#+date:  2022-10-30
 
-## Display Manager Services
+** Display Manager Services
+:PROPERTIES:
+:CUSTOM_ID: display-manager-services
+:END:
+In order to change the
+[[https://en.wikipedia.org/wiki/Display_manager][display manager]] on
+Void Linux - or any other Linux distro - you need to identify the
+currently enabled display manager.
 
-In order to change the [display 
-manager](https://en.wikipedia.org/wiki/Display_manager) on Void Linux - or any 
-other Linux distro - you need to identify the currently enabled display manager.
+*** Disabling the Current Display Manager
+:PROPERTIES:
+:CUSTOM_ID: disabling-the-current-display-manager
+:END:
+Void Linux only has one ISO available for download with a pre-built
+display manager at the time of this post: the XFCE ISO. If you've
+installed this version, the pre-assigned display manager is =lxdm=. If
+you installed another display manager, replace =lxdm= in the following
+command with the display manager you have installed.
 
-### Disabling the Current Display Manager
+To disable =lxdm=, simply remove the service symlink:
 
-Void Linux only has one ISO available for download with a pre-built display 
-manager at the time of this post: the XFCE ISO. If you've installed this 
-version, the pre-assigned display manager is `lxdm`. If you installed another 
-display manager, replace `lxdm` in the following command with the display 
-manager you have installed.
-
-To disable `lxdm`, simply remove the service symlink:
-
-```sh
+#+begin_src sh
 sudo rm /var/service/lxdm
-```
+#+end_src
 
-### Enabling a New Display Manager
+*** Enabling a New Display Manager
+:PROPERTIES:
+:CUSTOM_ID: enabling-a-new-display-manager
+:END:
+If you want to enable a new display manager, you can do so after =lxdm=
+is disabled. Make sure to replace =<new_display_manager>= with your new
+DM, such as =gdm=, =xdm=, etc.
 
-If you want to enable a new display manager, you can do so after `lxdm` is 
-disabled. Make sure to replace `<new_display_manager>` with your new DM, such as 
-`gdm`, `xdm`, etc.
-
-
-```sh
+#+begin_src sh
 sudo ln -s /etc/sv/<new_display_manager> /var/service
-```
+#+end_src
 
-## Set Up  `.xinitrc`
+** Set Up =.xinitrc=
+:PROPERTIES:
+:CUSTOM_ID: set-up-.xinitrc
+:END:
+Depending on your setup, you may need to create a few X files, such as
+=~/.xinitrc=. For my personal set-up, I created this file to launch the
+i3wm as my desktop.
 
-Depending on your setup, you may need to create a few X files, such as 
-`~/.xinitrc`. For my personal set-up, I created this file to launch the i3wm as 
-my desktop.
-
-```sh
+#+begin_src sh
 nano ~/.xinitrc
-```
+#+end_src
 
-```sh
+#+begin_src sh
 #!/bin/sh
 
 exec i3
-```
+#+end_src
 
-If you run a desktop other than i3, simply replace `i3` with the shell command 
-that launches that desktop.
+If you run a desktop other than i3, simply replace =i3= with the shell
+command that launches that desktop.
 
-## Set Up Your Shell Profile
+** Set Up Your Shell Profile
+:PROPERTIES:
+:CUSTOM_ID: set-up-your-shell-profile
+:END:
+Finally, in order to automatically launch an X session upon login, you
+will need to edit the =.bash_profile= (bash) or =.zprofile= (zsh) files
+for your shell:
 
-Finally, in order to automatically launch an X session upon login, you will need 
-to edit the `.bash_profile` (bash) or `.zprofile` (zsh) files for your 
-shell:
-
-```sh
+#+begin_src sh
 nano ~/.zprofile
-```
+#+end_src
 
-Add the following snippet to the end of the shell profile file. This will 
-execute the `startx` command upon login.
+Add the following snippet to the end of the shell profile file. This
+will execute the =startx= command upon login.
 
-```sh
+#+begin_src sh
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec startx
+    exec startx
 fi
-```
+#+end_src
 
-Alternatively, you can ignore this step and simply choose to manually execute 
-`startx` upon login. This can be useful if you have issues with your desktop or 
-like to manually launch different desktops by choice.
+Alternatively, you can ignore this step and simply choose to manually
+execute =startx= upon login. This can be useful if you have issues with
+your desktop or like to manually launch different desktops by choice.

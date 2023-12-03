@@ -1,31 +1,32 @@
-+++
-date = 2023-07-12T19:31:00
-title = "Enabling LAN Access in Mullvad Wireguard Conf Files"
-description = ""
-+++
+#+title: Enabling LAN Access in Mullvad Wireguard Conf Files
+#+date:  2023-07-12
 
-## Download Configuration Files from Mullvad
+** Download Configuration Files from Mullvad
+:PROPERTIES:
+:CUSTOM_ID: download-configuration-files-from-mullvad
+:END:
+To begin, you'll need
+[[https://mullvad.net/account/wireguard-config][Wireguard configuration
+files from Mullvad]]. You can choose any of the options as you download
+them. For example, I enabled the kill switch, selected all countries,
+and selected a few content filters.
 
-To begin, you'll need [Wireguard configuration files from
-Mullvad](https://mullvad.net/account/wireguard-config).
-You can choose any of the options as you download them.
-For example, I enabled the kill switch, selected all countries, and selected a
-few content filters.
+Once downloaded, unzip the files and move them to the Wireguard folder
+on your system.
 
-Once downloaded, unzip the files and move them to the Wireguard folder on your
-system.
-
-```sh
+#+begin_src sh
 cd ~/Downloads
 unzip mullvad_wireguard_linux_all_all.zip
 doas mv *.conf /etc/wireguard/
-```
+#+end_src
 
-### Configuration File Layout
-
+*** Configuration File Layout
+:PROPERTIES:
+:CUSTOM_ID: configuration-file-layout
+:END:
 The default configuration files will look something like this:
 
-```conf
+#+begin_src conf
 [Interface]
 # Device: <redacted>
 PrivateKey = <redacted>
@@ -38,43 +39,50 @@ PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m ad
 PublicKey = <redacted>
 AllowedIPs = <redacted>
 Endpoint = <redacted>
-```
+#+end_src
 
-> Note: If you didn't select the kill switch option, you won't see the `PostUp`
-> and `PreDown` lines.
-> In this case, you'll need to modify the script below to simply append those
-> lines to the `[Interface]` block.
+#+begin_quote
+Note: If you didn't select the kill switch option, you won't see the
+=PostUp= and =PreDown= lines. In this case, you'll need to modify the
+script below to simply append those lines to the =[Interface]= block.
 
-## Editing the Configuration Files
+#+end_quote
 
-Once you have the files, you'll need to edit them and replace the `PostUp` and
-`PreDown` lines to enable LAN access.
+** Editing the Configuration Files
+:PROPERTIES:
+:CUSTOM_ID: editing-the-configuration-files
+:END:
+Once you have the files, you'll need to edit them and replace the
+=PostUp= and =PreDown= lines to enable LAN access.
 
-I recommend that you do this process as root, since you'll need to be able to
-access files in `/etc/wireguard`, which are generally owned by root.
-You can also try using `sudo` or `doas`, but I didn't test that scenario so you
-may need to adjust, as necessary.
+I recommend that you do this process as root, since you'll need to be
+able to access files in =/etc/wireguard=, which are generally owned by
+root. You can also try using =sudo= or =doas=, but I didn't test that
+scenario so you may need to adjust, as necessary.
 
-```sh
+#+begin_src sh
 su
-```
+#+end_src
 
-Create the Python file that we'll be using to update the Wireguard configuration
-files.
+Create the Python file that we'll be using to update the Wireguard
+configuration files.
 
-```sh
+#+begin_src sh
 nano replace.py
-```
+#+end_src
 
-Within the Python file, copy and paste the logic below.
-This script will open a directory, loop through every configuration file within
-the directory, and replace the `PostUp` and `PreDown` lines with the new
+Within the Python file, copy and paste the logic below. This script will
+open a directory, loop through every configuration file within the
+directory, and replace the =PostUp= and =PreDown= lines with the new
 LAN-enabled iptables commands.
 
-> Note: If your LAN is on a subnet other than `192.168.1.0/24`, you'll need to
-> update the Python script below appropriately.
+#+begin_quote
+Note: If your LAN is on a subnet other than =192.168.1.0/24=, you'll
+need to update the Python script below appropriately.
 
-```python
+#+end_quote
+
+#+begin_src python
 import os
 import fileinput
 
@@ -83,35 +91,35 @@ print("--- starting ---")
 dir = "/etc/wireguard/"
 
 for file in os.listdir(dir):
-	print(os.path.join(dir, file))
-	for line in fileinput.input(os.path.join(dir, file), inplace=True):
-		if "PostUp" in line:
-			print("PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL ! -d 192.168.1.0/24 -j REJECT && ip6tables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT")
-		elif "PreDown" in line:
-			print("PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL ! -d 192.168.1.0/24 -j REJECT && ip6tables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT")
-		else:
-			print(line, end="")
+    print(os.path.join(dir, file))
+    for line in fileinput.input(os.path.join(dir, file), inplace=True):
+        if "PostUp" in line:
+            print("PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL ! -d 192.168.1.0/24 -j REJECT && ip6tables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT")
+        elif "PreDown" in line:
+            print("PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL ! -d 192.168.1.0/24 -j REJECT && ip6tables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT")
+        else:
+            print(line, end="")
 
 print("--- done ---")
-```
+#+end_src
 
-Once you're done, save and close the file. You can now run the Python script
-and watch as each file is updated.
+Once you're done, save and close the file. You can now run the Python
+script and watch as each file is updated.
 
-```sh
+#+begin_src sh
 python3 replace.py
-```
+#+end_src
 
-To confirm it worked, you can `cat` one of the configuration files to inspect
-the new logic and connect to one to test it out.
+To confirm it worked, you can =cat= one of the configuration files to
+inspect the new logic and connect to one to test it out.
 
-```sh
+#+begin_src sh
 cat /etc/wireguard/us-chi-wg-001.conf
-```
+#+end_src
 
 The configuration files should now look like this:
 
-```conf
+#+begin_src conf
 [Interface]
 # Device: <redacted>
 PrivateKey = <redacted>
@@ -124,19 +132,20 @@ PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m ad
 PublicKey = <redacted>
 AllowedIPs = <redacted>
 Endpoint = <redacted>
-```
+#+end_src
 
-If you connect to a Wireguard interface, such as `us-chi-wg-001`, you can test
-your SSH functionality and see that it works even while on the VPN.
+If you connect to a Wireguard interface, such as =us-chi-wg-001=, you
+can test your SSH functionality and see that it works even while on the
+VPN.
 
-```sh
+#+begin_src sh
 wg-quick up us-chi-wg-001
 ssh user@lan-host
-```
+#+end_src
 
 To confirm your VPN connection, you can curl Mullvad's connection API:
 
-```sh
+#+begin_src sh
 curl https://am.i.mullvad.net/connected
 # You are connected to Mullvad (server us-chi-wg-001). Your IP address is <redacted>
-```
+#+end_src

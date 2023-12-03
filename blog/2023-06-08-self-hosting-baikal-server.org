@@ -1,34 +1,34 @@
-+++
-date = 2023-06-08T21:48:00Z
-title = "Self-Hosting Baïkal Server (CalDAV & CardDAV)"
-description = "A quick guide on install Baïkal with docker-compose."
-+++
+#+title: Self-Hosting Baïkal Server
+#+date:  2023-06-08
 
-## What is Baïkal?
+** What is Baïkal?
+:PROPERTIES:
+:CUSTOM_ID: what-is-baïkal
+:END:
+[[https://sabre.io/baikal/][Baïkal]] is a lightweight CalDAV + CardDAV
+server that you can self-host on your own machine. While I have tried (&
+failed) to get this CalDAV + CardDAV server running before, it was quite
+easy this time. Not really sure what I did differently this time, but
+I'm documenting my process here to ensure I don't forget.
 
-[Baïkal](https://sabre.io/baikal/) is a lightweight CalDAV + CardDAV server 
-that you can self-host on your own machine.
-While I have tried (& failed) to get this CalDAV + CardDAV server running 
-before, it was quite easy this time.
-Not really sure what I did differently this time, but I'm documenting my 
-process here to ensure I don't forget.
+** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
+First, create a folder on your server and open a =docker-compose.yml=
+file for editing:
 
-## Installation
-
-First, create a folder on your server and open a `docker-compose.yml` file for 
-editing:
-
-```bash
+#+begin_src sh
 mkdir baikal && cd baikal
 nano docker-compose.yml
-```
+#+end_src
 
-Within this file, you'll need to paste the information below. You can customize 
-the `ports` section to use any port on your server to pass through to port 80 in 
-the container. You can also edit the `volumes` section to use docker volumes 
-instead of local folders.
+Within this file, you'll need to paste the information below. You can
+customize the =ports= section to use any port on your server to pass
+through to port 80 in the container. You can also edit the =volumes=
+section to use docker volumes instead of local folders.
 
-```conf
+#+begin_src conf
 version: "2"
 services:
   baikal:
@@ -39,61 +39,68 @@ services:
     volumes:
       - ./config:/var/www/baikal/config
       - ./data:/var/www/baikal/Specific
-```
+#+end_src
 
-Once finished with editing, save and close the file. Then, launch the docker 
-container:
+Once finished with editing, save and close the file. Then, launch the
+docker container:
 
-```bash
+#+begin_src sh
 sudo docker-compose up -d
-```
+#+end_src
 
-## Intial Setup
+** Intial Setup
+:PROPERTIES:
+:CUSTOM_ID: intial-setup
+:END:
+As long as no issues came up when starting the container, you should be
+able to visit the server's set-up page at =http://<server_ip>:<port>=.
+The application will ask you to create an administrator account and
+choose the database type for your storage. Personally, I opted to use
+SQLite.
 
-As long as no issues came up when starting the container, you should be able 
-to visit the server's set-up page at `http://<server_ip>:<port>`.
-The application will ask you to create an administrator account and choose 
-the database type for your storage.
-Personally, I opted to use SQLite.
-
-Make sure the administrator credentials are adequate to protect against 
+Make sure the administrator credentials are adequate to protect against
 common attacks.
 
-## Creating Users
+** Creating Users
+:PROPERTIES:
+:CUSTOM_ID: creating-users
+:END:
+Once you've set up the application, you will be greeted by the Dashboard
+page, which will show the version of the app, status of the
+admin/CalDAV/CardDAV services, and the number of users, calendars,
+events, address books, and contacts.
 
-Once you've set up the application, you will be greeted by the Dashboard page, 
-which will show the version of the app, status of the admin/CalDAV/CardDAV 
-services, and the number of users, calendars, events, address books, and 
-contacts.
+#+caption: Baïkal Dashboard
+[[https://img.cleberg.net/blog/20230608-baikal/baikal-dashboard.png]]
 
-![Baïkal Dashboard](https://img.cleberg.net/blog/20230608-baikal/baikal-dashboard.png "Baïkal Dashboard")
+To create a new user, navigate to the =Users and resources= page. This
+process is as simple as entering a username, password, and email.
 
-To create a new user, navigate to the `Users and resources` page. This process 
-is as simple as entering a username, password, and email.
+Once a user has been created, you can create any number of calendars and
+address books for user, as well as inspect their information.
 
-Once a user has been created, you can create any number of calendars and address 
-books for user, as well as inspect their information.
+** Setting Up a Public URL
+:PROPERTIES:
+:CUSTOM_ID: setting-up-a-public-url
+:END:
+Once your application is working locally, you can open access remotely
+via a URL by using a reverse-proxy like Nginx.
 
-## Setting Up a Public URL
+As a prerequisite, you must own a domain name and set up DNS records to
+point a domain name to the server hosting Baïkal.
 
-Once your application is working locally, you can open access remotely via a URL 
-by using a reverse-proxy like Nginx.
+Start by navigating to your web server's configuration directory and
+create a new file for this application.
 
-As a prerequisite, you must own a domain name and set up DNS records 
-to point a domain name to the server hosting Baïkal.
-
-Start by navigating to your web server's configuration directory and create a 
-new file for this application.
-
-```bash
+#+begin_src sh
 cd /etc/nginx/sites-available/
 nano dav
-```
+#+end_src
 
-Within this file, paste in the configuration from below and change 
-`dav.example.com` to match the URL you'll be using.
+Within this file, paste in the configuration from below and change
+=dav.example.com= to match the URL you'll be using.
 
-```conf
+#+begin_src conf
 server {
         if ($host ~ ^[^.]+\.example\.com$) {
                 return 301 https://$host$request_uri;
@@ -123,35 +130,37 @@ server {
         include /etc/letsencrypt/options-ssl-nginx.conf;
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 }
-```
+#+end_src
 
-For Nginx on Ubuntu, you'll need to symlink the configuration file to the 
-`sites-enabled` directory and then restart Nginx.
+For Nginx on Ubuntu, you'll need to symlink the configuration file to
+the =sites-enabled= directory and then restart Nginx.
 
-```bash
+#+begin_src sh
 sudo ln -s /etc/nginx/sites-available/dav /etc/nginx/sites-enabled/dav
 sudo systemctl restart nginx.service
-```
+#+end_src
 
-At this point, the Baïkal server should be available over the internet at the 
-URL configured above!
+At this point, the Baïkal server should be available over the internet
+at the URL configured above!
 
-## Configuring Clients
+** Configuring Clients
+:PROPERTIES:
+:CUSTOM_ID: configuring-clients
+:END:
+Lastly, configuring clients and applications is essential to making sure
+the DAV server is being fully utilized.
 
-Lastly, configuring clients and applications is essential to making sure the DAV 
-server is being fully utilized.
+You can also use the =Users and resources= page to inspect a user's
+personal link to their calendars and address books by clicking the info
+(i) button. It will show a URI like
+=/dav.php/calendars/your-user/default/=.
 
-You can also use the `Users and resources` page to inspect a user's personal 
-link to their calendars and address books by clicking the info (i) button. It 
-will show a URI like 
-`/dav.php/calendars/your-user/default/`.
+However, I found that the following URL works for most applications:
+=/dav.php/principals/your-user/=.
 
-However, I found that the following URL works for most applications: 
-`/dav.php/principals/your-user/`.
+I used the =principals= URL above for Thunderbird (calendar, tasks, and
+contacts), as well as iOS (calendar, tasks, and contacts) and everything
+works flawlessly so far.
 
-I used the `principals` URL above for Thunderbird (calendar, tasks, and 
-contacts), as well as iOS (calendar, tasks, and contacts) and everything works 
-flawlessly so far.
-
-Syncing is quick between the server and clients, and I haven't seen any 
+Syncing is quick between the server and clients, and I haven't seen any
 disruptions in the service or data integrity.
