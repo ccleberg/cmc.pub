@@ -1,169 +1,177 @@
-@media (prefers-reduced-motion:no-preference) {
-    :root { 
-	scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
     }
 }
 
-body { 
-    background-color: hsl(0, 0%, 100%); 
-    color: hsl(0, 0%, 5%); 
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-    font-size: 1rem; 
-    line-height: 1.5; 
-    max-width: 45em; 
-    margin: 0 auto; 
-    padding: 0 1rem; 
+body {
+    background-color: #282828;
+    color: #ebdbb2;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 45em;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-a, a:visited { 
-    color: hsl(240, 100%, 35%); 
-    text-decoration: none; 
+nav,
+footer {
+    border-color: #ebdbb2;
 }
 
-a:hover { 
-    background-color: hsl(240, 100%, 35%); 
-    color: hsl(0, 0%, 100%); 
+h1 {
+    color: #458588;
 }
 
-#preamble { 
-    padding: 1rem 0; 
+h2 {
+    color: #d79921;
 }
 
-#preamble nav a { 
-    margin-right: 0.5rem; 
+h3 {
+    color: #b16286;
 }
 
-#postamble { 
-    border-top: 1px solid #000; 
-    margin-top: 1rem; 
+h4 {
+    color: #cc241d;
 }
 
-img { 
-    width: 100%; 
+h1::before {
+    content: "* ";
 }
 
-table { 
-    border-collapse: collapse; 
+h2::before {
+    content: "** ";
 }
 
-thead, th, tr, td { 
-    border: 1px solid hsl(0, 100%, 5%); 
-    padding: 0.25rem; 
+h3::before {
+    content: "*** ";
 }
 
-pre > code, time, code { 
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
-    font-size: 1rem; 
+h4::before {
+    content: "**** ";
 }
 
-pre { 
-    padding: 0.5rem; 
-    margin: 0.5rem 0; 
-    border: 1px solid #0d0d0d; 
-    overflow-x:	auto; 
+a,
+a:visited {
+    color: #689d6a;
+    text-decoration: underline;
 }
 
-:not(pre)>code { 
-    background-color: hsl(240, 100%, 85%); 
-    border: 1px solid
-	    hsl(240, 100%, 85%); 
-    border-radius: 0; 
-    color: hsl(0, 0%, 5%); 
-    padding: 0
-	     0.25rem; 
+a:hover {
+    background-color: #689d6a;
+    color: #282828;
 }
 
-aside { 
-    background-color: hsl(0, 0%, 85%); 
-    padding: 1rem; 
+#preamble {
+    padding: 1rem 0;
 }
 
-blockquote { 
-    background-color: hsl(0, 0%, 85%); 
-    border-left: 5px solid hsl(240, 100%, 35%); 
-    color: hsl(0, 0%, 5%); 
-    padding: 1rem; 
-    margin: 1rem 0; 
+#preamble nav a {
+    margin-right: 0.5rem;
 }
 
-blockquote p { 
-    margin: 0; 
+#postamble {
+    border-top: 1px solid #000;
+    margin-top: 1rem;
 }
 
-.footnote-definition { 
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: top; 
-    margin: 1rem 0; 
+img {
+    width: 100%;
 }
 
-.footnote-definition sup { 
-    font-size: inherit; 
-    top: 0; 
+table {
+    border-collapse: collapse;
+    color: #ebdbb2;
+    border-color: #665c54;
+}
+
+thead,
+th,
+tr,
+td {
+    border: 1px solid #665c54;
+    padding: 0.25rem;
+}
+
+pre > code,
+time,
+code {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-size: 1rem;
+}
+
+pre {
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+pre::before,
+pre::after {
+    background-color: #504945;
+    display: block;
+    white-space: pre;
+}
+
+pre::before {
+    content: "#+BEGIN_SRC";
+}
+
+pre::after {
+    content: "#+END_SRC";
+}
+
+:not(pre) > code {
+    color: #d79921;
+}
+
+aside {
+    background-color: #504945;
+    padding: 1rem;
+}
+
+blockquote {
+    margin: 1rem 0;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote::before,
+blockquote::after {
+    background-color: #504945;
+    display: block;
+    white-space: pre;
+}
+
+blockquote::before {
+    content: "#+BEGIN_QUOTE";
+}
+
+blockquote::after {
+    content: "#+END_QUOTE";
+}
+
+.footnote-definition {
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    margin: 1rem 0;
+}
+
+.footnote-definition sup {
+    font-size: inherit;
+    top: 0;
     line-height: inherit;
-    padding-right: .5rem; 
+    padding-right: 0.5rem;
 }
 
-.footnote-definition sup::after { 
-    content: "."; 
+.footnote-definition sup::after {
+    content: ".";
 }
 
-.footnote-definition p { 
-    display: inline-block; 
-    margin: 0; 
-}
-
-@media (prefers-color-scheme: dark) {
-    body { 
-	background-color: hsl(0, 0%, 5%);
-	color: hsl(0, 0%, 75%); 
-    }
-
-    nav, footer { 
-	border-color: hsl(0, 0%, 75%); 
-    }
-
-    h1, h2, h3, h4, h5, h6 { 
-	color: hsl(0, 0%, 85%); 
-    }
-
-    a, a:visited { 
-	color: hsl(120, 100%, 45%); 
-    }
-
-    a:hover { 
-	background-color: hsl(120, 100%, 45%); 
-	color: hsl(0, 0%, 5%); 
-    }
-    :not(pre)>code { 
-	background-color: hsl(120, 100%, 35%); 
-	border: 1px solid hsl(120, 100%, 35%); 
-	border-radius: 0; 
-	color: hsl(0, 0%, 5%);
-        padding: 0 0.25rem; 
-    }
-
-    aside { 
-	background-color: hsl(0, 0%, 15%); 
-	padding: 1rem; 
-    }
-
-    blockquote { 
-	background-color: hsl(0, 0%, 15%); 
-	border-left: 5px solid hsl(120, 100%, 25%); 
-	color: hsl(0, 0%, 85%); 
-    }
-
-    pre { 
-	border: 1px solid hsl(0, 0%, 35%); 
-    }
-
-    table { 
-	color: hsl(0, 0%, 75%); 
-	border-color: hsl(0, 0%, 35%); 
-    }
-
-    thead, th, tr, td { 
-	border: 1px solid hsl(0, 0%, 35%); 
-    }
+.footnote-definition p {
+    display: inline-block;
+    margin: 0;
 }
