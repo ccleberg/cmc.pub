@@ -78,7 +78,7 @@ team@nextdns.io with the transcript of the installation:
 
 #+begin_src sh
 sh -c 'DEBUG=1 sh -c "$(curl -sL https://nextdns.io/install)"'
-#+end_Ssrc
+#+end_src
 
 *** Content Filtering Conflict
 :PROPERTIES:
