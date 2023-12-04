@@ -9,7 +9,7 @@ Use =C-f= to search blog post titles for keywords.
 :PUBDATE:  2023-12-03 Sun 22:35
 :END:
 
-- 2023-12-03 [[./2023-12-03-unifi-nextdns.org][Installing NextDNS on the Unifi Dream Machine]]
+- 2023-12-03 [[./2023-12-03-unifi-nextdns.org][How to Install NextDNS on the Unifi Dream Machine]]
 - 2023-11-08 [[./2023-11-08-scli.org][Installing scli on Alpine Linux (musl)]]
 - 2023-10-17 [[./2023-10-17-self-hosting-anonymousoverflow.org][Self-Hosting AnonymousOverflow]]
 - 2023-10-15 [[./2023-10-15-alpine-ssh-hardening.org][SSH Hardening for Alpine Linux]]
