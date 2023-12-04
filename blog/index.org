@@ -4,7 +4,12 @@
 Use =C-f= to search blog post titles for keywords.
 
 * 2023
+:PROPERTIES:
+:ID:       21779F03-E65E-4A80-A958-3D08723EB8AD
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
+- 2023-12-03 [[./2023-12-03-unifi-nextdns.org][Installing NextDNS on the Unifi Dream Machine]]
 - 2023-11-08 [[./2023-11-08-scli.org][Installing scli on Alpine Linux (musl)]]
 - 2023-10-17 [[./2023-10-17-self-hosting-anonymousoverflow.org][Self-Hosting AnonymousOverflow]]
 - 2023-10-15 [[./2023-10-15-alpine-ssh-hardening.org][SSH Hardening for Alpine Linux]]
@@ -33,6 +38,10 @@ Use =C-f= to search blog post titles for keywords.
 - 2023-01-03 [[./2023-01-03-recent-website-changes.org][Recent Website Changes]]
 
 * 2022
+:PROPERTIES:
+:ID:       3B281087-A3B6-46B7-8A29-77F74DAD5F15
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
 - 2022-12-23 [[./2022-12-23-alpine-desktop.org][Alpine Linux as a Desktop OS]]
 - 2022-12-17 [[./2022-12-17-st.org][Simple Terminal]]
@@ -76,6 +85,10 @@ Use =C-f= to search blog post titles for keywords.
 - 2022-02-10 [[./2022-02-10-leaving-the-office.org][Leaving Office-Based Work In the Past]]
 
 * 2021
+:PROPERTIES:
+:ID:       7603D51F-513F-4407-9CDC-F55C555D35D4
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
 - 2021-12-04 [[./2021-12-04-cisa.org][I Passed the CISA!]]
 - 2021-10-09 [[./2021-10-09-apache-redirect.org][Apache Redirect HTML Files to a Directory]]
@@ -95,6 +108,10 @@ Use =C-f= to search blog post titles for keywords.
 - 2021-01-01 [[./2021-01-01-seum.org][SEUM: Speedrunners from Hell]]
 
 * 2020
+:PROPERTIES:
+:ID:       8442803D-FB00-498D-9936-51029E80B367
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
 - 2020-12-29 [[./2020-12-29-zork.org][Zork: Let's Explore a Classic]]
 - 2020-12-28 [[./2020-12-28-neon-drive.org][Neon Drive: A Nostalgic 80s Arcade Racing Game]]
@@ -115,6 +132,10 @@ Use =C-f= to search blog post titles for keywords.
 - 2020-01-25 [[./2020-01-25-linux-software.org][Linux Software]]
 
 * 2019
+:PROPERTIES:
+:ID:       CC0E4E85-6094-48AD-B78A-68DE97E56A17
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
 - 2019-12-16 [[./2019-12-16-password-security.org][Password Security]]
 - 2019-12-03 [[./2019-12-03-the-ansoff-matrix.org][The Ansoff Matrix]]
@@ -122,6 +143,10 @@ Use =C-f= to search blog post titles for keywords.
 - 2019-01-07 [[./2019-01-07-useful-css.org][Useful CSS Snippets]]
 
 * 2018
+:PROPERTIES:
+:ID:       4FE32AD6-AC36-43DD-ACEF-B2D98450FB2D
+:PUBDATE:  2023-12-03 Sun 22:35
+:END:
 
 - 2018-12-08 [[./2018-12-08-aes-encryption.org][AES Encryption]]
 - 2018-11-28 [[./2018-11-28-cpp-compiler.org][The C++ Compiler]]

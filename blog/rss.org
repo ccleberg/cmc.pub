@@ -1,5 +1,6 @@
 #+TITLE: cleberg.net
 
+- [[file:2023-12-03-unifi-nextdns.org][How to Install NextDNS on the Unifi Dream Machine]]
 - [[file:2021-03-28-vaporwave-vs-outrun.org][2021-03-28-vaporwave-vs-outrun]]
 - [[file:2023-06-23-self-hosting-convos-irc.org][2023-06-23-self-hosting-convos-irc]]
 - [[file:2020-07-26-business-analysis.org][Algorithmically Analyzing Local Businesses]]
@@ -66,7 +67,6 @@
 - [[file:2022-02-20-nginx-caching.org][2022-02-20-nginx-caching]]
 - [[file:2022-08-31-privacy.com-changes.org][2022-08-31-privacy.com-changes]]
 - [[file:2022-03-02-note-taking.org][2022-03-02-note-taking]]
-- [[file:2023-11-12-consolefonts.org][2023-11-12-consolefonts]]
 - [[file:2021-04-28-photography.org][2021-04-28-photography]]
 - [[file:2020-09-22-internal-audit.org][What is Internal Audit?]]
 - [[file:2022-07-25-curseradio.org][2022-07-25-curseradio]]
