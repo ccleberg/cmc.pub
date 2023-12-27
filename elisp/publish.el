@@ -51,7 +51,7 @@ PUB-DIR is when the output will be placed."
 
 	("static"
 	:base-directory "~/Source/cleberg.net/static/"
-	:base-extension "css\\|el"
+	:base-extension "css\\|txt"
 	:publishing-directory "~/Source/cleberg.net/public/static/"
         :publishing-function org-publish-attachment)
 	("website" :components ("cleberg.net" "rss" "static"))))

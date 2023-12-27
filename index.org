@@ -21,5 +21,6 @@ He hoped it had nanosecond nightmares.
 :ID:       A0D2C73E-264F-4DBC-BF87-E875EA36D6A5
 :END:
 
-- hello [at] cleberg.net
+- hello [at] cleberg.net ([[./static/gpg.txt][GPG]])
+- [[https://matrix.to/#/@cyborg:matrix.tchncs.de][@cyborg@matrix.tchncs.de]]
 - [[https://git.cleberg.net][Source Code]]
