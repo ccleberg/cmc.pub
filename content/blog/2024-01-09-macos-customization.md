@@ -4,7 +4,7 @@ title = "Customizing macOS"
 description = "Learn how to customize macOS beyond the standard, built-in options provided by Apple."
 +++
 
-I have been using macOS instead of my Linux machine more and more lately, so I wanted to write a post on simple ways to customize macOS beyond the normal built-in settings menu.
+I have been using macOS more than Linux lately, so I wrote this post to describe some simple options to customize macOS beyond the normal built-in settings menu.
 
 While not all-encompassing, the options below should be a good start for anyone looking to dive down the rabbit hole.
 
