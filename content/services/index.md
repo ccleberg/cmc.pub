@@ -14,4 +14,4 @@ description = "Publicly-available services hosted on cleberg.net."
 - [Office](https://office.cleberg.net) - The world\'s smallest office suite
 - [SearXNG](https://search.cleberg.net) - A privacy-respecting, open metasearch engine
 
-See the [git log](https://git.cleberg.net/?p=cleberg.net.git;a=history;f=services/index.org;h=71ed6bcae7e52a8103f980f1821ca291ef3010ba;hb=HEAD) for this page if you want to see changes that have been made.
+See the [git log](https://git.sr.ht/~cyborg/cleberg.net/log/main/item/content/services/index.md) for this page if you want to see changes that have been made.
