@@ -485,7 +485,7 @@ blockquote p {
 }
 
 .post time {
-    flex: 0 0 auto;
+    flex-shrink: 0;
     margin-right: 0.5rem;
 }
 
