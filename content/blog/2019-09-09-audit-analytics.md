@@ -109,18 +109,12 @@ It should be noted that tracking KPIs in the department can help ensure
 you have a rigorous Quality Assurance and Improvement Program (QAIP) in
 accordance with some applicable standards, such as IPPF Standard 1300.
 
-```{=org}
-#+BEING_QUOTE
-```
-The chief audit executive must develop and maintain a quality assurance
-and improvement program that covers all aspects of the internal audit
-activity.
+> The chief audit executive must develop and maintain a quality assurance
+> and improvement program that covers all aspects of the internal audit
+> activity.
+> 
+> -   IPPF Standard 1300
 
--   IPPF Standard 1300
-
-```{=org}
-#+END_QUOTE
-```
 Additionally, IPPF Standard 2060 discusses reporting:
 
 > The chief audit executive must report periodically to senior

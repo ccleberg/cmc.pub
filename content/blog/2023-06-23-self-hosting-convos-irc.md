@@ -132,15 +132,9 @@ excerpt of the chat screen.
 There are numerous themes to choose from; the theme shown in the images
 below is Dracula.
 
-```{=org}
-#+caption: Convos Home
-```
-<https://img.cleberg.net/blog/20230623-convos/convos_home.png%20%22Convos%20Home%22>
+![Convos Home](https://img.cleberg.net/blog/20230623-convos/convos_home.png "Convos Home")
 
-```{=org}
-#+caption: Convos Chat
-```
-<https://img.cleberg.net/blog/20230623-convos/convos_chat.png%20%22Convos%20Chat%22>
+![Convos Chat](https://img.cleberg.net/blog/20230623-convos/convos_chat.png "Convos Chat")
 
 ## Registering a Nickname
 

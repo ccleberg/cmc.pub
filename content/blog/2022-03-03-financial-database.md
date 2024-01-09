@@ -181,7 +181,7 @@ scripts.
     reports I wanted, I moved on to create a Python project with the
     following structure:
 
-    ```example
+    ```txt
     finance/
     ├── notebooks/
     │   │   ├── account_summary.ipynb
