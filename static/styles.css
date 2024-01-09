@@ -484,11 +484,8 @@ blockquote p {
   display: flex;
 }
 
-.post:first-child {
-    flex: 0 0 auto;
-}
-
 .post time {
+    flex: 0 0 auto;
     margin-right: 0.5rem;
 }
 
