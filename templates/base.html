@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>cleberg.net</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% if page %}
+		{% if page.description %}
+		<meta name="description" content="{{ page.description }}">
+		{% elif config.description %}
+		<meta name="description" content="{{ config.description }}">
+		{% endif %}
+	{% elif config.description %}
+		<meta name="description" content="{{ config.description }}" />
+	{% endif %}
+
+	{% block rss %}
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+	{% endblock %}
+
+	{% block css %}
+	<link rel="stylesheet" href="/styles.css">
+	{% endblock css %}
+
+	{% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+	<nav class="site-nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/blog/">Blog</a></li>
+			<li><a href="/services/">Services</a></li>
+			<li><a href="/wiki/">Wiki</a></li>
+		</ul>
+	</nav>
+	
+	<main>{% block content %}{% endblock content %}</main>
+
+	<footer>
+		<p>Last build: {{ now() | date(format="%Y-%m-%d %H:%M:%S") }}</p>
+		<p><a href="https://git.sr.ht/~cyborg/cleberg.net" target="_blank" rel="noopener">Source Code</a></p>
+		<p><a href="/atom.xml">Atom RSS Feed</a></p>
+	</footer>
+</body>
+</html>
