@@ -352,13 +352,11 @@ template {
 
 /* CUSTOM CSS */
 :root {
-  --bg: #181a1b;
-  --bg-bright: #2f3132;
-  --fg: #c6c6c6;
-  --fg-bright: #fff;
-  --fg-dark: #575757;
-  --blue: #6eb6ff;
-  --pink: #ff91a5;
+  --bg: #282a36;
+  --bg-bright: #44475a;
+  --fg: #f8f8f2;
+  --link: #50fa7b;
+  --code: #f1fa8c;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -414,12 +412,12 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--fg-bright);
+  color: var(--fg);
 }
 
 a,
 a:visited {
-  color: var(--blue);
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -434,14 +432,14 @@ img {
 table {
   border-collapse: collapse;
   color: var(--fg);
-  border-color: var(--fg-dark);
+  border-color: var(--bg-bright);
 }
 
 thead,
 th,
 tr,
 td {
-  border: 1px solid var(--fg-dark);
+  border: 1px solid var(--bg-bright);
   padding: 0.25rem;
 }
 
@@ -462,10 +460,8 @@ pre {
 }
 
 :not(pre) > code {
-  background-color: var(--bg-bright);
-  color: var(--pink);
-  padding: 0.15rem;
-  border-radius: 3px;
+  color: var(--code);
+  font-family: inherit;
 }
 
 aside {
@@ -475,7 +471,7 @@ aside {
 
 blockquote {
   background-color: var(--bg-bright);
-  border-left: 10px solid var(--blue);
+  border-left: 10px solid var(--link);
   margin: 1rem 0;
   padding: 0.5rem 1rem;
 }
