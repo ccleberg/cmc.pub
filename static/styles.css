@@ -352,11 +352,11 @@ template {
 
 /* CUSTOM CSS */
 :root {
-  --bg: #282a36;
-  --bg-bright: #44475a;
-  --fg: #f8f8f2;
-  --link: #50fa7b;
-  --code: #f1fa8c;
+  --bg: #111111;
+  --bg-bright: #2a2a2a;
+  --fg: #c9c9c9;
+  --link: #f07178;
+  --code: #ffb454;
 }
 
 @media (prefers-reduced-motion: no-preference) {
