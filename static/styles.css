@@ -453,7 +453,7 @@ code {
 
 pre {
   background-color: var(--bg-bright) !important;
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   overflow-x: auto;
@@ -472,6 +472,7 @@ aside {
 blockquote {
   background-color: var(--bg-bright);
   border-left: 10px solid var(--link);
+  border-radius: 5px;
   margin: 1rem 0;
   padding: 0.5rem 1rem;
 }
