@@ -1,12 +1,12 @@
 +++
 date = 2023-06-08
 title = "Self-Hosting Baikal Server (CalDAV & CardDAV)"
-description = "A guide to self-hosting the Baïkal application on your own server."
+description = "A guide to self-hosting the Baikal application on your own server."
 +++
 
-## What is Baïkal?
+## What is Baikal?
 
-[Baïkal](https://sabre.io/baikal/) is a lightweight CalDAV + CardDAV
+[Baikal](https://sabre.io/baikal/) is a lightweight CalDAV + CardDAV
 server that you can self-host on your own machine. While I have tried (&
 failed) to get this CalDAV + CardDAV server running before, it was quite
 easy this time. Not really sure what I did differently this time, but
@@ -66,7 +66,7 @@ Dashboard page, which will show the version of the app, status of the
 admin/CalDAV/CardDAV services, and the number of users, calendars,
 events, address books, and contacts.
 
-![Baïkal
+![Baikal
 Dashboard](https://img.cleberg.net/blog/20230608-baikal/baikal-dashboard.png)
 
 To create a new user, navigate to the `Users and resources`
@@ -82,7 +82,7 @@ Once your application is working locally, you can open access remotely
 via a URL by using a reverse-proxy like Nginx.
 
 As a prerequisite, you must own a domain name and set up DNS records to
-point a domain name to the server hosting Baïkal.
+point a domain name to the server hosting Baikal.
 
 Start by navigating to your web server's configuration directory and
 create a new file for this application.
@@ -135,7 +135,7 @@ sudo ln -s /etc/nginx/sites-available/dav /etc/nginx/sites-enabled/dav
 sudo systemctl restart nginx.service
 ```
 
-At this point, the Baïkal server should be available over the internet
+At this point, the Baikal server should be available over the internet
 at the URL configured above!
 
 ## Configuring Clients
