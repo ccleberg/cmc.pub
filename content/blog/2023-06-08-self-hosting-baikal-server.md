@@ -1,6 +1,6 @@
 +++
 date = 2023-06-08
-title = "Self-Hosting Baïkal Server (CalDAV & CardDAV)"
+title = "Self-Hosting Baikal Server (CalDAV & CardDAV)"
 description = "A guide to self-hosting the Baïkal application on your own server."
 +++
 
