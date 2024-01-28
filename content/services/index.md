@@ -10,7 +10,6 @@ description = "Publicly-available services hosted on cleberg.net."
 - [GotHub](https://gh.cleberg.net) - An alternative front-end for GitHub
 - [ifconfig.php](https://ip.cleberg.net) - A \"whatsmyip\" tool
 - [Invidious](https://invidious.cleberg.net) - A YouTube proxy
-- [Nitter](https://nitter.cleberg.net) - A Twitter proxy
 - [Office](https://office.cleberg.net) - The world\'s smallest office suite
 - [SearXNG](https://search.cleberg.net) - A privacy-respecting, open metasearch engine
 
