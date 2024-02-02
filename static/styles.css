@@ -352,11 +352,11 @@ template {
 
 /* CUSTOM CSS */
 :root {
-  --bg: #111111;
-  --bg-bright: #2a2a2a;
-  --fg: #c9c9c9;
-  --link: #f07178;
-  --code: #ffb454;
+  --bg: #fff;
+  --bg-bright: #eee;
+  --fg: #111;
+  --link: #00f;
+  --code: #f00;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -533,4 +533,14 @@ summary {
 .footnote-definition p {
   display: inline-block;
   margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --bg-bright: #2a2a2a;
+    --fg: #c9c9c9;
+    --link: #f07178;
+    --code: #ffb454;
+  }
 }

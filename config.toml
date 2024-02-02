@@ -11,7 +11,10 @@ feed_filename = "atom.xml"
 [markdown]
 highlight_code = true
 highlight_theme = "css"
-highlight_themes_css = [{ theme = "ayu-dark", filename = "syntax-theme-dark.css" }]
+highlight_themes_css = [
+    { theme = "ayu-dark", filename = "syntax-theme-dark.css" },
+    { theme = "inspired-github", filename = "syntax-theme-light.css" },
+]
 external_links_target_blank = true
 lazy_async_image = true
 
