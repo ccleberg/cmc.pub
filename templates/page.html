@@ -16,7 +16,7 @@
 {% if page.toc %}
     <details open>
         <summary>Table of Contents</summary>
-        <nav class="page-nav">
+        <nav class="page-nav" aria-label="page-nav" role="navigation">
             <ul>
             {% for h1 in page.toc %}
                 <li>
@@ -38,5 +38,7 @@
 {% endif %}
 </section>
 
+<article role="article">
 {{ page.content | safe }}
+</article>
 {% endblock content %}
