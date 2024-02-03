@@ -16,11 +16,11 @@ Vaporwave. For example, take a look at the image search results for
 Vaporwave: the results include **a lot** of Outrun-themed images.
 You'll find a similar trend almost everywhere.
 
-![](https://img.cleberg.net/blog/20210328-vaporwave-vs-outrun/vaporwave-search-results.png)
+![Vaporwave Search Results](https://img.cleberg.net/blog/20210328-vaporwave-vs-outrun/vaporwave-search-results.png)
 
 ## Vaporwave
 
-![](https://img.cleberg.net/blog/20210328-vaporwave-vs-outrun/macintosh-plus.png)
+![Macintosh Plus Album Cover](https://img.cleberg.net/blog/20210328-vaporwave-vs-outrun/macintosh-plus.png)
 
 Okay, so what is Vaporwave? I'm going to just copy-and-paste some
 general info from the Wikipedia article on

@@ -6,7 +6,7 @@ description = "Learn how to fix Steam NTFS issues on Linux."
 
 # Auto-Mount Steam Drives
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
+![Steam Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
 
 If you want to see how to install Steam on Linux, see my other post:
 [Linux Software](/blog/linux-software/).

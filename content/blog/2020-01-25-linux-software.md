@@ -8,7 +8,7 @@ description = "A look at some useful Linux applications."
 
 ## Etcher
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/etcher.png)
+![Etcher Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/etcher.png)
 
 [Etcher](https://www.balena.io/etcher/) is a quick and easy way to burn
 ISO images to CDs and USB devices. There are two different ways you can
@@ -56,7 +56,7 @@ sudo pacman -S etcher
 
 ## Atom
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/atom.png)
+![Atom Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/atom.png)
 
 [Atom](https://atom.io) is the self-proclaimed "hackable text editor
 for the 21st century". This text editor is made by GitHub, [now owned
@@ -105,7 +105,7 @@ sudo pacman -S atom
 
 ## Visual Studio Code
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/vscode.png)
+![Visual Studio Code Code](https://img.cleberg.net/blog/20200125-the-best-linux-software/vscode.png)
 
 [Visual Studio Code](https://code.visualstudio.com) is yet another
 fantastic choice for programming on Linux, especially if you need those
@@ -142,7 +142,7 @@ sudo pacman -S yay binutils make gcc pkg-config fakeroot yay -S visual-studio-co
 
 ## GNOME Tweaks
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/gnome-tweaks.png)
+![Gnome Tweaks Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/gnome-tweaks.png)
 
 [Gnome Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks) is the
 ultimate tool to use if you want to customize your GNOME desktop
@@ -164,7 +164,7 @@ sudo dnf install gnome-tweaks
 
 ## Steam
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
+![Steam Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
 
 [Steam](https://steampowered.com) is one of the most popular gaming
 libraries for computers and is one of the main reasons that many people
@@ -212,7 +212,7 @@ Here.](./2020-01-26-steam-on-ntfs-drives.html)
 
 ## neofetch
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/neofetch.png)
+![Neofetch Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/neofetch.png)
 
 [Neofetch](https://github.com/dylanaraps/neofetch) is a customizable
 tool used in the command-line to show system information. This is
@@ -242,7 +242,7 @@ sudo pacman -S neofetch
 
 ## yt-dlp
 
-![](https://img.cleberg.net/blog/20200125-the-best-linux-software/yt-dlp.png)
+![yt-dlp Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/yt-dlp.png)
 
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) is an extremely handy
 command-line tool that allows you to download video or audio files from
