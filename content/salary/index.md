@@ -30,18 +30,18 @@ Note: When in a role that gives periodic raises, I will create a new
 record with the new base salary in the table below. See the KPMG records
 for an example of a raise while in the same role.
 
-| Title                                 | Company                | Location       | Start Date | End Date | Base Salary |
-|---------------------------------------|------------------------|----------------|------------|----------|-------------|
-| Senior Technology Assurance Associate | KPMG                   | Omaha, NE      | 2023-10    | Current  | \$116,700   |
-| Senior Technology Assurance Associate | KPMG                   | Omaha, NE      | 2022-06    | 2023-10  | \$110,000   |
-| Senior Technology Risk Consultant     | Ernst & Young          | Des Moines, IA | 2021-09    | 2022-06  | \$89,500    |
-| Senior IT Auditor                     | Ameritas               | Lincoln, NE    | 2021-05    | 2021-09  | \$72,000    |
-| IT Auditor                            | Ameritas               | Lincoln, NE    | 2020-04    | 2021-05  | \$65,000    |
-| IS Auditor II                         | Nelnet                 | Lincoln, NE    | 2019-12    | 2020-04  | \$58,000    |
-| IS Auditor I                          | Nelnet                 | Lincoln, NE    | 2019-06    | 2019-12  | \$20/hour   |
-| Internal Audit Intern                 | Ameritas               | Lincoln, NE    | 2018-02    | 2019-06  | \$16/hour   |
-| Teaching Assistant                    | University of Nebraska | Lincoln, NE    | 2017-08    | 2018-05  | \$7/hour    |
-| Community Management Intern           | Walgreens              | Lincoln, NE    | 2017-06    | 2018-02  | \$14/hour   |
+| Title                                          | Company                | Location       | Start   | End     | Salary   |
+|------------------------------------------------|------------------------|----------------|:-------:|:-------:|----------|
+| Senior Associate, Technology Assurance - Audit | KPMG                   | Omaha, NE      | 2023-10 | Current | $116,700 |
+| Senior Associate, Technology Assurance - Audit | KPMG                   | Omaha, NE      | 2022-06 | 2023-10 | $110,000 |
+| Senior Technology Risk Consultant              | Ernst & Young          | Des Moines, IA | 2021-09 | 2022-06 | $89,500  |
+| Senior IT Auditor                              | Ameritas               | Lincoln, NE    | 2021-05 | 2021-09 | $72,000  |
+| IT Auditor                                     | Ameritas               | Lincoln, NE    | 2020-04 | 2021-05 | $65,000  |
+| IS Auditor II                                  | Nelnet                 | Lincoln, NE    | 2019-12 | 2020-04 | $58,000  |
+| IS Auditor I                                   | Nelnet                 | Lincoln, NE    | 2019-06 | 2019-12 | $20/hour |
+| Internal Audit Intern                          | Ameritas               | Lincoln, NE    | 2018-02 | 2019-06 | $16/hour |
+| Teaching Assistant                             | University of Nebraska | Lincoln, NE    | 2017-08 | 2018-05 | $7/hour  |
+| Community Management Intern                    | Walgreens              | Lincoln, NE    | 2017-06 | 2018-02 | $14/hour |
 
 This page was inspired by [Xe](https://xeiaso.net/), and I'm quoting
 the following wording from them as I want to reiterate this piece:
