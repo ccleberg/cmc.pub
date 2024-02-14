@@ -433,6 +433,8 @@ table {
   border-collapse: collapse;
   color: var(--fg);
   border-color: var(--bg-bright);
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 0.9rem;
 }
 
 thead,
@@ -446,8 +448,7 @@ td {
 pre > code,
 time,
 code {
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-    monospace;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 1rem;
 }
 
