@@ -28,7 +28,7 @@ type an organization's name instead of a user's name.
 CNTX=users; NAME=YOUR-USERNAME; PAGE=1
 curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
   grep -e 'git_url*' |
-  cut -d " -f 4 |
+  cut -d \" -f 4 |
   xargs -L1 git clone
 ```
 
