@@ -3,7 +3,7 @@ title = "Salary"
 description = "A summary of my salaries throughout my career."
 +++
 
-# Salary Transparency
+## Salary Transparency
 
 The data below details the base salary information for each job I've
 held. This information is posted publicly to ensure others in my
@@ -24,7 +24,7 @@ are paid differently (expertise, years of experience, certifications,
 education, etc.) and that the data in this table should only be used as
 a single point of reference, not the whole story.
 
-# Salary Data
+## Salary Data
 
 Note: When in a role that gives periodic raises, I will create a new
 record with the new base salary in the table below. See the KPMG records

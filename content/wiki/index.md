@@ -5,7 +5,7 @@ description = "An informal wiki of sorts."
 
 An informal wiki of sorts.
 
-# Digital Garden
+## Digital Garden
 
 > At times, wilderness is exactly what readers want: a rich collection
 > of resources and links. At times, rigid formality suits readers
@@ -20,7 +20,7 @@ An informal wiki of sorts.
 
 [Hypertext Garden](https://www.eastgate.com/garden/)
 
-# Git
+## Git
 
 I want to get rid of all local modifications and go back to the working
 tree of the most recent commit:
@@ -48,12 +48,11 @@ since my most recent pull:
 git pull --rebase
 ```
 
-# Hardware
+## Hardware
 
-## Laptops
+### Laptops
 
-### macOS
-
+#### macOS
 
 | Category | Details         |
 | -------- | --------------- |
@@ -62,7 +61,7 @@ git pull --rebase
 | RAM      | 16GB            |
 | Storage  | 512GB SSD       |
 
-### Linux
+#### Linux
 
 | Category | Details                                     |
 | -------- | ------------------------------------------- |
@@ -71,7 +70,7 @@ git pull --rebase
 | RAM      | 16 GB                                       |
 | Storage  | 256 GB SSD                                  |
 
-## Servers
+### Servers
 
 | Category           | Details                                |
 | ------------------ | -------------------------------------- |
@@ -83,7 +82,7 @@ git pull --rebase
 | Storage (HDD Bay)  | 48TB HDD                               |
 | PSU                | Corsair RM850 PSU                      |
 
-## Networking Equipment
+### Networking Equipment
 
 - UDM-Pro
 - USW-24-PoE
@@ -97,9 +96,9 @@ git pull --rebase
 - USW 24-Port Patch Panel
 - USW Switch Lite 8 PoE
 
-# Software
+## Software
 
-## Laptop
+### Laptop
 
 Alpine 3.18.2; no DE.
 
@@ -129,7 +128,7 @@ I have Sway installed and configured, but only launch it when I must.
 - zola
 - zsh
 
-## Server
+### Server
 
 Ubuntu 22.04.1; no DE.
 
