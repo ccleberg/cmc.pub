@@ -1,0 +1,66 @@
+#+title: Byobu
+#+date: 2023-06-23
+#+description: Learning about the Byobu application for terminals.
+#+filetags: :linux:
+
+* Byobu
+[[https://www.byobu.org][byobu]] is a command-line tool that allows you
+to use numerous screens within a single terminal emulator instance. More
+specifically, it's a text based window manager, using either =screen= or
+=tmux=.
+
+This post is mostly just a self-reference as I explore byobu, so I may
+come back later and update this post with more content.
+
+** Screenshot
+Take a look below at my current multi-window set-up in byobu while I
+write this blog post:
+
+#+caption: byobu
+[[https://img.cleberg.net/blog/20230623-byobu/byobu.png]]
+
+*** Keybindings
+You can open the help menu with either of the following commands; they
+will both open the same manpage:
+
+#+begin_src sh
+byobu --help
+# or
+man byobu
+#+end_src
+
+While the manpage contains a ton of information about the functionality
+of byobu (such as status notifications, sessions, and windows), the
+first location to explore should be the keybindings section.
+
+The keybindings are configured as follows:
+
+#+begin_src txt
+byobu  keybindings  can be user defined in /usr/share/byobu/keybindings/ (or 
+within .screenrc if byobu-export was used). The common key bindings are:
+
+F2 - Create a new window
+F3 - Move to previous window
+F4 - Move to next window
+F5 - Reload profile
+F6 - Detach from this session
+F7 - Enter copy/scrollback mode
+F8 - Re-title a window
+F9 - Configuration Menu
+F12 -  Lock this terminal
+shift-F2 - Split the screen horizontally
+ctrl-F2 - Split the screen vertically
+shift-F3 - Shift the focus to the previous split region
+shift-F4 - Shift the focus to the next split region
+shift-F5 - Join all splits
+ctrl-F6 - Remove this split
+ctrl-F5 - Reconnect GPG and SSH sockets
+shift-F6 - Detach, but do not logout
+alt-pgup - Enter scrollback mode
+alt-pgdn - Enter scrollback mode
+Ctrl-a $ - show detailed status
+Ctrl-a R - Reload profile
+Ctrl-a ! - Toggle key bindings on and off
+Ctrl-a k - Kill the current window
+Ctrl-a ~ - Save the current window's scrollback buffer
+#+end_src

@@ -1,0 +1,170 @@
+#+title: Customizing macOS
+#+date: 2024-01-09
+#+description: Learn how to customize macOS beyond the standard, built-in options provided by Apple.
+#+filetags: :apple:
+
+I have been using macOS more than Linux lately, so I wrote this post to
+describe some simple options to customize macOS beyond the normal
+built-in settings menu.
+
+While not all-encompassing, the options below should be a good start for
+anyone looking to dive down the rabbit hole.
+
+* Basics
+** Package Management
+To install a lot of software on macOS, you will need
+[[https://brew.sh/][Homebrew]]. You can use their installation script to
+get started. Simply open the =Terminal= application and paste the
+following snippet:
+
+#+begin_src sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
+This will allow you to easily install and manage applications and other
+software easily through the =brew= command.
+
+** Terminal
+If you're serious about customizing your macOS system, I highly
+recommend installing a terminal emulator that you like and if you're not
+comfortable on the command line yet, start learning. A lot of
+customization options require you to edit hidden files, which is easiest
+in a terminal.
+
+There are options like iTerm2, Kitty, Alacritty, Hyper, Warp, or the
+built-in Terminal app.
+
+I use [[https://iterm2.com/][iTerm2]], which can be installed with
+Homebrew:
+
+#+begin_src sh
+brew install iterm2
+#+end_src
+
+#+caption: iTerm2
+[[https://img.cleberg.net/blog/20240109-macos-customization/iterm2.png]]
+
+To install color schemes, such as the Dracula scheme shown in the
+screenshot above, you visit [[https://iterm2colorschemes.com/][iTerm
+Themes]] and follow their installation instructions to install any of
+the themes.
+
+* Desktop
+** Window Management
+[[https://github.com/koekeishiya/yabai][yabai]] is a tiling window
+manager for macOS. While other window managers exist, I found that most
+of them struggled to create logical layouts and to allow me to easily
+move windows around the screen.
+
+Some advanced settings for yabai are only available if partially disable
+System Integrity Protection (SIP). However, I chose not to do this and
+it hasn't affected my basic usage of yabai at all.
+
+Refer to the
+[[https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)][yabai
+wiki]] for installation instructions. You will need to ensure that yabai
+is allowed to access the accessibility and screen recording APIs.
+
+You can see a basic three-pane layout atuomatically configured by yabai
+for me as I opened the windows below.
+
+#+caption: yabai window manager
+[[https://img.cleberg.net/blog/20240109-macos-customization/yabai.png]]
+
+** Keyboard Shortcuts
+[[https://github.com/koekeishiya/skhd][skhd]] is a simple hotkey daemon
+that allows you to define hotkeys in a file for usage on your system.
+
+Installation is simple:
+
+#+begin_src sh
+brew install koekeishiya/formulae/skhd
+skhd --start-service
+#+end_src
+
+After installation, be sure to allow =skhd= access to the accessibility
+API in the macOS privacy settings.
+
+You can configure your hotkeys in the =~/.config/skhd/skhdrc= file:
+
+#+begin_src sh
+nano ~/.config/skhd/skhdrc
+#+end_src
+
+For example, I have hotkeys to open my browser and terminal:
+
+#+begin_src conf
+# Terminal
+cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
+
+# Browser
+cmd + shift - return : /Applications/LibreWolf.app/Contents/MacOS/librewolf
+#+end_src
+
+** Widgets
+[[https://github.com/felixhageloh/uebersicht/][uebersicht]] is a handy
+desktop-based widget tool with a plethora of community-made widgets
+available in the [[https://tracesof.net/uebersicht-widgets/][widgets
+gallery]]. You can also write your own widgets with this tool.
+
+To install, simply download the latest release from the
+[[https://tracesof.net/uebersicht/][uebersicht website]] and copy it to
+the Applications folder.
+
+See below for an example of the
+[[https://tracesof.net/uebersicht-widgets/#Mond][Mond]] widget in
+action.
+
+#+caption: uebersicht desktop widgets
+[[https://img.cleberg.net/blog/20240109-macos-customization/uebersicht.png]]
+
+** Status Bar
+[[https://github.com/FelixKratz/SketchyBar][SketchyBar]] is a
+customizable replacement for the macOS status or menu bar.
+
+You can browse a discussion where various users shared their
+[[https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top][configurations]]
+for inspiration or to copy their dotfiles.
+
+See below for a quick (& slightly broken) copy of
+[[https://github.com/zer0yu/dotfiles][zer0yu's]] SketchyBar
+configuration.
+
+#+caption: SketchyBar
+[[https://img.cleberg.net/blog/20240109-macos-customization/sketchybar.png]]
+
+** Dock
+The easiest way to customize the dock is to install
+[[https://ubarapp.com/][uBar]], which uses a Windows-like menu bar as
+the default style.
+
+However, the built-in macOS dock cannot be disabled and can only be set
+to "always hidden". This can be annoying as it will pop out any time
+your mouse cursor passes closely to the dock edge of the screen. Because
+of this, I simply use the built-in dock instead of customizing it with
+third-party software.
+
+Regardless, see below for the default installation style of uBar.
+
+#+caption: uBar
+[[https://img.cleberg.net/blog/20240109-macos-customization/ubar.png]]
+
+** Application Icons
+You can also customize the icon of any application in macOS, which will
+show up in Finder, the Dock, Launchpad, search results, etc. I recommend
+using [[https://macosicons.com/][macOSicons]] to download icons you
+want, and then apply them by following this process.
+
+1. Open the Finder application.
+2. Navigate to the =Applications= folder.
+3. Right-click an application of your choice, and select =Get Info=.
+4. Drag the image you downloaded on top of the application's icon at the
+   top of information window (you will see a green "plus" symbol when
+   you're hovering over it).
+5. Release the new icon on top of the old icon and it will update!
+
+You can see an example of me dragging a new =signal.icns= file onto my
+Signal.app information window to update it below:
+
+#+caption: replace macOS icons
+[[https://img.cleberg.net/blog/20240109-macos-customization/replace_icon.png]]

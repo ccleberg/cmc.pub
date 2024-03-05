@@ -1,0 +1,14 @@
+#+title: Services
+#+description: Publicly-available services hosted on cleberg.net.
+
+- [[https://ao.cleberg.net/][AnonymousOverflow]] - A StackOverflow proxy
+- [[https://cyberchef.cleberg.net/][CyberChef]] - The Cyber Swiss Army Knife
+- [[https://files.cleberg.net/][FileArchive]] - An interesting file archive
+- [[https://paste.cleberg.net/][FlashPaper]] - One-time encrypted password/secret sharing
+- [[https://gh.cleberg.net/][GotHub]] - An alternative front-end for GitHub
+- [[https://ip.cleberg.net/][ifconfig.php]] - A "whatsmyip" tool
+- [[https://invidious.cleberg.net/][Invidious]] - A YouTube proxy
+- [[https://office.cleberg.net/][Office]] - The world's smallest office suite
+- [[https://search.cleberg.net/][SearXNG]] - A privacy-respecting, open metasearch engine
+
+See the [[https://git.cleberg.net/cleberg.net.git/log][git log]] if you want to see changes that have been made.

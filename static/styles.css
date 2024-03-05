@@ -1,126 +1,58 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
+/*!normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css*/
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
-
-/* Sections
-     ========================================================================== */
-
-/**
-   * Remove the margin in all browsers.
-   */
 
 body {
   margin: 0;
 }
 
-/**
-   * Render the `main` element consistently in IE.
-   */
-
 main {
   display: block;
 }
-
-/**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
 
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* Grouping content
-     ========================================================================== */
-
-/**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
-
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
-
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
-
-/* Text-level semantics
-     ========================================================================== */
-
-/**
-   * Remove the gray background on active links in IE 10.
-   */
 
 a {
-  background-color: transparent;
+  background-color: initial;
 }
-
-/**
-   * 1. Remove the bottom border in Chrome 57-
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
-
-/**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
 
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
-
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
-
-/**
-   * Add the correct font size in all browsers.
-   */
 
 small {
   font-size: 80%;
 }
-
-/**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
 
 sub,
 sup {
@@ -138,61 +70,30 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-     ========================================================================== */
-
-/**
-   * Remove the border on images inside links in IE 10.
-   */
-
 img {
   border-style: none;
 }
-
-/* Forms
-     ========================================================================== */
-
-/**
-   * 1. Change the font styles in all browsers.
-   * 2. Remove the margin in Firefox and Safari.
-   */
 
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
-
-/**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
 
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
-/**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
-
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
-
-/**
-   * Correct the inability to style clickable types in iOS and Safari.
-   */
 
 button,
 [type="button"],
@@ -200,10 +101,6 @@ button,
 [type="submit"] {
   -webkit-appearance: button;
 }
-
-/**
-   * Remove the inner border and padding in Firefox.
-   */
 
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -213,10 +110,6 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/**
-   * Restore the focus styles unset by the previous rule.
-   */
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -224,133 +117,68 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/**
-   * Correct the padding in Firefox.
-   */
-
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
-   * 1. Correct the text wrapping in Edge and IE.
-   * 2. Correct the color inheritance from `fieldset` elements in IE.
-   * 3. Remove the padding so developers are not caught out when they zero out
-   *    `fieldset` elements in all browsers.
-   */
-
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
-
-/**
-   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
 
 progress {
   vertical-align: baseline;
 }
 
-/**
-   * Remove the default vertical scrollbar in IE 10+.
-   */
-
 textarea {
   overflow: auto;
 }
 
-/**
-   * 1. Add the correct box sizing in IE 10.
-   * 2. Remove the padding in IE 10.
-   */
-
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  padding: 0;
 }
-
-/**
-   * Correct the cursor style of increment and decrement buttons in Chrome.
-   */
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
-   * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
-   */
-
 [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
 }
-
-/**
-   * Remove the inner padding in Chrome and Safari on macOS.
-   */
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
-   * 1. Correct the inability to style clickable types in iOS and Safari.
-   * 2. Change font properties to `inherit` in Safari.
-   */
-
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  font: inherit;
 }
-
-/* Interactive
-     ========================================================================== */
-
-/*
-   * Add the correct display in Edge, IE 10+, and Firefox.
-   */
 
 details {
   display: block;
 }
 
-/*
-   * Add the correct display in all browsers.
-   */
-
 summary {
   display: list-item;
 }
-
-/* Misc
-     ========================================================================== */
-
-/**
-   * Add the correct display in IE 10+.
-   */
 
 template {
   display: none;
 }
 
-/**
-   * Add the correct display in IE 10.
-   */
-
 [hidden] {
   display: none;
 }
 
-/* CUSTOM CSS */
 :root {
   --bg: #fff;
   --bg-bright: #eee;
@@ -368,8 +196,19 @@ template {
 body {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    helvetica,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
     sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -390,6 +229,7 @@ footer {
 }
 
 footer p {
+  font-size: 90%;
   margin: 0;
 }
 
@@ -433,8 +273,13 @@ table {
   border-collapse: collapse;
   color: var(--fg);
   border-color: var(--bg-bright);
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  font-size: 0.9rem;
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    Liberation Mono,
+    Lucida Console,
+    monospace;
 }
 
 thead,
@@ -448,7 +293,13 @@ td {
 pre > code,
 time,
 code {
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    Liberation Mono,
+    Lucida Console,
+    monospace;
   font-size: 1rem;
 }
 
@@ -510,7 +361,7 @@ details {
 }
 
 summary {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .footnote-definition {
@@ -544,4 +395,413 @@ summary {
     --link: #f07178;
     --code: #ffb454;
   }
+}
+
+/* Org Styles */
+p.verse {
+  margin-left: 3%;
+}
+.timestamp {
+  color: var(--bg-light);
+}
+.timestamp-kwd {
+  color: var(--timestamp-kwd);
+}
+.org-right {
+  margin-left: auto;
+  margin-right: 0px;
+  text-align: right;
+}
+.org-left {
+  margin-left: 0px;
+  margin-right: auto;
+  text-align: left;
+}
+.org-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.underline {
+  text-decoration: underline;
+}
+.todo {
+  font-family: monospace;
+  color: red;
+}
+.done {
+  font-family: monospace;
+  color: green;
+}
+.priority {
+  font-family: monospace;
+  color: orange;
+}
+.tag {
+  background-color: #eee;
+  font-family: monospace;
+  padding: 2px;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+.code-highlighted {
+  background-color: var(--highlight);
+}
+.org-info-js_info-navigation {
+  border-style: none;
+}
+#org-info-js_console-label {
+  font-size: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.org-info-js_search-highlight {
+  background-color: var(--highlight);
+  color: var(--fg);
+  font-weight: bold;
+}
+
+caption.t-above {
+  caption-side: top;
+}
+caption.t-bottom {
+  caption-side: bottom;
+}
+td,
+th {
+  vertical-align: top;
+}
+th.org-right {
+  text-align: center;
+}
+th.org-left {
+  text-align: center;
+}
+th.org-center {
+  text-align: center;
+}
+td.org-right {
+  text-align: right;
+}
+td.org-left {
+  text-align: left;
+}
+td.org-center {
+  text-align: center;
+}
+dt {
+  font-weight: bold;
+}
+.footpara {
+  display: inline;
+}
+.footdef {
+  margin-bottom: 1em;
+}
+.figure {
+  padding: 1em;
+}
+.figure p {
+  text-align: center;
+}
+.equation-container {
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+.equation {
+  vertical-align: middle;
+}
+.equation-label {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+}
+.inlinetask {
+  padding: 10px;
+  border: 2px solid var(--bg);
+  margin: 10px;
+  background: var(--task);
+}
+#org-div-home-and-up {
+  text-align: right;
+  font-size: 70%;
+  white-space: nowrap;
+}
+
+pre.src {
+  position: relative;
+  overflow: auto;
+}
+pre.src:before {
+  display: none;
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  padding: 3px;
+  color: var(--fg);
+  background-color: var(--bg-lightest-opac);
+}
+pre.src:hover:before {
+  display: inline;
+  margin-top: 14px;
+}
+
+/* Languages per Org manual */
+pre.src-asymptote:before {
+  content: "Asymptote";
+}
+pre.src-awk:before {
+  content: "Awk";
+}
+pre.src-authinfo::before {
+  content: "Authinfo";
+}
+pre.src-C:before {
+  content: "C";
+}
+/* pre.src-C++ doesn't work in CSS */
+pre.src-clojure:before {
+  content: "Clojure";
+}
+pre.src-css:before {
+  content: "CSS";
+}
+pre.src-D:before {
+  content: "D";
+}
+pre.src-ditaa:before {
+  content: "ditaa";
+}
+pre.src-dot:before {
+  content: "Graphviz";
+}
+pre.src-calc:before {
+  content: "Emacs Calc";
+}
+pre.src-emacs-lisp:before {
+  content: "Emacs Lisp";
+}
+pre.src-fortran:before {
+  content: "Fortran";
+}
+pre.src-gnuplot:before {
+  content: "gnuplot";
+}
+pre.src-haskell:before {
+  content: "Haskell";
+}
+pre.src-hledger:before {
+  content: "hledger";
+}
+pre.src-java:before {
+  content: "Java";
+}
+pre.src-js:before {
+  content: "Javascript";
+}
+pre.src-latex:before {
+  content: "LaTeX";
+}
+pre.src-ledger:before {
+  content: "Ledger";
+}
+pre.src-lisp:before {
+  content: "Lisp";
+}
+pre.src-lilypond:before {
+  content: "Lilypond";
+}
+pre.src-lua:before {
+  content: "Lua";
+}
+pre.src-matlab:before {
+  content: "MATLAB";
+}
+pre.src-mscgen:before {
+  content: "Mscgen";
+}
+pre.src-ocaml:before {
+  content: "Objective Caml";
+}
+pre.src-octave:before {
+  content: "Octave";
+}
+pre.src-org:before {
+  content: "Org mode";
+}
+pre.src-oz:before {
+  content: "OZ";
+}
+pre.src-plantuml:before {
+  content: "Plantuml";
+}
+pre.src-processing:before {
+  content: "Processing.js";
+}
+pre.src-python:before {
+  content: "Python";
+}
+pre.src-R:before {
+  content: "R";
+}
+pre.src-ruby:before {
+  content: "Ruby";
+}
+pre.src-sass:before {
+  content: "Sass";
+}
+pre.src-scheme:before {
+  content: "Scheme";
+}
+pre.src-screen:before {
+  content: "Gnu Screen";
+}
+pre.src-sed:before {
+  content: "Sed";
+}
+pre.src-sh:before {
+  content: "shell";
+}
+pre.src-sql:before {
+  content: "SQL";
+}
+pre.src-sqlite:before {
+  content: "SQLite";
+}
+/* additional languages in org.el's org-babel-load-languages alist */
+pre.src-forth:before {
+  content: "Forth";
+}
+pre.src-io:before {
+  content: "IO";
+}
+pre.src-J:before {
+  content: "J";
+}
+pre.src-makefile:before {
+  content: "Makefile";
+}
+pre.src-maxima:before {
+  content: "Maxima";
+}
+pre.src-perl:before {
+  content: "Perl";
+}
+pre.src-picolisp:before {
+  content: "Pico Lisp";
+}
+pre.src-scala:before {
+  content: "Scala";
+}
+pre.src-shell:before {
+  content: "Shell Script";
+}
+pre.src-ebnf2ps:before {
+  content: "ebfn2ps";
+}
+/* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+pre.src-cpp:before {
+  content: "C++";
+}
+pre.src-abc:before {
+  content: "ABC";
+}
+pre.src-coq:before {
+  content: "Coq";
+}
+pre.src-groovy:before {
+  content: "Groovy";
+}
+/* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+pre.src-bash:before {
+  content: "bash";
+}
+pre.src-csh:before {
+  content: "csh";
+}
+pre.src-ash:before {
+  content: "ash";
+}
+pre.src-dash:before {
+  content: "dash";
+}
+pre.src-ksh:before {
+  content: "ksh";
+}
+pre.src-mksh:before {
+  content: "mksh";
+}
+pre.src-posh:before {
+  content: "posh";
+}
+/* Additional Emacs modes also supported by the LaTeX listings package */
+pre.src-ada:before {
+  content: "Ada";
+}
+pre.src-asm:before {
+  content: "Assembler";
+}
+pre.src-caml:before {
+  content: "Caml";
+}
+pre.src-delphi:before {
+  content: "Delphi";
+}
+pre.src-html:before {
+  content: "HTML";
+}
+pre.src-idl:before {
+  content: "IDL";
+}
+pre.src-mercury:before {
+  content: "Mercury";
+}
+pre.src-metapost:before {
+  content: "MetaPost";
+}
+pre.src-modula-2:before {
+  content: "Modula-2";
+}
+pre.src-pascal:before {
+  content: "Pascal";
+}
+pre.src-ps:before {
+  content: "PostScript";
+}
+pre.src-prolog:before {
+  content: "Prolog";
+}
+pre.src-simula:before {
+  content: "Simula";
+}
+pre.src-tcl:before {
+  content: "tcl";
+}
+pre.src-tex:before {
+  content: "TeX";
+}
+pre.src-plain-tex:before {
+  content: "Plain TeX";
+}
+pre.src-verilog:before {
+  content: "Verilog";
+}
+pre.src-vhdl:before {
+  content: "VHDL";
+}
+pre.src-xml:before {
+  content: "XML";
+}
+pre.src-nxml:before {
+  content: "XML";
+}
+/* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+pre.src-conf:before {
+  content: "Configuration File";
 }

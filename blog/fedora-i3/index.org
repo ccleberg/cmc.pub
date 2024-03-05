@@ -1,0 +1,152 @@
+#+title: Rebooting My Love Affair with Linux
+#+date: 2022-06-24
+#+description: A retrospective on moving from macOS to Linux.
+#+filetags: :linux:
+
+* Leaving macOS
+As I noted [[../foss-macos-apps][in a recent post]], I have been
+planning on migrating from macOS back to a Linux-based OS. I am happy to
+say that I have finally completed my migration and am now stuck in the
+wonderful world of Linux again.
+
+My decision to leave macOS really came down to just a few important
+things:
+
+- Apple Security (Gatekeeper) restricting me from running any software I
+  want. Even if you disable Gatekeeper and allow software to bypass the
+  rest of the device installation security, you still have to repeat
+  that process every time the allowed software is updated.
+- macOS sends out nearly constant connections, pings, telemetry, etc. to
+  a myriad of mysterious Apple services. I'm not even going to dive into
+  how many macOS apps have constant telemetry on, as well.
+- Lastly, I just /really/ missed the customization and freedom that
+  comes with Linux. Being able to switch to entirely new kernel, OS, or
+  desktop within minutes is a freedom I took for granted when I switched
+  to macOS.
+
+Now that I've covered macOS, I'm going to move on to more exciting
+topics: my personal choice of OS, DE, and various customizations I'm
+using.
+
+* Fedora
+After trying a ton of distros (I think I booted and tested around 20-25
+distros), I finally landed on [[https://getfedora.org/][Fedora Linux]].
+I have quite a bit of experience with Fedora and enjoy the =dnf= package
+manager. Fedora allows me to keep up-to-date with recent software (I'm
+looking at you, Debian), but still provides a level of stability you
+don't find in every distro.
+
+In a very close second place was Arch Linux, as well as its spin-off:
+Garuda Linux (Garuda w/ sway is /beautiful/). Arch is great for
+compatibility and the massive community it has, but I have just never
+had the time to properly sit down and learn the methodology behind their
+packaging systems.
+
+Basically, everything else I tested was unacceptable in at least one way
+or another. Void (=glibc=) was great, but doesn't support all the
+software I need. Slackware worked well as a tui, but I wasn't skilled
+enough to get a tiling window manager (WM) working on it.
+
+** i3
+One of the reasons I settled on Fedora is that it comes with an official
+i3 spin. Being able to use a tiling WM, such as i3 or sway, is one of
+the biggest things I wanted to do as soon as I adopted Linux again.
+
+I will probably set up a dotfile repository soon, so that I don't lose
+any of my configurations, but nothing big has been configured thus far.
+
+The two main things I have updated in i3wm are natural scrolling and
+binding my brightness keys to the =brightnessctl= program.
+
+1. Natural Scrolling
+
+   You can enable natural scrolling by opening the following file:
+
+   #+begin_src sh
+   sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
+   #+end_src
+
+   Within the =40-libinput.conf= file, find the following input sections
+   and enable the natural scrolling option.
+
+   This is the =pointer= section:
+
+   #+begin_src conf
+   Section "InputClass"
+           Identifier "libinput pointer catchall"
+           MatchIsPointer "on"
+           MatchDevicePath "/dev/input/event*"
+           Driver "libinput"
+           Option "NaturalScrolling" "True"
+   EndSection
+   #+end_src
+
+   This is the =touchpad= section:
+
+   #+begin_src conf
+   Section "InputClass"
+           Identifier "libinput touchpad catchall"
+           MatchIsTouchpad "on"
+           MatchDevicePath "/dev/input/event*"
+           Driver "libinput"
+           Option "NaturalScrolling" "True"
+   EndSection
+   #+end_src
+
+2. Enabling Brightness Keys
+
+   Likewise, enabling brightness key functionality is as simple as
+   binding the keys to the =brightnessctl= program.
+
+   To do this, open up your i3 config file. Mine is located here:
+
+   #+begin_src sh
+   nano /home/<my-user>/.config/i3/config
+   #+end_src
+
+   #+begin_src conf
+   # Use brightnessctl to adjust brightness.
+   bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+   bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
+   #+end_src
+
+3. =polybar=
+
+   Instead of using the default =i3status= bar, I have opted to use
+   =polybar= instead (as you can also see in the screenshot above).
+
+   My config for this menu bar is basically just the default settings
+   with modified colors and an added battery block to quickly show me
+   the machine's battery info.
+
+4. =alacritty=
+
+   Not much to say on this part yet, as I haven't configured it much,
+   but I installed =alacritty= as my default terminal, and I am using
+   =zsh= and the shell.
+
+* Software Choices
+Again, I'm not going to say much that I haven't said yet in other blog
+posts, so I'll just do a quick rundown of the apps I installed
+immediately after I set up the environment.
+
+Flatpak Apps:
+
+- Cryptomator
+- pCloud
+- Signal
+
+Fedora Packages:
+
+- gomuks
+- neomutt
+- neofetch
+- Firefox
+  - uBlock Origin
+  - Bitwarden
+  - Stylus
+  - Privacy Redirect
+
+Other:
+
+- exiftool

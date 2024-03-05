@@ -1,0 +1,83 @@
+#+title: README
+#+description: Project README.
+
+* cleberg.net
+
+[[https://cleberg.net][cleberg.net]] is my personal webpage.
+
+This README is viewable on [[https://git.cleberg.net/cleberg.net.git/tree/README.org][cgit]] (raw), or on [[https://cleberg.net/README.html][my website]] (html).
+
+** Overview
+
+This website & blog uses [[https://orgmode.org/][Org-Mode]], published with =org-publish=.
+
+** Configuration
+
+In order to configure the project for publishing, add the following code to your =~/.emacs= file (for Doom, =~/.doom.d/config.el=).
+
+#+begin_src lisp
+;; org-publish
+(require 'ox-publish)
+
+(setq org-publish-project-alist
+      `(("blog"
+         :base-directory "~/Source/cleberg.net/"
+         :base-extension "org"
+         :recursive t
+         :publishing-directory "~/Source/cleberg.net/public/"
+         :publishing-function org-html-publish-to-html)
+         ;; HTML5
+         :html-doctype "html5"
+         :html-html5-fancy t
+         ;; Disable some Org's HTML defaults
+         :html-head-include-scripts nil
+         :html-head-include-default-style nil
+         ;; Generate sitemap
+         :auto-sitemap t
+         :sitemap-filename "sitemap.org"
+         ;; Customize head, preamble, & postamble
+         :html-head "<link rel='stylesheet' href='/static/styles.css' type='text/css'>"
+         :html-preamble ""
+         :html-postamble ""
+        ("static"
+         :base-directory "~/Source/cleberg.net/static/"
+         :base-extension "css\\|txt\\|jpg\\|gif\\|png"
+         :recursive t
+         :publishing-directory  "~/Source/cleberg.net/public/"
+         :publishing-function org-publish-attachment)
+
+        ("cleberg.net" :components ("blog" "static"))));; org-publish
+(require 'ox-publish)
+#+end_src
+
+** Building
+
+Local testing can be done via [[https://www.gnu.org/software/emacs/][Emacs]].
+
+To get running:
+
+#+begin_src shell
+git clone https://git.cleberg.net/cleberg.net.git
+cd cleberg.net
+emacs -nw
+#+end_src
+
+Within Emacs, open any of the repository files. In Doom, I do this with =Spc f f= and selecting =README.org=. Once a file has been opened, you can publish the project with =C-c C-e P a=.
+
+If you need to re-publish unchanged files, I recommend using the following command:
+
+#+begin_src lisp
+M-: (org-publish "project name" t)
+#+end_src
+
+The files will be published to the =public= directory.
+
+** Tasks
+
+*** TODO Create RSS feed
+Possible Solution: [[https://writepermission.com/org-blogging-rss-feed.html][Org mode blogging: RSS feed]]
+Possible Solution: [[https://www.zoraster.org/blog/script-to-generate-rss-feed][Script to Generate RSS Feeds]]
+*** TODO Format all blog posts with =M q=
+*** TODO Create script to auto-generate the =/blog/= list and =/= most recent posts
+Possible Solution: [[https://taingram.org/blog/org-mode-blog.html#orgde61a58][Sitemap]]
+*** TODO Figure out how to get filetags to show up

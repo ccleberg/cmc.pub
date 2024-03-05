@@ -1,0 +1,69 @@
+#+title: Stuck in Ubuntu's Emergency Mode? Try Fixing the Fstab File
+#+date: 2024-02-13
+#+description: Learn how to fix a missing disk issue that can lock you in Ubuntu's emergency mode.
+#+filetags: :linux:
+
+* The Problem
+I recently [[../zfs/][migrated my hard drives to a ZFS pool]] and
+found myself stuck in Ubuntu's emergency mode after the first reboot I
+performed after creating the ZFS pool.
+
+My server was stuck in the boot process and showed the following error
+on the screen:
+
+#+begin_src txt
+You are in emergency mode.
+After logging in, type "journalctl -xb" to view system logs,
+"systemctl reboot" to reboot, "systemctl default"
+or ^D to try again to boot into default mode".
+#+end_src
+
+After rebooting the server and watching the logs scroll on a monitor, I
+noticed the root cause was related to a very long search for certain
+drives. I kept seeing errors like this:
+
+#+begin_src txt
+[ TIME ] Timed out waiting of device dev-disk-by/[disk-uuid]
+#+end_src
+
+I realized that I had not removed the =/etc/fstab= references that asked
+Ubuntu to mount two disks on boot, but I had recently changed those
+disks to be part of my ZFS pool instead. Therefore, Ubuntu was trying to
+identify and mount a disk that was not available.
+
+Now that we have an idea of the issue, let's move to solution.
+
+* The Solution
+In order to fix the issue, I waited until I was allowed to type the root
+user's password, and then I executed the following command:
+
+#+begin_src sh
+nano /etc/fstab
+#+end_src
+
+Within the =fstab= file, I needed to comment/remove the following lines
+at the bottom of the file. You can comment-out a line by prepending a
+=#= symbol at the beginning of the line. You can also delete the line
+entirely.
+
+#+begin_src conf
+# What it looked like when running into the issue:
+UUID=B64E53824E5339F7 /mnt/white-01 ntfs-3g uid=1000,gid=1000 0 0
+UUID=E69867E59867B32B /mnt/white-02 ntfs-3g uid=1000,gid=1000 0 0
+
+# What I changed it to, in order to fix the issue:
+# UUID=B64E53824E5339F7 /mnt/white-01 ntfs-3g uid=1000,gid=1000 0 0
+# UUID=E69867E59867B32B /mnt/white-02 ntfs-3g uid=1000,gid=1000 0 0
+#+end_src
+
+Once removing the lines above from the =/etc/fstab= file, save and exit
+the file by hitting the =Ctrl= + =x= key combo.
+
+You can now hit =Ctrl= + =D= to continue, or reboot:
+
+#+begin_src sh
+systemctl reboot
+#+end_src
+
+Once rebooted, I was able to watch the machine boot properly and launch
+to the TTY login screen without errors!
