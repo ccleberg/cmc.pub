@@ -357,6 +357,7 @@ template {
   --fg: #111;
   --link: #00f;
   --code: #f00;
+  --border: #ccc;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -368,12 +369,16 @@ template {
 body {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
-  font-size: 1rem;
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    Liberation Mono,
+    Lucida Console,
+    monospace;
+  font-size: 0.9rem;
   line-height: 1.5;
-  max-width: 45em;
+  max-width: 50em;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -418,7 +423,7 @@ h4 {
 a,
 a:visited {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -433,7 +438,13 @@ table {
   border-collapse: collapse;
   color: var(--fg);
   border-color: var(--bg-bright);
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    Liberation Mono,
+    Lucida Console,
+    monospace;
   font-size: 0.9rem;
 }
 
@@ -441,20 +452,25 @@ thead,
 th,
 tr,
 td {
-  border: 1px solid var(--bg-bright);
+  border: 1px solid var(--border);
   padding: 0.25rem;
 }
 
 pre > code,
 time,
 code {
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  font-size: 1rem;
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    Liberation Mono,
+    Lucida Console,
+    monospace;
+  font-size: inherit;
 }
 
 pre {
   background-color: var(--bg-bright) !important;
-  border-radius: 5px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   overflow-x: auto;
@@ -472,8 +488,7 @@ aside {
 
 blockquote {
   background-color: var(--bg-bright);
-  border-left: 10px solid var(--link);
-  border-radius: 5px;
+  border-left: 5px solid var(--link);
   margin: 1rem 0;
   padding: 0.5rem 1rem;
 }
@@ -538,10 +553,12 @@ summary {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #111111;
-    --bg-bright: #2a2a2a;
-    --fg: #c9c9c9;
-    --link: #f07178;
+    --bg: #141617;
+    --bg-bright: #191c1d;
+    --fg: #b2aea9;
+/*    --link: #2b8ad9; */
+    --link: #ff79c6;
     --code: #ffb454;
+    --border: #333;
   }
 }
