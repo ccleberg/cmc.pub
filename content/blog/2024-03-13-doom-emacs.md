@@ -10,7 +10,7 @@ These screenshots are showing a project opened with projectile, a treemacs side
 pane open with the project contents, multiple buffers tiled next to each other,
 and the help pane open at the bottomm.
 
-The themes are `doom-homage-white` and `doom-dracula`.
+The themes are `doom-homage-white` and `doom-homage-black`.
 
 ![Doom Emacs Light
 Mode](https://img.cleberg.net/blog/20240314-doom-emacs/light.png)
