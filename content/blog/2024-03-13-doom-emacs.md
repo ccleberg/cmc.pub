@@ -192,6 +192,8 @@ been slowly adoping some Python and general web dev tools as well.
 
 ### Markdown
 
+![Markdown Preview](https://img.cleberg.net/blog/20240314-doom-emacs/markdown.png)
+
 Markdown is fairly simple as the syntax is limited, so just make sure the
 `~/.doom.d/init.el` includes the `markdown` declaration in the `:lang` section.
 
@@ -210,6 +212,8 @@ things like link hiding.
 | `SPC : markdown-table-align` | markdown-table-align     |
 
 ### Org-Mode
+
+![Org-Mode Preview](https://img.cleberg.net/blog/20240314-doom-emacs/org.png)
 
 Similar to the markdown section above, ensure that the `~/.doom.d/init.el`
 includes the `org` declaration in the `:lang` section.
