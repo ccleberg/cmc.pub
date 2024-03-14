@@ -497,13 +497,27 @@ blockquote p {
   margin: 0;
 }
 
-.post {
+.post,
+.wiki-post {
   display: flex;
 }
 
 .post time {
   flex-shrink: 0;
   margin-right: 0.5rem;
+}
+
+.wiki-post {
+justify-content: space-between;
+}
+
+.wiki-post:first-of-type {
+border-bottom: 1px dotted var(--fg);
+margin-bottom: 1rem;
+}
+
+.wiki-post p {
+margin: 0;
 }
 
 .post-metadata {
