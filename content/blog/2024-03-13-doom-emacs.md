@@ -258,7 +258,8 @@ Once a project has been created, you can create custom publishing actions within
 your `~/.doom.d/config.el` file. For example, here's a test project I created to
 try and convert this blog to org-mode recently.
 
-```lisp ;; org-publish (require 'ox-publish)
+```lisp
+;; org-publish (require 'ox-publish)
 
 (defun my/org-sitemap-date-entry-format (entry style project) "Format ENTRY in
   org-publish PROJECT Sitemap format ENTRY ENTRY STYLE format that includes
