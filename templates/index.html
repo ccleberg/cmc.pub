@@ -13,7 +13,7 @@
 		{% if i < 3%}
 			{% set_global i = i + 1%}
 			<div class="post">
-				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date }}</time>
+				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format='%Y-%m-%d') }}</time>
 				<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
 			</div>
 		{% endif %}
