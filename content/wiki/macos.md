@@ -14,8 +14,67 @@ My primary OS. Currently running macOS Sonoma 14. This wiki page contains most o
 
 ## Configuration
 
+### Disable System Services
+
 - [Disabling and Enabling System Integrity Protection](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection)
 - Disable Gatekeeper: `sudo spctl --master-disable`
+
+### Dotfiles
+
+These are probably out of date, but they give a general idea of how I configure my machine.
+
+```config
+# ~/.zshrc
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+export EDITOR="/opt/homebrew/bin/emacs -nw"
+ZSH_THEME="bureau"
+plugins=(git zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+```
+
+```config
+# ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+```config
+# ~/.config/skhd/skhdrc
+cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
+cmd + shift - return : /Applications/LibreWolf.app/Contents/MacOS/librewolf
+```
+
+```config
+# ~/.config/yabai/yabairc
+yabai -m config                                 \
+    mouse_follows_focus          off            \
+    focus_follows_mouse          off            \
+    window_origin_display        default        \
+    window_placement             second_child   \
+    window_zoom_persist          on             \
+    window_shadow                on             \
+    window_animation_duration    0.0            \
+    window_animation_frame_rate  120            \
+    window_opacity_duration      0.0            \
+    active_window_opacity        1.0            \
+    normal_window_opacity        0.90           \
+    window_opacity               off            \
+    insert_feedback_color        0xffd75f5f     \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    auto_balance                 off            \
+    top_padding                  15             \
+    bottom_padding               15             \
+    left_padding                 15             \
+    right_padding                15             \
+    window_gap                   10             \
+    layout                       bsp            \
+    mouse_modifier               fn             \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap
+echo "yabai configuration loaded.."
+```
 
 ## Software
 
@@ -48,7 +107,7 @@ My primary OS. Currently running macOS Sonoma 14. This wiki page contains most o
 
 ### Editors
 
-- [Doom Emacs](https://github.com/doomemacs/doomemacs) -  An Emacs framework, great for working in `org` files
+- [Doom Emacs](https://github.com/doomemacs/doomemacs) -  An Emacs framework, great for working in org-mode
 - [Obsidian](https://obsidian.md/) [`*`] - A nice Markdown-based editor based on a "vault" structure. Offers a paid sync solution and community extensions
 - [Standard Notes](https://standardnotes.com/) - A simple text editor focused on privacy and security. Offers a paid sync solution and community extensions
 - [VSCodium](https://vscodium.com/) [`*`] - VS Code without proprietary blobs
