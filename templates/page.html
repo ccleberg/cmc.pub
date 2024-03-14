@@ -16,6 +16,9 @@
     {% if page.date %}
     <p><time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date }}</time></p>
     {% endif %}
+    {% if page.updated %}
+    <p>Last Updated: <time datetime="{{ page.updated | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.updated }}</time></p>
+    {% endif %}
     <p>{{ page.word_count }} words; {{ page.reading_time }} minute(s)</p>
 {% if page.toc %}
     <details open>
