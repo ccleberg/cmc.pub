@@ -19,10 +19,10 @@ I have seen what can happen when great employees don't know the market values
 for their skills and I happily help those in my teams, so I'm happy to extend
 this information to the online community.
 
-As a final note, there are numerous reasons that people in the same role are
-paid differently (expertise, years of experience, certifications, education,
-etc.) and that the data in this table should only be used as a single point of
-reference, not the whole story.
+As a final note, there are numerous reasons that companies pay people in the
+same role differently (expertise, years of experience, certifications,
+education, etc.) and that you should only view the data in this table as a
+single point of reference, not the whole story.
 
 ## Salary Data
 
