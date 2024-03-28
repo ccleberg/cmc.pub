@@ -9,11 +9,21 @@ draft = false
 - [1MB Club](https://1mb.club/)
 - [250KB Club](https://250kb.club/)
 - [512KB Club](https://512kb.club/)
-- [A List Of Text-Only & Minimalist News Sites](https://greycoder.com/a-list-of-text-only-new-sites/)
 - [Darktheme Club](https://darktheme.club/)
 - [No CSS Club](https://nocss.club/)
 - [No-JS Club](https://no-js.club/)
 - [Ye Olde Blogroll](https://blogroll.org/)
+
+## Plain Text
+
+A list of various plaintext websites and lists.
+
+- [A List Of Text-Only & Minimalist News Sites](https://greycoder.com/a-list-of-text-only-new-sites/)
+- [Harvard Law Review](https://harvardlawreview.org/)
+- [Hyperlinked Text](https://sjmulder.nl/en/textonly.html)
+- [Plain-text web design](https://medium.com/@letsworkshop/plain-text-web-design-a78ccaf9dbc0)
+- [Plaintext World](https://plaintextworld.com/)
+- [Words](https://justinjackson.ca/words.html)
 
 ## Webrings
 
