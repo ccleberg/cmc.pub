@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block subtitle %}Wiki | {% endblock %}
+{% block main %}
+<h1>Wiki</h1>
+<p>Use <code>Ctrl + F</code> to search wiki pages for keywords.</p>
+<div class="wiki-post">
+	<p>Wiki Page</p>
+	<p>Last Updated</p>
+</div>
+{% for post in posts %}
+	<div class="wiki-post">
+		<a href="{{ url_for("wiki", slug=post.slug) }}">{{ post.title }}</a>
+		<time datetime="{{ post.date | strftime("%Y-%m-%d") }}">&lt;{{ post.date|strftime("%Y-%m-%d") }}&gt;</time>
+	</div>
+{% endfor %}
+{% endblock %}
