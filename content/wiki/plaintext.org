@@ -1,0 +1,16 @@
+#+title: Plaintext
+#+date: <2024-03-07>
+#+draft: t
+
+** Markdown
+:PROPERTIES:
+:CUSTOM_ID: markdown
+:END:
+** Org-Mode
+:PROPERTIES:
+:CUSTOM_ID: org-mode
+:END:
+** AsciiDoc
+:PROPERTIES:
+:CUSTOM_ID: asciidoc
+:END:

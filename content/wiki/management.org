@@ -1,0 +1,16 @@
+#+title: Management
+#+date: <2024-03-07>
+#+draft: t
+
+** Time Management
+:PROPERTIES:
+:CUSTOM_ID: time-management
+:END:
+** People Management
+:PROPERTIES:
+:CUSTOM_ID: people-management
+:END:
+** Project Management
+:PROPERTIES:
+:CUSTOM_ID: project-management
+:END:

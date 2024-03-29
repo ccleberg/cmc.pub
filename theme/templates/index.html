@@ -7,19 +7,6 @@
 </section>
 <section>
 	<h2>Recent Blog Posts</h2>
-<<<<<<< HEAD:templates/index.html
-	{% set section = get_section(path="blog/_index.md") %}
-	{% set i = 0 %}
-	{% for page in section.pages %}
-		{% if i < 3%}
-			{% set_global i = i + 1%}
-			<div class="post">
-				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format='%Y-%m-%d') }}</time>
-				<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
-			</div>
-		{% endif %}
-	{% endfor %}
-=======
 	<div class="post">
 		<time datetime="2024-03-15">&lt;2024-03-15&gt;</time>
 		<a href="/blog/self-hosting-ddns-updater.html">Self-Hosting DDNS Updater</a>
@@ -32,7 +19,6 @@
 		<time datetime="2024-02-21">&lt;2024-02-21&gt;</time>
 		<a href="/blog/self-hosting-an-otter-wiki.html">Self-Hosting An Otter Wiki</a>
 	</div>
->>>>>>> org:theme/templates/index.html
 	<br>
 	<a href="/blog/">All Posts &rarr;</a>
 </section>

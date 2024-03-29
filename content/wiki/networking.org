@@ -1,0 +1,48 @@
+#+title: Networking
+#+date: <2024-03-07>
+#+draft: t
+
+** Bluetooth
+:PROPERTIES:
+:CUSTOM_ID: bluetooth
+:END:
+** DNS
+:PROPERTIES:
+:CUSTOM_ID: dns
+:END:
+** Gemini
+:PROPERTIES:
+:CUSTOM_ID: gemini
+:END:
+** Gopher
+:PROPERTIES:
+:CUSTOM_ID: gopher
+:END:
+** HTTP
+:PROPERTIES:
+:CUSTOM_ID: http
+:END:
+** IoT
+:PROPERTIES:
+:CUSTOM_ID: iot
+:END:
+** Nginx
+:PROPERTIES:
+:CUSTOM_ID: nginx
+:END:
+** SSH
+:PROPERTIES:
+:CUSTOM_ID: ssh
+:END:
+** SSL
+:PROPERTIES:
+:CUSTOM_ID: ssl
+:END:
+** VPN
+:PROPERTIES:
+:CUSTOM_ID: vpn
+:END:
+** Wi-Fi
+:PROPERTIES:
+:CUSTOM_ID: wi-fi
+:END:

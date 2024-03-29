@@ -1,27 +1,13 @@
 {% extends "base.html" %}
 
-<<<<<<< HEAD:templates/wiki.html
-{% block content %}
-<h1>{{ section.title }}</h1>
-=======
 {% block subtitle %}Wiki | {% endblock %}
 {% block main %}
 <h1>Wiki</h1>
->>>>>>> org:theme/templates/wiki.html
 <p>Use <code>Ctrl + F</code> to search wiki pages for keywords.</p>
 <div class="wiki-post">
 	<p>Wiki Page</p>
 	<p>Last Updated</p>
 </div>
-<<<<<<< HEAD:templates/wiki.html
-{% for page in section.pages %}
-	<div class="wiki-post">
-		<p><a href="/wiki/{{ page.slug }}/">{{ page.title }}</a></p>
-		<time datetime="{{ page.updated | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.updated | date(format='%Y-%m-%d')}}</p>
-	</div>
-{% endfor %}
-{% endblock content %}
-=======
 {% for post in posts %}
 	<div class="wiki-post">
 		<a href="{{ url_for("wiki", slug=post.slug) }}">{{ post.title }}</a>
@@ -29,4 +15,3 @@
 	</div>
 {% endfor %}
 {% endblock %}
->>>>>>> org:theme/templates/wiki.html

@@ -1,19 +1,21 @@
-+++
-title = "Linux"
-updated = 2024-03-07
-draft = true
-+++
+#+title: Linux
+#+date: <2024-03-07>
+#+draft: t
 
 Related:
 
-- [Hardware](/wiki/hardware/)
+- [[/wiki/hardware.html][Hardware]]
 
-## Alpine Linux
-
+** Alpine Linux
+:PROPERTIES:
+:CUSTOM_ID: alpine-linux
+:END:
 My secondary laptop OS.
 
-## Ubuntu Server
-
+** Ubuntu Server
+:PROPERTIES:
+:CUSTOM_ID: ubuntu-server
+:END:
 My primary server OS.
 
 - Applications
