@@ -66,8 +66,8 @@ cd ~/Source/cleberg.net && nano publish.el
 
 Since I'm using Doom, Emacs will not automatically load the packages I need
 later in the build process. To compensate, my =publish.el= file needs to
-explicitly tell Emacs where Doom stores the =htmlize=, =weblorg=, and templatel=
-packages.
+explicitly tell Emacs where Doom stores the =htmlize=, =weblorg=, and 
+=templatel= packages.
 
 #+begin_src lisp
 ;; explicity load packages since I'm using Doom Emacs
