@@ -13,7 +13,8 @@ This website & blog uses [[https://orgmode.org/][Org-Mode]], published with [[ht
 
 ** Configuration
 
-Everything is configured within the =publish.el= file. Refer to the weblorg documentation for further configuration options.
+Everything is configured within the =publish.el= file. Refer to the weblorg
+documentation for further configuration options.
 
 ** Building
 
@@ -22,22 +23,26 @@ Local testing can be done via [[https://www.gnu.org/software/emacs/][Emacs]] or 
 To get running:
 
 #+begin_src shell
-git clone https://git.cleberg.net/cleberg.net.git
-cd cleberg.net
-emacs -nw
+git clone https://git.cleberg.net/cleberg.net.git cd cleberg.net emacs -nw
 #+end_src
 
-Within Emacs, open any of the repository files. In Doom, I do this with =Spc f f= and selecting =README.org=. Make any changes necessary to customize the project.
+Within Emacs, open any of the repository files. In Doom, I do this with =Spc f
+f= and selecting =README.org=. Make any changes necessary to customize the
+project.
 
-To publish, you can use the =build.sh= script (change the deployment target!) or you can run the following commands.
+To publish, you can use the =build.sh= script (change the deployment target!) or
+you can run the following commands.
 
-Use the =ENV= environment variable to determine which base URL weblorg will use. If ENV is ommitted, it will default to =localhost:8000=. If =ENV=prod=, weblorg will look in the =publish.el= file for the production base URL.
+Use the =ENV= environment variable to determine which base URL weblorg will use.
+If ENV is ommitted, it will default to =localhost:8000=. If =ENV=prod=, weblorg
+will look in the =publish.el= file for the production base URL.
 
 #+begin_src sh
 ENV=prod emacs --script publish.el
 #+end_src
 
-The files will be published to the =.build= directory. You can deploy these files to the target through any number of methods, such as =scp= or SFTP.
+The files will be published to the =.build= directory. You can deploy these
+files to the target through any number of methods, such as =scp= or SFTP.
 
 ** Tasks
 
