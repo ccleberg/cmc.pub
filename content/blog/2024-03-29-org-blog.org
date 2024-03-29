@@ -1,34 +1,237 @@
 #+title: Blogging in Org-Mode
-#+date: 2024-03-29
+#+date: <2024-03-29 Fri 09:00:00>
 #+description: A guide to blogging with org-mode, no third-party tools required.
 #+filetags: :dev:
-#+draft: t
 #+slug: org-blog
 
-Refer to the post I wrote about [[/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for more information about
-my base Emacs configuration.
+First and foremost, apologies to those who subscribe via RSS as I know that my
+feed duplicated itself when I moved this blog over to org-mode last night.
 
-* TODO Weblorg
+This post focuses specifically on the configuration and tools I use to blog from
+Emacs with Org-Mode and does not focus on Emacs or Org-Mode themselves. Refer to
+the post I wrote about [[/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for more information about my base
+Emacs configuration.
+
+* Weblorg
+
+The first step in blogging with Org-Mode is to choose a method to convert the
+source files to HTML and publish them. The Worg site maintains a nice list of
+[[https://orgmode.org/worg/org-blog-wiki.html][Blogs and Wikis with Org]], but the tools are inevitably different and
+opinionated, so you'll need to find what works for you.
+
+I tried using Jekyll, Hugo, ox-hugo, Nikola, Blorg, org-static-blog, and the
+native org-publish functions before finally settling on Weblorg. For one reason
+or another, the other solutions were a drastic step down from my previous
+workflow that used [[https://www.getzola.org/][Zola]] with Markdown content.
 
 [[https://github.com/emacs-love/weblorg][Weblorg]] is a static site generator for [[https://orgmode.org/][org-mode]], built for use within [[https://www.gnu.org/software/emacs/][Emacs]].
+Since it's written in Emacs Lisp, there's no need to install other languages or
+frameworks to get started. More than that, you can write in any editor you
+please and simply invoke the Emacs build process with the =--script= parameter
+instead of requiring you to blog inside Emacs.
 
 ** Installation
 
-macOS, use Doom's package installation process, link proper files in =publish.el=
+The [[https://emacs.love/weblorg/doc/index.html][Getting Started]] page details broad installation requirements. I am using
+Doom Emacs on macOS, which requires you to add the package to the
+=~/.doom.d/packages.el= file and configure the =publish.el= file slightly
+differently.
+
+To start, add the =htmlize= and =weblorg= packages to Doom, sync the changes,
+and reload.
+
+#+begin_src sh
+nano ~/.doom.d/packages.el
+#+end_src
+
+#+begin_src lisp
+(package! htmlize)
+(package! weblorg)
+#+end_src
+
+#+begin_src sh
+doom sync
+#+end_src
+
+Either re-open Emacs or hit =SPC h r r= to reload the changes.
 
 ** Configuration
 
+Now that I've installed weblorg, I need to configure the project. I'll start by
+navigating to my site's source code and creating a =publish.el= file.
+
+#+begin_src sh
+cd ~/Source/cleberg.net && nano publish.el
+#+end_src
+
+Since I'm using Doom, Emacs will not automatically load the packages I need
+later in the build process. To compensate, my =publish.el= file needs to
+explicitly tell Emacs where Doom stores the =htmlize=, =weblorg=, and templatel=
+packages.
+
+#+begin_src lisp
+;; explicity load packages since I'm using Doom Emacs
+(add-to-list 'load-path "~/.emacs.d/.local/straight/repos/emacs-htmlize")
+(add-to-list 'load-path "~/.emacs.d/.local/straight/repos/weblorg")
+(add-to-list 'load-path "~/.emacs.d/.local/straight/repos/templatel")
+(require 'htmlize)
+(require 'weblorg)
+
+;; defaults to http://localhost:8000
+;; To build with the custom URL below, call:
+;;;; ENV=prod emacs --script publish.el
+(if (string= (getenv "ENV") "prod")
+ (setq weblorg-default-url "https://cleberg.net"))
+
+;; site metadata
+(weblorg-site
+ :theme nil
+ :template-vars '(("site_name" . "cleberg.net")
+                  ("site_owner" . "hello@cleberg.net")
+                  ("site_description" . "Just a blip of ones and zeroes.")))
+
+;; route for rendering the index page of the website
+(weblorg-route
+ :name "index"
+ :input-pattern "content/index.org"
+ :template "index.html"
+ :output ".build/index.html"
+ :url "/")
+
+;; route for rendering each blog post
+(weblorg-route
+ :name "blog"
+ :input-pattern "content/blog/*.org"
+ :template "post.html"
+ :output ".build/blog/{{ slug }}.html"
+ :url "/blog/{{ slug }}.html")
+
+;; route for rendering the index page of the blog
+(weblorg-route
+ :name "blog-index"
+ :input-pattern "content/blog/*.org"
+ :input-aggregate #'weblorg-input-aggregate-all-desc
+ :template "blog.html"
+ :output ".build/blog/index.html"
+ :url "/blog/")
+
+;; route for rendering each wiki post
+(weblorg-route
+ :name "wiki"
+ :input-pattern "content/wiki/*.org"
+ :template "post.html"
+ :output ".build/wiki/{{ slug }}.html"
+ :url "/wiki/{{ slug }}.html")
+
+;; route for rendering the index page of the wiki
+(weblorg-route
+ :name "wiki-index"
+ :input-pattern "content/wiki/*.org"
+ :input-aggregate #'weblorg-input-aggregate-all
+ :template "wiki.html"
+ :output ".build/wiki/index.html"
+ :url "/wiki/")
+
+;; routes for rendering all other pages
+(weblorg-route
+ :name "pages"
+ :input-pattern "content/*.org"
+ :template "page.html"
+ :output ".build/{{ slug }}.html"
+ :url "/{{ slug }}.html")
+
+(weblorg-route
+ :name "salary"
+ :input-pattern "content/salary/*.org"
+ :template "page.html"
+ :output ".build/salary/{{ slug }}.html"
+ :url "/salary/{{ slug }}.html")
+
+(weblorg-route
+ :name "services"
+ :input-pattern "content/services/*.org"
+ :template "page.html"
+ :output ".build/services/{{ slug }}.html"
+ :url "/services/{{ slug }}.html")
+
+;; RSS Feed
+(weblorg-route
+ :name "rss"
+ :input-pattern "content/blog/*.org"
+ :input-aggregate #'weblorg-input-aggregate-all-desc
+ :template "atom.xml"
+ :output ".build/atom.xml"
+ :url "/atom.xml")
+
+;; route for static assets that also copies files to .build directory
+(weblorg-copy-static
+ :output ".build/{{ file }}"
+ :url "/{{ file }}")
+
+;; fire the engine and export all the files declared in the routes above
+(weblorg-export)
+#+end_src
+
 * Project
 
-** TODO Structure
+** Structure
 
-** TODO Configuration
+The project structure for weblorg is highly customizable and the main
+restriction is that the =publish.el= file must point to the correct paths.
 
-** TODO Build & Deploy
+For my blog, I prefer to keep the blog content out of the top-level directory.
+This results in the following structure (shortened for brevity):
+
+#+begin_src txt
+.build/
+content/
+    blog/
+        example-blog-post.org
+        index.org
+    wiki/
+        example-wiki-post.org
+        index.org
+    index.org
+    other-example-page.org
+theme/
+    static/
+        styles.css
+        robots.txt
+    templates/
+        base.html
+        blog.html
+        index.html
+        page.html
+        post.html
+        wiki.html
+build.sh
+publish.el
+#+end_src
+
+This is simply my preferred structure and you can alter it to fit your needs.
+The key here really is that you can customize at will, as long as the
+=publish.el= file matches.
+
+** Build & Deploy
+
+Once you're content with the status of the project, you're ready to build and
+deploy the blog.
+
+My process utilizes a =build.sh= script that combines the steps I take every
+time.
 
 #+begin_src sh
 touch build.sh && chmod +x build.sh && nano build.sh
 #+end_src
+
+Within this script, I do the following:
+
+1. Remove any files within the =.build= directory that I use to store published
+   files.
+2. Set the environment variable to =prod= to ensure the =base_url= matches my
+   configuration in =publish.el=.
+3. Build the site with Emacs & =publish.el=.
+4. Use =scp= to copy files to my site's public directory on my server.
 
 #+begin_src sh
 rm -rf .build/*                              && \
@@ -36,8 +239,21 @@ ENV=prod emacs --script publish.el           && \
 scp -r .build/* ubuntu:/var/www/cleberg.net/
 #+end_src
 
+*** Time to Build
+
+My only current complaints are:
+
+1. Errors messages are not helpful. It takes work to determine what the error is
+   and where it's coming from. I generally have to sit and watch the build
+   process to see the file that weblorg pubslishes right before the error
+   occurred.
+2. The build process re-builds every single file on each run, which takes a long
+   time for a blog of my size. See below for the last time I measured.
+
 #+begin_src sh
 > time ./build.sh
 
 ./build.sh  35.46s user 0.59s system 85% cpu 41.965 total
 #+end_src
+
+Overall, I have thoroughly enjoyed using weblog and will continue to use it going forward until I find something better.
