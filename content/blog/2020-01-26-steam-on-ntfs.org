@@ -1,0 +1,93 @@
+#+title: Linux Gaming Tweak: Steam on NTFS Drives
+#+date: 2020-01-26
+#+description: Learn how to fix Steam NTFS issues on Linux.
+#+filetags: :gaming:linux:
+
+* Auto-Mount Steam Drives
+#+caption: Steam Screenshot
+[[https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png]]
+
+If you want to see how to install Steam on Linux, see my other post:
+[[../linux-software/][Linux Software]].
+
+Are you having trouble launching games, even though they've installed
+correctly? This may happen if you're storing your games on an
+NTFS-formatted drive. This shouldn't be an issue if you're storing your
+games on the same drive that Steam is on, but some gamers prefer to put
+Steam on their main drive and game files on another SSD or HDD.
+
+To fix this problem, you'll need to try a few things. First, you'll need
+to install the =ntfs-3g= package, which is meant for better
+interoperability with Linux.
+
+#+begin_src sh
+sudo apt install ntfs-3g
+#+end_src
+
+Next, you should set up the =/etc/fstab= file to automatically mount
+your drives on boot. To automatically mount your drives when the
+computer boots up, you'll have to create the folders you want to mount
+your drive to first. I store mine in the =/mnt= folder using names that
+I'll recognize, but you can create your folders wherever you want.
+
+#+begin_src sh
+mkdir /path/to/folder
+#+end_src
+
+For example:
+
+#+begin_src sh
+mkdir /mnt/steam_library
+#+end_src
+
+To automatically mount drives upon system boot, you will need to collect
+a few items. The UUID is the identification number connected to
+whichever drive you're using to store Steam games.
+
+Drives are usually labeled similar to =/dev/nvme0n1p1= or =/dev/sda1=,
+so you'll need to find the line in the output of the command below that
+correlates to your drive and copy the UUID over to the =/etc/fstab=
+file.
+
+#+begin_src sh
+sudo blkid | grep UUID=
+#+end_src
+
+Next, you'll need your =uid= and =gid=. To find these, run the following
+command:
+
+#+begin_src sh
+id -u && id -g
+#+end_src
+
+Now that you have collected the necessary information, open the
+=/etc/fstab= file:
+
+#+begin_src sh
+sudo nano /etc/fstab
+#+end_src
+
+Each drive you want to mount on boot should have its own line in the
+=/etc/fstab= file that looks similar to this:
+
+#+begin_src config
+UUID=B64E53824E5339F7 /mnt/steam_library ntfs-3g uid=1000,gid=1000 0 0
+#+end_src
+
+Now all you need to do is unmount your drive and re-mount it. You can
+unmount the drive by doing this (be sure to use the correct drive name
+here):
+
+#+begin_src sh
+sudo umount /dev/sdxX
+#+end_src
+
+You can re-mount all your drives by executing the following:
+
+#+begin_src sh
+sudo mount -a
+#+end_src
+
+If you don't know what your drive name is, or you're nervous about
+unmounting and re-mounting, simply reboot your computer, and it will be
+done for you automatically.

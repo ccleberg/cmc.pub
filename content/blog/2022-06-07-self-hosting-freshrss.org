@@ -1,0 +1,232 @@
+#+title: Self-Hosting FreshRSS
+#+date: 2022-06-07
+#+description: A guide to self-hosting the FreshRSS application on your own server.
+#+filetags: :selfhosting:
+
+* Why RSS?
+After noticing that I have collected 50+ blogs as bookmarks, I decided
+to migrate back to using RSS feeds to stay up-to-date with my favorite
+websites. Using RSS allows me to read all of these posts in a single app
+(on both mobile & desktop) and allows me to be notified when new posts
+are available.
+
+However, I ran into one issue: syncing subscriptions and read/unread
+posts across devices. Since I want to be able to easily read on both
+mobile and desktop, I decided to look for a self-hosted RSS solution.
+
+Thus, I found [[https://www.freshrss.org/][FreshRSS]] and was able to
+successfully install it on my server in about 30 minutes.
+
+* Documentation
+While it's certainly not robust, the
+[[https://freshrss.github.io/FreshRSS/][FreshRSS documentation]] is
+helpful for figuring out basic information about the service.
+
+However, I wanted to install this service as a Docker container and
+stumbled across the
+[[https://github.com/FreshRSS/FreshRSS/tree/edge/Docker][Docker README]]
+within the GitHub repository.
+
+This README was the documentation I actually needed. However, as you'll
+see below, I still had to manually edit one file (=config.php=) to
+access the API externally via my RSS apps.
+
+* Installation
+** DNS
+The first step, as required by any external web service, was assigning a
+domain name to use. I chose to use a subdomain, like =rss.example.com=.
+
+To assign this, I created an =A= record in my DNS settings with the IPv4
+address of the server and an =AAAA= record with the IPv6 address of the
+server. Note: assigning an IPv6 (=AAAA=) record is optional, but I like
+to enable IPV6 for my services.
+
+#+begin_src config
+rss.example.com     A       xxx.xxx.xxx.xxx
+rss.example.com     AAAA    xxxx:xxxx: ... :xxxx
+#+end_src
+
+** Docker
+I initially tried to set up a =docker-compose.yml= file with a =.env=
+file because I prefer to have a file I can look back at later to see how
+I initially started the container, but it simply wouldn't work for me.
+I'm not sure why, but I assume I wasn't telling =docker-compose= where
+the =.env= file was.
+
+Regardless, I chose to simply run the service with =docker run=. See the
+following command for my =docker run= configuration:
+
+#+begin_src sh
+sudo docker run -d --restart unless-stopped --log-opt max-size=10m \
+  -p 8080:80 \
+  -e TZ=America/Chicago \
+  -e 'CRON_MIN=1,31' \
+  -v freshrss_data:/var/www/FreshRSS/data \
+  -v freshrss_extensions:/var/www/FreshRSS/extensions \
+  --name freshrss \
+  freshrss/freshrss
+#+end_src
+
+This started the container successfully and allowed me to visit the
+FreshRSS instance at =localhost:8080=.
+
+** Fresh RSS Set-Up
+I *HIGHLY** suggest that you set up your user account prior to exposing
+this service to the public. It's unlikely that someone is trying to
+access the exact domain or IP/port you're assigning here, but as soon as
+you expose this service, the first person to open the URL will be able
+to create the admin user.
+
+In order to set up your FreshRSS service, open the =localhost:8080= URL
+in your browser (you may need to use a local IP instead of =localhost=
+if you're accessing the page from a different machine on the network -
+e.g., =192.168.1.20:8080=).
+
+Once the page loads, set up your default user with a strong username and
+password. You may also choose to configure other settings prior to
+exposing this service.
+
+** Nginx Reverse-Proxy
+In order to access this service outside my home, I needed to set up a
+reverse-proxy to connect =localhost:8080= to =rss.example.com=.
+
+First, I created a new Nginx configuration file:
+
+#+begin_src sh
+sudo nano /etc/nginx/sites-available/rss.example.com
+#+end_src
+
+Within the config file, I pasted the following code:
+
+#+begin_src config
+upstream freshrss {
+        server 127.0.0.1:8080;
+        keepalive 64;
+}
+
+server {
+        server_name rss.example.com;
+        listen 80;
+
+        location / {
+                # The final `/` is important.
+                proxy_pass http://localhost:8080/;
+                add_header X-Frame-Options SAMEORIGIN;
+                add_header X-XSS-Protection "1; mode=block";
+                proxy_redirect off;
+                proxy_buffering off;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Forwarded-Port $server_port;
+                proxy_read_timeout 90;
+
+                # Forward the Authorization header for the Google Reader API.
+                proxy_set_header Authorization $http_authorization;
+                proxy_pass_header Authorization;
+        }
+}
+#+end_src
+
+Finally, restart Nginx and you will be able to access your service via
+HTTP:
+
+#+begin_src sh
+sudo systemctl restart nginx.service
+#+end_src
+
+** HTTPS
+However, I don't want to access my RSS feeds via HTTP. I want it
+available only via HTTPS. In order to do this, I ran the
+[[https://certbot.eff.org/][certbot]] program to generate SSL
+certificates for me:
+
+#+begin_src sh
+sudo certbot --nginx
+#+end_src
+
+This process will automatically generate an SSL certificate for you and
+modify the Nginx configuration file to include a redirect from HTTP to
+HTTPS.
+
+* Post-Installation Fixes
+At this point, we have a functional FreshRSS website, available from
+anywhere and secured with HTTPS. However, attempting to connect this
+service to an RSS app resulted in many errors regarding unavailable URLs
+and incorrect credentials.
+
+** API Set-Up
+First, you need to open your user profile in FreshRSS (=Settings= >
+=Profile=) and set an API password in the field at the bottom. This is
+the password you will need to provide to your RSS apps.
+
+Once that is set and saved, click the link below the API password field
+to open the API check tool. It should look something like
+=https://localhost:8080/api/= or =https://rss.example.com/api/=.
+
+Within this page, you /should/ see your correct external URL and "PASS"
+at the bottom of each API type. This would mean everything is set up
+correctly, and you can now move on and login to any RSS apps that
+support self-hosted options.
+
+In my case, the URL showed an internal URL and I had a warning that the
+=base_url= variable may be misconfigured. If this is the case, see the
+next section for a fix.
+
+** Base URL Fix
+In order to fix the =base_url= for the API, I opened up my docker
+container with the following command:
+
+#+begin_src sh
+sudo docker exec -it freshrss bash
+#+end_src
+
+Within this container, update the packages and install an editor:
+
+#+begin_src sh
+apt-get update
+apt-get install nano
+#+end_src
+
+Finally, open up =config.php= in the =data= directory:
+
+#+begin_src sh
+nano data/config.php
+#+end_src
+
+Within =config.php=, you will need to update the =base_url= variable and
+update it to match your external URL. In my case, I simply commented-out
+the incorrect URL with =//= and added the correct one on a new line:
+
+#+begin_src php
+<?php
+    return array (
+        ...
+        //  'base_url' => 'http://localhost:8080',
+        'base_url' => 'https://rss.example.com',
+        ...
+    )
+>
+#+end_src
+
+You can now exit the file with =Ctrl + x=, press =y= to save the file,
+and then click =Enter= to keep the same file name.
+
+Finally, just exit out of the docker container:
+
+#+begin_src sh
+exit
+#+end_src
+
+Next, just restart the container:
+
+#+begin_src sh
+sudo docker restart freshrss
+#+end_src
+
+Voilà! Your API check should now "PASS" and you should be able to use
+one of the API URLs in your RSS apps.
+
+In my case, I use [[https://netnewswire.com][NetNewsWire]] on my desktop
+and phone.

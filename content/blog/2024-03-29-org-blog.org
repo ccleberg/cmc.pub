@@ -1,0 +1,43 @@
+#+title: Blogging in Org-Mode
+#+date: 2024-03-29
+#+description: A guide to blogging with org-mode, no third-party tools required.
+#+filetags: :dev:
+#+draft: t
+#+slug: org-blog
+
+Refer to the post I wrote about [[/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for more information about
+my base Emacs configuration.
+
+* TODO Weblorg
+
+[[https://github.com/emacs-love/weblorg][Weblorg]] is a static site generator for [[https://orgmode.org/][org-mode]], built for use within [[https://www.gnu.org/software/emacs/][Emacs]].
+
+** Installation
+
+macOS, use Doom's package installation process, link proper files in =publish.el=
+
+** Configuration
+
+* Project
+
+** TODO Structure
+
+** TODO Configuration
+
+** TODO Build & Deploy
+
+#+begin_src sh
+touch build.sh && chmod +x build.sh && nano build.sh
+#+end_src
+
+#+begin_src sh
+rm -rf .build/*                              && \
+ENV=prod emacs --script publish.el           && \
+scp -r .build/* ubuntu:/var/www/cleberg.net/
+#+end_src
+
+#+begin_src sh
+> time ./build.sh
+
+./build.sh  35.46s user 0.59s system 85% cpu 41.965 total
+#+end_src

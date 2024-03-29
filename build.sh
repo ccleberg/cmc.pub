@@ -1,6 +1,3 @@
-#!/bin/sh
-
-cd ~/Source/cleberg.net/
-rm -rf public/
-zola build --force
-scp -r public/* ubuntu:/var/www/cleberg.net/
+rm -rf .build/*                              && \
+ENV=prod emacs --script publish.el           && \
+scp -r .build/* ubuntu:/var/www/cleberg.net/
