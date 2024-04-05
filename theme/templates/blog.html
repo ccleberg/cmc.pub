@@ -4,7 +4,7 @@
 {% block main %}
 	<h1>Blog</h1>
 	<p>Use <code>Ctrl + F</code> to search blog post titles for keywords.</p>
-	<p>You can also add the <a href="/atom.xml">RSS Feed</a> to your feed reader.</p>
+	<p>You can also add the <a href="/feed.xml">RSS Feed</a> to your feed reader.</p>
 	{% for post in posts %}
 	<div class="post">
 		<time datetime="{{ post.date | strftime("%Y-%m-%d") }}">&lt;{{ post.date|strftime("%Y-%m-%d") }}&gt;</time>

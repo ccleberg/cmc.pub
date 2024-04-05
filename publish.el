@@ -85,9 +85,9 @@
  :name "rss"
  :input-pattern "content/blog/*.org"
  :input-aggregate #'weblorg-input-aggregate-all-desc
- :template "atom.xml"
- :output ".build/atom.xml"
- :url "/atom.xml")
+ :template "feed.xml"
+ :output ".build/feed.xml"
+ :url "/feed.xml")
 
 ;; route for static assets that also copies files to .build directory
 (weblorg-copy-static

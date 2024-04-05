@@ -21,11 +21,6 @@
     <lastBuildDate>{{ now() | strftime("%a, %d %b %Y %H:%M:%S %z") }}</lastBuildDate>
     <generator>{{ meta.generator }}</generator>
     <webMaster>{{ site_owner | default("hello@cleberg.net") }}</webMaster>
-    <image>
-      <url>{{ url_for("index") }}media/img/8bitme.png</url>
-      <title>Blog Author</title>
-      <link>{{ url_for("index") }}</link>
-    </image>
 
     {% for post in posts %}
     <item>
