@@ -2,6 +2,7 @@
 #+date: 2022-12-23
 #+description: Learn how to set up Alpine Linux with Sway to use as a desktop operating system.
 #+filetags: :linux:
+#+slug: alpine-desktop
 
 * Isn't Alpine Linux for Servers?
 This is a question I see a lot when people are presented with an example
