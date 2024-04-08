@@ -25,8 +25,8 @@ To start, export any pages or tabs from OneNote to the Word format (=.docx=):
 * Download Pandoc
 
 Start by downloading Pandoc from their [[https://github.com/jgm/pandoc/releases][GitHub releases]] page. I cannot install
-=.msi= files on my corporate laptop, so I downloaded the =
-pandoc-3.1.12.3-windows-x86_64.zip= file, which contains a simple =.exe= file
+=.msi= files on my corporate laptop, so I downloaded the
+=pandoc-3.1.12.3-windows-x86_64.zip= file, which contains a simple =.exe= file
 that you do not need to install - you will simply run it from the command line
 below.
 
