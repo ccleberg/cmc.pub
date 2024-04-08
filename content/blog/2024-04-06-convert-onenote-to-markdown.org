@@ -1,0 +1,80 @@
+#+title: Convert OneNote to Markdown (or Org-Mode)
+#+date: <2024-04-06 Sat 10:00:00>
+#+description: Learn how to convert OneNote pages or tabs to another format, such as Markdown or Org-Mode.
+#+filetags: :dev:
+#+slug: convert-onenote-to-markdown
+
+If you're looking to convert your OneNote content to another format, such as
+Markdown or Org-Mode, you're in luck. I use a solution that doesn't require
+other programs, such as Evernote or Notion. Personally, I used this solution on
+a managed corporate laptop that doesn't allow installation of other programs
+like these.
+
+This solution uses OneNote and Pandoc on Windows 10.
+
+* Export OneNote Content to Word
+
+To start, export any pages or tabs from OneNote to the Word format (=.docx=):
+
+1. Open OneNote desktop.
+2. Select =File= and then =Export=.
+3. Select the scope of content to export, such as =Tab= or =Page=.
+4. Name and save the file in an easy to remember location. I recommend your
+   Downloads or Desktop folder.
+
+* Download Pandoc
+
+Start by downloading Pandoc from their [[https://github.com/jgm/pandoc/releases][GitHub releases]] page. I cannot install
+=.msi= files on my corporate laptop, so I downloaded the =
+pandoc-3.1.12.3-windows-x86_64.zip= file, which contains a simple =.exe= file
+that you do not need to install - you will simply run it from the command line
+below.
+
+Once downloaded, unzip the archive and move the =pandoc.exe= file to the same
+folder where your Word documents were saved above. If you prefer, you can move
+this file to an easier location, such as =C:\Users\youruser\Downloads=.
+
+* Convert Word to Markdown
+
+In this example, I will be converting the Word documents to Markdown, but Pandoc
+supports [[https://github.com/jgm/pandoc?tab=readme-ov-file#the-universal-markup-converter][a ton of different formats for conversion]]. Choose the format you prefer
+and then modify the following commands as needed.
+
+To perform the conversion, open the Command Prompt. If you can't find it, open
+the start menu and search for it.
+
+Within the command prompt, navigate to the directory where you stored the
+=pandoc.exe= file and the Word documents.
+
+#+begin_src cli
+cd "C:\Users\yourusername\Downloads"
+#+end_src
+
+You can verify that you're in the correct directory with the =dir= command.
+
+#+begin_src cli
+dir
+#+end_src
+
+Once you have verified that you have the command prompt open in the correct
+directory with the =pandoc.exe= and the Word documents, you can run the
+following loop to convert all Word documents to Markdown.
+
+#+begin_src cli
+for %f in (*.docx) do (pandoc.exe --extract-media=. --wrap=preserve "%f" "%f.md")
+#+end_src
+
+This loop will perform the following actions:
+
+1. Find all documents matching the pattern =*.docx=, which means all Word
+   documents ending with that file extension.
+2. Iterate through all files found in step 1.
+3. For each file, perform the pandoc command.
+4. Within the pandoc command, =--extract-media= saves all media found in the
+   files to the current folder, with pandoc automatically creating a =media=
+   subfolder to hold all images.
+5. Within the pandoc command, =--wrap=preserve= will attempt to prseerve the
+   wrapping from the source document.
+6. Within the pandoc command, the final step is to specify the output path with
+   =-o=. This option adds the =.md= file extension to recognize the output files
+   as Markdown files.

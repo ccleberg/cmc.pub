@@ -8,12 +8,12 @@
 ;; defaults to http://localhost:8000
 ;; ENV=prod emacs --script publish.el
 (if (string= (getenv "ENV") "prod")
- (setq weblorg-default-url "https://cleberg.net"))
+    (setq weblorg-default-url "https://cleberg.net"))
 
 (weblorg-site
  :theme nil
  :template-vars '(("site_name" . "cleberg.net")
-                  ("site_owner" . "hello@cleberg.net")
+                  ("site_owner" . "Christian Cleberg <hello@cleberg.net>")
                   ("site_description" . "Just a blip of ones and zeroes.")))
 
 ;; route for rendering the index page of the website
