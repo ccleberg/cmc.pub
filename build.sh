@@ -1,3 +1,12 @@
-rm -rf .build/*                              && \
-ENV=prod emacs --script publish.el           && \
-scp -r .build/* ubuntu:/var/www/cleberg.net/
+#!/bin/bash
+
+if [ "$ENV" == "prod" ]; then
+	echo "Environment = Production"              && \
+	rm -rf .build/*                              && \
+	emacs --script publish.el                    && \
+	scp -r .build/* ubuntu:/var/www/cleberg.net/
+else
+	echo "Environment = Development"             && \
+	rm -rf .build/*                              && \
+	emacs --script publish.el
+fi
