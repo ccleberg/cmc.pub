@@ -6,7 +6,7 @@
 * Source Code
 I don't want to bury the lede here, so if you'd like to see the full
 source code I use to email myself plaintext poems daily, visit the
-repository: [[https://git.cleberg.net/daily-poem.git][daily-poem.git]].
+repository: [[https://git.cleberg.net/?p=daily-poem.git;a=summary][daily-poem.git]].
 
 * My Daily Dose of Poetry
 Most of my programming projects are small, random projects that are made

@@ -5,7 +5,7 @@
 
 [[https://cleberg.net][cleberg.net]] is my personal webpage.
 
-This README is viewable on [[https://git.cleberg.net/cleberg.net.git/tree/README.org][rgit]].
+This README is viewable on [[https://git.cleberg.net/?p=cleberg.net.git;a=blob;f=README.org;h=155f4696a09503411730afc422b7fb49acbef8f3;hb=HEAD][rgit]].
 
 ** Overview
 
@@ -23,7 +23,9 @@ Local testing can be done via [[https://www.gnu.org/software/emacs/][Emacs]] or 
 To get running:
 
 #+begin_src shell
-git clone https://git.cleberg.net/cleberg.net.git cd cleberg.net emacs -nw
+git clone https://git.cleberg.net/cleberg.net.git && \
+cd cleberg.net && \
+emacs -nw
 #+end_src
 
 Within Emacs, open any of the repository files. In Doom, I do this with =Spc f

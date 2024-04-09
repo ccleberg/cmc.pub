@@ -13,4 +13,4 @@
 - [[https://org.cleberg.net/][Org-Live]] - A basic org-mode editor for the web I built
 - [[https://search.cleberg.net/][SearXNG]] - A privacy-respecting, open metasearch engine
 
-See the [[https://git.cleberg.net/cleberg.net.git/log][git log]] if you want to see changes that have been made.
+See the [[https://git.cleberg.net/?p=cleberg.net.git;a=history;f=content/services/index.org;h=b9ecca2567a02711a33bb633d45f790610ed9214;hb=HEAD][git log]] if you want to see changes that have been made.
