@@ -22,6 +22,17 @@ To start, export any pages or tabs from OneNote to the Word format (=.docx=):
 4. Name and save the file in an easy to remember location. I recommend your
    Downloads or Desktop folder.
 
+See below for a visual walkthrough of the export process.
+
+#+caption: OneNote Notebook
+[[https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/onenote.png]]
+
+#+caption: OneNote Section Export Options
+[[https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/export.png]]
+
+#+caption: Exported Word Document
+[[https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/word.png]]
+
 * Download Pandoc
 
 Start by downloading Pandoc from their [[https://github.com/jgm/pandoc/releases][GitHub releases]] page. I cannot install
@@ -61,7 +72,7 @@ directory with the =pandoc.exe= and the Word documents, you can run the
 following loop to convert all Word documents to Markdown.
 
 #+begin_src cli
-for %f in (*.docx) do (pandoc.exe --extract-media=. --wrap=preserve "%f" "%f.md")
+for %f in (*.docx) do (pandoc.exe --extract-media=. --wrap=preserve "%f" -o "%f.md")
 #+end_src
 
 This loop will perform the following actions:
@@ -78,3 +89,14 @@ This loop will perform the following actions:
 6. Within the pandoc command, the final step is to specify the output path with
    =-o=. This option adds the =.md= file extension to recognize the output files
    as Markdown files.
+
+#+caption: Pandoc Conversion
+[[https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/command.png]]
+
+If you want to export to another format, simply specify the =-f=/=--from= and =-t=/=--to= options.
+
+For example, you can convert the Word document to org-mode. You can also convert to one format and subsequently convert to other formats as needed.
+
+#+begin_src cli
+pandoc.exe -f docx -t org file.docx
+#+end_src
