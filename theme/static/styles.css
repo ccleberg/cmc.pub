@@ -352,12 +352,14 @@ template {
 
 /* CUSTOM CSS */
 :root {
-  --bg: #fff;
-  --bg-bright: #eee;
-  --fg: #111;
-  --link: #00f;
-  --code: #f00;
-  --border: #ccc;
+  --bg: rgb(255, 255, 255);
+  --bg-bright: rgb(238, 238, 238);
+  --fg: rgb(17, 17, 17);
+  --fg-bright: rgb(0, 0, 0);
+  --fg-dim: rgb(68, 68, 68);
+  --link: rgb(0, 0, 255);
+  --code: rgb(255, 0, 0);
+  --border: rgb(204, 204, 204);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -370,13 +372,19 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family:
-    Menlo,
-    Consolas,
-    Monaco,
-    Liberation Mono,
-    Lucida Console,
-    monospace;
-  font-size: 0.9rem;
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    helvetica,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
+    sans-serif;
   line-height: 1.5;
   max-width: 50em;
   margin: 0 auto;
@@ -417,17 +425,18 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--fg);
+  color: var(--fg-bright);
 }
 
 a,
 a:visited {
-  color: var(--link);
+  border-bottom: 2px solid var(--border);
+  color: var(--fg-dim);
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--link);
 }
 
 img {
@@ -438,14 +447,6 @@ table {
   border-collapse: collapse;
   color: var(--fg);
   border-color: var(--bg-bright);
-  font-family:
-    Menlo,
-    Consolas,
-    Monaco,
-    Liberation Mono,
-    Lucida Console,
-    monospace;
-  font-size: 0.9rem;
 }
 
 thead,
@@ -508,16 +509,16 @@ blockquote p {
 }
 
 .wiki-post {
-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .wiki-post:first-of-type {
-border-bottom: 1px dotted var(--fg);
-margin-bottom: 1rem;
+  border-bottom: 1px dotted var(--fg);
+  margin-bottom: 1rem;
 }
 
 .wiki-post p {
-margin: 0;
+  margin: 0;
 }
 
 .post-metadata {
@@ -567,12 +568,13 @@ summary {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #141617;
-    --bg-bright: #191c1d;
-    --fg: #b2aea9;
-    /*    --link: #2b8ad9; */
-    --link: #ff79c6;
-    --code: #ffb454;
-    --border: #333;
+    --bg: rgb(20, 22, 23);
+    --bg-bright: rgb(25, 28, 29);
+    --fg: rgb(178, 174, 169);
+    --fg-bright: rgb(255, 255, 255);
+    --fg-dim: rgb(221, 221, 221);
+    --link: rgb(10, 132, 255);
+    --code: rgb(255, 159, 10);
+    --border: rgb(51, 51, 51);
   }
 }
