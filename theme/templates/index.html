@@ -4,52 +4,17 @@
 	<blockquote>
 		Do AIs dream in electric sheep?<br />He hoped it had nanosecond nightmares.
 	</blockquote>
+	<a href="https://git.cleberg.net">git</a>&nbsp;
+	<a href="/gpg.txt">gpg</a>&nbsp;
+	<a href="https://matrix.to/#/@cyborg:matrix.tchncs.de">matrix</a>&nbsp;
+	<a href="/feed.xml">rss</a>
+	<br>
+	<a href="/blog/">blog</a>&nbsp;
+	<a href="/salary/">salary</a>&nbsp;
+	<a href="/services/">services</a>&nbsp;
+	<a href="/wiki/">wiki</a>
 </section>
-<section>
-	<h2>Featured Posts</h2>
-	<div class="post">
-		<time datetime="2024-03-29">&lt;2024-03-29&gt;</time>
-		<a href="/blog/org-blog.html">Blogging in Org-Mode</a>
-	</div>
-	<div class="post">
-		<time datetime="2024-03-14">&lt;2024-03-14&gt;</time>
-		<a href="/blog/doom-emacs-org-mode.html">Doom Emacs & Org-Mode</a>
-	</div>
-	<div class="post">
-		<time datetime="2023-10-04">&lt;2023-10-04&gt;</time>
-		<a href="/blog/digital-minimalism.html">Digital Minimalism</a>
-	</div>
-	<br />
-	<a href="/blog/">All Posts &rarr;</a>
-</section>
-<section>
-	<h2>Everything Else</h2>
-	<ul>
-		<li><a href="/salary/">Salary</a></li>
-		<li><a href="/services/">Services</a></li>
-		<li><a href="/wiki/">Wiki</a></li>
-	</ul>
-</section>
-<section>
-	<h2>Contact</h2>
-	<ul>
-		<li>hello [at] cleberg.net (<a href="/gpg.txt">GPG</a>)</li>
-		<li>
-			<a
-				href="https://matrix.to/#/@cyborg:matrix.tchncs.de"
-				target="_blank"
-				rel="noopener"
-				>@cyborg:@matrix.tchncs.de</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://git.cleberg.net/?p=cleberg.net.git;a=summary"
-				target="_blank"
-				rel="noopener"
-				>Git</a
-			>
-		</li>
-	</ul>
-</section>
+<footer>
+	<p>Last Build: &lt;<time datetime='{{ now() | strftime("%Y-%m-%d %H:%M:%S") }}'>{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}</time>&gt;</p>
+</footer>
 {% endblock %}

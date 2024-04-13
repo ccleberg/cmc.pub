@@ -1,30 +1,22 @@
-{% extends "base.html" %}
-
-{% block subtitle %}
-	{{ post.title }} | 
-{% endblock %}
+{% extends "base.html" %} {% block subtitle %} {{ post.title }} | {% endblock %}
 {% block meta %}
-<meta property="og:title" content="{{ post.title }}">
-<meta property="og:url" content="{{ post.url }}">
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:url" content="{{ post.url }}" />
 {% if post.description is defined %}
-<meta property="og:description" content="{{ post.description }}">
+<meta property="og:description" content="{{ post.description }}" />
 {% elif project_description is defined %}
-<meta property="og:description" content="{{ project_description }}">
-{% endif %}
-<link rel="stylesheet" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)">
-{% endblock %}
-
-{% block main %}
+<meta property="og:description" content="{{ project_description }}" />
+{% endif %} {% endblock %} {% block main %}
+<p><a href="/">&larr; home</a></p>
 <article role="article">
 	<section class="post-metadata">
 		<h1 class="post__title">{{ post.title }}</h1>
 		{% if post.date is defined %}
-			<time datetime="{{ post.date|strftime("%Y-%m-%d") }}">&lt;{{ post.date|strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</time>
+		<time datetime='{{ post.date|strftime("%Y-%m-%d") }}'
+			>&lt;{{ post.date|strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</time
+		>
 		{% endif %}
 	</section>
-	<section>
-		{{ post.html | safe }}
-	</section>
+	<section>{{ post.html | safe }}</section>
 </article>
 {% endblock %}

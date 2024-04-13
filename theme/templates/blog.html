@@ -2,13 +2,14 @@
 
 {% block subtitle %}Blog | {% endblock %}
 {% block main %}
-	<h1>Blog</h1>
-	<p>Use <code>Ctrl + F</code> to search blog post titles for keywords.</p>
-	<p>You can also add the <a href="/feed.xml">RSS Feed</a> to your feed reader.</p>
-	{% for post in posts %}
-	<div class="post">
-		<time datetime="{{ post.date | strftime("%Y-%m-%d") }}">&lt;{{ post.date|strftime("%Y-%m-%d") }}&gt;</time>
-		<a href="{{ url_for("blog", slug=post.slug) }}">{{ post.title }}</a>
-	</div>
-	{% endfor %}
+<p><a href="/">&larr; home</a></p>
+<h1>Blog</h1>
+<p>Use <code>Ctrl + F</code> to search blog post titles for keywords.</p>
+<p>You can also add the <a href="/feed.xml">RSS Feed</a> to your feed reader.</p>
+{% for post in posts %}
+<div class="post">
+	<time datetime='{{ post.date | strftime("%Y-%m-%d") }}'>{{ post.date|strftime("%Y-%m-%d") }}</time>
+	<a href='{{ url_for("blog", slug=post.slug) }}'>{{ post.title }}</a>
+</div>
+{% endfor %}
 {% endblock %}

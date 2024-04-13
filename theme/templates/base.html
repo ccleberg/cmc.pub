@@ -5,8 +5,8 @@
     {% block head %}
     <meta charset="utf-8">
     <title>
-	{% block subtitle %}{% endblock %}
-	{% block title %}{{ site_name | default("weblorg website") }}{% endblock %}
+    {% block subtitle %}{% endblock %}
+    {% block title %}{{ site_name | default("weblorg website") }}{% endblock %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if site_owner is defined %}<meta name="author" content="{{ site_owner }}" >{% endif %}
@@ -17,25 +17,6 @@
     {% endblock %}
 </head>
 <body>
-	{% block nav %}
-	<nav class="site-nav" aria-label="site-nav" role="navigation">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/blog/">Blog</a></li>
-			<li><a href="/services/">Services</a></li>
-			<li><a href="/wiki/">Wiki</a></li>
-		</ul>
-	</nav>
-	{% endblock %}
-
-	<main>{% block main %}{% endblock %}</main>
-
-	{% block footer %}
-	<footer>
-		<p>Last Build: &lt;<time datetime='{{ now() | strftime("%Y-%m-%d %H:%M:%S") }}''>{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}</time>&gt;</p>
-		<p><a href="https://git.cleberg.net/?p=cleberg.net.git;a=summary" target="_blank" rel="noopener">Source Code</a></p>
-		<p><a href="/feed.xml">RSS Feed</a></p>
-	</footer>
-	{% endblock %}
+    <main>{% block main %}{% endblock %}</main>
 </body>
 </html>
