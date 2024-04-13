@@ -1,20 +1,55 @@
 {% extends "base.html" %} {% block main %}
 <section>
 	<h1>cleberg.net</h1>
-	<blockquote>
-		Do AIs dream in electric sheep?<br />He hoped it had nanosecond nightmares.
-	</blockquote>
-	<a href="https://git.cleberg.net">git</a>&nbsp;
-	<a href="/gpg.txt">gpg</a>&nbsp;
-	<a href="https://matrix.to/#/@cyborg:matrix.tchncs.de">matrix</a>&nbsp;
-	<a href="/feed.xml">rss</a>
-	<br>
-	<a href="/blog/">blog</a>&nbsp;
-	<a href="/salary/">salary</a>&nbsp;
-	<a href="/services/">services</a>&nbsp;
-	<a href="/wiki/">wiki</a>
+	<pre>pub   rsa4096 2022-11-16 [SC]
+      <a href="/gpg.txt">3917 973F B159 BBB8 6194 5385 6945 1A51 7AC0 CB37</a>
+uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
+</section>
+<section>
+	<table>
+		<thead>
+			<tr>
+				<th>link</th>
+				<th>desc</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="/blog/">blog</a></td>
+				<td>my personal blog</td>
+			</tr>
+			<tr>
+				<td><a href="https://git.cleberg.net">git</a></td>
+				<td>personal git hosting</td>
+			</tr>
+			<tr>
+				<td><a href="https://matrix.to/#/@cyborg:matrix.tchncs.de">matrix</a></td>
+				<td>encrypted chat</td>
+			</tr>
+			<tr>
+				<td><a href="/feed.xml">rss</a></td>
+				<td>feed for my personal blog</td>
+			</tr>
+			<tr>
+				<td><a href="/salary/">salary</a></td>
+				<td>my salary log</td>
+			</tr>
+			<tr>
+				<td><a href="/services/">services</a></td>
+				<td>my public services</td>
+			</tr>
+			<tr>
+				<td><a href="/wiki/">wiki</a></td>
+				<td>my personal wiki</td>
+			</tr>
+		</tbody>
+	</table>
 </section>
 <footer>
-	<p>Last Build: &lt;<time datetime='{{ now() | strftime("%Y-%m-%d %H:%M:%S") }}'>{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}</time>&gt;</p>
+	<p>
+		Last Build: &lt;<time datetime='{{ now() | strftime("%Y-%m-%d %H:%M:%S") }}'
+			>{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}</time
+		>&gt;
+	</p>
 </footer>
 {% endblock %}
