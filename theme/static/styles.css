@@ -358,7 +358,7 @@ template {
   --fg-bright: rgb(0, 0, 0);
   --fg-dim: rgb(68, 68, 68);
   --link: rgb(0, 0, 255);
-  --code: rgb(255, 0, 0);
+  --code: rgb(195, 0, 0);
   --border: rgb(204, 204, 204);
 }
 
@@ -430,13 +430,9 @@ h4 {
 
 a,
 a:visited {
-  border-bottom: 2px solid var(--border);
-  color: var(--fg-dim);
+  border-bottom: 2px solid var(--link);
+  color: var(--fg);
   text-decoration: none;
-}
-
-a:hover {
-  color: var(--link);
 }
 
 img {
@@ -467,7 +463,7 @@ code {
     Liberation Mono,
     Lucida Console,
     monospace;
-  font-size: inherit;
+  font-size: 0.9rem;
 }
 
 pre {
@@ -479,7 +475,6 @@ pre {
 
 :not(pre) > code {
   color: var(--code);
-  font-family: inherit;
 }
 
 aside {
@@ -568,11 +563,11 @@ summary {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: rgb(20, 22, 23);
-    --bg-bright: rgb(25, 28, 29);
-    --fg: rgb(178, 174, 169);
+    --bg: rgb(0, 0, 0);
+    --bg-bright: rgb(28, 28, 30);
+    --fg: rgb(245, 245, 247);
     --fg-bright: rgb(255, 255, 255);
-    --fg-dim: rgb(221, 221, 221);
+    --fg-dim: rgb(209, 209, 214);
     --link: rgb(10, 132, 255);
     --code: rgb(255, 159, 10);
     --border: rgb(51, 51, 51);
