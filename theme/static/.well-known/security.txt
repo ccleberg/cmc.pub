@@ -1,5 +1,24 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Contact: mailto:security@cleberg.net
 Expires: 2100-01-01T06:00:00.000Z
 Encryption: https://cleberg.net/gpg.txt
 Preferred-Languages: en
 Canonical: https://cleberg.net/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEOReXP7FZu7hhlFOFaUUaUXrAyzcFAmYkB9IACgkQaUUaUXrA
+yzcgzhAAtF6PlYQ2X2U7J+5BmoSxelJ/0enSY5VYx0PbdYqtr9M8pqBara+aNc8x
+NFNhV0X5TCmz59KzXgPOhsHbo3kR+g1uL9e4QZGWQ/1Bg5boEuJExjlGKmzDKM2D
+lP3Fiz1Zg1M6NTFopUIniGvEMwIny0/h5CDgqn3e0/ARg5TaKo1t5qQq0G55P9+p
+GNdDmeQTNYeLu3Xi1h6MkUmxUT6l0Bzlodz7olxvcq+eZ0XI3SID/Vbe449eXPlU
+///PXpyuumk7+Nd2wpNEZZmPY1j60G6/U96tpg/X8vDfwOev8lFVQVT+OrkGowQd
+rP5IlVRZrL/o4BhwzZCIgiA/GMU6bg7u30xzl02b2EfT2aLSggCzZ4FZtd3qAKyq
+dQWnAXgcMEx9ea4T2FeP/hf2Tyy2HdWfsGtIKOEHJG1tPkVufEUy3FoQUt56i12p
+n2EnTEn+wiDJdX9dSYHXVMYjSUTcx3DQmbHXmNJc5xWo6IICSLanVoJYouNsO+Wn
+0KhArePS96lgiUCy9HATkr2vRLF/KKJfL7DsP2W42XrDXsv1NBLP2dHC6pCa+Awm
+dq5RYxBaAN1QTiiNAfHnE0nrDgTDpXBA3GFspa8NrrEr3xjozf/zZRklZbj8WMca
+6wcegAjucPLqrXNaApEiKBxyeabIrC+sVsDVLPCDIMhyDthCBNE=
+=hv3R
+-----END PGP SIGNATURE-----
