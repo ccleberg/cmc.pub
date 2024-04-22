@@ -50,5 +50,12 @@ files to the target through any number of methods, such as =scp= or SFTP.
 
 *** DONE Create RSS feed
 *** TODO Format all blog posts with =M q=
+**** DONE 2018
+**** DONE 2019
+**** DONE 2020
+**** TODO 2021
+**** TODO 2022
+**** TODO 2023
+**** TODO 2024
 *** DONE Create script to auto-generate the =/blog/= list and =/= most recent posts
 *** TODO Figure out how to get filetags to show up

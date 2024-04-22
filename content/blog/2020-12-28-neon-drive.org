@@ -4,51 +4,44 @@
 #+filetags: :gaming:
 
 * Game Description
-[[https://store.steampowered.com/app/433910/Neon_Drive/][Neon Drive]]
-presents itself as a simple arcade-style game inspired by the arcade
-race games of the 1980s, yet it has managed to take up hours of my life
-without much effort. The game description, directly from the Steam page,
-is intriguing enough to entice anyone who's been looking for a good
-arcade racing game:
+[[https://store.steampowered.com/app/433910/Neon_Drive/][Neon Drive]] presents itself as a simple arcade-style game inspired by the arcade
+race games of the 1980s, yet it has managed to take up hours of my life without
+much effort. The game description, directly from the Steam page, is intriguing
+enough to entice anyone who's been looking for a good arcade racing game:
 
 #+begin_quote
-Neon Drive is a slick retro-futuristic arcade game that will make your
-brain melt. You've been warned. From beautiful cityscapes and ocean
-roads to exploding enemy spaceships, Neon Drive has it all.
-
+Neon Drive is a slick retro-futuristic arcade game that will make your brain
+melt. You've been warned. From beautiful cityscapes and ocean roads to exploding
+enemy spaceships, Neon Drive has it all.
 #+end_quote
 
 * Gameplay
-The game holds true to the
-[[https://en.wikipedia.org/wiki/Retrofuturism][retro-futurism]] style,
-including chrome female robots, pixelated arcade machines, and
-[[https://teddit.net/r/outrun/][outrun]] aesthetics.
+The game holds true to the [[https://en.wikipedia.org/wiki/Retrofuturism][retro-futurism]] style, including chrome female robots,
+pixelated arcade machines, and [[https://teddit.net/r/outrun/][outrun]] aesthetics.
 
-Each level of the game is shown as a separate arcade machine. Each
-arcade machine lets you play on Normal, Hard, Insane, Practice, and Free
-Run. To beat each arcade, you must reach the end of the level without
-crashing your car into the various obstacles on the course. Basic levels
-let you move left or right to avoid blocks in the road. Later levels put
-you through other tests, such as dodging traffic or blasting asteroids.
+Each level of the game is shown as a separate arcade machine. Each arcade
+machine lets you play on Normal, Hard, Insane, Practice, and Free Run. To beat
+each arcade, you must reach the end of the level without crashing your car into
+the various obstacles on the course. Basic levels let you move left or right to
+avoid blocks in the road. Later levels put you through other tests, such as
+dodging traffic or blasting asteroids.
 
-The game uses synthwave music to keep you on track to make the correct
-moves by timing the beats of the songs to the correct moves on the
-screen. It reminds me of the early Guitar Hero games, as well as mobile
-apps like VOEZ - repetition and staying on-beat is the only way to win.
+The game uses synthwave music to keep you on track to make the correct moves by
+timing the beats of the songs to the correct moves on the screen. It reminds me
+of the early Guitar Hero games, as well as mobile apps like VOEZ - repetition
+and staying on-beat is the only way to win.
 
 * In-Game Screenshots
-Taking a look at the main menu, you can see that Neon Drive plays into
-every stereotype you can think of around retro-futuristic, synthwave
-arcades (in a good way).
+Taking a look at the main menu, you can see that Neon Drive plays into every
+stereotype you can think of around retro-futuristic, synthwave arcades (in a
+good way).
 
 #+caption: Neon Drive Menu
 [[https://img.cleberg.net/blog/20201228-neon-drive/neon_drive_menu.png]]
 
-Once you get into the first level, we see that the choice of car fits
-right in with the stereotypical cars of the 80s, like the
-[[https://en.wikipedia.org/wiki/DMC_DeLorean][DeLorean]] or the
-[[https://en.wikipedia.org/wiki/Ferrari_F40][Ferrari F40]]. Each new
-level comes with new color schemes and cars, so you should never get
+Once you get into the first level, we see that the choice of car fits right in
+with the stereotypical cars of the 80s, like the [[https://en.wikipedia.org/wiki/DMC_DeLorean][DeLorean]] or the [[https://en.wikipedia.org/wiki/Ferrari_F40][Ferrari F40]].
+Each new level comes with new color schemes and cars, so you should never get
 tired of the aesthetic.
 
 #+caption: Neon Drive Race
@@ -59,25 +52,24 @@ Personally, I love the orange and blue colors used in level 2:
 #+caption: Level 2
 [[https://img.cleberg.net/blog/20201228-neon-drive/neon_drive_level_2.png]]
 
-If you're the competitive type and getting 100% on all arcade machines
-isn't enough, there are leaderboards for the regular part of the game,
-and the endurance game mode.
+If you're the competitive type and getting 100% on all arcade machines isn't
+enough, there are leaderboards for the regular part of the game, and the
+endurance game mode.
 
 #+caption: Leaderboard
 [[https://img.cleberg.net/blog/20201228-neon-drive/neon_drive_leaderboard.png]]
 
 * Other Suggestions
-Neon Drive sits nicely within the well-founded cult genre of Outrun.
-Other games that I've enjoyed in this same spectrum are:
+Neon Drive sits nicely within the well-founded cult genre of Outrun. Other games
+that I've enjoyed in this same spectrum are:
 
 - [[https://store.steampowered.com/app/233270/Far_Cry_3__Blood_Dragon/][Far
   Cry 3: Blood Dragon]]
 - [[https://store.steampowered.com/app/1239690/Retrowave/][Retrowave]]
 - [[https://store.steampowered.com/app/732810/Slipstream/][Slipstream]]
 
-Although these games aren't necessarily in the same genre, they do have
-aspects that place them close enough to interest gamers that enjoyed
-Neon Drive:
+Although these games aren't necessarily in the same genre, they do have aspects
+that place them close enough to interest gamers that enjoyed Neon Drive:
 
 - [[https://store.steampowered.com/app/311800/Black_Ice/][Black Ice]]
 - [[https://store.steampowered.com/app/746850/Cloudpunk/][Cloudpunk]]
@@ -85,9 +77,7 @@ Neon Drive:
   for Speed: Heat]]
 - [[https://store.steampowered.com/app/1019310/VirtuaVerse/][VirtuaVerse]]
 
-Of course, if all you really care about is the arcade aspect of these
-games, you can check out the
-[[https://store.steampowered.com/app/400020/Atari_Vault/][Atari Vault]]
-or any of the other classic games sold on Steam by companies like Namco,
-Atari. For something like Nintendo, you'd have to settle for buying used
-classic consoles or delve into the world of emulation.
+Of course, if all you really care about is the arcade aspect of these games, you
+can check out the [[https://store.steampowered.com/app/400020/Atari_Vault/][Atari Vault]] or any of the other classic games sold on Steam by
+companies like Namco, Atari. For something like Nintendo, you'd have to settle
+for buying used classic consoles or delve into the world of emulation.
