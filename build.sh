@@ -1,12 +1,13 @@
 #!/bin/bash
 
 if [ "$ENV" == "prod" ]; then
-	echo "Environment = Production"              && \
+	echo "Environment: Production"               && \
 	rm -rf .build/*                              && \
-	emacs --script publish.el                    && \
+	zola build                                   && \
 	rsync -avzP .build/ ubuntu:/var/www/cleberg.net/
 else
-	echo "Environment = Development"             && \
+	echo "Environment: Development"              && \
 	rm -rf .build/*                              && \
-	emacs --script publish.el
+	zola build                                   && \
+	zola serve
 fi

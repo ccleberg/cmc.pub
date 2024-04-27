@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+	<h1>cleberg.net</h1>
+	<pre>pub   rsa4096 2022-11-16 [SC]
+      <a href="/gpg.txt">3917 973F B159 BBB8 6194 5385 6945 1A51 7AC0 CB37</a>
+uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
+</section>
+<section>
+	<h2>Recent Blog Posts</h2>
+	{% set section = get_section(path="blog/_index.md") %}
+	{% set i = 0 %}
+	{% for page in section.pages %}
+		{% if i < 3%}
+			{% set_global i = i + 1%}
+			<div class="post">
+				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format='%Y-%m-%d') }}</time>
+				<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<br>
+	<a href="/blog/">All Posts &rarr;</a>
+</section>
+<section>
+	<h2>Everything Else</h2>
+	<ul>
+		<li><a href="/salary/">Salary</a></li>
+		<li><a href="/services/">Services</a></li>
+		<li><a href="/wiki/">Wiki</a></li>
+	</ul>
+</section>
+<section>
+	<h2>Contact</h2>
+	<ul>
+		<li>hello [at] cleberg.net (<a href="/gpg.txt">GPG</a>)</li>
+		<li><a href="https://matrix.to/#/@cyborg:matrix.tchncs.de" target="_blank" rel="noopener">@cyborg:@matrix.tchncs.de</a></li>
+		<li><a href="https://git.cleberg.net/" target="_blank" rel="noopener">Git</a></li>
+	</ul>
+</section>
+{% endblock content %}
