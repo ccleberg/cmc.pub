@@ -4,7 +4,7 @@ if [ "$ENV" == "prod" ]; then
 	echo "Environment: Production"               && \
 	rm -rf .build/*                              && \
 	zola build                                   && \
-	rsync -avzP .build/ ubuntu:/var/www/cleberg.net/
+	rsync -avzP public/ ubuntu:/var/www/cleberg.net/
 else
 	echo "Environment: Development"              && \
 	rm -rf .build/*                              && \
