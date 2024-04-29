@@ -27,7 +27,7 @@ A list of various plaintext websites and lists.
 
 ## Webrings
 
-Instead of listing my personal favorites, I\'m just going to drop a link to [brisay's webring list](https://brisray.com/web/webring-list.htm), which contains 237 webrings for a total of 7078 websites, as of 2024-03-15.
+Instead of listing my personal favorites, I'm just going to drop a link to [brisay's webring list](https://brisray.com/web/webring-list.htm), which contains 237 webrings for a total of 7078 websites, as of 2024-03-15.
 
 ## Everything Else
 

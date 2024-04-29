@@ -47,7 +47,7 @@ and quiet as my top priorities.
 
 ### IoT
 
-A collection of mainly smart lights, sensors, and smart appliances. My first preference is to disable all networking for new smart devices or simply not connect internet in the first place (e.g. I never enable internet on my smart TVs). If the smart device requires LAN access, I will connect the device to my guest-restricted IoT network. As a last resort, I will set-up the internet but monitor the DNS lookups via NextDNS and forcibly block any domains I do not want the device to be using. If the device is egregious or shady, I\'ll just sell it and either replace it or live without it.
+A collection of mainly smart lights, sensors, and smart appliances. My first preference is to disable all networking for new smart devices or simply not connect internet in the first place (e.g. I never enable internet on my smart TVs). If the smart device requires LAN access, I will connect the device to my guest-restricted IoT network. As a last resort, I will set-up the internet but monitor the DNS lookups via NextDNS and forcibly block any domains I do not want the device to be using. If the device is egregious or shady, I'll just sell it and either replace it or live without it.
 
 -   Other Appliances (washer, dryer, humidifier, fans, etc.)
  - [Roomba i7+](https://about.irobot.com/sitecore/content/north-america/irobot-us/home/roomba/i7-series)

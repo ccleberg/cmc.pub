@@ -5,33 +5,31 @@ description = ""
 draft = false
 +++
 
+# Isn't Alpine Linux for Servers?
 
-# Isn\'t Alpine Linux for Servers?
+This is a question I see a lot when people are presented with an example of
+Alpine Linux running as a desktop OS.
 
-This is a question I see a lot when people are presented with an example
-of Alpine Linux running as a desktop OS.
+While Alpine is small, fast, and minimal, that doesn't stop it from functioning
+at a productive level for desktop users.
 
-While Alpine is small, fast, and minimal, that doesn\'t stop it from
-functioning at a productive level for desktop users.
-
-This post is documentation of how I installed and modified Alpine Linux
-to become my daily desktop OS.
+This post is documentation of how I installed and modified Alpine Linux to
+become my daily desktop OS.
 
 # Installation
 
-Note that I cover the installation of Alpine Linux in my other post, so
-I won\'t repeat it here: [Alpine Linux: My New Server
-OS](../alpine-linux/).
+Note that I cover the installation of Alpine Linux in my other post, so I won't
+repeat it here: [Alpine Linux: My New Server OS](../alpine-linux/).
 
-Basically, get a bootable USB or whatever you prefer with Alpine on it,
-boot the ISO, and run the setup script.
+Basically, get a bootable USB or whatever you prefer with Alpine on it, boot the
+ISO, and run the setup script.
 
 ```sh
 setup-alpine
 ```
 
-Once you have gone through all the options and installer finishes
-without errors, reboot.
+Once you have gone through all the options and installer finishes without
+errors, reboot.
 
 ```sh
 reboot
@@ -40,9 +38,9 @@ reboot
 # Initial Setup
 
 Once Alpine is installed and the machine has rebooted, login is as root
-initially or `su` to root once you log in as your user. From
-here, you should start by updating and upgrading the system in case the
-ISO was not fully up-to-date.
+initially or `su` to root once you log in as your user. From here, you should
+start by updating and upgrading the system in case the ISO was not fully
+up-to-date.
 
 ```sh
 # Update and upgrade system
@@ -52,8 +50,8 @@ apk -U update && apk -U upgrade
 apk add nano
 ```
 
-You need to uncomment the `community` repository for your
-version of Alpine Linux.
+You need to uncomment the `community` repository for your version of Alpine
+Linux.
 
 For v3.17, the `repositories` file should look like this:
 
@@ -80,11 +78,11 @@ adduser $USER wheel
 
 # Window Manager (Desktop)
 
-The [Sway installation guide](https://wiki.alpinelinux.org/wiki/Sway)
-has everything you need to get Sway working on Alpine.
+The [Sway installation guide](https://wiki.alpinelinux.org/wiki/Sway) has
+everything you need to get Sway working on Alpine.
 
-However, I\'ll include a brief list of the commands I ran and their
-purpose for posterity here.
+However, I'll include a brief list of the commands I ran and their purpose for
+posterity here.
 
 ```sh
 # Add eudev and set it up
@@ -126,11 +124,10 @@ apk add                \ # Install optional dependencies:
 ```
 
 Once you have the packages installed and set-up, you need to export the
-`XDG_RUNTIME_DIR` upon login. To do this, edit your
-`.profile` file.
+`XDG_RUNTIME_DIR` upon login. To do this, edit your `.profile` file.
 
-If you use another shell, such as `zsh`, you need to edit
-that shell\'s profile (e.g., `~/.zprofile`)!
+If you use another shell, such as `zsh`, you need to edit that shell's profile
+(e.g., `~/.zprofile`)!
 
 ```sh
 nano ~/.profile
@@ -148,7 +145,7 @@ if test -z "${XDG_RUNTIME_DIR}"; then
 fi
 ```
 
-Once that\'s complete, you can launch Sway manually.
+Once that's complete, you can launch Sway manually.
 
 ```sh
 dbus-run-session -- sway
@@ -156,8 +153,7 @@ dbus-run-session -- sway
 
 ## Personal Touches
 
-I also added the following packages, per my personal preferences and
-situation.
+I also added the following packages, per my personal preferences and situation.
 
 ```sh
 doas apk add brightnessctl   \ # Brightness controller
@@ -171,16 +167,16 @@ doas apk add brightnessctl   \ # Brightness controller
              gnupg             # GPG key manager
 ```
 
-From here, I use my Syncthing storage to pull all the configuration
-files I stored from prior desktops, such as [my
+From here, I use my Syncthing storage to pull all the configuration files I
+stored from prior desktops, such as [my
 dotfiles](https://git.sr.ht/~cmc/dotfiles).
 
 # Resolving Issues
 
 ## WiFi Issues
 
-I initially tried to set up my Wi-Fi the standard way with
-`iwd`, but it didn\'t work.
+I initially tried to set up my Wi-Fi the standard way with `iwd`, but it didn't
+work.
 
 Here is what I initially tried (I did all of this as `root`):
 
@@ -191,8 +187,7 @@ iwctl station wlan0 connect <SSID> # This will prompt for the password
 rc-update add iwd boot && rc-update add dbus boot
 ```
 
-Then, I added the Wi-Fi entry to the bottom of the networking interface
-file:
+Then, I added the Wi-Fi entry to the bottom of the networking interface file:
 
 ```sh
 nano /etc/network/interfaces
@@ -209,13 +204,11 @@ Finally, restart the networking service:
 rc-service networking restart
 ```
 
-My Wi-Fi interface would receive an IP address from the router, but it
-could not ping anything in the network. To solve the Wi-Fi issues, I
-originally upgraded to Alpine\'s `edge` repositories, which
-was unnecessary.
+My Wi-Fi interface would receive an IP address from the router, but it could not
+ping anything in the network. To solve the Wi-Fi issues, I originally upgraded
+to Alpine's `edge` repositories, which was unnecessary.
 
-Really, the solution was to enable the
-`NameResolvingService=resolvconf` in
+Really, the solution was to enable the `NameResolvingService=resolvconf` in
 `/etc/iwd/main.conf`.
 
 ```sh
@@ -232,8 +225,8 @@ Once I finished this process, my Wi-Fi is working flawlessly.
 
 ## Sound Issues
 
-Same as with the Wi-Fi, I had no sound and could not control the
-mute/unmute or volume buttons on my laptop.
+Same as with the Wi-Fi, I had no sound and could not control the mute/unmute or
+volume buttons on my laptop.
 
 To resolve this, I installed
 [pipewire](https://wiki.alpinelinux.org/wiki/PipeWire).
@@ -247,9 +240,9 @@ addgroup $USER video
 apk add pipewire wireplumber pipewire-pulse pipewire-jack pipewire-alsa
 ```
 
-Finally, I needed to add `/usr/libexec/pipewire-launcher` to
-my `.config/sway/config` file so that Pipewire would run
-every time I launched sway.
+Finally, I needed to add `/usr/libexec/pipewire-launcher` to my
+`.config/sway/config` file so that Pipewire would run every time I launched
+sway.
 
 ```sh
 nano ~/.config/sway/config
@@ -266,8 +259,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 ```
 
-Note that I do not use bluetooth or screen sharing, so I won\'t cover
-those options in this post.
+Note that I do not use bluetooth or screen sharing, so I won't cover those
+options in this post.
 
-Other than these issues, I have a working Alpine desktop. No other
-complaints thus far!
+Other than these issues, I have a working Alpine desktop. No other complaints
+thus far!

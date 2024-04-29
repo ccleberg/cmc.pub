@@ -7,42 +7,41 @@ draft = false
 
 # What is IBM Watson?
 
-If you\'ve never heard of [Watson](https://www.ibm.com/watson), this
-service is a suite of enterprise-ready AI services, applications, and
-tooling provided by IBM. Watson contains quite a few useful tools for
-data scientists and students, including the subject of this post today:
-visual recognition.
+If you've never heard of [Watson](https://www.ibm.com/watson), this service is
+a suite of enterprise-ready AI services, applications, and tooling provided by
+IBM. Watson contains quite a few useful tools for data scientists and students,
+including the subject of this post today: visual recognition.
 
-If you\'d like to view the official documentation for the Visual
-Recognition API, visit the [API
+If you'd like to view the official documentation for the Visual Recognition
+API, visit the [API
 Docs](https://cloud.ibm.com/apidocs/visual-recognition/visual-recognition-v3?code=python).
 
 # Prerequisites
 
-To be able to use Watson Visual Recognition, you\'ll need the following:
+To be able to use Watson Visual Recognition, you'll need the following:
 
-1.  Create a free account on [IBM Watson
-    Studio](https://www.ibm.com/cloud/watson-studio).
-2.  Add the [Watson Visual
-    Recognition](https://www.ibm.com/cloud/watson-visual-recognition)
-    service to your IBM Watson account.
-3.  Get your API key and URL. To do this, first go to the [profile
-    dashboard](https://dataplatform.cloud.ibm.com/home2?context=cpdaas)
-    for your IBM account and click on the Watson Visual Recognition
-    service you created. This will be listed in the section titled
-    **Your services**. Then click the **Credentials\*** tab and open the
-    **Auto-generated credentials\*** dropdown. Copy your API key and URL
-    so that you can use them in the Python script later.
-4.  **\[Optional\]\*** While not required, you can also create the
-    Jupyter Notebook for this project right inside [Watson
-    Studio](https://www.ibm.com/cloud/watson-studio). Watson Studio will
-    save your notebooks inside an organized project and allow you to use
-    their other integrated products, such as storage containers, AI
-    models, documentation, external sharing, etc.
+1. Create a free account on [IBM Watson
+   Studio](https://www.ibm.com/cloud/watson-studio).
+2. Add the [Watson Visual
+   Recognition](https://www.ibm.com/cloud/watson-visual-recognition) service to
+   your IBM Watson account.
+3. Get your API key and URL. To do this, first go to the [profile
+   dashboard](https://dataplatform.cloud.ibm.com/home2?context=cpdaas) for your
+   IBM account and click on the Watson Visual Recognition service you created.
+   This will be listed in the section titled **Your services**. Then click the
+   **Credentials** tab and open the **Auto-generated credentials** dropdown.
+   Copy your API key and URL so that you can use them in the Python script
+   later.
+4. **[Optional]** While not required, you can also create the Jupyter Notebook
+   for this project right inside [Watson
+   Studio](https://www.ibm.com/cloud/watson-studio). Watson Studio will save
+   your notebooks inside an organized project and allow you to use their other
+   integrated products, such as storage containers, AI models, documentation,
+   external sharing, etc.
 
 # Calling the IBM Watson Visual Recognition API
 
-Okay, now let\'s get started.
+Okay, now let's get started.
 
 To begin, we need to install the proper Python package for IBM Watson.
 
@@ -50,8 +49,8 @@ To begin, we need to install the proper Python package for IBM Watson.
 pip install --upgrade --user "ibm-watson>=4.5.0"
 ```
 
-Next, we need to specify the API key, version, and URL given to us when
-we created the Watson Visual Recognition service.
+Next, we need to specify the API key, version, and URL given to us when we
+created the Watson Visual Recognition service.
 
 ``` python
 apikey = "<your-apikey>"
@@ -59,7 +58,7 @@ version = "2018-03-19"
 url = "<your-url>"
 ```
 
-Now, let\'s import the necessary libraries and authenticate our service.
+Now, let's import the necessary libraries and authenticate our service.
 
 ``` python
 import json
@@ -75,16 +74,15 @@ visual_recognition = VisualRecognitionV3(
 visual_recognition.set_service_url(url)
 ```
 
-**\[Optional\]** If you\'d like to tell the API not to use any data to
-improve their products, set the following header.
+**[Optional]** If you'd like to tell the API not to use any data to improve
+their products, set the following header.
 
 ``` python
 visual_recognition.set_default_headers({'x-watson-learning-opt-out': "true"})
 ```
 
-Now we have our API all set and ready to go. For this example, I\'m
-going to include a `dict` of photos to load as we test out
-the API.
+Now we have our API all set and ready to go. For this example, I'm going to
+include a `dict` of photos to load as we test out the API.
 
 ``` python
 data = [
@@ -115,14 +113,14 @@ data = [
 ]
 ```
 
-Now that we\'ve set up our libraries and have the photos ready, let\'s
-create a loop to call the API for each image. The code below shows a
-loop that calls the URL of each image and sends it to the API,
-requesting results with at least 60% confidence. The results are output
-to the console with dotted lines separating each section.
+Now that we've set up our libraries and have the photos ready, let's create a
+loop to call the API for each image. The code below shows a loop that calls the
+URL of each image and sends it to the API, requesting results with at least 60%
+confidence. The results are output to the console with dotted lines separating
+each section.
 
-In the case of an API error, the codes and explanations are output to
-the console.
+In the case of an API error, the codes and explanations are output to the
+console.
 
 ``` python
 from ibm_watson import ApiException
@@ -149,23 +147,22 @@ except ApiException as ex:
 
 # The Results
 
-Here we can see the full result set of our function above. If you view
-each of the URLs that we sent to the API, you\'ll be able to see that it
-was remarkably accurate. To be fair, these are clear high-resolution,
-clear photos shot with a professional camera. In reality, you will most
-likely be processing images that are lower quality and may have a lot of
-noise in the photo.
+Here we can see the full result set of our function above. If you view each of
+the URLs that we sent to the API, you'll be able to see that it was remarkably
+accurate. To be fair, these are clear high-resolution, clear photos shot with a
+professional camera. In reality, you will most likely be processing images that
+are lower quality and may have a lot of noise in the photo.
 
-However, we can clearly see the benefit of being able to call this API
-instead of attempting to write our own image recognition function. Each
-of the classifications returned was a fair description of the image.
+However, we can clearly see the benefit of being able to call this API instead
+of attempting to write our own image recognition function. Each of the
+classifications returned was a fair description of the image.
 
-If you wanted to restrict the results to those that are at least 90%
-confident or greater, you would simply adjust the `threshold`
-in the `visual_recognition.classify()` function.
+If you wanted to restrict the results to those that are at least 90% confident
+or greater, you would simply adjust the `threshold` in the
+`visual_recognition.classify()` function.
 
-When your program runs, it should show the output below for each photo
-you provide.
+When your program runs, it should show the output below for each photo you
+provide.
 
 ``` txt
 ----------------------------------------------------------------
@@ -184,22 +181,19 @@ greenishness color ( 0.975 )
 
 # Discussion
 
-Now, this was a very minimal implementation of the API. We simply
-supplied some images and looked to see how accurate the results were.
-However, you could implement this type of API into many machine learning
-(ML) models.
+Now, this was a very minimal implementation of the API. We simply supplied some
+images and looked to see how accurate the results were. However, you could
+implement this type of API into many machine learning (ML) models.
 
-For example, you could be working for a company that scans their
-warehouses or inventory using drones. Would you want to pay employees to
-sit there and watch drone footage all day in order to identify or count
-things in the video? Probably not. Instead, you could use a
-classification system similar to this one in order to train your machine
-learning model to correctly identify items that the drones show through
-video. More specifically, you could have your machine learning model
-watch a drone fly over a field of sheep in order to count how many sheep
-are living in that field.
+For example, you could be working for a company that scans their warehouses or
+inventory using drones. Would you want to pay employees to sit there and watch
+drone footage all day in order to identify or count things in the video?
+Probably not. Instead, you could use a classification system similar to this one
+in order to train your machine learning model to correctly identify items that
+the drones show through video. More specifically, you could have your machine
+learning model watch a drone fly over a field of sheep in order to count how
+many sheep are living in that field.
 
-There are many ways to implement machine learning functionality, but
-hopefully this post helped inspire some deeper thought about the tools
-that can help propel us further into the future of machine learning and
-AI.
+There are many ways to implement machine learning functionality, but hopefully
+this post helped inspire some deeper thought about the tools that can help
+propel us further into the future of machine learning and AI.

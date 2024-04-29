@@ -28,12 +28,13 @@ Use `zola build` and deploy to whichever deployment target you prefer.
 
 ## Tasks
 
-- [ ] Format all blog posts
-      - [ ] 2018
-      - [ ] 2019
-      - [ ] 2020
-      - [ ] 2021
-      - [ ] 2022
-      - [ ] 2023
-      - [ ] 2024
+- [x] Format all blog posts
+      - [x] 2018
+      - [x] 2019
+      - [x] 2020
+      - [x] 2021
+      - [x] 2022
+      - [x] 2023
+      - [x] 2024
+- [ ] Add descriptions to blog posts
 - [ ] Figure out how to get file tags to show up

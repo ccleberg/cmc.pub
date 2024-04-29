@@ -5,48 +5,46 @@ description = ""
 draft = false
 +++
 
-# Njalla\'s API
+# Njalla's API
 
 As noted in my recent post about [switching to Njalla from
-Cloudflare](file:///blog/ditching-cloudflare/), I was searching for a
-way to replace my very easy-to-use bash script to [update Cloudflare\'s
-DNS via their API](file:///blog/cloudflare-dns-api/).
+Cloudflare](file:///blog/ditching-cloudflare/), I was searching for a way to
+replace my very easy-to-use bash script to [update Cloudflare's DNS via their
+API](file:///blog/cloudflare-dns-api/).
 
-To reiterate what I said in those posts, this is a common necessity for
-those of us who have non-static IP addresses that can change at any
-moment due to ISP policy.
+To reiterate what I said in those posts, this is a common necessity for those of
+us who have non-static IP addresses that can change at any moment due to ISP
+policy.
 
-In order to keep a home server running smoothly, the server admin needs
-to have a process to constantly monitor their public IP address and
-update their domain\'s DNS records if it changes.
+In order to keep a home server running smoothly, the server admin needs to have
+a process to constantly monitor their public IP address and update their
+domain's DNS records if it changes.
 
-This post explains how to use Python to update Njalla\'s DNS records
-whenever a machine\'s public IP address changes.
+This post explains how to use Python to update Njalla's DNS records whenever a
+machine's public IP address changes.
 
 ## Creating a Token
 
-To use Njalla\'s API, you will first need to create a token that will be
-used to authenticate you every time you call the API. Luckily, this is
-very easy to do if you have an account with Njalla.
+To use Njalla's API, you will first need to create a token that will be used to
+authenticate you every time you call the API. Luckily, this is very easy to do
+if you have an account with Njalla.
 
-Simply go the [API Settings](https://njal.la/settings/api/) page and
-click the `Add Token` button. Next, enter a name for the
-token and click `Add`.
+Simply go the [API Settings](https://njal.la/settings/api/) page and click the
+`Add Token` button. Next, enter a name for the token and click `Add`.
 
-Finally, click the `Manage` button next to your newly created
-token and copy the `API Token` field.
+Finally, click the `Manage` button next to your newly created token and copy the
+`API Token` field.
 
 ## Finding the Correct API Request
 
-Once you have a token, you\'re ready to call the Njalla API for any
-number of requests. For a full listing of available requests, see the
-[Njalla API Documentation](https://njal.la/api/).
+Once you have a token, you're ready to call the Njalla API for any number of
+requests. For a full listing of available requests, see the [Njalla API
+Documentation](https://njal.la/api/).
 
-For this demo, we are using the `list-records` and
-`edit-record` requests.
+For this demo, we are using the `list-records` and `edit-record` requests.
 
-The `list-records` request requires the following payload to
-be sent when calling the API:
+The `list-records` request requires the following payload to be sent when
+calling the API:
 
 ``` txt
 params: {
@@ -54,8 +52,8 @@ params: {
 }
 ```
 
-The `edit-record` request requires the following payload to
-be sent when calling the API:
+The `edit-record` request requires the following payload to be sent when calling
+the API:
 
 ``` txt
 params: {
@@ -67,14 +65,14 @@ params: {
 
 # Server Set-Up
 
-To create this script, we will be using Python. By default, I use Python
-3 on my servers, so please note that I did not test this in Python 2,
-and I do not know if Python 2 will work for this.
+To create this script, we will be using Python. By default, I use Python 3 on my
+servers, so please note that I did not test this in Python 2, and I do not know
+if Python 2 will work for this.
 
 ## Creating the Script
 
-First, find a suitable place to create your script. Personally, I just
-create a directory called `ddns` in my home directory:
+First, find a suitable place to create your script. Personally, I just create a
+directory called `ddns` in my home directory:
 
 ```sh
 mkdir ~/ddns
@@ -86,23 +84,17 @@ Next, create a Python script file:
 nano ~/ddns/ddns.py
 ```
 
-The following code snippet is quite long, so I won\'t go into depth on
-each part. However, I suggest you read through the entire script before
-running it; it is quite simple and contains comments to help explain
-each code block.
+The following code snippet is quite long, so I won't go into depth on each
+part. However, I suggest you read through the entire script before running it;
+it is quite simple and contains comments to help explain each code block.
 
-:warning: **Note**: You will need to update the following variables for
-this to work:
+:warning: **Note**: You will need to update the following variables for this to
+work:
 
--   `token`: This is the Njalla API token you created
-    earlier.
--   `user_domain`: This is the top-level domain you want to
-    modify.
--   `include_subdomains`: Set this to `True` if
-    you also want to modify subdomains found under the TLD.
--   `subdomains`: If `include_subdomains` =
-    `True`, you can include your list of subdomains to be
-    modified here.
+- `token`: This is the Njalla API token you created earlier.
+- `user_domain`: This is the top-level domain you want to modify.
+- `include_subdomains`: Set this to `True` if you also want to modify subdomains found under the TLD.
+- `subdomains`: If `include_subdomains` = `True`, you can include your list of subdomains to be modified here.
 
 ``` python
 #!/usr/bin/python
@@ -187,8 +179,8 @@ for record in data['records']:
 
 ## Running the Script
 
-Once you\'ve created the script and are ready to test it, run the
-following command:
+Once you've created the script and are ready to test it, run the following
+command:
 
 ```sh
 python3 ~/ddns/ddns.py
@@ -196,16 +188,15 @@ python3 ~/ddns/ddns.py
 
 ## Setting the Script to Run Automatically
 
-To make sure the scripts run automatically, add it to the
-`cron` file so that it will run on a schedule. To do this,
-open the `cron` file:
+To make sure the scripts run automatically, add it to the `cron` file so that it
+will run on a schedule. To do this, open the `cron` file:
 
 ```sh
 crontab -e
 ```
 
-In the cron file, paste the following at the bottom of the editor in
-order to check the IP every five minutes:
+In the cron file, paste the following at the bottom of the editor in order to
+check the IP every five minutes:
 
 ```sh
 */5 ** ** ** ** python3 /home/<your_username>/ddns/ddns.py

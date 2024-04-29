@@ -7,16 +7,15 @@ draft = false
 
 # Introduction
 
-When creating websites that will allow users to create accounts, the
-developer always needs to consider the proper authentication flow for
-their app. For example, some developers will utilize an API for
-authentication, some will use OAuth, and some may just use their own
-simple database.
+When creating websites that will allow users to create accounts, the developer
+always needs to consider the proper authentication flow for their app. For
+example, some developers will utilize an API for authentication, some will use
+OAuth, and some may just use their own simple database.
 
-For those using pre-built libraries, authentication may simply be a
-problem of copying and pasting the code from their library\'s
-documentation. For example, here\'s the code I use to authenticate users
-with the Tumblr OAuth API for my Tumblr client, Vox Populi:
+For those using pre-built libraries, authentication may simply be a problem of
+copying and pasting the code from their library's documentation. For example,
+here's the code I use to authenticate users with the Tumblr OAuth API for my
+Tumblr client, Vox Populi:
 
 ``` php
 // Start the session
@@ -41,24 +40,23 @@ $client = new Tumblr\API\Client(
 );
 ```
 
-However, developers creating authentication flows from scratch will need
-to think carefully about when to make sure a web page will check the
-user\'s authenticity.
+However, developers creating authentication flows from scratch will need to
+think carefully about when to make sure a web page will check the user's
+authenticity.
 
-In this article, we\'re going to look at a simple authentication flow
-using a MySQL database and PHP.
+In this article, we're going to look at a simple authentication flow using a
+MySQL database and PHP.
 
 # Creating User Accounts
 
-The beginning to any type of user authentication is to create a user
-account. This process can take many formats, but the simplest is to
-accept user input from a form (e.g., username and password) and send it
-over to your database. For example, here\'s a snippet that shows how to
-get username and password parameters that would come when a user submits
-a form to your PHP script.
+The beginning to any type of user authentication is to create a user account.
+This process can take many formats, but the simplest is to accept user input
+from a form (e.g., username and password) and send it over to your database. For
+example, here's a snippet that shows how to get username and password
+parameters that would come when a user submits a form to your PHP script.
 
-**Note**: Ensure that your password column is large enough to hold the
-hashed value (at least 60 characters or longer).
+**Note**: Ensure that your password column is large enough to hold the hashed
+value (at least 60 characters or longer).
 
 ``` php
 // Get the values from the URL
@@ -97,9 +95,9 @@ $conn->close();
 
 ## Validate Returning Users
 
-To be able to verify that a returning user has a valid username and
-password in your database is as simple as having users fill out a form
-and comparing their inputs to your database.
+To be able to verify that a returning user has a valid username and password in
+your database is as simple as having users fill out a form and comparing their
+inputs to your database.
 
 ``` php
 // Query the database for username and password
@@ -116,24 +114,23 @@ if(password_verify($password_input, $hashed_password)) {
 
 # Storing Authentication State
 
-Once you\'ve created the user\'s account, now you\'re ready to
-initialize the user\'s session. **You will need to do this on every page
-you load while the user is logged in.\*** To do so, simply enter the
-following code snippet:
+Once you've created the user's account, now you're ready to initialize the
+user's session. **You will need to do this on every page you load while the
+user is logged in.** To do so, simply enter the following code snippet:
 
 ``` php
 session_start();
 ```
 
-Once you\'ve initialized the session, the next step is to store the
-session in a cookie so that you can access it later.
+Once you've initialized the session, the next step is to store the session in a
+cookie so that you can access it later.
 
 ``` php
 setcookie(session_name());
 ```
 
-Now that the session name has been stored, you\'ll be able to check if
-there\'s an active session whenever you load a page.
+Now that the session name has been stored, you'll be able to check if there's
+an active session whenever you load a page.
 
 ``` php
 if(isset(session_name())) {
@@ -143,9 +140,9 @@ if(isset(session_name())) {
 
 ## Removing User Authentication
 
-The next logical step is to give your users the option to log out once
-they are done using your application. This can be tricky in PHP since a
-few of the standard ways do not always work.
+The next logical step is to give your users the option to log out once they are
+done using your application. This can be tricky in PHP since a few of the
+standard ways do not always work.
 
 ``` php
 // Initialize the session.
@@ -183,14 +180,13 @@ die();
 
 # Wrapping Up
 
-Now you should be ready to begin your authentication programming with
-PHP. You can create user accounts, create sessions for users across
-different pages of your site, and then destroy the user data when
-they\'re ready to leave.
+Now you should be ready to begin your authentication programming with PHP. You
+can create user accounts, create sessions for users across different pages of
+your site, and then destroy the user data when they're ready to leave.
 
 For more information on this subject, I recommend reading the [PHP
-Documentation](https://www.php.net/). Specifically, you may want to look
-at [HTTP Authentication with
+Documentation](https://www.php.net/). Specifically, you may want to look at
+[HTTP Authentication with
 PHP](https://www.php.net/manual/en/features.http-auth.php), [session
 handling](https://www.php.net/manual/en/book.session.php), and
 [hash](https://www.php.net/manual/en/function.hash.php).

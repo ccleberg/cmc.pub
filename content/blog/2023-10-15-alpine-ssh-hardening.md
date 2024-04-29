@@ -8,13 +8,13 @@ draft = false
 # Overview
 
 This guide follows the standard
-[ssh-audit](https://www.ssh-audit.com/hardening_guides.html) hardening
-guide, tweaked for Alpine Linux.
+[ssh-audit](https://www.ssh-audit.com/hardening_guides.html) hardening guide,
+tweaked for Alpine Linux.
 
 # Hardening Guide
 
-These steps must be performed as root. You can try to use
-`doas` or `sudo`, but there may be issues.
+These steps must be performed as root. You can try to use `doas` or `sudo`, but
+there may be issues.
 
 1.  Re-generate the RSA and ED25519 keys
 
@@ -31,8 +31,8 @@ awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.safe
 mv /etc/ssh/moduli.safe /etc/ssh/moduli
 ```
 
-3.  Enable the RSA and ED25519 HostKey directives in the
-    /etc/ssh/sshd~config~ file
+3.  Enable the RSA and ED25519 HostKey directives in the /etc/ssh/sshd~config~
+    file
 
 ```sh
 sed -i 's/^\#HostKey \/etc\/ssh\/ssh_host_\(rsa\|ed25519\)_key$/HostKey \/etc\/ssh\/ssh_host_\1_key/g' /etc/ssh/sshd_config
@@ -65,8 +65,8 @@ pip3 install ssh-audit
 ssh-audit localhost
 ```
 
-If everything succeeded, the results will show as all green. If anything
-is yellow, orange, or red, you may need to tweak additional settings.
+If everything succeeded, the results will show as all green. If anything is
+yellow, orange, or red, you may need to tweak additional settings.
 
 ``` txt
 #+caption: ssh audit

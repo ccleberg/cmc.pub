@@ -5,56 +5,52 @@ description = ""
 draft = false
 +++
 
-When developing websites locally, I often use a simple Python web server
-to observe the changes.
+When developing websites locally, I often use a simple Python web server to
+observe the changes.
 
 ```sh
 python3 -m http.server
 ```
 
-However, this approach has its limitations. For example, this approach
-does not enable logging or access controls. You also need to customize
-`SimpleHTTPServer` if you have advanced needs from your web
-server.
+However, this approach has its limitations. For example, this approach does not
+enable logging or access controls. You also need to customize `SimpleHTTPServer`
+if you have advanced needs from your web server.
 
-So, I went to find an alternative that is almost as easy and far more
-extensible and found Docker Desktop to be a suitable replacement.
+So, I went to find an alternative that is almost as easy and far more extensible
+and found Docker Desktop to be a suitable replacement.
 
 # Docker Desktop
 
 ## Installation
 
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) is a
-desktop GUI for the phenomenal Docker container software. This allows
-you to manage containers, images, volumes, environments, and extensions
-via an easy-to-use GUI.
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) is a desktop
+GUI for the phenomenal Docker container software. This allows you to manage
+containers, images, volumes, environments, and extensions via an easy-to-use
+GUI.
 
-To install, open the link above and click the `Download`
-button for your platform. I\'m going through this process on an M2
-Macbook, so I downloaded the Mac - Apple Chip version.
+To install, open the link above and click the `Download` button for your
+platform. I'm going through this process on an M2 Macbook, so I downloaded the
+Mac - Apple Chip version.
 
-Open the installer and follow the installation process until the
-application finishes the installation process.
+Open the installer and follow the installation process until the application
+finishes the installation process.
 
 ![Docker Desktop on
 macOS](https://img.cleberg.net/blog/20240408-docker-local-web-server/docker-desktop.png)
 
 ## Creating an Nginx Container
 
-I prefer to use the command line to create containers, so the following
-commands will be input via the terminal.
+I prefer to use the command line to create containers, so the following commands
+will be input via the terminal.
 
-The following command will create a container, using the
-`nginx` image:
+The following command will create a container, using the `nginx` image:
 
-1.  `-d`: Run this container as a daemon (detach)
-2.  `-p`: Allocate a port in the format
-    `<external>:<internal>`
-3.  `-i`: Keep STDIN open even if not attached
-4.  `-t`: Allocate a pseudo-TTY
-5.  `-p`: Allocate a port in the format
-    `<external>:<internal>`
-6.  `--rm`: Remove the container once it\'s done running
+1. `-d`: Run this container as a daemon (detach)
+2. `-p`: Allocate a port in the format `<external>:<internal>`
+3. `-i`: Keep STDIN open even if not attached
+4. `-t`: Allocate a pseudo-TTY
+5. `-p`: Allocate a port in the format `<external>:<internal>`
+6. `--rm`: Remove the container once it's done running
 
 ```sh
 docker run -it --rm -d -p 8000:80 --name web nginx
@@ -67,27 +63,26 @@ Container](https://img.cleberg.net/blog/20240408-docker-local-web-server/default
 
 ## Customizing the Nginx Container
 
-Now that I have a container running the Nginx web server, I need to link
-some volumes so that I can modify the site configuration and provide the
-web files to serve.
+Now that I have a container running the Nginx web server, I need to link some
+volumes so that I can modify the site configuration and provide the web files to
+serve.
 
-Let\'s start with the new command, which adds two volumes:
+Let's start with the new command, which adds two volumes:
 
-1.  `<your_content>:/usr/share/nginx/html`: This is the
-    directory where you will provide the web pages for the server to
-    serve.
-2.  `<your_config>:/etc/nginx/conf.d/default.conf`: This is
-    the Nginx configuration file for your site.
+1. `<your_content>:/usr/share/nginx/html`: This is the directory where you will
+   provide the web pages for the server to serve.
+2. `<your_config>:/etc/nginx/conf.d/default.conf`: This is the Nginx
+   configuration file for your site.
 
-To see the updates, you can delete the previous container in the GUI or
-run `docker stop web` to stop the container. Once stopped,
-you can run the new `docker run` command below.
+To see the updates, you can delete the previous container in the GUI or run
+`docker stop web` to stop the container. Once stopped, you can run the new
+`docker run` command below.
 
 ```sh
 docker run -it -d -p 8000:80 --name web -v ~/Source/cleberg.net/.build:/usr/share/nginx/html -v ~/Source/cleberg.net/nginx-config.conf:/etc/nginx/conf.d/default.conf nginx
 ```
 
-Here\'s an example of my development configuration file.
+Here's an example of my development configuration file.
 
 ``` conf
 # nginx-config.conf
@@ -114,19 +109,16 @@ server {
 
 # Customizing Deployment Actions
 
-I am currently blogging with [weblorg](https://emacs.love/weblorg/),
-which uses a custom `publish.el` file to build the static
-site. Within this file, I have configured my deployment process to check
-for the `ENV` variable in thesh and if it\'s set to
-`prod`, the script will set the base URLs to
-`https://cleberg.net`. If not, it sets the base URLs to
-`localhost:8000` (which matches the port used in the
-container above).
+I am currently blogging with [weblorg](https://emacs.love/weblorg/), which uses
+a custom `publish.el` file to build the static site. Within this file, I have
+configured my deployment process to check for the `ENV` variable in thesh and if
+it's set to `prod`, the script will set the base URLs to `https://cleberg.net`.
+If not, it sets the base URLs to `localhost:8000` (which matches the port used
+in the container above).
 
-Therefore, I have modified my `build.sh` script to build with
-`localhost` URLs if `ENV` is not set to
-`prod`. It also prevents the build process from sending the
-built files to the production web server.
+Therefore, I have modified my `build.sh` script to build with `localhost` URLs
+if `ENV` is not set to `prod`. It also prevents the build process from sending
+the built files to the production web server.
 
 ```sh
 #!/bin/bash
@@ -143,7 +135,6 @@ else
 fi
 ```
 
-You can modify the container in numerous ways and this approach allows
-you to create complex scenarios for your web development purposes. I
-highly recommend switching over to a container-based approach for
-simple, local web development.
+You can modify the container in numerous ways and this approach allows you to
+create complex scenarios for your web development purposes. I highly recommend
+switching over to a container-based approach for simple, local web development.

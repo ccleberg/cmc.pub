@@ -7,14 +7,14 @@ draft = false
 
 # A Brief Introduction
 
-[C++](https://en.wikipedia.org/wiki/C%2B%2B) is a general-purpose
-programming language with object-oriented, generic, and functional
-features in addition to facilities for low-level memory manipulation.
+[C++](https://en.wikipedia.org/wiki/C%2B%2B) is a general-purpose programming
+language with object-oriented, generic, and functional features in addition to
+facilities for low-level memory manipulation.
 
-The source code, shown in the snippet below, must be compiled before it
-can be executed. There are many steps and intricacies to the compilation
-process, and this post was a personal exercise to learn and remember as
-much information as I can.
+The source code, shown in the snippet below, must be compiled before it can be
+executed. There are many steps and intricacies to the compilation process, and
+this post was a personal exercise to learn and remember as much information as I
+can.
 
 ``` cpp
 #include <iostream>
@@ -29,56 +29,52 @@ int main()
 
 ### An Overview
 
-Compiling C++ projects is a frustrating task most days. Seemingly
-nonexistent errors keeping your program from successfully compiling can
-be annoying (especially since you know you wrote it perfectly the first
-time, right?).
+Compiling C++ projects is a frustrating task most days. Seemingly nonexistent
+errors keeping your program from successfully compiling can be annoying
+(especially since you know you wrote it perfectly the first time, right?).
 
-I\'m learning more and more about C++ these days and decided to write
-this concept down so that I can cement it even further in my own head.
-However, C++ is not the only compiled language. Check out [the Wikipedia
-entry for compiled
-languages](https://en.wikipedia.org/wiki/Compiled_language) for more
-examples of compiled languages.
+I'm learning more and more about C++ these days and decided to write this
+concept down so that I can cement it even further in my own head. However, C++
+is not the only compiled language. Check out [the Wikipedia entry for compiled
+languages](https://en.wikipedia.org/wiki/Compiled_language) for more examples of
+compiled languages.
 
-I\'ll start with a wonderful, graphical way to conceptualize the C++
-compiler. View [The C++ Compilation
+I'll start with a wonderful, graphical way to conceptualize the C++ compiler.
+View [The C++ Compilation
 Process](https://web.archive.org/web/20190419035048/http://faculty.cs.niu.edu/~mcmahon/CS241/Notes/compile.html)
-by Kurt MacMahon, an NIU professor, to see the graphic and an
-explanation. The goal of the compilation process is to take the C++ code
-and produce a shared library, dynamic library, or an executable file.
+by Kurt MacMahon, an NIU professor, to see the graphic and an explanation. The
+goal of the compilation process is to take the C++ code and produce a shared
+library, dynamic library, or an executable file.
 
 ## Compilation Phases
 
-Let\'s break down the compilation process. There are four major steps to
+Let's break down the compilation process. There are four major steps to
 compiling C++ code.
 
 ### Step 1
 
-The first step is to expand the source code file to meet all
-dependencies. The C++ preprocessor includes the code from all the header
-files, such as `#include
-<iostream>`. Now, what does that mean? The previous example
-includes the `iostream` header. This tells the computer that
-you want to use the `iostream` standard library, which
-contains classes and functions written in the core language. This
-specific header allows you to manipulate input/output streams. After all
-this, you\'ll end up which a temporary file that contains the expanded
+The first step is to expand the source code file to meet all dependencies. The
+C++ preprocessor includes the code from all the header files, such as `#include
+<iostream>`. Now, what does that mean? The previous example includes the
+`iostream` header. This tells the computer that you want to use the `iostream`
+standard library, which contains classes and functions written in the core
+language. This specific header allows you to manipulate input/output streams.
+After all this, you'll end up which a temporary file that contains the expanded
 source code.
 
-In the example of the C++ code above, the `iostream` class
-would be included in the expanded code.
+In the example of the C++ code above, the `iostream` class would be included in
+the expanded code.
 
 ### Step 2
 
-After the code is expanded, the compiler comes into play. The compiler
-takes the C++ code and converts this code into the assembly language,
-understood by the platform. You can see this in action if you head over
-to the [GodBolt Compiler Explorer](https://godbolt.org), which shows C++
-being converted into assembly dynamically.
+After the code is expanded, the compiler comes into play. The compiler takes the
+C++ code and converts this code into the assembly language, understood by the
+platform. You can see this in action if you head over to the [GodBolt Compiler
+Explorer](https://godbolt.org), which shows C++ being converted into assembly
+dynamically.
 
-For example, the `Hello, world!` code snippet above compiles
-into the following assembly code:
+For example, the `Hello, world!` code snippet above compiles into the following
+assembly code:
 
 ``` asm
 .LC0:
@@ -124,17 +120,17 @@ _GLOBAL__sub_I_main:
 
 ### Step 3
 
-Third, the assembly code generated by the compiler is assembled into the
-object code for the platform. Essentially, this is when the compiler
-takes the assembly code and assembles it into machine code in a binary
-format. After researching this online, I figured out that a lot of
-compilers will allow you to stop compilation at this step. This would be
-useful for compiling each source code file separately. This saves time
-later if a single file changes; only that file needs to be recompiled.
+Third, the assembly code generated by the compiler is assembled into the object
+code for the platform. Essentially, this is when the compiler takes the assembly
+code and assembles it into machine code in a binary format. After researching
+this online, I figured out that a lot of compilers will allow you to stop
+compilation at this step. This would be useful for compiling each source code
+file separately. This saves time later if a single file changes; only that file
+needs to be recompiled.
 
 ### Step 4
 
-Finally, the object code file generated by the assembler is linked
-together with the object code files for any library functions used to
-produce a shared library, dynamic library, or an executable file. It
-replaces all references to undefined symbols with the correct addresses.
+Finally, the object code file generated by the assembler is linked together with
+the object code files for any library functions used to produce a shared
+library, dynamic library, or an executable file. It replaces all references to
+undefined symbols with the correct addresses.

@@ -7,12 +7,11 @@ draft = false
 
 ## Screenshots
 
-These screenshots are showing a project opened with projectile, a
-treemacs side pane open with the project contents, multiple buffers
-tiled next to each other, and the help pane open at the bottomm.
+These screenshots are showing a project opened with projectile, a treemacs side
+pane open with the project contents, multiple buffers tiled next to each other,
+and the help pane open at the bottomm.
 
-The themes are `doom-homage-white` and
-`doom-homage-black`.
+The themes are `doom-homage-white` and `doom-homage-black`.
 
 ![Doom Emacs Light
 Mode](https://img.cleberg.net/blog/20240314-doom-emacs/light.png)
@@ -24,42 +23,38 @@ Mode](https://img.cleberg.net/blog/20240314-doom-emacs/dark.png)
 
 I have been switching back and forth between
 [markdown](https://en.wikipedia.org/wiki/Markdown) and
-[org-mode](https://en.wikipedia.org/wiki/Org-mode) recently for my
-personal note taking, wiki, and even this blog. As a result, I have been
-stumbling further into the world of Emacs and found myself at a point
-where I now prefer to do most of my basic editing within Emacs.
+[org-mode](https://en.wikipedia.org/wiki/Org-mode) recently for my personal note
+taking, wiki, and even this blog. As a result, I have been stumbling further
+into the world of Emacs and found myself at a point where I now prefer to do
+most of my basic editing within Emacs.
 
-I\'ll leave the markdown vs. org-mode debate for another post, but I
-love org-mode\'s extensibility and interactive nature within Emacs, but
-it becomes very unwieldy in any other client implementation of
-org-mode - especially on iOS. On the flip side, markdown is limited in
-functionality and fractured into different standards, but it\'s simple
-and popular enough that there are a plethora of great clients to choose
-from that will get the job done.
+I'll leave the markdown vs. org-mode debate for another post, but I love
+org-mode's extensibility and interactive nature within Emacs, but it becomes
+very unwieldy in any other client implementation of org-mode - especially on
+iOS. On the flip side, markdown is limited in functionality and fractured into
+different standards, but it's simple and popular enough that there are a
+plethora of great clients to choose from that will get the job done.
 
-For now, I want to focus on how I have been using Emacs and some of the
-things that would have helped me learn it faster had I known where to
-start.
+For now, I want to focus on how I have been using Emacs and some of the things
+that would have helped me learn it faster had I known where to start.
 
 ### Installation
 
-This post focuses on [Doom
-Emacs](https://github.com/doomemacs/doomemacs), which is an Emacs
-framework that provides an alternative experience to the vanilla [GNU
-Emacs](https://www.gnu.org/software/emacs/).
+This post focuses on [Doom Emacs](https://github.com/doomemacs/doomemacs), which
+is an Emacs framework that provides an alternative experience to the vanilla
+[GNU Emacs](https://www.gnu.org/software/emacs/).
 
 The [Getting Start
 Guide](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org)
-has an extremely detailed walkthrough of installation for all systems,
-so please refer to that guide for up-to-date instructions.
+has an extremely detailed walkthrough of installation for all systems, so please
+refer to that guide for up-to-date instructions.
 
 I chose to install on macOS, using the Homebrew option with the
 `railwaycat/emacsmacport` version of Emacs.
 
-Once the program is installed, you can run the program by typing
-`emacs` in a terminal. If you installed a version of Emacs
-that supports both a GUI and TUI, you will have to run
-`emacs -nw` to get the TUI instead of the default GUI.
+Once the program is installed, you can run the program by typing `emacs` in a
+terminal. If you installed a version of Emacs that supports both a GUI and TUI,
+you will have to run `emacs -nw` to get the TUI instead of the default GUI.
 
 ### Configuration
 
@@ -68,13 +63,13 @@ Once installed, you can configure Doom by editing the files within the
 
 1.  `config.el` - Personal configuration file
 2.  `custom.el` - Custom set variables
-3.  `init.el` - Doom modules and load order, must run
-    `doom sync` after modifying
-4.  `packages.el` - Declare packages to install in this file,
-    then run `doom    sync` to install
+3.  `init.el` - Doom modules and load order, must run `doom sync` after
+    modifying
+4.  `packages.el` - Declare packages to install in this file, then run `doom
+    sync` to install
 
-I only needed a few customizations for my configuration, so I\'ll list
-them below.
+I only needed a few customizations for my configuration, so I'll list them
+below.
 
 ```lisp
 ;; ~/.doom.d/config.el
@@ -148,140 +143,127 @@ them below.
        (default +bindings +smartparens))
 ```
 
-If you\'re editing these files within Doom directly, remember to run
-`SPC h r r` to reload the configuration. Also remember to run
-`doom sync` for any changes to the `init.el` or
-`packages.el` files.
+If you're editing these files within Doom directly, remember to run `SPC h r r`
+to reload the configuration. Also remember to run `doom sync` for any changes to
+the `init.el` or `packages.el` files.
 
 ## Basic Functionality
 
-I kept a cheat sheet note open at first with all of the basic functions
-typed out, copied as I went through the tutorial. After a little while,
-I no longer needed it. I highly recommend writing down the most
-applicable shortcuts for your preferred functionality and refer back to
-it until you\'ve memorized it.
+I kept a cheat sheet note open at first with all of the basic functions typed
+out, copied as I went through the tutorial. After a little while, I no longer
+needed it. I highly recommend writing down the most applicable shortcuts for
+your preferred functionality and refer back to it until you've memorized it.
 
-Memorizing the shortcuts will differ based on the type of Emacs
-framework being used. Personally, migrating from vanilla Emacs to Doom
-Emacs simplified everything by a large factor and instantly enabled me
-to start working on my projects, eliminating most of the hurdles I was
-running into. The vanilla emacs hotkeys became obnoxious and I actually
-stopped using Emacs entirely for about a month before trying Doom.
+Memorizing the shortcuts will differ based on the type of Emacs framework being
+used. Personally, migrating from vanilla Emacs to Doom Emacs simplified
+everything by a large factor and instantly enabled me to start working on my
+projects, eliminating most of the hurdles I was running into. The vanilla emacs
+hotkeys became obnoxious and I actually stopped using Emacs entirely for about a
+month before trying Doom.
 
-For me, the first logical step is to interact with the local filesystem.
-To do this, I needed to know how to open directories, open files, save
-files, discard changes, close files, and switch between open files. Here
-are some example shortcuts I\'ve written down in order to accomplish
-file-based actions.
+For me, the first logical step is to interact with the local filesystem. To do
+this, I needed to know how to open directories, open files, save files, discard
+changes, close files, and switch between open files. Here are some example
+shortcuts I've written down in order to accomplish file-based actions.
 
-  Doom Hotkey                  Emacs Hotkey                Description
-  ---------------------------- --------------------------- ----------------------------------------
-  `SPC :`           `C-x`            Run functions
-  `SPC f f`         `C-x f`          Open file in buffer
-  `SPC f d`         `C-x d`          Open directory with `dired`
-  `i`               `C-x C-q`        Edit current buffer (insert mode)
-  `q`               `C-x C-q`        Quit out of insert mode
-  `SPC f s`         `C-x s`          Save current buffer
-  `SPC b k`         `C-x k`          Kill current buffer
-  `SPC w h/j/k/l`   `C-x o`\[^1^\]   Move left/down/up/right to next buffer
+| Doom Hotkey     | Emacs Hotkey | Description                            |
+|-----------------|--------------|----------------------------------------|
+| `SPC :`         | `C-x`        | Run functions                          |
+| `SPC f f`       | `C-x f`      | Open file in buffer                    |
+| `SPC f d`       | `C-x d`      | Open directory with `dired`            |
+| `i`             | `C-x C-q`    | Edit current buffer (insert mode)      |
+| `q`             | `C-x C-q`    | Quit out of insert mode                |
+| `SPC f s`       | `C-x s`      | Save current buffer                    |
+| `SPC b k`       | `C-x k`      | Kill current buffer                    |
+| `SPC w h/j/k/l` | `C-x o`[^1]  | Move left/down/up/right to next buffer |
 
-\[^1^\] Doom\'s evil-window functionality is a bit different from GNU
-Emacs, but you can always switch to the \"other\" buffer with
-`C-x o` or `C-x b` to get a list of buffers to
-select.
+[^1]: Doom's evil-window functionality is a bit different from GNU Emacs, but
+you can always switch to the "other" buffer with `C-x o` or `C-x b` to get a
+list of buffers to select.
 
-In general, when in Doom, you can press `SPC` and wait a
-second for the help pane to appear with all available hotkey options.
-For example, you can press `SPC`, wait for the help pane, and
-then select a key such as `g` to enter the git help pane and
-explore further command options.
+In general, when in Doom, you can press `SPC` and wait a second for the help
+pane to appear with all available hotkey options. For example, you can press
+`SPC`, wait for the help pane, and then select a key such as `g` to enter the
+git help pane and explore further command options.
 
 ## Editing
 
-Next in my process is to dive into editing for any languages I\'m
-currently using. In this post, I will just cover Markdown and Org-Mode
-but I have also been slowly adoping some Python and general web dev
-tools as well.
+Next in my process is to dive into editing for any languages I'm currently
+using. In this post, I will just cover Markdown and Org-Mode but I have also
+been slowly adoping some Python and general web dev tools as well.
 
 ### Markdown
 
 ![Markdown
 Preview](https://img.cleberg.net/blog/20240314-doom-emacs/markdown.png)
 
-Markdown is fairly simple as the syntax is limited, so just make sure
-the `~/.doom.d/init.el` includes the `markdown`
-declaration in the `:lang` section.
+Markdown is fairly simple as the syntax is limited, so just make sure the
+`~/.doom.d/init.el` includes the `markdown` declaration in the `:lang` section.
 
-This package includes the following hotkey menus. The insert and toggle
-menu expands further, allowing you to insert various markdown elements
-and toggle things like link hiding.
+This package includes the following hotkey menus. The insert and toggle menu
+expands further, allowing you to insert various markdown elements and toggle
+things like link hiding.
 
-  Doom Hotkey                               Function
-  ----------------------------------------- --------------------------
-  `SPC m '`                      markdown-edit-code-block
-  `SPC m e`                      markdown-export
-  `SPC m i`                      +insert
-  `SPC m o`                      markdown-open
-  `SPC m p`                      markdown-preview
-  `SPC m t`                      +toggle
-  `SPC : markdown-table-align`   markdown-table-align
+| Doom Hotkey                  | Function                 |
+|------------------------------|--------------------------|
+| `SPC m '`                    | markdown-edit-code-block |
+| `SPC m e`                    | markdown-export          |
+| `SPC m i`                    | +insert                  |
+| `SPC m o`                    | markdown-open            |
+| `SPC m p`                    | markdown-preview         |
+| `SPC m t`                    | +toggle                  |
+| `SPC : markdown-table-align` | markdown-table-align     |
 
 ### Org-Mode
 
-![Org-Mode
-Preview](https://img.cleberg.net/blog/20240314-doom-emacs/org.png)
+![Org-Mode Preview](https://img.cleberg.net/blog/20240314-doom-emacs/org.png)
 
-Similar to the markdown section above, ensure that the
-`~/.doom.d/init.el` includes the `org` declaration
-in the `:lang` section.
+Similar to the markdown section above, ensure that the `~/.doom.d/init.el`
+includes the `org` declaration in the `:lang` section.
 
-There are a few hot keys, but a quick search with `SPC : org`
-shows that there are 865 possible org-related functions you can run. I
-won\'t possibly be able to list them all, so I will simply cover a few
-of the basic commands I use myself.
+There are a few hot keys, but a quick search with `SPC : org` shows that there
+are 865 possible org-related functions you can run. I won't possibly be able to
+list them all, so I will simply cover a few of the basic commands I use myself.
 
-  Doom Hotkey                 Function
-  --------------------------- ---------------------------------------
-  `SPC m t`        org-todo
-  `SPC n t`        org-todo-list
-  `SPC o A`        org-agenda
-  `SPC X`          org-capture
-  `SPC m p p`      org-priority
-  `SPC m d s`      org-schedule
-  `TAB`            org-cycle
-  `SHIFT TAB`      Collapse/open all headings in buffer
-  `M-q`            Format/wrap current section
-  `M-Left/Right`   Demote/promote current heading
-  `M-Down/Up`      Shift current heading section down/up
+| Doom Hotkey    | Function                              |
+|----------------|---------------------------------------|
+| `SPC m t`      | org-todo                              |
+| `SPC n t`      | org-todo-list                         |
+| `SPC o A`      | org-agenda                            |
+| `SPC X`        | org-capture                           |
+| `SPC m p p`    | org-priority                          |
+| `SPC m d s`    | org-schedule                          |
+| `TAB`          | org-cycle                             |
+| `SHIFT TAB`    | Collapse/open all headings in buffer  |
+| `M-q`          | Format/wrap current section           |
+| `M-Left/Right` | Demote/promote current heading        |
+| `M-Down/Up`    | Shift current heading section down/up |
 
 1.  Org-Publish
 
     Org includes a [publishing management
-    system](https://orgmode.org/manual/Publishing.html) by default that
-    allows you to export org files to Org, iCalendar, HTML, LaTex,
-    Markdown, ODT, and Plain Text. Most of these can be exported into
-    another buffer and opened, or simply to an external file.
+    system](https://orgmode.org/manual/Publishing.html) by default that allows
+    you to export org files to Org, iCalendar, HTML, LaTex, Markdown, ODT, and
+    Plain Text. Most of these can be exported into another buffer and opened, or
+    simply to an external file.
 
-    While inside an org file, simply run `SPC m e` or
-    `M-x org-export-dispatch` to open the export menu. This
-    menu will show all options and ask you to select an option. If you
-    want to export to HTML, simply press `h` and then
-    `H` (As HTML buffer), `h` (As HTML file), or
-    `o` (As HTML file and open).
+    While inside an org file, simply run `SPC m e` or `M-x org-export-dispatch`
+    to open the export menu. This menu will show all options and ask you to
+    select an option. If you want to export to HTML, simply press `h` and then
+    `H` (As HTML buffer), `h` (As HTML file), or `o` (As HTML file and open).
 
 2.  Projects
 
-    Some publishing options are easier with a defined project in Emacs.
-    To create a project within Emacs, I use two methods:
+    Some publishing options are easier with a defined project in Emacs. To
+    create a project within Emacs, I use two methods:
 
-    1.  Add the project via the projectile command `SPC p a`.
-        Does not always work for me.
-    2.  Add an empty `.projectile` file in the project root.
+    1. Add the project via the projectile command `SPC p a`. Does not always
+       work for me.
+    2. Add an empty `.projectile` file in the project root.
 
-    Once a project has been created, you can create custom publishing
-    actions within your `~/.doom.d/config.el` file. For
-    example, here\'s a test project I created to try and convert this
-    blog to org-mode recently.
+    Once a project has been created, you can create custom publishing actions
+    within your `~/.doom.d/config.el` file. For example, here's a test project
+    I created to try and convert this blog to org-mode recently.
 
     ```lisp
     ;; org-publish
@@ -352,11 +334,10 @@ of the basic commands I use myself.
 
 ## General Thoughts
 
-I have enjoyed Doom Emacs (far more than GNU Emacs) and will likely
-continue to use it as my main editor for the time being. Org-Mode is
-certainly the largest factor here, as I far prefer it over Markdown due
-to its inherent features and detailed markup options. However, working
-with org-mode on iOS has been a pain and I will have to see if there\'s
-an easier way to resolve those issues or if going back to separate
-Markdown, Reminders, and Calendar apps is easier to work with than an
-all-in-one org solution.
+I have enjoyed Doom Emacs (far more than GNU Emacs) and will likely continue to
+use it as my main editor for the time being. Org-Mode is certainly the largest
+factor here, as I far prefer it over Markdown due to its inherent features and
+detailed markup options. However, working with org-mode on iOS has been a pain
+and I will have to see if there's an easier way to resolve those issues or if
+going back to separate Markdown, Reminders, and Calendar apps is easier to work
+with than an all-in-one org solution.

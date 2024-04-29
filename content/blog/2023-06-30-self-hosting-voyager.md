@@ -7,12 +7,12 @@ draft = false
 
 # Installation Guide
 
-[Voyager](https://github.com/aeharding/voyager) is a mobile-first Lemmy
-web client, based on iOS design standards. It follows very closely to
-Apollo\'s design.
+[Voyager](https://github.com/aeharding/voyager) is a mobile-first Lemmy web
+client, based on iOS design standards. It follows very closely to Apollo's
+design.
 
-This post is a guide showing how I was able to build and launch my own
-instance of Voyager via Docker Compose.
+This post is a guide showing how I was able to build and launch my own instance
+of Voyager via Docker Compose.
 
 ## Clone the Repository
 
@@ -25,26 +25,24 @@ cd voyager
 
 ## Build the Image
 
-With this repository, you can build the image yourself without any
-further configuration. When complete, it\'ll give you the image ID for
-you to run.
+With this repository, you can build the image yourself without any further
+configuration. When complete, it'll give you the image ID for you to run.
 
 ```sh
 sudo docker build .
 # Successfully built 5f00723cb5be
 ```
 
-With the image ID above, you can run the container and pass the
-requested port `5314` through or use a custom port, if you
-wish.
+With the image ID above, you can run the container and pass the requested port
+`5314` through or use a custom port, if you wish.
 
-You can also set the `CUSTOM_LEMMY_SERVERS` environment
-variable if you want to add to the default suggested login servers. This
-must be set with a comma separated list of suggested servers. The first
-instance in the list will be the default view for logged-out users.
+You can also set the `CUSTOM_LEMMY_SERVERS` environment variable if you want to
+add to the default suggested login servers. This must be set with a comma
+separated list of suggested servers. The first instance in the list will be the
+default view for logged-out users.
 
-I will be using a `docker-compose.yml` file to run this
-container, instead of a `docker run` command.
+I will be using a `docker-compose.yml` file to run this container, instead of a
+`docker run` command.
 
 ```sh
 nano docker-compose.yml
@@ -67,17 +65,16 @@ sudo docker-compose up -d
 ```
 
 The web app will now be available at the following address:
-`<machine_ip>:<custom_port>`. If you are running it on your
-local device, try `localhost:<custom_port>`.
+`<machine_ip>:<custom_port>`. If you are running it on your local device, try
+`localhost:<custom_port>`.
 
 ## Reverse Proxy
 
-If you want to visit this app via an external URL or domain name,
-you\'ll need to set up a reverse proxy. The example below uses Nginx as
-a reverse proxy.
+If you want to visit this app via an external URL or domain name, you'll need
+to set up a reverse proxy. The example below uses Nginx as a reverse proxy.
 
-Simply create the configuration file, paste the contents below, save the
-file, symlink the file, and restart Nginx.
+Simply create the configuration file, paste the contents below, save the file,
+symlink the file, and restart Nginx.
 
 ```sh
 sudo nano /etc/nginx/sites-available/voyager
@@ -120,8 +117,7 @@ sudo ln sudo ln -s /etc/nginx/sites-available/voyager /etc/nginx/sites-enabled/v
 sudo systemctl restart nginx.service
 ```
 
-The site will now be available at the `server_name` you
-specified above!
+The site will now be available at the `server_name` you specified above!
 
-You can visit my instance at
-[voyager.cleberg.net](https://voyager.cleberg.net) for an example.
+You can visit my instance at [voyager.cleberg.net](https://voyager.cleberg.net)
+for an example.

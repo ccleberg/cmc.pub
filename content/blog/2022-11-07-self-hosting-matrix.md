@@ -7,21 +7,21 @@ draft = false
 
 # Synpase
 
-If you\'re reading this, you likely know that
+If you're reading this, you likely know that
 [Synapse](https://github.com/matrix-org/synapse/) is a popular
-[Matrix](https://matrix.org/) home server software that allows users to
-run their own Matrix home server.
+[Matrix](https://matrix.org/) home server software that allows users to run
+their own Matrix home server.
 
-This post is a short guide describing how I was able to get Synapse
-working in a minimally-usable state on Alpine Linux.
+This post is a short guide describing how I was able to get Synapse working in a
+minimally-usable state on Alpine Linux.
 
 # Installation Process
 
 ## Dependencies
 
-First, since there is no Alpine-specific package for Synapse, we need to
-ensure that Alpine has the required dependencies for the Python-based
-installation method.
+First, since there is no Alpine-specific package for Synapse, we need to ensure
+that Alpine has the required dependencies for the Python-based installation
+method.
 
 ```sh
 doas apk -U update
@@ -41,10 +41,9 @@ pip install matrix-synapse
 
 ## Running Synapse
 
-Once installed, running Synapse is easy. Simply execute the following
-command, replacing `example.com` with the domain name that
-will be used with this home server. This will generate the configuration
-files needed to run the server.
+Once installed, running Synapse is easy. Simply execute the following command,
+replacing `example.com` with the domain name that will be used with this home
+server. This will generate the configuration files needed to run the server.
 
 ```sh
 python -m synapse.app.homeserver \
@@ -62,16 +61,14 @@ synctl start
 
 ## Configuring Synapse
 
-To make any change to Synapse, we need to edit the `YAML`
-configuration file:
+To make any change to Synapse, we need to edit the `YAML` configuration file:
 
 ```sh
 nano ~/synapse/homeserver.yaml
 ```
 
-For now, we just need to ensure the `server_name` is
-accurate. However, there are a lot of other configuration options found
-in the [Configuring
+For now, we just need to ensure the `server_name` is accurate. However, there
+are a lot of other configuration options found in the [Configuring
 Synapse](https://matrix-org.github.io/synapse/develop/usage/configuration/config_documentation.html)
 documentation that can be enabled/disabled at any point.
 
@@ -87,9 +84,9 @@ synctl restart
 
 ## Nginx Reverse-Proxy
 
-To ensure that Synapse is reachable from the public, we need to connect
-our domain to the Synapse server. In my case, I use a Nginx
-reverse-proxy for this purpose.
+To ensure that Synapse is reachable from the public, we need to connect our
+domain to the Synapse server. In my case, I use a Nginx reverse-proxy for this
+purpose.
 
 To use Nginx, we need to create a reverse-proxy configuration file:
 
@@ -97,9 +94,8 @@ To use Nginx, we need to create a reverse-proxy configuration file:
 doas nano /etc/nginx/http.d/example.com.conf
 ```
 
-If you already have TLS certificates for this domain
-(`example.com`), you can simply use the SSL configuration and
-point toward your TLS certificates.
+If you already have TLS certificates for this domain (`example.com`), you can
+simply use the SSL configuration and point toward your TLS certificates.
 
 ``` conf
 server {
@@ -143,10 +139,9 @@ server {
 ```
 
 If you need to generate TLS certificates (I recommend
-[Certbot](https://certbot.eff.org/)), you\'ll need a more minimal Nginx
-conf file before you can use the TLS-enabled example above. Instead, use
-this configuration file during the Certbot certificate generation
-process:
+[Certbot](https://certbot.eff.org/)), you'll need a more minimal Nginx conf
+file before you can use the TLS-enabled example above. Instead, use this
+configuration file during the Certbot certificate generation process:
 
 ``` conf
 server {
@@ -158,20 +153,19 @@ server {
 }
 ```
 
-Once you\'re done editing the Nginx conf file, restart Nginx:
+Once you're done editing the Nginx conf file, restart Nginx:
 
 ```sh
 doas rc-service nginx restart
 ```
 
-If you still need to generate TLS certificates, run `certbot`
-now and obtain the certificates. Certbot will ask if you want to use a
-webroot or spin up a temporary web server. I **highly\*** recommend
-using the temporary web server due to the many issues with using a
-webroot.
+If you still need to generate TLS certificates, run `certbot` now and obtain the
+certificates. Certbot will ask if you want to use a webroot or spin up a
+temporary web server. I **highly** recommend using the temporary web server due
+to the many issues with using a webroot.
 
-You will need to stop Nginx in order to user the temporary web server
-option with Certbot:
+You will need to stop Nginx in order to user the temporary web server option
+with Certbot:
 
 ```sh
 # Stop Nginx so certbot can spin up a temp webserver for cert generation
@@ -182,13 +176,13 @@ doas rc-service nginx start
 
 ## Open Firewall & Router Ports
 
-If you use a firewall on the server, open the `8448` port for
-discovery and federation, as well as the normal web server ports if
-you\'re using a reverse proxy. If you want additional services, such as
-voice calls, you will need to read the Synapse documentation to see
-which ports need to be opened for those features.
+If you use a firewall on the server, open the `8448` port for discovery and
+federation, as well as the normal web server ports if you're using a reverse
+proxy. If you want additional services, such as voice calls, you will need to
+read the Synapse documentation to see which ports need to be opened for those
+features.
 
-Here\'s an example of the Universal Firewall (UFW) software:
+Here's an example of the Universal Firewall (UFW) software:
 
 ```sh
 # Matrix port
@@ -197,15 +191,13 @@ doas ufw allow 8448
 doas ufw allow "Nginx Full"
 ```
 
-Remember to forward any Synapse ports, such as `8448`,
-`80`, and `443`, in your Router from the internet
-to your server\'s IP address.
+Remember to forward any Synapse ports, such as `8448`, `80`, and `443`, in your
+Router from the internet to your server's IP address.
 
 ## Adding Matrix Users
 
-Finally, if you didn\'t enable public registration in the
-`homeserver.yaml` file, you can manually create users via the
-command-line:
+Finally, if you didn't enable public registration in the `homeserver.yaml`
+file, you can manually create users via the command-line:
 
 ```sh
 cd ~/synapse
@@ -213,9 +205,8 @@ register_new_matrix_user -c homeserver.yaml
 ```
 
 Remember that the format for federated Matrix usernames is
-`@username:example.com` when logging in to client
-applications.
+`@username:example.com` when logging in to client applications.
 
-Once Synapse is running, and you have a username, you are ready to log
-in to a Matrix client and start sending messages, joining rooms, and
-utilizing your very own Matrix server.
+Once Synapse is running, and you have a username, you are ready to log in to a
+Matrix client and start sending messages, joining rooms, and utilizing your very
+own Matrix server.

@@ -92,7 +92,7 @@ echo "yabai configuration loaded.."
 
 ### Communications
 
-- [Element](https://element.io/) (`*`) - Matrix\'s default GUI client
+- [Element](https://element.io/) (`*`) - Matrix's default GUI client
 - [gomuks](https://github.com/tulir/gomuks) - A terminal based Matrix client
 - [Thunderbird](https://www.thunderbird.net/) (`*`) - An open source email client by Mozilla
 - [Signal](https://signal.org/) (`*`) - A simple, powerful, and secure messenger
@@ -103,7 +103,7 @@ echo "yabai configuration loaded.."
     - [open-webui](https://github.com/open-webui/open-webui) - User-friendly WebUI for LLMs
 - [iTerm2](https://iterm2.com/) (`*`) - The best terminal for macOS, hands down
 - [Podman Desktop](https://podman-desktop.io/) (`*`) - Open source tool for containers and Kubernetes
-- [Xcode](https://developer.apple.com/xcode/) - Apple\'s IDE
+- [Xcode](https://developer.apple.com/xcode/) - Apple's IDE
 - [zsh](https://en.wikipedia.org/wiki/Z_shell) (`*`) - My shell preference due to its plugin and theme community
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for zsh
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh

@@ -7,9 +7,8 @@ draft = false
 
 # Plex Transcoder Error
 
-Occasionally, you may see an error in your Plex client that references a
-failure with the transcoder conversion process. The specific error
-wording is:
+Occasionally, you may see an error in your Plex client that references a failure
+with the transcoder conversion process. The specific error wording is:
 
 ``` txt
 Conversion failed. The transcoder failed to start up.
@@ -17,14 +16,13 @@ Conversion failed. The transcoder failed to start up.
 
 # Debugging the Cause
 
-In order to get a better look at what is causing the error, I\'m going
-to observe the Plex console while the error occurs. To do this, open the
-Plex web client, go to `Settings` \> `Manage` \>
-`Console`. Now, try to play the title again and watch to see
-which errors occur.
+In order to get a better look at what is causing the error, I'm going to
+observe the Plex console while the error occurs. To do this, open the Plex web
+client, go to `Settings` > `Manage` > `Console`. Now, try to play the title
+again and watch to see which errors occur.
 
-In my case, you can see the errors below are related to a subtitle file
-(`.srt`) causing the transcoder to crash.
+In my case, you can see the errors below are related to a subtitle file (`.srt`)
+causing the transcoder to crash.
 
 ``` txt
 Jul 19, 2023 16:49:34.945 [140184571120440] Error — Couldn't find the file to stream: /movies/Movie Title (2021)/Movie Title (2021).srt
@@ -36,17 +34,17 @@ Jul 19, 2023 16:51:23.402 [140184510081848] Info — Library section 1 (Movies) 
 
 # Solving the Error
 
-In my case, I simply removed the subtitle file because it was not
-critical to keep. You may also avoid this by turning off subtitles if
-you don\'t want to delete the file.
+In my case, I simply removed the subtitle file because it was not critical to
+keep. You may also avoid this by turning off subtitles if you don't want to
+delete the file.
 
 ```sh
 rm -rf "/movies/Movie Title (2021)/Movie Title (2021).srt"
 ```
 
-Once the subtitle is removed from the directory or subtitles are turned
-off, try to play the title again. At this point, it should play without
-error. If not, reopen or refresh your Plex client and the Plex server:
+Once the subtitle is removed from the directory or subtitles are turned off, try
+to play the title again. At this point, it should play without error. If not,
+reopen or refresh your Plex client and the Plex server:
 
 ```sh
 sudo systemctl restart plexmediaserver.service
@@ -56,10 +54,8 @@ sudo systemctl restart plexmediaserver.service
 
 Looking at [a related Plex forum
 post](https://forums.plex.tv/t/subtitles-crashing-plex-transcoder-samsung-q80-tv-with-or-without-hardware-transcode/741441/2),
-it seems that `.srt` subtitles are the core issue here.
-However, Plex does not seem to have a resolution that fixes these
-errors.
+it seems that `.srt` subtitles are the core issue here. However, Plex does not
+seem to have a resolution that fixes these errors.
 
 Unfortunately, I would suggest converting subtitle formats, burning the
-subtitles into the title, or simply removing subtitles when they cause
-crashes.
+subtitles into the title, or simply removing subtitles when they cause crashes.

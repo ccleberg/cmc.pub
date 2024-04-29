@@ -11,59 +11,56 @@ I am currently rebuilding my music library from scratch so that I can
 effectively archive all the music I own in the [FLAC file
 format](https://en.wikipedia.org/wiki/FLAC), a lossless audio codec.
 
-However, streaming FLAC files outside the home can be difficult due to
-the size of the files, especially if you\'re using a weak connection.
+However, streaming FLAC files outside the home can be difficult due to the size
+of the files, especially if you're using a weak connection.
 
-So, in order to archive the music in a lossless format and still be able
-to stream it easily, I opted to create a copy of my FLAC files in the
-[Opus audio codec](https://en.wikipedia.org/wiki/Opus_(audio_format)).
-This allows me to archive a quality, lossless version of the music and
-then point my streaming service to the smaller, stream-ready version.
+So, in order to archive the music in a lossless format and still be able to
+stream it easily, I opted to create a copy of my FLAC files in the [Opus audio
+codec](https://en.wikipedia.org/wiki/Opus_(audio_format)). This allows me to
+archive a quality, lossless version of the music and then point my streaming
+service to the smaller, stream-ready version.
 
 ## Dependencies
 
-The process I follow utilizes the `opus-tools` package in
-Ubuntu. Before proceeding, install the package:
+The process I follow utilizes the `opus-tools` package in Ubuntu. Before
+proceeding, install the package:
 
 ```sh
 sudo apt install opus-tools
 ```
 
-If you want to use a different conversion method, such as
-`ffmpeg` or `avconv`, simply install that package
-instead.
+If you want to use a different conversion method, such as `ffmpeg` or `avconv`,
+simply install that package instead.
 
 ## Conversion Process
 
-The script I\'m using is stored in my home directory, but feel free to
-create it wherever you want. It does not need to be in the same
-directory as your music files.
+The script I'm using is stored in my home directory, but feel free to create it
+wherever you want. It does not need to be in the same directory as your music
+files.
 
 ```sh
 cd ~ && nano transform.sh
 ```
 
-Once you have your new bash script opened in an editor, go ahead and
-paste the following logic into the script.
+Once you have your new bash script opened in an editor, go ahead and paste the
+following logic into the script.
 
 You **MUST** edit the following variables in order for it to work:
 
--   `source`: The source directory where your FLAC files are
-    stored.
--   `dest`: The destination directory where you want the
-    resulting Opus files to be stored.
+- `source`: The source directory where your FLAC files are stored.
+- `dest`: The destination directory where you want the resulting Opus files to
+  be stored.
 
 You **MAY** want to edit the following variables to suit your needs:
 
--   `filename`: If you are converting to a file format other
-    than Opus, you\'ll need to edit this so that your resulting files
-    have the correct filename extension.
--   `reldir`: This variable can be edited to strip out more
-    leading directories in the file path. As you\'ll see later, I ignore
-    this for now and simply clean it up afterward.
--   `opusenc`: This is the actual conversion process. You may
-    want to edit the bitrate to suit your needs. I set mine at 128 but
-    some prefer 160 or higher.
+- `filename`: If you are converting to a file format other than Opus, you'll
+  need to edit this so that your resulting files have the correct filename
+  extension.
+- `reldir`: This variable can be edited to strip out more leading directories in
+  the file path. As you'll see later, I ignore this for now and simply clean it
+  up afterward.
+- `opusenc`: This is the actual conversion process. You may want to edit the
+  bitrate to suit your needs. I set mine at 128 but some prefer 160 or higher.
 
 ```sh
 #!/bin/bash
@@ -129,8 +126,8 @@ opusenc --vbr --bitrate 128 --date "$DATE" \
 done
 ```
 
-Once you\'re done, simply save the file and exit your editor. Don\'t
-forget to enable execution of the script:
+Once you're done, simply save the file and exit your editor. Don't forget to
+enable execution of the script:
 
 ```sh
 chmod +x transform.sh
@@ -142,17 +139,16 @@ Finally, you may now run the script:
 ./transform.sh
 ```
 
-If you used `opusenc`, you\'ll see the conversions happen
-within the terminal as it progresses. You will also see variables
-printed if you uncommented any of the bash script\'s comments.
+If you used `opusenc`, you'll see the conversions happen within the terminal as
+it progresses. You will also see variables printed if you uncommented any of the
+bash script's comments.
 
 ## Cleanup
 
-As I noted above, I didn\'t customize my `reldir` variable in
-the script, which caused my output directory to be
-`/mnt/music/library/archives` instead of
-`/mnt/music/library`. So, I moved the output up one level and
-deleted the accidental directory.
+As I noted above, I didn't customize my `reldir` variable in the script, which
+caused my output directory to be `/mnt/music/library/archives` instead of
+`/mnt/music/library`. So, I moved the output up one level and deleted the
+accidental directory.
 
 ```sh
 cd /mnt/music/library
@@ -162,8 +158,8 @@ rm -rf archives
 
 ## Check the Resulting Size
 
-If you want to see what kind of file size savings you\'ve gained, you
-can always use the `du` command to check:
+If you want to see what kind of file size savings you've gained, you can always
+use the `du` command to check:
 
 ```sh
 cd /mnt/music

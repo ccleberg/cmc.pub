@@ -5,103 +5,95 @@ description = ""
 draft = false
 +++
 
-I\'ve written [a note about minimalism](file:///wiki/#digital-garden)
-before, but I wanted to dedicate some time to reflect on digital
-minimalism and how I\'ve been able to minimize the impact of digital
-devices in my life.
+I've written [a note about minimalism](file:///wiki/#digital-garden) before,
+but I wanted to dedicate some time to reflect on digital minimalism and how
+I've been able to minimize the impact of digital devices in my life.
 
-> These changes crept up on us and happened fast, before we had a chance
-> to step back and ask what we really wanted out of the rapid advances
-> of the past decade. We added new technologies to the periphery of our
-> experience for minor reasons, then woke one morning to discover that
-> they had colonized the core of our daily life. We didn\'t, in other
-> words, sign up for the digital world in which we\'re currently
-> entrenched; we seem to have stumbled backward into it.
+> These changes crept up on us and happened fast, before we had a chance to step
+> back and ask what we really wanted out of the rapid advances of the past
+> decade. We added new technologies to the periphery of our experience for minor
+> reasons, then woke one morning to discover that they had colonized the core of
+> our daily life. We didn't, in other words, sign up for the digital world in
+> which we're currently entrenched; we seem to have stumbled backward into it.
 >
 > *(Digital Minimalism, 2019)*
 
 # The Principles of Digital Minimalism
 
-As noted in Cal Newport\'s book, *Digital Minimalism*, there are three
-main principles to digital minimalism that I tend to agree with:
+As noted in Cal Newport's book, *Digital Minimalism*, there are three main
+principles to digital minimalism that I tend to agree with:
 
 1.  Clutter is costly.
-    -   Digital minimalists recognize that cluttering their time and
-        attention with too many devices, apps, and services creates an
-        overall negative cost that can swamp the small benefits that
-        each individual item provides in isolation.
+    - Digital minimalists recognize that cluttering their time and attention
+      with too many devices, apps, and services creates an overall negative cost
+      that can swamp the small benefits that each individual item provides in
+      isolation.
 2.  Optimization is important.
-    -   Digital minimalists believe that deciding a particular
-        technology supports something they value is only the first step.
-        To truly extract its full potential benefit, it\'s necessary to
-        think carefully about how they\'ll use the technology.
+    - Digital minimalists believe that deciding a particular technology supports
+      something they value is only the first step. To truly extract its full
+      potential benefit, it's necessary to think carefully about how they'll
+      use the technology.
 3.  Intentionality is satisfying.
-    -   Digital minimalists derive significant satisfaction from their
-        general commitment to being more intentional about how they
-        engage with new technologies. This source of satisfaction is
-        independent of the specific decisions they make and is one of
-        the biggest reasons that minimalism tends to be immensely
-        meaningful to its practitioners.
+    - Digital minimalists derive significant satisfaction from their general
+      commitment to being more intentional about how they engage with new
+      technologies. This source of satisfaction is independent of the specific
+      decisions they make and is one of the biggest reasons that minimalism
+      tends to be immensely meaningful to its practitioners.
 
 # Taking Action
 
-In order to put the logic into practice, I\'ve created a few new habits
-and continued performing old habits that are working well:
+In order to put the logic into practice, I've created a few new habits and
+continued performing old habits that are working well:
 
 ## Using Devices With Intention
 
--   I already rarely use \"social media\", mostly limited to forums such
-    as Hacker News and Tildes, so I\'ve just tweaked my behavior to stop
-    looking for content in those places when I\'m bored.
--   Use devices with intention. Each time I pick up a digital device,
-    there should be an intention to use the device to improve my current
-    situation. No more endless scrolling or searching for something to
-    interest me.
+- I already rarely use "social media", mostly limited to forums such as Hacker
+  News and Tildes, so I've just tweaked my behavior to stop looking for content
+  in those places when I'm bored.
+- Use devices with intention. Each time I pick up a digital device, there should
+  be an intention to use the device to improve my current situation. No more
+  endless scrolling or searching for something to interest me.
 
 ## Prevent Distractions
 
--   Disable (most) notifications on all devices. I spent 15-30 minutes
-    going through the notifications on my phone, watch, and computer to
-    ensure that only a select few apps have the ability to interrupt me:
-    Calendar, Messages, Phone, Reminders, & Signal.
--   Disable badges for any apps except the ones mentioned in the bullet
-    above.
--   Set-up focus profiles across devices so that I can enable different
-    modes, such as Personal when I only want to see notifications from
-    people I care about or Do Not Disturb, where absolutely nothing can
-    interrupt me.
--   Clean up my home screens. This one was quite easy as I already
-    maintain a minimalist set-up, but I went extreme by limiting my
-    phone to just eight apps on the home screen and four in the dock. If
-    I need another app, I\'ll have to search or use the app library.
--   Remove the work profile from my phone. This was a tough decision as
-    having my work profile on my device definitely makes my life easier
-    at times, but it also has quite a negative effect when I\'m \"always
-    online\" and can see the notifications and team activity 24/7. I
-    believe creating a distinct barrier between my work and personal
-    devices will be beneficial in the end.
+- Disable (most) notifications on all devices. I spent 15-30 minutes going
+  through the notifications on my phone, watch, and computer to ensure that only
+  a select few apps have the ability to interrupt me: Calendar, Messages, Phone,
+  Reminders, & Signal.
+- Disable badges for any apps except the ones mentioned in the bullet above.
+- Set-up focus profiles across devices so that I can enable different modes,
+  such as Personal when I only want to see notifications from people I care
+  about or Do Not Disturb, where absolutely nothing can interrupt me.
+- Clean up my home screens. This one was quite easy as I already maintain a
+  minimalist set-up, but I went extreme by limiting my phone to just eight apps
+  on the home screen and four in the dock. If I need another app, I'll have to
+  search or use the app library.
+- Remove the work profile from my phone. This was a tough decision as having my
+  work profile on my device definitely makes my life easier at times, but it
+  also has quite a negative effect when I'm "always online" and can see the
+  notifications and team activity 24/7. I believe creating a distinct barrier
+  between my work and personal devices will be beneficial in the end.
 
 ## Creating Alternative Activities
 
-This is the most difficult piece, as most of my hobbies and interests
-lie in the digital world. However, I\'m making a concerted effort to put
-devices down unless necessary and force myself to perform other
-activities in the physical world instead.
+This is the most difficult piece, as most of my hobbies and interests lie in the
+digital world. However, I'm making a concerted effort to put devices down
+unless necessary and force myself to perform other activities in the physical
+world instead.
 
-I\'ve started with a few basics that are always readily available to me:
+I've started with a few basics that are always readily available to me:
 
--   Do a chore, such as organizing or cleaning.
--   Read a book, study a piece of art, etc.
--   Exercise or get outdoors.
--   Participate in a hobby, such as photography, birding, disc golf,
-    etc.
--   Let yourself be bored and wander into creativity.
+- Do a chore, such as organizing or cleaning.
+- Read a book, study a piece of art, etc.
+- Exercise or get outdoors.
+- Participate in a hobby, such as photography, birding, disc golf, etc.
+- Let yourself be bored and wander into creativity.
 
 # Making Progress
 
-I\'ll be taking notes as I continue down this journey and hope to see
-positive trends. I\'ve always been a minimalist in the physical world
-and it feels refreshing to filter out the clutter that has come to
-dominate my digital life over the years.
+I'll be taking notes as I continue down this journey and hope to see positive
+trends. I've always been a minimalist in the physical world and it feels
+refreshing to filter out the clutter that has come to dominate my digital life
+over the years.
 
-I\'m excited to see where this journey leads.
+I'm excited to see where this journey leads.

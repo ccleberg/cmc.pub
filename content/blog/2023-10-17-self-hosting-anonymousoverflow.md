@@ -8,18 +8,17 @@ draft = false
 # Overview
 
 I recently launched an instance of AnonymousOverflow at
-[ao.cleberg.net](https://ao.cleberg.net) and wanted to write a brief
-post on how easy it is to install with Docker Compose and Nginx.
+[ao.cleberg.net](https://ao.cleberg.net) and wanted to write a brief post on how
+easy it is to install with Docker Compose and Nginx.
 
-This guide uses Ubuntu server, Docker Compose, and Nginx as a reverse
-proxy.
+This guide uses Ubuntu server, Docker Compose, and Nginx as a reverse proxy.
 
 # Installation
 
 ## Docker Compose
 
-To install AnonymousOverflow, start by creating a directory for the
-application and create its `docker-compose.yml` file.
+To install AnonymousOverflow, start by creating a directory for the application
+and create its `docker-compose.yml` file.
 
 ```sh
 mkdir ~/anonymousoverflow && cd ~/anonymousoverflow
@@ -27,8 +26,7 @@ nano docker-compose.yml
 ```
 
 Within this file, paste the following information. Be sure to change the
-`APP_URL`, `JWT_SIGNING_SECRET`, and
-`ports` to match your needs.
+`APP_URL`, `JWT_SIGNING_SECRET`, and `ports` to match your needs.
 
 ``` yaml
 version: '3'
@@ -45,8 +43,8 @@ services:
         restart: 'always'
 ```
 
-Save and exit the file when complete. You can now launch the container
-and access it via your local network.
+Save and exit the file when complete. You can now launch the container and
+access it via your local network.
 
 ```sh
 sudo docker-compose up -d
@@ -54,19 +52,18 @@ sudo docker-compose up -d
 
 ## Nginx Reverse Proxy
 
-If you want to access this service outside the local network, I
-recommend using Nginx as a reverse proxy.
+If you want to access this service outside the local network, I recommend using
+Nginx as a reverse proxy.
 
-Let\'s start by creating a configuration file.
+Let's start by creating a configuration file.
 
 ```sh
 sudo nano /etc/nginx/sites-available/ao
 ```
 
-Within this file, paste the following content and repace
-`ao.example.com` with your URL. You may need to update the
-SSL certificate statements if your certificates are in a different
-location.
+Within this file, paste the following content and repace `ao.example.com` with
+your URL. You may need to update the SSL certificate statements if your
+certificates are in a different location.
 
 ``` conf
 server {
@@ -122,9 +119,9 @@ server {
 }
 ```
 
-Save and exit the file when complete. On Ubuntu, you will need to
-symlink the configuration file before it will be recognized by Nginx.
-Once complete, simply restart the web server.
+Save and exit the file when complete. On Ubuntu, you will need to symlink the
+configuration file before it will be recognized by Nginx. Once complete, simply
+restart the web server.
 
 ```sh
 sudo ln -s /etc/nginx/sites-available/ao /etc/nginx/sites-enabled/ao

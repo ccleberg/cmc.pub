@@ -7,31 +7,31 @@ draft = false
 
 # Background
 
-Have you ever used GitLab to host your source code, moved to a different
-host, and wanted to delete everything from your GitLab account? Well,
-this post covers any scenario where you would want to delete all
-repositories from your GitLab account.
+Have you ever used GitLab to host your source code, moved to a different host,
+and wanted to delete everything from your GitLab account? Well, this post covers
+any scenario where you would want to delete all repositories from your GitLab
+account.
 
-For me, I currently maintain around 30 repositories and don\'t like to
-manually delete them whenever I switch host. GitHub has a few different
-tools online to delete all repositories for you, but I have not found
-anything similar for GitLab, so I needed an alternative solution.
+For me, I currently maintain around 30 repositories and don't like to manually
+delete them whenever I switch host. GitHub has a few different tools online to
+delete all repositories for you, but I have not found anything similar for
+GitLab, so I needed an alternative solution.
 
 # Use a Python Script
 
 ## Requirements
 
-Before we look at the script, make sure you know your GitLab username.
-Next, [create an authorization
-token](https://gitlab.com/-/profile/personal_access_tokens) so that the
-Python script can delete your repositories. Don\'t lose this token or
-else you\'ll need to create a new one.
+Before we look at the script, make sure you know your GitLab username. Next,
+[create an authorization
+token](https://gitlab.com/-/profile/personal_access_tokens) so that the Python
+script can delete your repositories. Don't lose this token or else you'll need
+to create a new one.
 
 ## Create the Script
 
-To run a Python script, you must first create it. Open a terminal and
-enter the following commands in whichever directory you prefer to store
-the script. You can do the same things in a file manager if you prefer.
+To run a Python script, you must first create it. Open a terminal and enter the
+following commands in whichever directory you prefer to store the script. You
+can do the same things in a file manager if you prefer.
 
 ```sh
 mkdir delete-gitlab
@@ -103,13 +103,12 @@ if __name__ == "__main__":
     main()
 ```
 
-Now that you have the proper information, replace `{user-id}`
-with your GitLab username and `{auth-token}` with the
-authorization token you created earlier.
+Now that you have the proper information, replace `{user-id}` with your GitLab
+username and `{auth-token}` with the authorization token you created earlier.
 
-Finally, simply run the script and watch the output. You can also use
-PyCharm Community Edition to edit and run the Python script if you
-don\'t want to work in a terminal.
+Finally, simply run the script and watch the output. You can also use PyCharm
+Community Edition to edit and run the Python script if you don't want to work
+in a terminal.
 
 ```sh
 python3 main.py

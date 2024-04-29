@@ -51,19 +51,19 @@ Here's the baseline I start with:
 - Disable:
   - Analytics & Improvements
   - Apple Advertising
-  - Apple ID \> Sign-In & Security \> Two-Factor Authentication
-  - Location Services \> System Services \> Product Improvement
-  - Tracking \> Allow Apps to Request to Track
-  - Safari \> Advanced \> Privacy Preserving Ad Measurement
+  - Apple ID > Sign-In & Security > Two-Factor Authentication
+  - Location Services > System Services > Product Improvement
+  - Tracking > Allow Apps to Request to Track
+  - Safari > Advanced > Privacy Preserving Ad Measurement
 - Enable:
-  - Apple ID \> iCloud \> Advanced Data Protection
-  - Apple ID \> Personal Information \> Communication Preferences
+  - Apple ID > iCloud > Advanced Data Protection
+  - Apple ID > Personal Information > Communication Preferences
   - App Privacy Report
   - Location Services only for Camera, Find My, UDisc, & WiFiman
     (`While   Using`)
-  - Safari \> Prevent Cross-Site Tracking
-  - Safari \> Hide IP Address
-  - Safari \> Advanced \> Advanced Tracking and Fingerprinting
+  - Safari > Prevent Cross-Site Tracking
+  - Safari > Hide IP Address
+  - Safari > Advanced > Advanced Tracking and Fingerprinting
     Protection
 
 ## Native Apps
@@ -92,7 +92,7 @@ Here's the baseline I start with:
 
 ### Music
 
-- [Apple Music](https://apps.apple.com/us/app/apple-music/id1108187390) (`*`) - Apple\'s native music streaming app
+- [Apple Music](https://apps.apple.com/us/app/apple-music/id1108187390) (`*`) - Apple's native music streaming app
 - [Plexamp](https://apps.apple.com/us/app/plexamp/id1500797510) (`*`) - Top-notch music app for your Plex Media Server, with a neural network that provides excellent radio/shuffle suggestions
 
 ### News
@@ -109,7 +109,7 @@ Here's the baseline I start with:
 - [beorg](https://apps.apple.com/us/app/beorg-to-do-list-agenda/id1238649962) - An org-mode editor, outline, and scheduler with paid extensions
 - [Bitwarden](https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744) (`*`) - An open source password manager
 - [Cryptomator](https://apps.apple.com/us/app/cryptomator/id1560822163) - A cross-platform encryption program
-- [Obsidian](https://apps.apple.com/us/app/obsidian-connected-notes/id1557175442) (`*`) - A nice Markdown-based editor based on a \"vault\" structure. Offers a paid sync solution and community extensions
+- [Obsidian](https://apps.apple.com/us/app/obsidian-connected-notes/id1557175442) (`*`) - A nice Markdown-based editor based on a "vault" structure. Offers a paid sync solution and community extensions
 - [Strongbox](https://apps.apple.com/us/app/strongbox-password-manager/id897283731) - Keepass password manager for iOS & macOS
 - [UniFi Network](https://apps.apple.com/us/app/unifi/id1057750338) - View and manage most UniFi Network settings
 
@@ -130,7 +130,7 @@ Here's the baseline I start with:
 
 ### Sports
 
-- [Apple Sports](https://apps.apple.com/us/app/apple-sports/id6446788829) - Apple\'s new sports app - lacks notifications and live events
+- [Apple Sports](https://apps.apple.com/us/app/apple-sports/id6446788829) - Apple's new sports app - lacks notifications and live events
 - [UDisc](https://apps.apple.com/us/app/udisc-disc-golf/id1072228953) - Disc golf course maps, score cards, and more
 
 ### Utilities

@@ -7,15 +7,14 @@ draft = false
 
 # DDNS: Dynamic DNS
 
-If you\'re hosting a service from a location with dynamic DNS (where
-your IP may change at any time), you must have a solution to update the
-DNS so that you can access your service even when the IP of the server
-changes.
+If you're hosting a service from a location with dynamic DNS (where your IP may
+change at any time), you must have a solution to update the DNS so that you can
+access your service even when the IP of the server changes.
 
-The process below uses the [Cloudflare API](https://api.cloudflare.com/)
-to update DNS `A` and `AAAA` records with the
-server\'s current IP. If you use another DNS provider, you will have to
-find a way to update your DNS (or find a way to get a static IP).
+The process below uses the [Cloudflare API](https://api.cloudflare.com/) to
+update DNS `A` and `AAAA` records with the server's current IP. If you use
+another DNS provider, you will have to find a way to update your DNS (or find a
+way to get a static IP).
 
 First, install `jq` since we will use it in the next script:
 
@@ -23,18 +22,16 @@ First, install `jq` since we will use it in the next script:
 sudo apt install jq
 ```
 
-Next, create a location for your DDNS update scripts and open the first
-script:
+Next, create a location for your DDNS update scripts and open the first script:
 
 ```sh
 mkdir ~/ddns
 nano ~/ddns/update.sh
 ```
 
-The following `update.sh` script will take all of your
-domains and subdomains and check Cloudflare to see if the current
-`A` and `AAAA` records match your server\'s IP
-address. If not, it will update the records.
+The following `update.sh` script will take all of your domains and subdomains
+and check Cloudflare to see if the current `A` and `AAAA` records match your
+server's IP address. If not, it will update the records.
 
 ```sh
 # file: update.sh
@@ -60,17 +57,16 @@ do
 done
 ```
 
-Next, open up the `ddns.sh` script. Paste the following into
-the script and update the `api_token` and `email`
-variables.
+Next, open up the `ddns.sh` script. Paste the following into the script and
+update the `api_token` and `email` variables.
 
 ```sh
 nano ~/ddns/ddns.sh
 ```
 
-**Note**: If you want your DNS records to be proxied through Cloudflare,
-find and update the following snippet: `"proxied":false}"` to
-say `true` instead of `false`.
+**Note**: If you want your DNS records to be proxied through Cloudflare, find
+and update the following snippet: `"proxied":false}"` to say `true` instead of
+`false`.
 
 ```sh
 # file: ddns.sh
@@ -180,9 +176,8 @@ You can test the script by running it manually:
 ./update.sh
 ```
 
-To make sure the scripts run automatically, add it to the
-`cron` file so that it will run on a schedule. To do this,
-open the cron file:
+To make sure the scripts run automatically, add it to the `cron` file so that it
+will run on a schedule. To do this, open the cron file:
 
 ```sh
 crontab -e

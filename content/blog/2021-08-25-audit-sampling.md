@@ -8,44 +8,43 @@ draft = false
 # Introduction
 
 For anyone who is familiar with internal auditing, external auditing, or
-consulting, you will understand how tedious audit testing can become
-when you are required to test large swaths of data. When we cannot
-establish an automated means of testing an entire population, we
-generate samples to represent the population of data. This helps ensure
-we can have a small enough data pool to test and that our results still
-represent the population.
+consulting, you will understand how tedious audit testing can become when you
+are required to test large swaths of data. When we cannot establish an automated
+means of testing an entire population, we generate samples to represent the
+population of data. This helps ensure we can have a small enough data pool to
+test and that our results still represent the population.
 
-However, sampling data within the world of audit still seems to confuse
-quite a lot of people. While some audit-focused tools have introduced
-sampling functionality (e.g. Wdesk), many audit departments and firms
-cannot use software like this due to certain constraints, such as the
-team\'s budget or knowledge. Here is where this article comes in: we\'re
-going to use [Python](https://www.python.org), a free and open-source
-programming language, to generate random samples from a dataset in order
-to suffice numerous audit situations.
+However, sampling data within the world of audit still seems to confuse quite a
+lot of people. While some audit-focused tools have introduced sampling
+functionality (e.g. Wdesk), many audit departments and firms cannot use software
+like this due to certain constraints, such as the team's budget or knowledge.
+Here is where this article comes in: we're going to use
+[Python](https://www.python.org), a free and open-source programming language,
+to generate random samples from a dataset in order to suffice numerous audit
+situations.
 
 # Audit Requirements for Sampling
 
-Before we get into the details of how to sample with Python, I want to
-make sure I discuss the different requirements that auditors may have of
-samples used within their projects.
+Before we get into the details of how to sample with Python, I want to make sure
+I discuss the different requirements that auditors may have of samples used
+within their projects.
 
 ## Randomness
 
-First, let\'s discuss randomness. When testing out new technology to
-help assist with audit sampling, you need to understand exactly how your
-samples are being generated. For example, if the underlying function is
-just picking every 57th element from a list, that\'s not truly random;
-it\'s a systematic form of sampling. Luckily, since Python is
-open-source, we have access to its codebase. Through this blog post, I
-will be using the [pandas](https://pandas.pydata.org) module in order to
-generate the random samples. More specifically, I will be using the
+First, let's discuss randomness. When testing out new technology to help assist
+with audit sampling, you need to understand exactly how your samples are being
+generated. For example, if the underlying function is just picking every 57th
+element from a list, that's not truly random; it's a systematic form of
+sampling. Luckily, since Python is open-source, we have access to its codebase.
+Through this blog post, I will be using the [pandas](https://pandas.pydata.org)
+module in order to generate the random samples. More specifically, I will be
+using the
 [pandas.DataFrame.sample](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html)
 function provided by Pandas.
 
-Now that you know what you\'re using, you can always check out the code
-behind `pandas.DataFrame.sample`. This function does a lot of
-work, but we really only care about the following snippets of code:
+Now that you know what you're using, you can always check out the code behind
+`pandas.DataFrame.sample`. This function does a lot of work, but we really only
+care about the following snippets of code:
 
 ``` python
 # Process random_state argument
@@ -61,67 +60,59 @@ result.index = ibase.default_index(len(result))
 return result
 ```
 
-The block of code above shows you that if you assign a
-`random_state` argument when you run the function, that will
-be used as a seed number in the random generation and will allow you to
-reproduce a sample, given that nothing else changes. This is critical to
-the posterity of audit work. After all, how can you say your audit
-process is adequately documented if the next person can\'t run the code
-and get the same sample? The final piece here on randomness is to look
-at the
-[choice](https://docs.%20python.org/3/library/random.html#random.choice)
-function used above. This is the crux of the generation and can also be
-examined for more detailed analysis on its reliability. As far as
-auditing goes, we will trust that these functions are mathematically
-random.
+The block of code above shows you that if you assign a `random_state` argument
+when you run the function, that will be used as a seed number in the random
+generation and will allow you to reproduce a sample, given that nothing else
+changes. This is critical to the posterity of audit work. After all, how can you
+say your audit process is adequately documented if the next person can't run
+the code and get the same sample? The final piece here on randomness is to look
+at the [choice](https://docs.%20python.org/3/library/random.html#random.choice)
+function used above. This is the crux of the generation and can also be examined
+for more detailed analysis on its reliability. As far as auditing goes, we will
+trust that these functions are mathematically random.
 
 ## Sample Sizes
 
-As mentioned in the intro, sampling is only an effective method of
-auditing when it truly represents the entire population. While some
-audit departments or firms may consider certain judgmental sample sizes
-to be adequate, you may need to rely on statistically-significant
-confidence levels of sample testing at certain points. I will
-demonstrate both here. For statistically-significant confidence levels,
-most people will assume a 90% - 99% confidence level. In order to
-actually calculate the correct sample size, it is best to use
-statistical tools due to the tedious math work required. For example,
-for a population of 1000, and a 90% confidence level that no more than
-5% of the items are nonconforming, you would sample 45 items.
+As mentioned in the intro, sampling is only an effective method of auditing when
+it truly represents the entire population. While some audit departments or firms
+may consider certain judgmental sample sizes to be adequate, you may need to
+rely on statistically-significant confidence levels of sample testing at certain
+points. I will demonstrate both here. For statistically-significant confidence
+levels, most people will assume a 90% - 99% confidence level. In order to
+actually calculate the correct sample size, it is best to use statistical tools
+due to the tedious math work required. For example, for a population of 1000,
+and a 90% confidence level that no more than 5% of the items are nonconforming,
+you would sample 45 items.
 
-However, in my personal experience, many audit departments and firms do
-not use statistical sampling. Most people use a predetermined, often
-proprietary, table that will instruct auditors which sample sizes to
-choose. This allows for uniform testing and reduces overall workload.
-See the table below for a common implementation of sample sizes:
+However, in my personal experience, many audit departments and firms do not use
+statistical sampling. Most people use a predetermined, often proprietary, table
+that will instruct auditors which sample sizes to choose. This allows for
+uniform testing and reduces overall workload. See the table below for a common
+implementation of sample sizes:
 
   Control Frequency   Sample Size - High Risk   Sample Size - Low Risk
   ------------------- ------------------------- ------------------------
-  More Than Daily     40                        25
-  Daily               40                        25
-  Weekly              12                        5
-  Monthly             5                         3
-  Quarterly           2                         2
-  Semi-Annually       1                         1
-  Annually            1                         1
-  Ad-hoc              1                         1
+  More Than Daily     40                        25 Daily               40
+  25 Weekly              12                        5 Monthly             5
+  3 Quarterly           2                         2 Semi-Annually       1
+  1 Annually            1                         1 Ad-hoc              1
+  1
 
 ### Sampling with Python & Pandas
 
-In this section, I am going to cover a few basic audit situations that
-require sampling. While some situations may require more effort, the
-syntax, organization, and intellect used remain largely the same. If
-you\'ve never used Python before, note that lines starting with a
-\'`#`\' symbol are called comments, and they will be skipped
-by Python. I highly recommend taking a quick tutorial online to
-understand the basics of Python if any of the code below is confusing to
-you.
+In this section, I am going to cover a few basic audit situations that require
+sampling. While some situations may require more effort, the syntax,
+organization, and intellect used remain largely the same. If you've never used
+Python before, note that lines starting with a '`#`' symbol are called
+comments, and they will be skipped by Python. I highly recommend taking a quick
+tutorial online to understand the basics of Python if any of the code below is
+confusing to you.
 
 ## Simple Random Sample
 
-First, let\'s look at a simple, random sample. The code block below will
-import the `pandas` module, load a data file, sample the
-data, and export the sample to a file.
+First, let's look at a simple, random sample. The code block below will import
+the `pandas` module, load a data file, sample the data, and export the sample to
+a file.
 
 ``` python
 # Import the Pandas module
@@ -145,8 +136,8 @@ sample.to_excel(file_output)
 
 ## Simple Random Sample: Using Multiple Input Files
 
-Now that we\'ve created a simple sample, let\'s create a sample from
-multiple files.
+Now that we've created a simple sample, let's create a sample from multiple
+files.
 
 ``` python
 # Import the Pandas module
@@ -179,9 +170,9 @@ sample.to_excel(file_output)
 
 ## Stratified Random Sample
 
-Well, what if you need to sample distinct parts of a single file? For
-example, let\'s write some code to separate our data by \"Region\" and
-sample those regions independently.
+Well, what if you need to sample distinct parts of a single file? For example,
+let's write some code to separate our data by "Region" and sample those
+regions independently.
 
 ``` python
 # Import the Pandas module
@@ -213,10 +204,10 @@ sample.to_excel(file_output)
 
 ## Stratified Systematic Sample
 
-This next example is quite useful if you need audit coverage over a
-certain time period. This code will generate samples for each month in
-the data and combine them all together at the end. Obviously, this code
-can be modified to stratify by something other than months, if needed.
+This next example is quite useful if you need audit coverage over a certain time
+period. This code will generate samples for each month in the data and combine
+them all together at the end. Obviously, this code can be modified to stratify
+by something other than months, if needed.
 
 ``` python
 # Import the Pandas module
@@ -262,17 +253,17 @@ sample.to_excel(file_output)
 
 ### Documenting the Results
 
-Once you\'ve generated a proper sample, there are a few things left to
-do in order to properly ensure your process is reproducible.
+Once you've generated a proper sample, there are a few things left to do in
+order to properly ensure your process is reproducible.
 
-1.  Document the sample. Make sure the resulting file is readable and
-    includes the documentation listed in the next bullet.
-2.  Include documentation around the data source, extraction techniques,
-    any modifications made to the data, and be sure to include a copy of
-    the script itself.
-3.  Whenever possible, perform a completeness and accuracy test to
-    ensure your sample is coming from a complete and accurate
-    population. To ensure completeness, compare the record count from
-    the data source to the record count loaded into Python. To ensure
-    accuracy, test a small sample against the source data (e.g., test 5
-    sales against the database to see if the details are accurate).
+1. Document the sample. Make sure the resulting file is readable and includes
+   the documentation listed in the next bullet.
+2. Include documentation around the data source, extraction techniques, any
+   modifications made to the data, and be sure to include a copy of the script
+   itself.
+3. Whenever possible, perform a completeness and accuracy test to ensure your
+   sample is coming from a complete and accurate population. To ensure
+   completeness, compare the record count from the data source to the record
+   count loaded into Python. To ensure accuracy, test a small sample against the
+   source data (e.g., test 5 sales against the database to see if the details
+   are accurate).

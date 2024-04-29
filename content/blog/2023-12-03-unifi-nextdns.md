@@ -9,32 +9,31 @@ draft = false
 
 I recently installed NextDNS on my Unifi Dream Machine router using the
 [UnifiOS](https://github.com/nextdns/nextdns/wiki/UnifiOS) wiki page on
-NextDNS\'s GitHub repository.
+NextDNS's GitHub repository.
 
-As a result of this, I wanted to write down the process in case the wiki
-or installer ever gets lost.
+As a result of this, I wanted to write down the process in case the wiki or
+installer ever gets lost.
 
 # Wiki
 
-The following is copied from the wiki page linked above, with one
-difference in the `ssh` command.
+The following is copied from the wiki page linked above, with one difference in
+the `ssh` command.
 
-Install instructions for Unifi Dream Machine (UDM) standard and pro
-routers.
+Install instructions for Unifi Dream Machine (UDM) standard and pro routers.
 
 ## Install
 
 Enable SSH:
 
--   Go to your unifi admin interface and select your device (not the
-    controller settings, but the Dream Machine settings)
--   Click on \"Settings\" at the bottom of the page
--   Go to the \"Advanced\" section on the left pan
--   Enable SSH
--   Set a SSH password
+- Go to your unifi admin interface and select your device (not the controller
+  settings, but the Dream Machine settings)
+- Click on "Settings" at the bottom of the page
+- Go to the "Advanced" section on the left pan
+- Enable SSH
+- Set a SSH password
 
-Connect to your router using `ssh root@xxx.xxx.xxx.xxx` with
-the password you configured.
+Connect to your router using `ssh root@xxx.xxx.xxx.xxx` with the password you
+configured.
 
 Run the following command and follow the instructions:
 
@@ -42,25 +41,24 @@ Run the following command and follow the instructions:
 sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
 ```
 
-Note: Queries from the UDM itself won\'t be routed to NextDNS nor
-encrypted due to current system limitation. All traffic from other
-devices on then network will.
+Note: Queries from the UDM itself won't be routed to NextDNS nor encrypted due
+to current system limitation. All traffic from other devices on then network
+will.
 
 ## Upgrade
 
-To upgrade to the last version, simply re-run the installer above. If a
-new version is available, the upgrade action will added to the list of
-possible actions.
+To upgrade to the last version, simply re-run the installer above. If a new
+version is available, the upgrade action will added to the list of possible
+actions.
 
 ## Uninstall
 
-To uninstall, re-run the installer above and select \"Remove\" in the
-menu.
+To uninstall, re-run the installer above and select "Remove" in the menu.
 
 ## Troubleshooting
 
-If the installation fail, please the installer in debug mode and contact
-us at team@nextdns.io with the transcript of the installation:
+If the installation fail, please the installer in debug mode and contact us at
+team@nextdns.io with the transcript of the installation:
 
 ```sh
 sh -c 'DEBUG=1 sh -c "$(curl -sL https://nextdns.io/install)"'
@@ -68,15 +66,15 @@ sh -c 'DEBUG=1 sh -c "$(curl -sL https://nextdns.io/install)"'
 
 ### Content Filtering Conflict
 
-NextDNS CLI and the UDM Content Filtering or the Ad Blocking features
-are incompatible. If you want to use NextDNS CLI, please make sure they
-are disabled.
+NextDNS CLI and the UDM Content Filtering or the Ad Blocking features are
+incompatible. If you want to use NextDNS CLI, please make sure they are
+disabled.
 
-To disable Content Filtering, go to Settings \> Network, then for each
-network, set the Content Filtering feature to None
+To disable Content Filtering, go to Settings > Network, then for each network,
+set the Content Filtering feature to None
 
-To disable Ad Blocking, go to Settings \> Application Firewall. In the
-General tab, uncheck the Ad Blocking checkbox.
+To disable Ad Blocking, go to Settings > Application Firewall. In the General
+tab, uncheck the Ad Blocking checkbox.
 
 ### APT Error
 
@@ -96,8 +94,7 @@ sed -i -e 's/deb.debian.org/archive.debian.org/g' \
 
 ## install.sh
 
-Here are the contents of the `install.sh` file used above, as
-of 2023-12-03:
+Here are the contents of the `install.sh` file used above, as of 2023-12-03:
 
 ```sh
 #!/bin/sh

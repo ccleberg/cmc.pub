@@ -7,9 +7,9 @@ draft = false
 
 # Creating the Ban List
 
-In order to ban list referral domains or websites with Nginx, you need
-to create a ban list file. The file below will accept regexes for
-different domains or websites you wish to block.
+In order to ban list referral domains or websites with Nginx, you need to create
+a ban list file. The file below will accept regexes for different domains or
+websites you wish to block.
 
 First, create the file in your nginx directory:
 
@@ -17,8 +17,8 @@ First, create the file in your nginx directory:
 doas nano /etc/nginx/banlist.conf
 ```
 
-Next, paste the following contents in and fill out the regexes with
-whichever domains you\'re blocking.
+Next, paste the following contents in and fill out the regexes with whichever
+domains you're blocking.
 
 ``` conf
 # /etc/nginx/banlist.conf
@@ -35,15 +35,15 @@ map $http_referer $bad_referer {
 
 # Configuring Nginx
 
-In order for the ban list to work, Nginx needs to know it exists and how
-to handle it. For this, edit the `nginx.conf` file.
+In order for the ban list to work, Nginx needs to know it exists and how to
+handle it. For this, edit the `nginx.conf` file.
 
 ```sh
 doas nano /etc/nginx/nginx.conf
 ```
 
-Within this file, find the `http` block and add your ban list
-file location to the end of the block.
+Within this file, find the `http` block and add your ban list file location to
+the end of the block.
 
 ``` conf
 # /etc/nginx/nginx.conf
@@ -58,24 +58,23 @@ http {
 
 # Enabling the Ban List
 
-Finally, we need to take action when a bad referral site is found. To do
-so, edit the configuration file for your website. For example, I have
-all website configuration files in the `http.d` directory.
-You may have them in the `sites-available` directory on some
-distributions.
+Finally, we need to take action when a bad referral site is found. To do so,
+edit the configuration file for your website. For example, I have all website
+configuration files in the `http.d` directory. You may have them in the
+`sites-available` directory on some distributions.
 
 ```sh
 doas nano /etc/nginx/http.d/example.com.conf
 ```
 
-Within each website\'s configuration file, edit the `server`
-blocks that are listening to ports 80 and 443 and create a check for the
-`$bad_referrer` variable we created in the ban list file.
+Within each website's configuration file, edit the `server` blocks that are
+listening to ports 80 and 443 and create a check for the `$bad_referrer`
+variable we created in the ban list file.
 
 If a matching site is found, you can return any [HTTP Status
-Code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) you want.
-Code 403 (Forbidden) is logical in this case since you are preventing a
-client connection due to a banned domain.
+Code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) you want. Code
+403 (Forbidden) is logical in this case since you are preventing a client
+connection due to a banned domain.
 
 ``` conf
 server {
@@ -100,8 +99,8 @@ doas rc-service nginx restart
 
 # Testing Results
 
-In order to test the results, let\'s curl the contents of our site. To
-start, I\'ll curl the site normally:
+In order to test the results, let's curl the contents of our site. To start,
+I'll curl the site normally:
 
 ```sh
 curl https://cleberg.net
@@ -113,15 +112,15 @@ The HTML contents of the page come back successfully:
 <!doctype html>...</html>
 ```
 
-Next, let\'s include a banned referrer:
+Next, let's include a banned referrer:
 
 ```sh
 curl --referer https://news.ycombinator.com https://cleberg.net
 ```
 
-This time, I\'m met with a 403 Forbidden response page. That means we
-are successful and any clients being referred from a banned domain will
-be met with this same response code.
+This time, I'm met with a 403 Forbidden response page. That means we are
+successful and any clients being referred from a banned domain will be met with
+this same response code.
 
 ``` html
 <html>

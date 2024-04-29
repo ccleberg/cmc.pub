@@ -7,17 +7,16 @@ draft = false
 
 # Overview
 
-When you have to scope a database into your engagement, you may be
-curious how to best extract the information from the database. While
-there are numerous different methods to extract this type of
-information, I\'m going to show an example of how to gather all users
-and privileges from three main database types: Oracle, Microsoft SQL,
-and MySQL.
+When you have to scope a database into your engagement, you may be curious how
+to best extract the information from the database. While there are numerous
+different methods to extract this type of information, I'm going to show an
+example of how to gather all users and privileges from three main database
+types: Oracle, Microsoft SQL, and MySQL.
 
 # Oracle
 
-You can use the following SQL script to see all users and their
-privileges in an Oracle database:
+You can use the following SQL script to see all users and their privileges in an
+Oracle database:
 
 ``` sql
 SELECT
@@ -37,23 +36,21 @@ WHERE
     grantee IN (SELECT DISTINCT grantee FROM dba_tab_privs);
 ```
 
-This script queries the `dba_sys_privs` and
-`dba_tab_privs` views to retrieve system and table-level
-privileges respectively. It then combines the results using
-`UNION ALL` to show all users and their associated
-privileges. Please note that this method does not extract information
-from the `dba_role_privs` table - use the method below for
-that data.
+This script queries the `dba_sys_privs` and `dba_tab_privs` views to retrieve
+system and table-level privileges respectively. It then combines the results
+using `UNION ALL` to show all users and their associated privileges. Please note
+that this method does not extract information from the `dba_role_privs` table -
+use the method below for that data.
 
-Please note that you might need appropriate privileges (e.g., DBA
-privileges) to access these views, and you should exercise caution when
-querying system tables in a production Oracle database.
+Please note that you might need appropriate privileges (e.g., DBA privileges) to
+access these views, and you should exercise caution when querying system tables
+in a production Oracle database.
 
 ## Alternative Oracle Query
 
-You can also extract each table\'s information separately and perform
-processing outside the database to explore and determine the information
-necessary for the audit:
+You can also extract each table's information separately and perform processing
+outside the database to explore and determine the information necessary for the
+audit:
 
 ``` sql
 SELECT ** FROM sys.dba_role_privs;
@@ -64,9 +61,8 @@ SELECT ** FROM sys.dba_users;
 
 # Microsoft SQL
 
-You can use the following SQL script to see all users and their
-privileges in a Microsoft SQL Server database
-([source](https://stackoverflow.com/a/30040784)):
+You can use the following SQL script to see all users and their privileges in a
+Microsoft SQL Server database ([source](https://stackoverflow.com/a/30040784)):
 
 ``` sql
 /*
@@ -217,8 +213,8 @@ ORDER BY
 
 # MySQL
 
-You can use the following SQL script to see all users and their
-privileges in a MySQL database:
+You can use the following SQL script to see all users and their privileges in a
+MySQL database:
 
 ```sh
 mysql -u root -p
@@ -230,26 +226,22 @@ Find all users and hosts with access to the database:
 SELECT ** FROM information_schema.user_privileges;
 ```
 
-This script retrieves user information and their associated
-database-level privileges from the
-`information_schema.user_privileges` table in MySQL. It lists
-various privileges such as SELECT, INSERT, UPDATE, DELETE, CREATE, and
+This script retrieves user information and their associated database-level
+privileges from the `information_schema.user_privileges` table in MySQL. It
+lists various privileges such as SELECT, INSERT, UPDATE, DELETE, CREATE, and
 more for each user and database combination.
 
-Please note that you may need appropriate privileges (e.g.,
-`SELECT` privileges on
-`information_schema.user_privileges`) to access this
-information in a MySQL database. Additionally, some privileges like
-GRANT OPTION, EXECUTE, EVENT, and TRIGGER may not be relevant for all
-users and databases.
+Please note that you may need appropriate privileges (e.g., `SELECT` privileges
+on `information_schema.user_privileges`) to access this information in a MySQL
+database. Additionally, some privileges like GRANT OPTION, EXECUTE, EVENT, and
+TRIGGER may not be relevant for all users and databases.
 
 ## Alternative MySQL Query
 
-You can also grab individual sets of data from MySQL if you prefer to
-join them after extraction. I have marked the queries below with
-`SELECT ...` and excluded most `WHERE` clauses for
-brevity. You should determine the relevant privileges in-scope and query
-for those privileges to reduce the length of time to query.
+You can also grab individual sets of data from MySQL if you prefer to join them
+after extraction. I have marked the queries below with `SELECT ...` and excluded
+most `WHERE` clauses for brevity. You should determine the relevant privileges
+in-scope and query for those privileges to reduce the length of time to query.
 
 ``` sql
 -- Global Permissions
