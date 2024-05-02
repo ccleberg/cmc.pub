@@ -34,21 +34,16 @@ To quote the Gemini Protocol's documentation:
 
 ```md
 [//]: <> (Headings)
-
 # Heading
-
 ## Sub-heading
-
 ### Sub-subheading
 
 [//]: <> (Lists)
-
 -   Mercury
 -   Gemini
 -   Apollo
 
 [//]: <> (Quotes)
-
 > I contend that text-based websites should not exceed in size the major works of Russian literature.
 
 [//]: <> (Links)
