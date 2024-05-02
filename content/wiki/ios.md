@@ -1,6 +1,6 @@
 +++
 title = "iOS"
-updated = 2024-03-13
+updated = 2024-05-01
 draft = false
 +++
 
@@ -95,6 +95,10 @@ Here's the baseline I start with:
 - [Apple Music](https://apps.apple.com/us/app/apple-music/id1108187390) (`*`) - Apple's native music streaming app
 - [Plexamp](https://apps.apple.com/us/app/plexamp/id1500797510) (`*`) - Top-notch music app for your Plex Media Server, with a neural network that provides excellent radio/shuffle suggestions
 
+### Navigation
+
+- [deedum](https://apps.apple.com/us/app/deedum/id1546810946) - A Gemini Protocol browser
+
 ### News
 
 - [NetNewsWire](https://apps.apple.com/us/app/netnewswire-rss-reader/id1480640210) - A free and open source RSS reader for Mac, iPhone, and iPad
@@ -108,6 +112,7 @@ Here's the baseline I start with:
 
 - [beorg](https://apps.apple.com/us/app/beorg-to-do-list-agenda/id1238649962) - An org-mode editor, outline, and scheduler with paid extensions
 - [Bitwarden](https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744) (`*`) - An open source password manager
+- [Bitwarden Authenticator](https://apps.apple.com/us/app/bitwarden-authenticator/id6497335175) (`*`) - Generate 2FA on your device
 - [Cryptomator](https://apps.apple.com/us/app/cryptomator/id1560822163) - A cross-platform encryption program
 - [Obsidian](https://apps.apple.com/us/app/obsidian-connected-notes/id1557175442) (`*`) - A nice Markdown-based editor based on a "vault" structure. Offers a paid sync solution and community extensions
 - [Strongbox](https://apps.apple.com/us/app/strongbox-password-manager/id897283731) - Keepass password manager for iOS & macOS
