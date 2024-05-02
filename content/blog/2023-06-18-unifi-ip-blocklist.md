@@ -7,8 +7,8 @@ draft = false
 
 # Identifying Abusive IPs
 
-If you're like me and use Unifi network equipment at the edge of the network
-you manage, you may know that Unifi is only somewhat decent at identifying and
+If you're like me and use Unifi network equipment at the edge of the network you
+manage, you may know that Unifi is only somewhat decent at identifying and
 blocking IPs that represent abusive or threat actors.
 
 While Unifi has a [threat
@@ -28,6 +28,7 @@ blocked yet.
 # Create an IP Group Profile
 
 To start, login to the Unifi machine's web GUI and navigate to the Network app
+
 > Settings > Profiles.
 
 Within this page, choose the `IP Groups` tab and click `Create New`.
@@ -58,12 +59,12 @@ navigate to the Network app > Settings > Firewall & Security.
 Within this screen, find the Firewall Rules table and click `Create Entry`. This
 entry should contain the following settings:
 
-- Type: `Internet In`
-- Description: `<Your Custom Rule>`
-- Rule Applied: `Before Predefined Rules`
-- Action: `Drop`
-- Source Type: `Port/IP Group`
-- IPv4 Address Group: `<Name of the Group Profile You Created Above>`
+-   Type: `Internet In`
+-   Description: `<Your Custom Rule>`
+-   Rule Applied: `Before Predefined Rules`
+-   Action: `Drop`
+-   Source Type: `Port/IP Group`
+-   IPv4 Address Group: `<Name of the Group Profile You Created Above>`
 
 Customize the remaining configurations to your liking, and then save and enable
 the firewall rule.

@@ -26,14 +26,18 @@ buttons.
 Tumblr's unlike buttons are structured as you can see in the following code
 block. All unlike buttons have an `aria-label` with a value of `Unlike`.
 
-``` html
+```html
 <button class="TRX6J" aria-label="Unlike">
-  <span class="EvhBA B1Z5w ztpfZ" tabindex="-1">
-    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="23" 
-    role="presentation">
-      <use href="#managed-icon__like-filled"></use>
-    </svg>
-  </span>
+	<span class="EvhBA B1Z5w ztpfZ" tabindex="-1">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			height="21"
+			width="23"
+			role="presentation"
+		>
+			<use href="#managed-icon__like-filled"></use>
+		</svg>
+	</span>
 </button>
 ```
 
@@ -46,8 +50,8 @@ Further, be sure to scroll down to the bottom and force Tumblr to load more
 posts so that this script unlikes more posts at a time.
 
 Once you are logged in and the page is loaded, open the Developer Tools and be
-sure you're on the "Console" tab. It should look something like this (this is
-in Firefox, Chromium should be similar):
+sure you're on the "Console" tab. It should look something like this (this is in
+Firefox, Chromium should be similar):
 
 ![Firefox Dev
 !Tools](https:///img.cleberg.net/blog/20230105-mass-unlike-tumblr-posts/dev_console.png)
@@ -58,17 +62,17 @@ unlike it.
 
 Optionally, you can comment-out the line `elements[i].click();` and uncomment
 the `console.log()` lines to simply print out information without performing any
-actions. This can be useful to debug issues or confirm that the code below
-isn't doing anything you don't want it to.
+actions. This can be useful to debug issues or confirm that the code below isn't
+doing anything you don't want it to.
 
-``` javascript
+```javascript
 const elements = document.querySelectorAll('[aria-label="Unlike"]');
 // console.log(elements); // 👉 [button]
 
-for (let i=0; i < elements.length; i++) {
-  // console.log(elements[i]);
-  elements[i].click();
-} 
+for (let i = 0; i < elements.length; i++) {
+	// console.log(elements[i]);
+	elements[i].click();
+}
 ```
 
 # Results

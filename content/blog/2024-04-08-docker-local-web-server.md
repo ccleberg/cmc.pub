@@ -84,7 +84,7 @@ docker run -it -d -p 8000:80 --name web -v ~/Source/cleberg.net/.build:/usr/shar
 
 Here's an example of my development configuration file.
 
-``` conf
+```conf
 # nginx-config.conf
 server {
        server_name cleberg.net www.cleberg.net;

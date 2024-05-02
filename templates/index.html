@@ -12,14 +12,14 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 	{% set section = get_section(path="blog/_index.md") %}
 	{% set i = 0 %}
 	{% for page in section.pages %}
-		{% if i < 3%}
-			{% set_global i = i + 1%}
+	{% if i < 3%}
+	{% set_global i = i + 1%}
 			<div class="post">
-				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date | date(format='%Y-%m-%d') }}</time>
+				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S')
+				}}">{{ page.date | date(format='%Y-%m-%d') }}</time>
 				<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
 			</div>
-		{% endif %}
-	{% endfor %}
+		{% endif %} {% endfor %}
 	<br>
 	<a href="/blog/">All Posts &rarr;</a>
 </section>
@@ -35,8 +35,10 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 	<h2>Contact</h2>
 	<ul>
 		<li>hello [at] cleberg.net (<a href="/gpg.txt">GPG</a>)</li>
-		<li><a href="https://matrix.to/#/@cyborg:matrix.tchncs.de" target="_blank" rel="noopener">@cyborg:@matrix.tchncs.de</a></li>
-		<li><a href="https://git.cleberg.net/" target="_blank" rel="noopener">Git</a></li>
+		<li><a href="https://matrix.to/#/@cyborg:matrix.tchncs.de"
+		target="_blank" rel="noopener">@cyborg:@matrix.tchncs.de</a></li>
+		<li><a href="https://git.cleberg.net/" target="_blank"
+		rel="noopener">Git</a></li>
 	</ul>
 </section>
 {% endblock content %}

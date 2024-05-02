@@ -23,11 +23,11 @@ portal.
 
 This guide assumes you have the following already set-up:
 
-- A registered domain with DNS pointing to your server.
-- A subdomain for Authelia (`auth.example.com`) and a subdomain to protect via
-  Authelia (`app.example.com`).
-- A working Nginx web server.
-- Docker and docker-compose installed.
+-   A registered domain with DNS pointing to your server.
+-   A subdomain for Authelia (`auth.example.com`) and a subdomain to protect via
+    Authelia (`app.example.com`).
+-   A working Nginx web server.
+-   Docker and docker-compose installed.
 
 # Installation
 
@@ -49,19 +49,19 @@ Within this file, paste the following content. If you prefer a different local
 port, modify the port on the left side of the colon on the `9091:9091` line. Be
 sure to modify the `TZ` variable to your timezone.
 
-``` yml
-version: '3.3'
+```yml
+version: "3.3"
 
 services:
-  authelia:
-    image: authelia/authelia
-    container_name: authelia
-    volumes:
-      - ./config:/config
-    ports:
-      - 9091:9091
-    environment:
-      - TZ=America/Chicago
+    authelia:
+        image: authelia/authelia
+        container_name: authelia
+        volumes:
+            - ./config:/config
+        ports:
+            - 9091:9091
+        environment:
+            - TZ=America/Chicago
 ```
 
 Start the container with docker-compose:
@@ -93,107 +93,107 @@ and modify as necessary.
 
 The major required changes are:
 
-- Any instances of `example.com` should be replaced by your domain.
-- `jwt_secret` - Use the `pwgen 40 1` command to generate a secret for yourself.
-- `access_control` - Set the Authelia domain to bypass here, as well as any
-  subdomains you want to protect.
-- `session` > `secret` - Use the `pwgen 40 1` command to generate a secret for
-  yourself.
-- `regulation` - Set the variables here to restrict login attempts and bans.
-- `storage` > `encryption_key` - Use the `pwgen 40 1` command to generate a
-  secret for yourself.
-- `smtp` - If you have access to an SMTP service, set up the information here to
-  active outgoing emails.
+-   Any instances of `example.com` should be replaced by your domain.
+-   `jwt_secret` - Use the `pwgen 40 1` command to generate a secret for
+    yourself.
+-   `access_control` - Set the Authelia domain to bypass here, as well as any
+    subdomains you want to protect.
+-   `session` > `secret` - Use the `pwgen 40 1` command to generate a secret for
+    yourself.
+-   `regulation` - Set the variables here to restrict login attempts and bans.
+-   `storage` > `encryption_key` - Use the `pwgen 40 1` command to generate a
+    secret for yourself.
+-   `smtp` - If you have access to an SMTP service, set up the information here
+    to active outgoing emails.
 
-``` yml
+```yml
 # yamllint disable rule:comments-indentation
 ---
 ###############################################################################
 #                           Authelia Configuration                            #
 ###############################################################################
 
-theme: dark 
+theme: dark
 jwt_secret: aiS5iedaiv6eeVaideeLeich5roo6ohvaf3Vee1a # pwgen 40 1
 
 default_redirection_url: https://example.com
 
 server:
-  host: 0.0.0.0
-  port: 9091
-  path: ""
-  read_buffer_size: 4096
-  write_buffer_size: 4096
-  enable_pprof: false
-  enable_expvars: false
-  disable_healthcheck: false
-  tls:
-    key: ""
-    certificate: ""
+    host: 0.0.0.0
+    port: 9091
+    path: ""
+    read_buffer_size: 4096
+    write_buffer_size: 4096
+    enable_pprof: false
+    enable_expvars: false
+    disable_healthcheck: false
+    tls:
+        key: ""
+        certificate: ""
 
 log:
-  level: debug
+    level: debug
 
 totp:
-  issuer: example.com
-  period: 30
-  skew: 1
+    issuer: example.com
+    period: 30
+    skew: 1
 
 authentication_backend:
-  disable_reset_password: false
-  refresh_interval: 5m
-  file:
-    path: /config/users_database.yml
-    password:
-      algorithm: argon2id
-      iterations: 1
-      key_length: 32
-      salt_length: 16
-      memory: 1024
-      parallelism: 8
+    disable_reset_password: false
+    refresh_interval: 5m
+    file:
+        path: /config/users_database.yml
+        password:
+            algorithm: argon2id
+            iterations: 1
+            key_length: 32
+            salt_length: 16
+            memory: 1024
+            parallelism: 8
 
 access_control:
-  default_policy: deny
-  rules:
-    - domain:
-        - "auth.example.com"
-      policy: bypass
-    - domain: "teddit.example.com"
-      policy: one_factor
+    default_policy: deny
+    rules:
+        - domain:
+              - "auth.example.com"
+          policy: bypass
+        - domain: "teddit.example.com"
+          policy: one_factor
 
 session:
-  name: authelia_session
-  secret: aiS5iedaiv6eeVaideeLeich5roo6ohvaf3Vee1a # pwgen 40 1
-  expiration: 3600
-  inactivity: 300
-  domain: example.com
+    name: authelia_session
+    secret: aiS5iedaiv6eeVaideeLeich5roo6ohvaf3Vee1a # pwgen 40 1
+    expiration: 3600
+    inactivity: 300
+    domain: example.com
 
 regulation:
-  max_retries: 5
-  find_time: 10m
-  ban_time: 12h
+    max_retries: 5
+    find_time: 10m
+    ban_time: 12h
 
 storage:
-  local:
-    path: /config/db.sqlite3 
-  encryption_key: aiS5iedaiv6eeVaideeLeich5roo6ohvaf3Vee1a # pwgen 40 1
+    local:
+        path: /config/db.sqlite3
+    encryption_key: aiS5iedaiv6eeVaideeLeich5roo6ohvaf3Vee1a # pwgen 40 1
 
 notifier:
-  disable_startup_check: true
-  smtp:
-    username: user@example.com
-    password: password
-    host: smtp.example.com
-    port: 465
-    sender: user@example.com
-    identifier: example.com
-    subject: "[Authelia] {title}"
-    startup_check_address: user@example.com
-    disable_require_tls: false
-    disable_html_emails: true
-    tls:
-      skip_verify: false
-      minimum_version: TLS1.2
-...
+    disable_startup_check: true
+    smtp:
+        username: user@example.com
+        password: password
+        host: smtp.example.com
+        port: 465
+        sender: user@example.com
+        identifier: example.com
+        subject: "[Authelia] {title}"
+        startup_check_address: user@example.com
+        disable_require_tls: false
+        disable_html_emails: true
+        tls:
+            skip_verify: false
+            minimum_version: TLS1.2
 ```
 
 ## Authelia Users
@@ -212,17 +212,17 @@ To generate the password, go to [Argon2 Hash Generator](https://argon2.online),
 generate a random salt, and make sure the rest of the settings match the
 `authentication_backend` section of `configuration.yml` file.
 
-``` yaml
+```yaml
 users:
-  my_username:
-    displayname: "My User"
-    # Generated at https://argon2.online/ -- match the settings in 
-    # the `authentication_backend` section of configuration.yml
-    password: "" 
-    email: email@example.com
-    groups:
-      - admins
-      - dev
+    my_username:
+        displayname: "My User"
+        # Generated at https://argon2.online/ -- match the settings in
+        # the `authentication_backend` section of configuration.yml
+        password: ""
+        email: email@example.com
+        groups:
+            - admins
+            - dev
 ```
 
 Once the app is configured, restart the container from scratch.
@@ -247,7 +247,7 @@ Within this file, paste the following information and be sure to update
 `example.com` to your domain. Make sure the `$upstream_authelia` variable
 matches the location of your Authelia container.
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.example\.com$) {
         return 301 https://$host$request_uri;
@@ -322,7 +322,7 @@ variables.
 sudo nano /etc/nginx/sites-available/teddit
 ```
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.example\.com$) {
         return 301 https://$host$request_uri;
@@ -441,9 +441,9 @@ authentication domain and presented with the Authelia login portal.
 ![Authelia
 Portal](https://img.cleberg.net/blog/20231010-authelia/authelia_portal.png)
 
-Once you've successfully authenticated, you can visit your authentication
-domain directly and see that you're currently authenticated to any domain
-protected by Authelia.
+Once you've successfully authenticated, you can visit your authentication domain
+directly and see that you're currently authenticated to any domain protected by
+Authelia.
 
 ![Authelia
 Success](https://img.cleberg.net/blog/20231010-authelia/authelia_success.png)

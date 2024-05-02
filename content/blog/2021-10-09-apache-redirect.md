@@ -24,10 +24,10 @@ To solve this problem, I really needed to solve two pieces:
    `/blog/some-post/`.
 2. Ensure that no other `.html` files are redirected, such as `index.html`.
 
-After *a lot* of tweaking and testing, I believe I have finally found the
+After _a lot_ of tweaking and testing, I believe I have finally found the
 solution. The solution is shown below.
 
-``` conf
+```conf
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !\index.html$ [NC]
 RewriteRule ^(.*).html$ https://example.com/$1 [R=301,L]
@@ -41,5 +41,5 @@ following:
 3. Find any `.html` files within the website directory and redirect it to
    exclude the file extension.
 4. The final piece is adding the trailing slash (`/`) at the end of the URL -
-   you'll notice that I don't have an Apache rule for that since Apache
-   handles that automatically.
+   you'll notice that I don't have an Apache rule for that since Apache handles
+   that automatically.

@@ -46,7 +46,7 @@ Now that you know what you're using, you can always check out the code behind
 `pandas.DataFrame.sample`. This function does a lot of work, but we really only
 care about the following snippets of code:
 
-``` python
+```python
 # Process random_state argument
 rs = com.random_state(random_state)
 
@@ -64,9 +64,9 @@ The block of code above shows you that if you assign a `random_state` argument
 when you run the function, that will be used as a seed number in the random
 generation and will allow you to reproduce a sample, given that nothing else
 changes. This is critical to the posterity of audit work. After all, how can you
-say your audit process is adequately documented if the next person can't run
-the code and get the same sample? The final piece here on randomness is to look
-at the [choice](https://docs.%20python.org/3/library/random.html#random.choice)
+say your audit process is adequately documented if the next person can't run the
+code and get the same sample? The final piece here on randomness is to look at
+the [choice](https://docs.%20python.org/3/library/random.html#random.choice)
 function used above. This is the crux of the generation and can also be examined
 for more detailed analysis on its reliability. As far as auditing goes, we will
 trust that these functions are mathematically random.
@@ -90,23 +90,22 @@ that will instruct auditors which sample sizes to choose. This allows for
 uniform testing and reduces overall workload. See the table below for a common
 implementation of sample sizes:
 
-  Control Frequency   Sample Size - High Risk   Sample Size - Low Risk
-  ------------------- ------------------------- ------------------------
-  More Than Daily     40                        25 Daily               40
-  25 Weekly              12                        5 Monthly             5
-  3 Quarterly           2                         2 Semi-Annually       1
-  1 Annually            1                         1 Ad-hoc              1
-  1
+Control Frequency Sample Size - High Risk Sample Size - Low Risk
+
+---
+
+More Than Daily 40 25 Daily 40 25 Weekly 12 5 Monthly 5 3 Quarterly 2 2
+Semi-Annually 1 1 Annually 1 1 Ad-hoc 1 1
 
 ### Sampling with Python & Pandas
 
 In this section, I am going to cover a few basic audit situations that require
 sampling. While some situations may require more effort, the syntax,
 organization, and intellect used remain largely the same. If you've never used
-Python before, note that lines starting with a '`#`' symbol are called
-comments, and they will be skipped by Python. I highly recommend taking a quick
-tutorial online to understand the basics of Python if any of the code below is
-confusing to you.
+Python before, note that lines starting with a '`#`' symbol are called comments,
+and they will be skipped by Python. I highly recommend taking a quick tutorial
+online to understand the basics of Python if any of the code below is confusing
+to you.
 
 ## Simple Random Sample
 
@@ -114,7 +113,7 @@ First, let's look at a simple, random sample. The code block below will import
 the `pandas` module, load a data file, sample the data, and export the sample to
 a file.
 
-``` python
+```python
 # Import the Pandas module
 import pandas
 
@@ -139,7 +138,7 @@ sample.to_excel(file_output)
 Now that we've created a simple sample, let's create a sample from multiple
 files.
 
-``` python
+```python
 # Import the Pandas module
 import pandas
 
@@ -171,10 +170,10 @@ sample.to_excel(file_output)
 ## Stratified Random Sample
 
 Well, what if you need to sample distinct parts of a single file? For example,
-let's write some code to separate our data by "Region" and sample those
-regions independently.
+let's write some code to separate our data by "Region" and sample those regions
+independently.
 
-``` python
+```python
 # Import the Pandas module
 import pandas
 
@@ -209,7 +208,7 @@ period. This code will generate samples for each month in the data and combine
 them all together at the end. Obviously, this code can be modified to stratify
 by something other than months, if needed.
 
-``` python
+```python
 # Import the Pandas module
 import pandas
 

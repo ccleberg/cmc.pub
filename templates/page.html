@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/syntax-theme-dark.css"
+media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/syntax-theme-light.css"
+media="(prefers-color-scheme: light)">
 <link rel="stylesheet" href="/styles.css">
 {% endblock css %}
 
@@ -14,10 +16,11 @@
 <section class="post-metadata">
     <h1>{{ page.title }}</h1>
     {% if page.date %}
-    <p><time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.date }}</time></p>
-    {% endif %}
-    {% if page.updated %}
-    <p>Last Updated: <time datetime="{{ page.updated | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.updated }}</time></p>
+    <p><time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S') }}">{{
+    page.date }}</time></p>
+    {% endif %} {% if page.updated %}
+    <p>Last Updated: <time datetime="{{ page.updated | date(format='%Y-%m-%d
+    %H:%M:%S') }}">{{ page.updated }}</time></p>
     {% endif %}
     <p>{{ page.word_count }} words; {{ page.reading_time }} minute(s)</p>
 {% if page.toc %}
@@ -32,7 +35,8 @@
                         <ul>
                             {% for h2 in h1.children %}
                                 <li>
-                                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                    <a href="{{ h2.permalink | safe }}">{{
+                                    h2.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

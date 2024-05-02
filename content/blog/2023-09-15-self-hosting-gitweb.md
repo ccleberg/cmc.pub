@@ -34,7 +34,7 @@ Once installed, create an Nginx configuration file.
 sudo nano /etc/nginx/sites-available/git.example.com
 ```
 
-``` conf
+```conf
 server {
         listen 80;
         server_name example.com;

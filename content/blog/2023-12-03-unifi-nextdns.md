@@ -25,12 +25,12 @@ Install instructions for Unifi Dream Machine (UDM) standard and pro routers.
 
 Enable SSH:
 
-- Go to your unifi admin interface and select your device (not the controller
-  settings, but the Dream Machine settings)
-- Click on "Settings" at the bottom of the page
-- Go to the "Advanced" section on the left pan
-- Enable SSH
-- Set a SSH password
+-   Go to your unifi admin interface and select your device (not the controller
+    settings, but the Dream Machine settings)
+-   Click on "Settings" at the bottom of the page
+-   Go to the "Advanced" section on the left pan
+-   Enable SSH
+-   Set a SSH password
 
 Connect to your router using `ssh root@xxx.xxx.xxx.xxx` with the password you
 configured.

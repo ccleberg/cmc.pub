@@ -20,7 +20,7 @@ Instead, I finally found a solution that allows me to redirect both subdomains
 AND trailing content. For example, both of these URLs now redirect properly
 using the logic I'll explain below:
 
-``` txt
+```txt
 # Example 1 - Simple base domain redirect with trailing content
 https://domain1.com/blog/alpine-linux/ -> https://domain2.com/blog/alpine-linux/
 
@@ -44,7 +44,7 @@ doas nano /etc/nginx/http.d/domain1.conf
 Within this file, I had one block configured to redirect HTTP requests to HTTPS
 for the base domain and all subdomains.
 
-``` conf
+```conf
 server {
         listen [::]:80;
         listen 80;
@@ -66,7 +66,7 @@ For the base domain, I have another `server` block dedicated to redirecting all
 base domain requests. You can see that the `rewrite` line is instructing Nginx
 to gather all trailing content and append it to the new `domain2.com` URL.
 
-``` conf
+```conf
 server {
         listen [::]:443 ssl http2;
         listen 443 ssl http2;
@@ -91,7 +91,7 @@ Once the server gets to the `rewrite` line, it pulls the `subdomain` variable
 from above and uses it on the new `domain2.com` domain before appending the
 trailing content (`$request_uri`).
 
-``` conf
+```conf
 server {
         listen [::]:443 ssl http2;
         listen 443 ssl http2;

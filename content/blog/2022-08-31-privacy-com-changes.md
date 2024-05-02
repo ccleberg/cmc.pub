@@ -14,9 +14,9 @@ order to continue using their accounts.
 [You can view the new cardholder agreement
 here](https://privacy.com/commercial-cardholder-agreement).
 
-When you log in, you'll be greeted with a pop-up window asking you to review
-and agree to the new terms of use. You will also not be able to open any new
-cards until the terms are agreed to.
+When you log in, you'll be greeted with a pop-up window asking you to review and
+agree to the new terms of use. You will also not be able to open any new cards
+until the terms are agreed to.
 
 ## Changing from a "Prepaid Debit" Model to a "Charge Card" Model
 
@@ -36,9 +36,9 @@ Privacy.com and set the merchant as one of their pre-set options, such as
 "Smiley's Corner Store" or "NSA Gift Shop."
 
 The new model still works with a bank account as a funding source, but the model
-is changed so that you get a "line of credit" set according to a 14-day
-billing cycle. It seems that Privacy.com will now allow charges to be incurred
-without being immediately paid.
+is changed so that you get a "line of credit" set according to a 14-day billing
+cycle. It seems that Privacy.com will now allow charges to be incurred without
+being immediately paid.
 
 ## Daily Payments and Available Credit
 
@@ -83,8 +83,8 @@ off my prepaid debit payments, I have no interest in incurring charges that will
 need to be paid back at a later date. I also have no interest in submitting
 personal information to Privacy.com.
 
-This type of change toward a "buy it now, pay us later" model is concerning,
-and I will be watching Privacy.com to see if they further their interests in the
+This type of change toward a "buy it now, pay us later" model is concerning, and
+I will be watching Privacy.com to see if they further their interests in the
 credit model as time goes on.
 
 Could we see them start charging interest, fees, etc.? I'm not sure, but this

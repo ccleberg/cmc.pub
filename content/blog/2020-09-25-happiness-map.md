@@ -14,14 +14,14 @@ scores, as well as other national scoring measures.
 
 Fields include:
 
-- Overall rank
-- Country or region
-- GDP per capita
-- Social support
-- Healthy life expectancy
-- Freedom to make life choices
-- Generosity
-- Perceptions of corruption
+-   Overall rank
+-   Country or region
+-   GDP per capita
+-   Social support
+-   Healthy life expectancy
+-   Freedom to make life choices
+-   Generosity
+-   Perceptions of corruption
 
 There are 156 records. Since there are ~195 countries in the world, we can see
 that around 40 countries will be missing from this dataset.
@@ -31,7 +31,7 @@ that around 40 countries will be missing from this dataset.
 As always, run the `install` command for all packages needed to perform
 analysis.
 
-``` python
+```python
 !pip install folium geopandas matplotlib numpy pandas
 ```
 
@@ -42,7 +42,7 @@ We only need a couple packages to create a choropleth map. We will use
 visualizations in Python. We will also use geopandas and pandas to wrangle our
 data before we put it on a map.
 
-``` python
+```python
 # Import the necessary Python packages
 import folium
 import geopandas as gpd
@@ -58,7 +58,7 @@ GeoPandas will take this data and load it into a dataframe so that we can easily
 match it to the data we're trying to analyze. Let's look at the GeoJSON
 dataframe:
 
-``` python
+```python
 # Load the GeoJSON data with geopandas
 geo_data = gpd.read_file('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
 geo_data.head()
@@ -67,11 +67,11 @@ geo_data.head()
 ![GeoJSON
 Dataframe](https://img.cleberg.net/blog/20200925-world-choropleth-map/geojson_df.png)
 
-Next, let's load the data from the Kaggle dataset. I've downloaded this file,
-so update the file path if you have it somewhere else. After loading, let's
-take a look at this dataframe:
+Next, let's load the data from the Kaggle dataset. I've downloaded this file, so
+update the file path if you have it somewhere else. After loading, let's take a
+look at this dataframe:
 
-``` python
+```python
 # Load the world happiness data with pandas
 happy_data = pd.read_csv(r'~/Downloads/world_happiness_data_2019.csv')
 happy_data.head()
@@ -88,7 +88,7 @@ below showed empty countries. I searched both data frames for the missing
 countries to see the naming differences. Any countries that do not have records
 in the `happy_data` df will not show up on the map.
 
-``` python
+```python
 # Rename some countries to match our GeoJSON data
 
 # Rename USA
@@ -111,13 +111,13 @@ happy_data.at[democratic_congo_index, 'Country or region'] = 'Democratic Republi
 # Merge the Data
 
 Now that we have clean data, we need to merge the GeoJSON data with the
-happiness data. Since we've stored them both in dataframes, we just need to
-call the `.merge()` function.
+happiness data. Since we've stored them both in dataframes, we just need to call
+the `.merge()` function.
 
 We will also rename a couple columns, just so that they're a little easier to
 use when we create the map.
 
-``` python
+```python
 # Merge the two previous dataframes into a single geopandas dataframe
 merged_df = geo_data.merge(happy_data,left_on='ADMIN', right_on='Country or region')
 
@@ -136,7 +136,7 @@ simplest way to find the center of the map and create a Folium map object. The
 important part is to remember to reference the merged dataframe for our GeoJSON
 data and value data. The columns specify which geo data and value data to use.
 
-``` python
+```python
 # Assign centroids to map
 x_map = merged_df.centroid.x.mean()
 y_map = merged_df.centroid.y.mean()
@@ -173,7 +173,7 @@ Now that we have a map set up, we could stop. However, I want to add a tooltip
 so that I can see more information about each country. The `tooltip_data` code
 below will show a popup on hover with all the data fields shown.
 
-``` python
+```python
     # Adding labels to map
     style_function = lambda x: {'fillColor': '#ffffff',
                                 'color':'#000000',

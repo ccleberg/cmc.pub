@@ -11,8 +11,8 @@ If you've been looking around the self-hosted cloud storage space for a while,
 you've undoubtedly run into someone suggesting
 [Syncthing](https://syncthing.net) as an option. However, it is an unusual
 alternative for those users out there who are used to having a centralized cloud
-server that serves as the "controller" of the data and interacts with clients
-on devices to fetch files.
+server that serves as the "controller" of the data and interacts with clients on
+devices to fetch files.
 
 This post is a walkthrough of the Syncthing software, how I set up my personal
 storage, and some pros and cons of using the software.
@@ -114,10 +114,10 @@ per device.
 # My Personal Cloud Storage Set-up
 
 Personally, I use a model similar to a traditional cloud storage service. I have
-a "centralized" server running 24/7 that acts as an Introducer for my
-Syncthing network. I think of this as my main storage and all other devices as
-tertiary client devices. I will likely add additional servers as backups as time
-goes on so that I don't have to rely on my laptop or phone as the only backups.
+a "centralized" server running 24/7 that acts as an Introducer for my Syncthing
+network. I think of this as my main storage and all other devices as tertiary
+client devices. I will likely add additional servers as backups as time goes on
+so that I don't have to rely on my laptop or phone as the only backups.
 
 Currently, I have one desktop and one mobile device connected to the network,
 both running intermittently as they are not powered-on 24/7.
@@ -139,24 +139,24 @@ iCloud, etc.), and privacy-focused cloud solutions (pCloud, Tresorit, etc.).
 
 **Pros:**
 
-- I've faced no data loss at all through my two-month trial run.
-- No third-parties store your data on their servers.
-- You have full control over your data and can take your data and leave at any
-  time.
-- It's possible to encrypt client-side easily with software like Cryptomator.
-- No proprietary clients or mounted volumes, just plain files and folders.
+-   I've faced no data loss at all through my two-month trial run.
+-   No third-parties store your data on their servers.
+-   You have full control over your data and can take your data and leave at any
+    time.
+-   It's possible to encrypt client-side easily with software like Cryptomator.
+-   No proprietary clients or mounted volumes, just plain files and folders.
 
 **Cons:**
 
-- The learning curve is steeper than traditional cloud services and is focused
-  on a technical audience.
-- If a device needs to modify files in a Folder, the devices will need to sync
-  ALL files from the folder, which may be large. To avoid size restraints, split
-  large folders into smaller folders for syncing.
-- Syncing can be slow due to the clients/servers initially connecting or
-  re-connecting after sleeping.
-- Multiple personal devices are required and require the user to own or rent
-  them as no third-party servers are involved in the storage of data.
+-   The learning curve is steeper than traditional cloud services and is focused
+    on a technical audience.
+-   If a device needs to modify files in a Folder, the devices will need to sync
+    ALL files from the folder, which may be large. To avoid size restraints,
+    split large folders into smaller folders for syncing.
+-   Syncing can be slow due to the clients/servers initially connecting or
+    re-connecting after sleeping.
+-   Multiple personal devices are required and require the user to own or rent
+    them as no third-party servers are involved in the storage of data.
 
 Overall, I've had a great experience with Syncthing so far. I've had no data
 loss, syncing has been quick and easy when changes are made to files, device

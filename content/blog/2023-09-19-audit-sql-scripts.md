@@ -18,7 +18,7 @@ types: Oracle, Microsoft SQL, and MySQL.
 You can use the following SQL script to see all users and their privileges in an
 Oracle database:
 
-``` sql
+```sql
 SELECT
     grantee AS "User",
     privilege AS "Privilege"
@@ -52,11 +52,11 @@ You can also extract each table's information separately and perform processing
 outside the database to explore and determine the information necessary for the
 audit:
 
-``` sql
+```sql
 SELECT ** FROM sys.dba_role_privs;
 SELECT ** FROM sys.dba_sys_privs;
 SELECT ** FROM sys.dba_tab_privs;
-SELECT ** FROM sys.dba_users; 
+SELECT ** FROM sys.dba_users;
 ```
 
 # Microsoft SQL
@@ -64,16 +64,16 @@ SELECT ** FROM sys.dba_users;
 You can use the following SQL script to see all users and their privileges in a
 Microsoft SQL Server database ([source](https://stackoverflow.com/a/30040784)):
 
-``` sql
+```sql
 /*
 Security Audit Report
-1) List all access provisioned to a sql user or windows user/group directly 
+1) List all access provisioned to a sql user or windows user/group directly
 2) List all access provisioned to a sql user or windows user/group through a database or application role
 3) List all access provisioned to the public role
 
 Columns Returned:
 UserName        : SQL or Windows/Active Directory user account.  This could also be an Active Directory group.
-UserType        : Value will be either 'SQL User' or 'Windows User'.  This reflects the type of user defined for the 
+UserType        : Value will be either 'SQL User' or 'Windows User'.  This reflects the type of user defined for the
                   SQL Server user account.
 DatabaseUserName: Name of the associated user as defined in the database user account.  The database user may not be the
                   same as the server user.
@@ -86,70 +86,70 @@ PermissionType  : Type of permissions the user/role has on an object. Examples c
 PermissionState : Reflects the state of the permission type, examples could include GRANT, DENY, etc.
                   This value may not be populated for all roles.  Some built in roles have implicit permission
                   definitions.
-ObjectType      : Type of object the user/role is assigned permissions on.  Examples could include USER_TABLE, 
-                  SQL_SCALAR_FUNCTION, SQL_INLINE_TABLE_VALUED_FUNCTION, SQL_STORED_PROCEDURE, VIEW, etc.   
+ObjectType      : Type of object the user/role is assigned permissions on.  Examples could include USER_TABLE,
+                  SQL_SCALAR_FUNCTION, SQL_INLINE_TABLE_VALUED_FUNCTION, SQL_STORED_PROCEDURE, VIEW, etc.
                   This value may not be populated for all roles.  Some built in roles have implicit permission
-                  definitions.          
-ObjectName      : Name of the object that the user/role is assigned permissions on.  
+                  definitions.
+ObjectName      : Name of the object that the user/role is assigned permissions on.
                   This value may not be populated for all roles.  Some built in roles have implicit permission
                   definitions.
 ColumnName      : Name of the column of the object that the user/role is assigned permissions on. This value
-                  is only populated if the object is a table, view or a table value function.                 
+                  is only populated if the object is a table, view or a table value function.
 */
 
---List all access provisioned to a sql user or windows user/group directly 
-SELECT  
-    [UserName] = CASE princ.[type] 
+--List all access provisioned to a sql user or windows user/group directly
+SELECT
+    [UserName] = CASE princ.[type]
                     WHEN 'S' THEN princ.[name]
                     WHEN 'U' THEN ulogin.[name] COLLATE Latin1_General_CI_AI
                  END,
     [UserType] = CASE princ.[type]
                     WHEN 'S' THEN 'SQL User'
                     WHEN 'U' THEN 'Windows User'
-                 END,  
-    [DatabaseUserName] = princ.[name],       
-    [Role] = null,      
-    [PermissionType] = perm.[permission_name],       
-    [PermissionState] = perm.[state_desc],       
-    [ObjectType] = obj.type_desc,--perm.[class_desc],       
+                 END,
+    [DatabaseUserName] = princ.[name],
+    [Role] = null,
+    [PermissionType] = perm.[permission_name],
+    [PermissionState] = perm.[state_desc],
+    [ObjectType] = obj.type_desc,--perm.[class_desc],
     [ObjectName] = OBJECT_NAME(perm.major_id),
     [ColumnName] = col.[name]
-FROM    
+FROM
     --database user
-    sys.database_principals princ  
+    sys.database_principals princ
 LEFT JOIN
     --Login accounts
     sys.login_token ulogin on princ.[sid] = ulogin.[sid]
-LEFT JOIN        
+LEFT JOIN
     --Permissions
     sys.database_permissions perm ON perm.[grantee_principal_id] = princ.[principal_id]
 LEFT JOIN
     --Table columns
-    sys.columns col ON col.[object_id] = perm.major_id 
+    sys.columns col ON col.[object_id] = perm.major_id
                     AND col.[column_id] = perm.[minor_id]
 LEFT JOIN
     sys.objects obj ON perm.[major_id] = obj.[object_id]
-WHERE 
+WHERE
     princ.[type] in ('S','U')
 UNION
 --List all access provisioned to a sql user or windows user/group through a database or application role
-SELECT  
-    [UserName] = CASE memberprinc.[type] 
+SELECT
+    [UserName] = CASE memberprinc.[type]
                     WHEN 'S' THEN memberprinc.[name]
                     WHEN 'U' THEN ulogin.[name] COLLATE Latin1_General_CI_AI
                  END,
     [UserType] = CASE memberprinc.[type]
                     WHEN 'S' THEN 'SQL User'
                     WHEN 'U' THEN 'Windows User'
-                 END, 
-    [DatabaseUserName] = memberprinc.[name],   
-    [Role] = roleprinc.[name],      
-    [PermissionType] = perm.[permission_name],       
-    [PermissionState] = perm.[state_desc],       
-    [ObjectType] = obj.type_desc,--perm.[class_desc],   
+                 END,
+    [DatabaseUserName] = memberprinc.[name],
+    [Role] = roleprinc.[name],
+    [PermissionType] = perm.[permission_name],
+    [PermissionState] = perm.[state_desc],
+    [ObjectType] = obj.type_desc,--perm.[class_desc],
     [ObjectName] = OBJECT_NAME(perm.major_id),
     [ColumnName] = col.[name]
-FROM    
+FROM
     --Role/member associations
     sys.database_role_members members
 JOIN
@@ -161,39 +161,39 @@ JOIN
 LEFT JOIN
     --Login accounts
     sys.login_token ulogin on memberprinc.[sid] = ulogin.[sid]
-LEFT JOIN        
+LEFT JOIN
     --Permissions
     sys.database_permissions perm ON perm.[grantee_principal_id] = roleprinc.[principal_id]
 LEFT JOIN
     --Table columns
-    sys.columns col on col.[object_id] = perm.major_id 
+    sys.columns col on col.[object_id] = perm.major_id
                     AND col.[column_id] = perm.[minor_id]
 LEFT JOIN
     sys.objects obj ON perm.[major_id] = obj.[object_id]
 UNION
 --List all access provisioned to the public role, which everyone gets by default
-SELECT  
+SELECT
     [UserName] = '{All Users}',
-    [UserType] = '{All Users}', 
-    [DatabaseUserName] = '{All Users}',       
-    [Role] = roleprinc.[name],      
-    [PermissionType] = perm.[permission_name],       
-    [PermissionState] = perm.[state_desc],       
-    [ObjectType] = obj.type_desc,--perm.[class_desc],  
+    [UserType] = '{All Users}',
+    [DatabaseUserName] = '{All Users}',
+    [Role] = roleprinc.[name],
+    [PermissionType] = perm.[permission_name],
+    [PermissionState] = perm.[state_desc],
+    [ObjectType] = obj.type_desc,--perm.[class_desc],
     [ObjectName] = OBJECT_NAME(perm.major_id),
     [ColumnName] = col.[name]
-FROM    
+FROM
     --Roles
     sys.database_principals roleprinc
-LEFT JOIN        
+LEFT JOIN
     --Role permissions
     sys.database_permissions perm ON perm.[grantee_principal_id] = roleprinc.[principal_id]
 LEFT JOIN
     --Table columns
-    sys.columns col on col.[object_id] = perm.major_id 
-                    AND col.[column_id] = perm.[minor_id]                   
-JOIN 
-    --All objects   
+    sys.columns col on col.[object_id] = perm.major_id
+                    AND col.[column_id] = perm.[minor_id]
+JOIN
+    --All objects
     sys.objects obj ON obj.[object_id] = perm.[major_id]
 WHERE
     --Only roles
@@ -222,7 +222,7 @@ mysql -u root -p
 
 Find all users and hosts with access to the database:
 
-``` sql
+```sql
 SELECT ** FROM information_schema.user_privileges;
 ```
 
@@ -243,7 +243,7 @@ after extraction. I have marked the queries below with `SELECT ...` and excluded
 most `WHERE` clauses for brevity. You should determine the relevant privileges
 in-scope and query for those privileges to reduce the length of time to query.
 
-``` sql
+```sql
 -- Global Permissions
 SELECT ... FROM mysql.user;
 
@@ -260,6 +260,6 @@ SELECT ... FROM mysql.columns_priv
 WHERE db = @db_name;
 
 -- Password Configuration
-SHOW GLOBAL VARIABLES LIKE 'validate_password%'; 
+SHOW GLOBAL VARIABLES LIKE 'validate_password%';
 SHOW VARIABLES LIKE 'validate_password%';
 ```

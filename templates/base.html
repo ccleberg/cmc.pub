@@ -5,20 +5,21 @@
 	<title>cleberg.net</title>
 	{% endblock %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#111" media="(prefers-color-scheme: dark)">
-	<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
-	{% if page %}
-		{% if page.description %}
+	<meta name="theme-color" content="#111" media="(prefers-color-scheme:
+	dark)">
+	<meta name="theme-color" content="#fff" media="(prefers-color-scheme:
+	light)">
+	{% if page %} {% if page.description %}
 		<meta name="description" content="{{ page.description }}">
 		{% elif config.description %}
 		<meta name="description" content="{{ config.description }}">
-		{% endif %}
-	{% elif config.description %}
-		<meta name="description" content="{{ config.description }}" />
-	{% endif %}
+		{% endif %} {% elif config.description %}
+		<meta name="description" content="{{ config.description }}" /> {% endif
+		%}
 
 	{% block rss %}
-	<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="{{
+	get_url(path="atom.xml", trailing_slash=false) }}">
 	{% endblock %}
 
 	{% block css %}
@@ -41,7 +42,8 @@
 
 	<footer>
 		<p>Last build: {{ now() | date(format="%Y-%m-%d %H:%M:%S") }}</p>
-		<p><a href="https://git.cleberg.net/?p=cleberg.net.git;a=summary" target="_blank" rel="noopener">Source Code</a></p>
+		<p><a href="https://git.cleberg.net/?p=cleberg.net.git;a=summary"
+		target="_blank" rel="noopener">Source Code</a></p>
 		<p><a href="/atom.xml">Atom RSS Feed</a></p>
 	</footer>
 </body>

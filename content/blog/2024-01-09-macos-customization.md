@@ -61,7 +61,7 @@ Integrity Protection (SIP). However, I chose not to do this and it hasn't
 affected my basic usage of yabai at all.
 
 Refer to the [yabai
-wiki](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release))
+wiki](<https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)>)
 for installation instructions. You will need to ensure that yabai is allowed to
 access the accessibility and screen recording APIs.
 
@@ -94,7 +94,7 @@ nano ~/.config/skhd/skhdrc
 
 For example, I have hotkeys to open my browser and terminal:
 
-``` conf
+```conf
 # Terminal
 cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 
@@ -159,8 +159,8 @@ them by following this process.
 2. Navigate to the `Applications` folder.
 3. Right-click an application of your choice, and select `Get Info`.
 4. Drag the image you downloaded on top of the application's icon at the top of
-   information window (you will see a green "plus" symbol when you're
-   hovering over it).
+   information window (you will see a green "plus" symbol when you're hovering
+   over it).
 5. Release the new icon on top of the old icon and it will update!
 
 You can see an example of me dragging a new `signal.icns` file onto my

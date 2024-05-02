@@ -33,7 +33,7 @@ In order to launch i3 manually, you need to set up your X session properly. To
 start, create or edit the `~/.xinitrc` file to include the following at the
 bottom.
 
-``` config
+```config
 exec i3
 ```
 

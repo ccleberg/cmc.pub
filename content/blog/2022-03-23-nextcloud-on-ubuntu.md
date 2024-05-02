@@ -34,7 +34,7 @@ sudo mysql -uroot -p
 Once you've logged in, you must create a new user so that Nextcloud can manage
 the database. You will also create a `nextcloud` database and assign privileges:
 
-``` sql
+```sql
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 GRANT ALL PRIVILEGES ON nextcloud.** TO 'username'@'localhost';
@@ -74,7 +74,7 @@ sudo nano /etc/apache2/sites-available/nextcloud.conf
 Once the editor is open, paste the following information in. Then, save and
 close the file.
 
-``` config
+```config
 <VirtualHost *:80>
     DocumentRoot /var/www/example.com
     ServerName  example.com
@@ -154,9 +154,9 @@ of Nextcloud, using the `Breeze Dark` theme I installed from the Apps page.
 ![Nextcloud
 Dashboard](https://img.cleberg.net/blog/20220323-installing-nextcloud-on-ubuntu/nextcloud_dashboard.png)
 
-*Figure 01: Nextcloud Dashboard*
+_Figure 01: Nextcloud Dashboard_
 
 ![Nextcloud
 Settings](https://img.cleberg.net/blog/20220323-installing-nextcloud-on-ubuntu/nextcloud_settings.png)
 
-*Figure 02: Nextcloud Security Settings*
+_Figure 02: Nextcloud Security Settings_

@@ -13,8 +13,7 @@ If you're not familiar with encryption techniques,
 National Institute of Standards and Technology, sub-selected from the Rijndael
 family of ciphers (128, 192, and 256 bits) in 2001. Furthering its popularity
 and status, the US government chose AES as their default encryption method for
-top-secret data, removing the previous standard which had been in place since
-1977.
+top-secret data, removing the previous standard which had been in place since 1977.
 
 AES has proven to be an extremely safe encryption method, with 7-round and
 8-round attacks making no material improvements since the release of this
@@ -24,8 +23,8 @@ encryption standard almost two decades ago.
 > fastest single-key attacks on round-reduced AES variants [20, 33] so far are
 > only slightly more powerful than those proposed 10 years ago [23,24].
 >
-> - [Bogdonav, et
->   al.](http://research.microsoft.com/en-us/projects/cryptanalysis/aesbc.pdf)
+> -   [Bogdonav, et
+>     al.](http://research.microsoft.com/en-us/projects/cryptanalysis/aesbc.pdf)
 
 # How Secure is AES?
 
@@ -99,8 +98,8 @@ where feasible:
 1. Privacy is a human right and is recognized as a national right in some
    countries (e.g., [US Fourth
    Amendment](https://www.law.cornell.edu/wex/fourth_amendment)).
-2. "Why not?" Encryption rarely affects performance or speed, so there's
-   usually not a reason to avoid it in the first place.
+2. "Why not?" Encryption rarely affects performance or speed, so there's usually
+   not a reason to avoid it in the first place.
 3. Your digital identity and activity (texts, emails, phone calls, online
    accounts, etc.) are extremely valuable and can result in terrible
    consequences, such as identity theft, if leaked to other parties. Encrypting
@@ -110,10 +109,10 @@ where feasible:
    devices.
 5. Corporations, governments, and other nefarious groups/individuals are
    actively looking for ways to collect personal information about anyone they
-   can. If someone's data is unencrypted, that person may become a target due
-   to the ease of data collection.
+   can. If someone's data is unencrypted, that person may become a target due to
+   the ease of data collection.
 
 ​**Read More:**
 
-- [Federal Information Processing Standards Publication
-  197](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf)
+-   [Federal Information Processing Standards Publication
+    197](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf)

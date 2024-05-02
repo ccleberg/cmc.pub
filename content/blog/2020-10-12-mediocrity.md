@@ -16,7 +16,7 @@ allowed us to reach a lesser yet still superb solution.
 
 Philosophers throughout history have inspected this plight from many viewpoints.
 Greek mythology speaks of the [golden
-mean](https://en.wikipedia.org/wiki/Golden_mean_(philosophy)), which uses the
+mean](<https://en.wikipedia.org/wiki/Golden_mean_(philosophy)>), which uses the
 story of Icarus to illustrate that sometimes "the middle course" is the best
 solution. In this story, Daedalus, a famous artist of his time, built feathered
 wings for himself and his son so that they might escape the clutches of King
@@ -40,9 +40,9 @@ considered.
 
 Over and over throughout history, we've found that perfection is often
 unrealistic and unachievable. However, we push ourselves and our peers to "give
-100%" or "go the extra mile," while it may be that the better course is to
-give a valuable level of effort while considering the effects of further effort
-on the outcome. Working harder does not always help us achieve loftier goals.
+100%" or "go the extra mile," while it may be that the better course is to give
+a valuable level of effort while considering the effects of further effort on
+the outcome. Working harder does not always help us achieve loftier goals.
 
 This has presented itself to me most recently during my time studying at my
 university. I was anxious and feeling the stresses of my courses, career, and
@@ -56,8 +56,8 @@ talking to my father when he said something simple that hit home:
 The thought was extremely straightforward and uncomplicated, yet it was
 something that I had lost sight of during my stress-filled years at school. Ever
 since then, I've found myself pausing and remembering that quote every time I
-get anxious or stressed. It helps to stop and think "Can I do anything to
-affect the outcome, or am I simply worrying over something I can't change?"
+get anxious or stressed. It helps to stop and think "Can I do anything to affect
+the outcome, or am I simply worrying over something I can't change?"
 
 # When Mediocrity Isn't Enough
 

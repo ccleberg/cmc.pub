@@ -47,7 +47,7 @@ nano main.py
 
 Enter the following code into your `main.py` script.
 
-``` python
+```python
 import request
 import json
 
@@ -107,8 +107,8 @@ Now that you have the proper information, replace `{user-id}` with your GitLab
 username and `{auth-token}` with the authorization token you created earlier.
 
 Finally, simply run the script and watch the output. You can also use PyCharm
-Community Edition to edit and run the Python script if you don't want to work
-in a terminal.
+Community Edition to edit and run the Python script if you don't want to work in
+a terminal.
 
 ```sh
 python3 main.py

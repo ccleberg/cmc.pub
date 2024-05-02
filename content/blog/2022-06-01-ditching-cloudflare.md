@@ -25,8 +25,8 @@ if they're worth the higher rates (one domain is 30€ and the other is 45€).+
 
 > **Update (2022.06.03)**: I ended up transferring my final two domains over to
 > Njalla, clearing my Cloudflare account of personal data, and deleting the
-> Cloudflare account entirely. *I actually feel relieved to have moved on to a
-> provider I trust.*
+> Cloudflare account entirely. _I actually feel relieved to have moved on to a
+> provider I trust._
 
 # DNS
 

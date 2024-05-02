@@ -15,17 +15,16 @@ subdomains.
 
 One of the parts I've enjoyed the most about web development is the aspect of
 designing an identity for a web page and working to find exciting ways to
-display the site's content. Inevitably, this means I've changed the designs
-for my websites more times than I could possibly count. Since I don't really
-host anything on my main webpage that's vital, it allows me the freedom to
-change things as inspiration strikes.
+display the site's content. Inevitably, this means I've changed the designs for
+my websites more times than I could possibly count. Since I don't really host
+anything on my main webpage that's vital, it allows me the freedom to change
+things as inspiration strikes.
 
-Historically, I've relied on core utilities for spacing, components, and
-layouts from [Bootstrap](https://getbootstrap.com) and added custom CSS for
-fonts, accents, colors, and other items. I also tend to create sites with no
-border radius on items, visible borders, and content that takes up the entire
-screen (using whitespace inside components instead of whitespace around my
-components).
+Historically, I've relied on core utilities for spacing, components, and layouts
+from [Bootstrap](https://getbootstrap.com) and added custom CSS for fonts,
+accents, colors, and other items. I also tend to create sites with no border
+radius on items, visible borders, and content that takes up the entire screen
+(using whitespace inside components instead of whitespace around my components).
 
 # The Redesign Process
 
@@ -45,8 +44,8 @@ brutalist web design doesn't have to be minimal, it often is.
 
 I suppose, in a way, I did create a brutalist website since my HTML is semantic
 and accessible, hyperlinks are colored and underlined, and all native browser
-functions like scrolling and the back button work as expected. However, I
-didn't think about brutalism while designing these sites.
+functions like scrolling and the back button work as expected. However, I didn't
+think about brutalism while designing these sites.
 
 The new design followed a simple design process. I walked through the screens on
 my blog and asked myself: "Is this element necessary for a user?" This allowed
@@ -60,10 +59,10 @@ blog post descriptions, and the scroll-to-top button. It also helped to move all
 categories to a single page, rather than have each category on its own page.
 
 The final big piece to finish the
-"[KonMari](https://en.wikipedia.org/wiki/Marie_Kondo#KonMari_method)"-like
-part of my process was to remove Bootstrap CSS in its entirety. However, this
-meant pulling out a few very useful classes, such as `.img-fluid` and the
-default font stacks to keep in my custom CSS.
+"[KonMari](https://en.wikipedia.org/wiki/Marie_Kondo#KonMari_method)"-like part
+of my process was to remove Bootstrap CSS in its entirety. However, this meant
+pulling out a few very useful classes, such as `.img-fluid` and the default font
+stacks to keep in my custom CSS.
 
 After removing all the unnecessary pieces, I was finally able to reorganize my
 content and add a very small amount of custom CSS to make everything pretty.
@@ -91,5 +90,5 @@ for all four categories! First contextual paints of the blog homepage are under
 is within a separate CSS file, and the CSS for my main website is simply
 embedded in the HTML file.
 
-Now that everything is complete, I can confidently say I'm happy with the
-result and proud to look at the fastest set of websites I've created so far.
+Now that everything is complete, I can confidently say I'm happy with the result
+and proud to look at the fastest set of websites I've created so far.

@@ -10,7 +10,7 @@
 {% for page in section.pages %}
 	<div class="wiki-post">
 		<p><a href="/wiki/{{ page.slug }}/">{{ page.title }}</a></p>
-		<time datetime="{{ page.updated | date(format='%Y-%m-%d %H:%M:%S') }}">{{ page.updated | date(format='%Y-%m-%d')}}</p>
+		<time datetime="{{ page.updated | date(format='%Y-%m-%d %H:%M:%S')
+		}}">{{ page.updated | date(format='%Y-%m-%d')}}</p>
 	</div>
-{% endfor %}
-{% endblock content %}
+{% endfor %} {% endblock content %}

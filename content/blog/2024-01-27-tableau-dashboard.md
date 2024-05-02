@@ -42,7 +42,7 @@ nano data_processing.py
 
 Within the Python script, paste the following:
 
-``` python
+```python
 # Import modules
 import pandas as pd
 import glob
@@ -122,12 +122,12 @@ drag it into the `Columns` or `Rows` area of the canvas.
 See below for the map visualization. You can recreate this by adding the
 following fields:
 
-- `Columns`: Lon
-- `Rows`: Lat
-- `Marks`:
-    - Description
-    - Datetime
-- `Filters`: Datetime
+-   `Columns`: Lon
+-   `Rows`: Lat
+-   `Marks`:
+    -   Description
+    -   Datetime
+-   `Filters`: Datetime
 
 ![Worksheet
 Editing](https://img.cleberg.net/blog/20240127-tableau-dashboard/worksheet_edit.png)

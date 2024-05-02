@@ -92,9 +92,9 @@ To start, enable developer mode by going to `Settings` > `About` and tapping
 `Build Number` seven (7) times. You may need to enter your PIN to enable this
 mode.
 
-Once developer mode is enabled, go to `Settings` > `System` > `Devloper
-Options` and enable OEM Unlocking, as well as USB or Wireless Debugging. In my
-case, I chose USB Debugging and performed all actions via USB cable.
+Once developer mode is enabled, go to `Settings` > `System` > `Devloper Options`
+and enable OEM Unlocking, as well as USB or Wireless Debugging. In my case, I
+chose USB Debugging and performed all actions via USB cable.
 
 Once these options are enabled, plug the phone into the computer and execute the
 following command:
@@ -104,8 +104,8 @@ adb devices
 ```
 
 If an unauthorized error occurs, make sure the USB mode on the phone is changed
-from charging to something like "File Transfer" or "PTP." You can find the
-USB mode in the notification tray.
+from charging to something like "File Transfer" or "PTP." You can find the USB
+mode in the notification tray.
 
 ## Reboot Device
 

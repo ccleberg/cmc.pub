@@ -48,7 +48,7 @@ I will be using a `docker-compose.yml` file to run this container, instead of a
 nano docker-compose.yml
 ```
 
-``` conf
+```conf
 version: "2"
 services:
   voyager:
@@ -70,8 +70,8 @@ The web app will now be available at the following address:
 
 ## Reverse Proxy
 
-If you want to visit this app via an external URL or domain name, you'll need
-to set up a reverse proxy. The example below uses Nginx as a reverse proxy.
+If you want to visit this app via an external URL or domain name, you'll need to
+set up a reverse proxy. The example below uses Nginx as a reverse proxy.
 
 Simply create the configuration file, paste the contents below, save the file,
 symlink the file, and restart Nginx.
@@ -80,7 +80,7 @@ symlink the file, and restart Nginx.
 sudo nano /etc/nginx/sites-available/voyager
 ```
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.example\.com$) {
         return 301 https://$host$request_uri;

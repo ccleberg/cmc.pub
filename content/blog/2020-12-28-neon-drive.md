@@ -70,19 +70,19 @@ endurance game mode.
 Neon Drive sits nicely within the well-founded cult genre of Outrun. Other games
 that I've enjoyed in this same spectrum are:
 
-- [Far Cry 3: Blood
+-   [Far Cry 3: Blood
     Dragon](https://store.steampowered.com/app/233270/Far_Cry_3__Blood_Dragon/)
-- [Retrowave](https://store.steampowered.com/app/1239690/Retrowave/)
-- [Slipstream](https://store.steampowered.com/app/732810/Slipstream/)
+-   [Retrowave](https://store.steampowered.com/app/1239690/Retrowave/)
+-   [Slipstream](https://store.steampowered.com/app/732810/Slipstream/)
 
 Although these games aren't necessarily in the same genre, they do have aspects
 that place them close enough to interest gamers that enjoyed Neon Drive:
 
-- [Black Ice](https://store.steampowered.com/app/311800/Black_Ice/)
-- [Cloudpunk](https://store.steampowered.com/app/746850/Cloudpunk/)
-- [Need for Speed:
+-   [Black Ice](https://store.steampowered.com/app/311800/Black_Ice/)
+-   [Cloudpunk](https://store.steampowered.com/app/746850/Cloudpunk/)
+-   [Need for Speed:
     Heat](https://store.steampowered.com/app/1222680/Need_for_Speed_Heat/)
-- [VirtuaVerse](https://store.steampowered.com/app/1019310/VirtuaVerse/)
+-   [VirtuaVerse](https://store.steampowered.com/app/1019310/VirtuaVerse/)
 
 Of course, if all you really care about is the arcade aspect of these games, you
 can check out the [Atari

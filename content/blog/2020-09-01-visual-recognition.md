@@ -7,13 +7,13 @@ draft = false
 
 # What is IBM Watson?
 
-If you've never heard of [Watson](https://www.ibm.com/watson), this service is
-a suite of enterprise-ready AI services, applications, and tooling provided by
+If you've never heard of [Watson](https://www.ibm.com/watson), this service is a
+suite of enterprise-ready AI services, applications, and tooling provided by
 IBM. Watson contains quite a few useful tools for data scientists and students,
 including the subject of this post today: visual recognition.
 
-If you'd like to view the official documentation for the Visual Recognition
-API, visit the [API
+If you'd like to view the official documentation for the Visual Recognition API,
+visit the [API
 Docs](https://cloud.ibm.com/apidocs/visual-recognition/visual-recognition-v3?code=python).
 
 # Prerequisites
@@ -52,7 +52,7 @@ pip install --upgrade --user "ibm-watson>=4.5.0"
 Next, we need to specify the API key, version, and URL given to us when we
 created the Watson Visual Recognition service.
 
-``` python
+```python
 apikey = "<your-apikey>"
 version = "2018-03-19"
 url = "<your-url>"
@@ -60,7 +60,7 @@ url = "<your-url>"
 
 Now, let's import the necessary libraries and authenticate our service.
 
-``` python
+```python
 import json
 from ibm_watson import VisualRecognitionV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -77,14 +77,14 @@ visual_recognition.set_service_url(url)
 **[Optional]** If you'd like to tell the API not to use any data to improve
 their products, set the following header.
 
-``` python
+```python
 visual_recognition.set_default_headers({'x-watson-learning-opt-out': "true"})
 ```
 
 Now we have our API all set and ready to go. For this example, I'm going to
 include a `dict` of photos to load as we test out the API.
 
-``` python
+```python
 data = [
   {
     "title": "Grizzly Bear",
@@ -122,7 +122,7 @@ each section.
 In the case of an API error, the codes and explanations are output to the
 console.
 
-``` python
+```python
 from ibm_watson import ApiException
 
 for x in range(len(data)):
@@ -164,7 +164,7 @@ or greater, you would simply adjust the `threshold` in the
 When your program runs, it should show the output below for each photo you
 provide.
 
-``` txt
+```txt
 ----------------------------------------------------------------
 Image Title:  Grizzly Bear
 Image URL: https://example.com/photos/image1.jpg

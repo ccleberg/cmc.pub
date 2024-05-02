@@ -16,7 +16,7 @@ draft = false
 
 ## My Personal Data Flow
 
-``` txt
+```txt
                                                           ┌───────┐   ┌─────────────────┐
                                                        ┌──► VLAN1 ├───► Private Devices │
                                                        │  └───────┘   └─────────────────┘
@@ -35,44 +35,44 @@ have to think about the transport of data from `server` to `client`.
 
 Let's start with the actual server itself. Think about the following:
 
-- Do I have a firewall enabled? Do I need to update this to allow new ports or
-  IPs?
-- Do I have an IPS/IDS that may prevent outside traffic?
-- Do I have any other security software installed?
-- Are the services hosted inside Docker containers, behind a reverse proxy, or
-  virtualized? If so, are they configured to allow outside traffic?
+-   Do I have a firewall enabled? Do I need to update this to allow new ports or
+    IPs?
+-   Do I have an IPS/IDS that may prevent outside traffic?
+-   Do I have any other security software installed?
+-   Are the services hosted inside Docker containers, behind a reverse proxy, or
+    virtualized? If so, are they configured to allow outside traffic?
 
 Once the data leaves the server, where does it go? In my case, it goes to a
 managed switch. In this case, I asked the following:
 
-- What configurations is the switch using?
-- Am I using VLANs?
-    - Yes, I am using 802.1Q VLANs.
-- Are the VLANs configured properly?
-    - Yes, as shown in the Switch section below, I have a separate VLAN to allow
-      outside traffic to and from the server alone. No other devices, except for
-      a service port, and in that VLAN.
+-   What configurations is the switch using?
+-   Am I using VLANs?
+    -   Yes, I am using 802.1Q VLANs.
+-   Are the VLANs configured properly?
+    -   Yes, as shown in the Switch section below, I have a separate VLAN to
+        allow outside traffic to and from the server alone. No other devices,
+        except for a service port, and in that VLAN.
 
 At this point, the data has been processed through the switch. Where does it go
 next? In my case, it's pretty simple: it goes to the router/modem device.
 
-- Does my ISP block any ports that I need?
-    - This is an important step that a lot of people run into when self-hosting
-      at home. Use an online port-checker tool for your IP or call your ISP if
-      you think ports are blocked.
-- Is there a router firewall?
-    - Yes, I checked that it's configured to allow the ports I need to run my
-      services publicly. Common web servers and reverse proxies require ports 80
-      and 443, but other services like media servers or games can require unique
-      ports, so be sure to check the documentation for your service(s).
-- Are there any other settings affecting inbound/outbound traffic?
-    - Schedules or access blocks
-    - Static Routing
-    - QoS
-    - Port Forwarding
-    - DMZ Hosting
-    - Remote Management (this can sometimes mess with services that also require
-      the use of ports 80 and 443)
+-   Does my ISP block any ports that I need?
+    -   This is an important step that a lot of people run into when
+        self-hosting at home. Use an online port-checker tool for your IP or
+        call your ISP if you think ports are blocked.
+-   Is there a router firewall?
+    -   Yes, I checked that it's configured to allow the ports I need to run my
+        services publicly. Common web servers and reverse proxies require ports
+        80 and 443, but other services like media servers or games can require
+        unique ports, so be sure to check the documentation for your service(s).
+-   Are there any other settings affecting inbound/outbound traffic?
+    -   Schedules or access blocks
+    -   Static Routing
+    -   QoS
+    -   Port Forwarding
+    -   DMZ Hosting
+    -   Remote Management (this can sometimes mess with services that also
+        require the use of ports 80 and 443)
 
 Once the data leaves my router, it goes to the upstream ISP and can be accessed
 publicly.
@@ -172,7 +172,7 @@ sudo ufw enable
     rules is commented-out or doesn't exist, create the rule at the bottom of
     the file.
 
-    ``` config
+    ```config
     PermitRootLogin no
     PasswordAuthentication no
     PubkeyAuthentication yes
@@ -192,10 +192,10 @@ sudo ufw enable
 
 3.  Enable MFA for `ssh`
 
-    This part is optional, but I highly recommend it. So far, we've ensured
-    that no one can log into our user on the server without using our secret
-    key, and we've ensured that no one can log in remotely as `root`. Next, you
-    can enable MFA authentication for `ssh` connections.
+    This part is optional, but I highly recommend it. So far, we've ensured that
+    no one can log into our user on the server without using our secret key, and
+    we've ensured that no one can log in remotely as `root`. Next, you can
+    enable MFA authentication for `ssh` connections.
 
     This process involves editing a couple files and installing an MFA package,
     so I will not include all the details in this post. To see how to configure
@@ -203,7 +203,7 @@ sudo ufw enable
     SSH](../enable-totp-mfa-for-ssh/).
 
     ![SSH
-    MFA](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ssh_mfa.png)
+MFA](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ssh_mfa.png)
 
 ## `fail2ban`
 
@@ -239,10 +239,10 @@ order to SSH to this server, I need to plug my laptop into port 23 or else I
 cannot SSH. Otherwise, I'd need to hook up a monitor and keyboard directly to
 the server to manage it.
 
-| 
+|
 
 | VLAN ID | VLAN Name | Member Ports | Tagged Ports | Untagged Ports |
-|---------|-----------|--------------|--------------|----------------|
+| ------- | --------- | ------------ | ------------ | -------------- |
 | 1       | Default   | 1-24         | 1-24         |                |
 | 2       | Server    | 1,8,23       | 1,8,23       |                |
 
@@ -253,7 +253,7 @@ any related ports (in this case, see that ports `8` and `23` have a PVID of
 `2`).
 
 | Port | PVID |
-|------|------|
+| ---- | ---- |
 | 1    | 1    |
 | 2    | 1    |
 | 3    | 1    |
@@ -285,9 +285,9 @@ On my router, the configuration was as easy as opening the firewall settings and
 unblocking the ports I needed for my services (e.g., HTTP/S, Plex, SSH, MySQL,
 etc.).
 
-*Since I'm relying on an ISP-provided modem/router combo for now (not by
+_Since I'm relying on an ISP-provided modem/router combo for now (not by
 choice), I do not use any other advanced settings on my router that would
-inhibit any valid traffic to these services.*
+inhibit any valid traffic to these services._
 
 The paragraph above regarding the ISP-owned router is no longer accurate as I
 now use the Ubiquiti Unifi Dream Machine Pro as my router. Within this router, I
@@ -303,7 +303,7 @@ available to you.
 
 One large piece of self-hosting that people generally don't discuss online is
 physical security. However, physical security is very important for everyone who
-hosts a server like this. Exactly *how* important it is depends on the server
+hosts a server like this. Exactly _how_ important it is depends on the server
 use/purpose.
 
 If you self-host customer applications that hold protected data (HIPAA, GDPR,
@@ -315,24 +315,25 @@ minor consideration, but one you still need to think about.
 
 The first consideration is quite simple: location.
 
-- Is the server within a property you own or housed on someone else's property?
-- Is it nearby (in your house, in your work office, in your neighbor's garage,
-  in a storage unit, etc.)?
-- Do you have 24/7 access to the server?
-- Are there climate considerations, such as humidity, fires, tornadoes,
-  monsoons?
-- Do you have emergency equipment nearby in case of emergency?
+-   Is the server within a property you own or housed on someone else's
+    property?
+-   Is it nearby (in your house, in your work office, in your neighbor's garage,
+    in a storage unit, etc.)?
+-   Do you have 24/7 access to the server?
+-   Are there climate considerations, such as humidity, fires, tornadoes,
+    monsoons?
+-   Do you have emergency equipment nearby in case of emergency?
 
 ## Hardware Ownership
 
 Secondly, consider the hardware itself:
 
-- Do you own the server in its entirety?
-- Are any other users able to access the server, even if your data/space is
-  segregated?
-- If you're utilizing a third party, do they have any documentation to show
-  responsibility? This could be a SOC 1/2/3 report, ISO compliance report,
-  internal security/safety documentation.
+-   Do you own the server in its entirety?
+-   Are any other users able to access the server, even if your data/space is
+    segregated?
+-   If you're utilizing a third party, do they have any documentation to show
+    responsibility? This could be a SOC 1/2/3 report, ISO compliance report,
+    internal security/safety documentation.
 
 ## Physical Controls
 
@@ -342,10 +343,10 @@ usually covered already if you're utilizing a third party.
 
 These can include:
 
-- Server bezel locks
-- Server room locks - physical, digital, or biometric authentication
-- Security cameras
-- Raised floors/lowered ceilings with proper guards/gates in-place within the
-  floors or ceilings
-- Security personnel
-- Log sheets and/or guest badges
+-   Server bezel locks
+-   Server room locks - physical, digital, or biometric authentication
+-   Security cameras
+-   Raised floors/lowered ceilings with proper guards/gates in-place within the
+    floors or ceilings
+-   Security personnel
+-   Log sheets and/or guest badges

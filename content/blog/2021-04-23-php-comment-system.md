@@ -16,15 +16,15 @@ that should be standard.
 
 Of course, there are some really terrible options:
 
-- Facebook Comments
-- Discourse
+-   Facebook Comments
+-   Discourse
 
 There are some options that are better but still use too many scripts, frames,
 or social integrations on your web page that could impact some users:
 
-- Disqus
-- Isso
-- Remark42
+-   Disqus
+-   Isso
+-   Remark42
 
 Lastly, I looked into a few unique ways of generating blog comments, such as
 using Twitter threads or GitHub issues to automatically post issues. However,
@@ -52,22 +52,22 @@ database for any other part of my websites.
 I blog in plain Markdown files, commit all articles to Git, and ensure that
 future readers will be able to see the source data long after I'm gone, or the
 website has gone offline. However, I still haven't committed any images served
-on my blog to Git, as I'm not entirely sold on Git LFS yet - for now, images
-can be found at [img.cleberg.net](https://img.cleberg.net).
+on my blog to Git, as I'm not entirely sold on Git LFS yet - for now, images can
+be found at [img.cleberg.net](https://img.cleberg.net).
 
 Saving my comments back to the Git repository ensures that another aspect of my
 site will degrade gracefully.
 
 # Create a Comment Form
 
-Okay, let's get started. The first step is to create an HTML form that users
-can see and utilize to submit comments. This is fairly easy and can be changed
+Okay, let's get started. The first step is to create an HTML form that users can
+see and utilize to submit comments. This is fairly easy and can be changed
 depending on your personal preferences.
 
 Take a look at the code block below for the form I currently use. Note that
-`<current-url>` is replaced automatically in PHP with the current post's URL,
-so that my PHP script used later will know which blog post the comment is
-related to.
+`<current-url>` is replaced automatically in PHP with the current post's URL, so
+that my PHP script used later will know which blog post the comment is related
+to.
 
 The form contains the following structure:
 
@@ -81,45 +81,45 @@ The form contains the following structure:
     Markdown is allowed.
 5.  `<button>` - A button to submit the form.
 
-``` html
+```html
 <form action="/comment.php" method="POST">
-    <h3>Leave a Comment</h3>
-    <section hidden>
-        <label class="form-label" for="postURL">Post URL</label>
-        <input
-            class="form-control"
-            id="postURL"
-            name="postURL"
-            type="text"
-            value="<current-url>"
-        />
-    </section>
-    <section>
-        <label class="form-label" for="userName">Display Name</label>
-        <input
-            class="form-control"
-            id="userName"
-            name="userName"
-            placeholder="John Doe"
-            type="text"
-        />
-    </section>
-    <section>
-        <label class="form-label" for="userContent">Your Comment</label>
-        <textarea
-            class="form-control"
-            id="userContent"
-            name="userContent"
-            rows="3"
-            placeholder="# Feel free to use Markdown"
-            aria-describedby="commentHelp"
-            required
-        ></textarea>
-        <div id="commentHelp" class="form-text">
-            Comments are saved as Markdown and cannot be edited or deleted.
-        </div>
-    </section>
-    <button type="submit">Submit</button>
+	<h3>Leave a Comment</h3>
+	<section hidden>
+		<label class="form-label" for="postURL">Post URL</label>
+		<input
+			class="form-control"
+			id="postURL"
+			name="postURL"
+			type="text"
+			value="<current-url>"
+		/>
+	</section>
+	<section>
+		<label class="form-label" for="userName">Display Name</label>
+		<input
+			class="form-control"
+			id="userName"
+			name="userName"
+			placeholder="John Doe"
+			type="text"
+		/>
+	</section>
+	<section>
+		<label class="form-label" for="userContent">Your Comment</label>
+		<textarea
+			class="form-control"
+			id="userContent"
+			name="userContent"
+			rows="3"
+			placeholder="# Feel free to use Markdown"
+			aria-describedby="commentHelp"
+			required
+		></textarea>
+		<div id="commentHelp" class="form-text">
+			Comments are saved as Markdown and cannot be edited or deleted.
+		</div>
+	</section>
+	<button type="submit">Submit</button>
 </form>
 ```
 
@@ -144,7 +144,7 @@ the following tasks in this script:
 8.  Finally, send the user back to the `#comments` section of the blog post they
     just read.
 
-``` php
+```php
 // Get the content sent from the comment form
 $comment = htmlentities($_POST['userContent']);
 $post_url = $_POST['postURL'];
@@ -202,7 +202,7 @@ This piece of code should **really** be inside a function (or at least in an
 organized PHP workflow). Don't just copy-and-paste and expect it to work. You
 need to at least supply a `$query` variable depending on the page visited.
 
-``` php
+```php
 $query = 'your-blog-post.html';
 
 // Load saved comments
@@ -251,11 +251,11 @@ make sure it is printed when someone visits `https://example.com/comments/`.
 This comment system is by no means a fully-developed system. I have noted a few
 possible enhancements here that I may implement in the future:
 
-- Create a secure moderator page with user authentication at
-  `https://blog.example.com/mod/`. This page could have the option to edit or
-  delete any comment found in `comments.json`.
-- Create a temporary file, such as `pending_comments.json`, that will store
-  newly-submitted comments and won't display on blog posts until approved by a
-  moderator.
-- Create a `/modlog/` page with a chronological log, showing which moderator
-  approved which comments and why certain comments were rejected.
+-   Create a secure moderator page with user authentication at
+    `https://blog.example.com/mod/`. This page could have the option to edit or
+    delete any comment found in `comments.json`.
+-   Create a temporary file, such as `pending_comments.json`, that will store
+    newly-submitted comments and won't display on blog posts until approved by a
+    moderator.
+-   Create a `/modlog/` page with a chronological log, showing which moderator
+    approved which comments and why certain comments were rejected.

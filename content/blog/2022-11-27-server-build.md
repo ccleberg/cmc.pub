@@ -26,25 +26,25 @@ results of my server.
 
 I'll start by listing all the components I used for this server build:
 
-- **Case**: [Rosewill RSV-R4100U 4U Server Chassis Rackmount
+-   **Case**: [Rosewill RSV-R4100U 4U Server Chassis Rackmount
     Case](https://www.rosewill.com/rosewill-rsv-r4100u-black/p/9SIA072GJ92825)
-- **Motherboard**: [NZXT B550](https://nzxt.com/product/n7-b550)
-- **CPU**: AMD Ryzen 7 5700G with Radeon Graphics
-- **GPU**: N/A - I specifically chose one of the few AMD CPUs that support
+-   **Motherboard**: [NZXT B550](https://nzxt.com/product/n7-b550)
+-   **CPU**: AMD Ryzen 7 5700G with Radeon Graphics
+-   **GPU**: N/A - I specifically chose one of the few AMD CPUs that support
     onboard graphics.
-- **RAM**: 64GB RAM (2x32GB) *Max of 128GB RAM on this motherboard*
-- **Boot Drive**: Western Digital 500GB M.2 NVME SSD
-- **HDD Bay**:
-    - 10TB WD White *(shucked, moved from previous server)*
-    - 8TB WD White *(shucked, moved from previous server)*
-    - 2 x 8TB WD Red Plus *(Black Friday lined up perfectly with this build,
-        so I grabbed two of these)*
-- **PSU**: Corsair RM850 PSU
-- **Extras**:
-    - Corsair TM3Q Thermal Paste
-    - Noctua 120mm fan *(replacement for front case fan)*
-    - 2 x Noctua 80mm fans *(replacement for rear case fans)*
-    - CableMatters 6Gbps SATA Cables
+-   **RAM**: 64GB RAM (2x32GB) _Max of 128GB RAM on this motherboard_
+-   **Boot Drive**: Western Digital 500GB M.2 NVME SSD
+-   **HDD Bay**:
+    -   10TB WD White _(shucked, moved from previous server)_
+    -   8TB WD White _(shucked, moved from previous server)_
+    -   2 x 8TB WD Red Plus _(Black Friday lined up perfectly with this build,
+        so I grabbed two of these)_
+-   **PSU**: Corsair RM850 PSU
+-   **Extras**:
+    -   Corsair TM3Q Thermal Paste
+    -   Noctua 120mm fan _(replacement for front case fan)_
+    -   2 x Noctua 80mm fans _(replacement for rear case fans)_
+    -   CableMatters 6Gbps SATA Cables
 
 # Building the Server
 
@@ -70,8 +70,8 @@ with the tedium of removing the cage to install new drives.
 
 # Software
 
-I'm not going to dive into the software as I have done so in other recent
-posts. However, I wanted to note that I am using Alpine Linux on this server and
+I'm not going to dive into the software as I have done so in other recent posts.
+However, I wanted to note that I am using Alpine Linux on this server and
 hosting most services inside Docker. No virtual machines (VMs) and very few
 bare-metal services.
 

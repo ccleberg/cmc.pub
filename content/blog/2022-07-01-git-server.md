@@ -17,22 +17,22 @@ anywhere.
 Before I dive into the details, I want to state a high-level summary of my
 self-hosted Git approach:
 
-- This method uses the `ssh://` (read & write) and `git://` (read-only)
-  protocols for push and pull access.
-  - For the `git://` protocol, I create a `git-daemon-export-ok` file in any
-    repository that I want to be cloneable by anyone.
-  - The web interface I am using (`cgit`) allows simple HTTP cloning by default.
-    I do not disable this setting as I want beginners to be able to clone one of
-    my repositories even if they don't know the proper method.
-- I am not enabling Smart HTTPS for any repositories. Updates to repositories
-  must be pushed via SSH.
-- Beyond the actual repository management, I am using `cgit` for the front-end
-  web interface.
-  - If you use the `scan-path=<path>` configuration in the `cgitrc`
-    configuration file to automatically find repositories, you can't exclude a
-    repository from `cgit` if it's stored within the path that `cgit` reads. To
-    host private repositories, you'd need to set up another directory that
-    `cgit` can't read.
+-   This method uses the `ssh://` (read & write) and `git://` (read-only)
+    protocols for push and pull access.
+    -   For the `git://` protocol, I create a `git-daemon-export-ok` file in any
+        repository that I want to be cloneable by anyone.
+    -   The web interface I am using (`cgit`) allows simple HTTP cloning by
+        default. I do not disable this setting as I want beginners to be able to
+        clone one of my repositories even if they don't know the proper method.
+-   I am not enabling Smart HTTPS for any repositories. Updates to repositories
+    must be pushed via SSH.
+-   Beyond the actual repository management, I am using `cgit` for the front-end
+    web interface.
+    -   If you use the `scan-path=<path>` configuration in the `cgitrc`
+        configuration file to automatically find repositories, you can't exclude
+        a repository from `cgit` if it's stored within the path that `cgit`
+        reads. To host private repositories, you'd need to set up another
+        directory that `cgit` can't read.
 
 # Assumptions
 
@@ -106,7 +106,7 @@ sudo nano /etc/ssh/sshd_config
 Within this file, find the following settings and set them to the values I am
 showing below:
 
-``` conf
+```conf
 PermitRootLogin no
 PasswordAuthentication no
 AuthenticationMethods publickey
@@ -177,8 +177,8 @@ other than the standard git commands.
 
 # Opening the Firewall
 
-Don't forget to open up ports on the device firewall and network firewall if
-you want to access these repositories publicly. If you're using default ports,
+Don't forget to open up ports on the device firewall and network firewall if you
+want to access these repositories publicly. If you're using default ports,
 forward ports `22` (ssh) and `9418` (git) from your router to your server's IP
 address.
 
@@ -203,7 +203,7 @@ your `~/.ssh/config` file:
 nano ~/.ssh/config
 ```
 
-``` conf
+```conf
 Host git.example.com
   # HostName can be a URL or an IP address
   HostName git.example.com
@@ -215,8 +215,8 @@ Host git.example.com
 
 There are two main syntaxes you can use to manage git over SSH:
 
-- `git clone [user@]server:project.git`
-- `git clone ssh://[user@]server/project.git`
+-   `git clone [user@]server:project.git`
+-   `git clone ssh://[user@]server/project.git`
 
 I prefer the first, which is an `scp`-like syntax. To test it, try to clone the
 test repository you set up on the server:
@@ -238,7 +238,7 @@ sudo nano /etc/systemd/system/git-daemon.service
 
 Inside the `git-daemon.service` file, paste the following:
 
-``` conf
+```conf
 [Unit]
 Description=Start Git Daemon
 
@@ -322,7 +322,7 @@ mkdir ~/cgit && cd ~/cgit
 nano docker-compose.yml
 ```
 
-``` conf
+```conf
 # docker-compose.yml
 version: '3'
 
@@ -361,7 +361,7 @@ configuration file:
 sudo nano /etc/nginx/sites-available/git.example.com
 ```
 
-``` conf
+```conf
 server {
         listen 80;
           server_name git.example.com;
@@ -430,7 +430,7 @@ cd /git/example.git
 nano config
 ```
 
-``` conf
+```conf
 [gitweb]
     owner = "YourName"
 ```
@@ -451,7 +451,7 @@ Below is an example configuration for `cgitrc`. You can find all the
 configuration options within the [configuration manual]
 (<https://git.zx2c4.com/cgit/plain/cgitrc.5.txt>).
 
-``` conf
+```conf
 css=/cgit.css
 logo=/logo.png
 favicon=/favicon.png
@@ -569,8 +569,8 @@ files](https://git.zx2c4.com/cgit/tree/filters), repeat the `curl` and `chmod`
 process above for whichever files you need.
 
 However, formatting will not work quite yet since the Docker cgit container
-we're using doesn't have the formatting package installed. You can install
-this easily by install Python 3+ and the `pygments` package:
+we're using doesn't have the formatting package installed. You can install this
+easily by install Python 3+ and the `pygments` package:
 
 ```sh
 # Enter the container's command line
@@ -592,7 +592,7 @@ commands every time you kill and restart the container!**
 If not done already, we need to add the following variables to our `cgitrc` file
 in order for `cgit` to know where our filtering files are:
 
-``` conf
+```conf
 # Highlight source code with python pygments-based highlighter
 source-filter=/var/www/htdocs/cgit/filters/syntax-highlighting.py
 

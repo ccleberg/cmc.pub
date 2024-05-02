@@ -34,15 +34,15 @@ extended, where extra variables could be defined for `primary-text`,
 For example, here are some variables defined at the root of the website, which
 allows for any subsequent CSS rules to use those variables:
 
-``` css
+```css
 :root {
-    --primary-color: black;
-    --secondary-color: white;
+	--primary-color: black;
+	--secondary-color: white;
 }
 
 body {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 ```
 
@@ -50,14 +50,14 @@ body {
 
 Box shadows were once my mortal enemy. No matter how hard I tried, I just
 couldn't get them to work how I wanted. Because of this, my favorite discovery
-has been CSSMatic's [box shadow
-generator](https://www.cssmatic.com/box-shadow). It provides an excellent tool
-to generate box shadows using their simple sliders. Surprisingly, this is the
-reason I learned how box shadows work! You can use the sliders and watch how the
-CSS code changes in the image that is displayed. Through this, you should
-understand that the basic structure for box shadows is:
+has been CSSMatic's [box shadow generator](https://www.cssmatic.com/box-shadow).
+It provides an excellent tool to generate box shadows using their simple
+sliders. Surprisingly, this is the reason I learned how box shadows work! You
+can use the sliders and watch how the CSS code changes in the image that is
+displayed. Through this, you should understand that the basic structure for box
+shadows is:
 
-``` css
+```css
 box-shadow: inset horizontal vertical blur spread color;
 ```
 
@@ -67,55 +67,55 @@ with the code, experiment, and learn.
 
 **Box Shadow #1**
 
-``` html
+```html
 <div class="shadow-examples">
-    <div class="box effect1">
-        <h3>Effect 1</h3>
-    </div>
+	<div class="box effect1">
+		<h3>Effect 1</h3>
+	</div>
 </div>
 ```
 
-``` css
+```css
 .box h3 {
-    text-align: center;
-    position: relative;
-    top: 80px;
+	text-align: center;
+	position: relative;
+	top: 80px;
 }
 .box {
-    width: 70%;
-    height: 200px;
-    background: #fff;
-    margin: 40px auto;
+	width: 70%;
+	height: 200px;
+	background: #fff;
+	margin: 40px auto;
 }
 .effect1 {
-    box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0 10px 6px -6px #777;
 }
 ```
 
 **Box Shadow #2**
 
-``` html
+```html
 <div class="shadow-examples">
-    <div class="box effect2">
-        <h3>Effect 2</h3>
-    </div>
+	<div class="box effect2">
+		<h3>Effect 2</h3>
+	</div>
 </div>
 ```
 
-``` css
+```css
 .box h3 {
-    text-align: center;
-    position: relative;
-    top: 80px;
+	text-align: center;
+	position: relative;
+	top: 80px;
 }
 .box {
-    width: 70%;
-    height: 200px;
-    background: #fff;
-    margin: 40px auto;
+	width: 70%;
+	height: 200px;
+	background: #fff;
+	margin: 40px auto;
 }
 .effect2 {
-    box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
 }
 ```
 
@@ -128,7 +128,7 @@ Now, let's move on to the best part of this article: flexbox. The flexbox is by
 far my favorite new toy. I originally stumbled across this solution after
 looking for more efficient ways of centering content horizontally AND
 vertically. I had used a few hack-ish methods before, but flexbox throws those
-out the window. The best part of it all is that flexbox is *dead simple*.
+out the window. The best part of it all is that flexbox is _dead simple_.
 
 Flexbox pertains to the parent div of any element. You want the parent to be the
 flexbox in which items are arranged to use the flex methods. It's easier to see
@@ -136,34 +136,34 @@ this in action that explained, so let's see an example.
 
 **Flexbox**
 
-``` html
+```html
 <div class="flex-examples">
-    <div class="sm-box">
-        <h3>1</h3>
-    </div>
-    <div class="sm-box">
-        <h3>2</h3>
-    </div>
+	<div class="sm-box">
+		<h3>1</h3>
+	</div>
+	<div class="sm-box">
+		<h3>2</h3>
+	</div>
 </div>
 ```
 
-``` css
+```css
 .flex-examples {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-    background-color: #f2f2f2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px;
+	background-color: #f2f2f2;
 }
 .sm-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    height: 100px;
-    background: #fff;
-    margin: 40px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+	height: 100px;
+	background: #fff;
+	margin: 40px 10px;
 }
 ```
 

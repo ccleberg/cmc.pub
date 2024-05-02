@@ -15,11 +15,11 @@ $0.01/GB/month.
 
 However, there are free tiers:
 
-- The first 10 GB of storage is free.
-- The first 1 GB of data downloaded each day is free.
-- Class A transactions are free.
-- The first 2500 Class B transactions each day are free.
-- The first 2500 Class C transactions each day are free.
+-   The first 10 GB of storage is free.
+-   The first 1 GB of data downloaded each day is free.
+-   Class A transactions are free.
+-   The first 2500 Class B transactions each day are free.
+-   The first 2500 Class C transactions each day are free.
 
 You can see which API calls fall into categories A, B, or C here: [Pricing
 Organized by API
@@ -42,8 +42,8 @@ file upload and then sync an entire directory to my Backblaze bucket.
 # Create a Bucket
 
 Before you can start uploading, you need to create a bucket. If you're familiar
-with other object storage services, this will feel familiar. If not, it's
-pretty simple to create one.
+with other object storage services, this will feel familiar. If not, it's pretty
+simple to create one.
 
 As their webpage says:
 
@@ -55,10 +55,10 @@ As their webpage says:
 Once you click the `Create a Bucket` button on their webpage or mobile app, you
 need to provide the following:
 
-- Bucket Unique Name
-- Files in Bucket are: `Private` or `Public`
-- Default Encryption: `Disable` or `Enable`
-- Object Lock: `Disable` or `Enable`
+-   Bucket Unique Name
+-   Files in Bucket are: `Private` or `Public`
+-   Default Encryption: `Disable` or `Enable`
+-   Object Lock: `Disable` or `Enable`
 
 For my bucket, I created a private bucket with encryption enabled and object
 lock disabled.
@@ -126,7 +126,7 @@ bucket:
 b2 ls <bucket_name>
 ```
 
-``` txt
+```txt
 test.md
 ```
 
@@ -166,8 +166,8 @@ Note that symlinks are resolved by b2, so if you have a link from
 has 10TB of data, `b2` will resolve that link and start uploading all 10TB of
 data linked within the folder.
 
-If you're not sure if you have any symlinks, a symlink will look like this
-(note the `->` symbol):
+If you're not sure if you have any symlinks, a symlink will look like this (note
+the `->` symbol):
 
 ```sh
 > ls -lha

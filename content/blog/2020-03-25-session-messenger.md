@@ -44,16 +44,16 @@ Since most people are looking for an alternative to a popular chat app, I am
 going to list out the features that Session has so that you are able to
 determine if the app would suit your needs:
 
-- Multiple device linking (via QR code or ID)
-- App locking via device screen lock, password, or fingerprint
-- Screenshot blocking
-- Incognito keyboard
-- Read receipts and typing indicators
-- Mobile notification customization
-- Old message deletion and conversation limit
-- Backups
-- Recovery phrase
-- Account deletion, including ID, messages, sessions, and contacts
+-   Multiple device linking (via QR code or ID)
+-   App locking via device screen lock, password, or fingerprint
+-   Screenshot blocking
+-   Incognito keyboard
+-   Read receipts and typing indicators
+-   Mobile notification customization
+-   Old message deletion and conversation limit
+-   Backups
+-   Recovery phrase
+-   Account deletion, including ID, messages, sessions, and contacts
 
 # Downloads
 
@@ -76,8 +76,8 @@ Options](https://img.cleberg.net/blog/20200325-session-private-messenger/session
 
 # Creating an Account
 
-Once you've installed the app, simply run the app and create your unique
-Session ID. It will look something like this:
+Once you've installed the app, simply run the app and create your unique Session
+ID. It will look something like this:
 `05af1835afdd63c947b47705867501d6373f486aa1ae05b1f2f3fcd24570eba608`.
 
 You'll need to set a display name and, optionally, a password. If you set a
@@ -96,8 +96,8 @@ Authentication](https://img.cleberg.net/blog/20200325-session-private-messenger/
 
 Once you've created your account and set up your profile details, the next step
 is to start messaging other people. To do so, you'll need to share your Session
-ID with other people. From this point, it's fairly straightforward and acts
-like any other messaging app, so I won't dive into much detail here.
+ID with other people. From this point, it's fairly straightforward and acts like
+any other messaging app, so I won't dive into much detail here.
 
 ## macOS
 

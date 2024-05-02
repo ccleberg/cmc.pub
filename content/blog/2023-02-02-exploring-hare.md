@@ -33,8 +33,8 @@ program.
 
 ## Installation
 
-I'm currently running Alpine Linux on my Thinkpad, so the installation was
-quite easy as there is a package for Hare in the `apk` repositories.
+I'm currently running Alpine Linux on my Thinkpad, so the installation was quite
+easy as there is a package for Hare in the `apk` repositories.
 
 ```sh
 doas apk add hare hare-doc
@@ -132,8 +132,8 @@ hare build -o example file.ha
 
     While I was able to piece everything together eventually, the biggest
     downfall right now in Hare's documentation. For such a new project, the
-    documentation is in a great spot. However, bare specifications don't help
-    as much as a brief examples section would.
+    documentation is in a great spot. However, bare specifications don't help as
+    much as a brief examples section would.
 
     For example, it took me a while to figure out what the `u64n` function was
     looking for. I could tell that it took two parameters and the second was my
@@ -150,8 +150,8 @@ hare build -o example file.ha
     enjoy seeing in Hare, such as one to convert decimal (base 10) values to
     hexadecimal (base 16).
 
-    If I'm feeling comfortable with my math, I may work on the list of
-    functions I want and see if any can make it into the Hare source code.
+    If I'm feeling comfortable with my math, I may work on the list of functions
+    I want and see if any can make it into the Hare source code.
 
 3. Overall Thoughts
 

@@ -96,8 +96,8 @@ Here's an example of how my Markdown notes look when opened in plain-text mode:
 ![Obsidian Markdown Source
 Mode](https://img.cleberg.net/blog/20220302-easy-reliable-note-taking/obsidian_source_mode.png)
 
-Here's the "live preview" version, where the Markdown is rendered into its
-HTML format:
+Here's the "live preview" version, where the Markdown is rendered into its HTML
+format:
 
 ![Obsidian Markdown Live
 Preview](https://img.cleberg.net/blog/20220302-easy-reliable-note-taking/obsidian_live_preview.png)

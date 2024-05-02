@@ -7,31 +7,31 @@ draft = false
 
 # Text-Based Simplicity
 
-I've detailed my views on web-based minimalism and related topics in other
-posts throughout the years; e.g., JavaScript/CSS bloat slowing down websites
-that are essentially a text document. However, I have never really expanded
-beyond talking about the web and describing how I focus on minimizing
-distractions in other digital environments.
+I've detailed my views on web-based minimalism and related topics in other posts
+throughout the years; e.g., JavaScript/CSS bloat slowing down websites that are
+essentially a text document. However, I have never really expanded beyond
+talking about the web and describing how I focus on minimizing distractions in
+other digital environments.
 
-This post is going to set the baseline for how I *try* to live my digital life.
+This post is going to set the baseline for how I _try_ to live my digital life.
 It does not necessarily get into my physical life, which is often harder to
 control and contain all the noise in our modern world.
 
 While there are new things to do every day in our digital world, I find that
 keeping a core set of values and interests can ground you and keep you mindful
-of *why* you are participating in the digital world. For example, if - at your
+of _why_ you are participating in the digital world. For example, if - at your
 core - you have no interest in what strangers think about random topics, it
 would be unwise to start participating in social media. However, I am someone
 who has been dragged in by effective advertising to participate in communities
 that I realize I do not care for.
 
-I won't dive much further into explaining the philosophy of all this, but I
-will link a few helpful articles that may pique your interest if you're in
-search of more meaningful experiences:
+I won't dive much further into explaining the philosophy of all this, but I will
+link a few helpful articles that may pique your interest if you're in search of
+more meaningful experiences:
 
-- [Mindfulness](https://en.wikipedia.org/wiki/Mindfulness)
-- [Minimalism](https://en.wikipedia.org/wiki/Minimalism)
-- [Stoicism](https://en.wikipedia.org/wiki/Stoicism)
+-   [Mindfulness](https://en.wikipedia.org/wiki/Mindfulness)
+-   [Minimalism](https://en.wikipedia.org/wiki/Minimalism)
+-   [Stoicism](https://en.wikipedia.org/wiki/Stoicism)
 
 # Living Life in the Terminal
 
@@ -62,9 +62,8 @@ Now that we have some examples out of the way, let's dive into the specifics.
 
 I'm going to start off with a hard topic for those who prefer to live in the
 terminal: web browsing. This task is made hard mostly by websites and web apps
-that require JavaScript to run. The other difficult part is that if you're
-using a text-based browser, that means images won't load (hopefully that's
-obvious).
+that require JavaScript to run. The other difficult part is that if you're using
+a text-based browser, that means images won't load (hopefully that's obvious).
 
 I am using [Lynx](https://lynx.invisible-island.net), a text-based browser that
 runs quickly and easily in the terminal. Lynx allows me to browser most websites
@@ -79,10 +78,10 @@ using their text-only interface.
 ![DuckDuckGo
 !Lite](https://img.cleberg.net/blog/20220616-terminal-lifestyle/ddg.png)
 
-Eventually, you will run into websites that don't work (or are just too ugly
-and messy) in a text-only mode, and you'll be forced to switch over to a GUI
-browser to look at that site. Personally, I don't mind this as it doesn't
-happen as often as I thought it would.
+Eventually, you will run into websites that don't work (or are just too ugly and
+messy) in a text-only mode, and you'll be forced to switch over to a GUI browser
+to look at that site. Personally, I don't mind this as it doesn't happen as
+often as I thought it would.
 
 The only time I need to do this is when I want to browse an image/video-focused
 webpage or if I need to log in to a site, and it doesn't support a text-only
@@ -94,8 +93,8 @@ login page. For example, I am able to easily log in to
 After web browsing activities, my main form of terminal communication is Matrix.
 I use the [gomuks](https://docs.mau.fi/gomuks/) client currently.
 
-This was incredibly easy to install on macOS (but I will need to see if it'll
-be just as easy on Linux when my new laptop arrives):
+This was incredibly easy to install on macOS (but I will need to see if it'll be
+just as easy on Linux when my new laptop arrives):
 
 ```sh
 brew install gomuks
@@ -178,7 +177,7 @@ I am used to the easy extensions found in VSCodium and Kate, so I am slowly
 learning how to mold the default editing tools to my needs. Currently, this
 means I am using `nano` with the following configuration:
 
-``` config
+```config
 set breaklonglines
 set autoindent
 set linenumbers

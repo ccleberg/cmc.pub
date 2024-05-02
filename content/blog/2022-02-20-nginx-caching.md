@@ -17,7 +17,7 @@ to cache and determining the expiration length. To include more file types,
 simply use the bar separator (`|`) and type the new file extension you want to
 include.
 
-``` config
+```config
 server {
     ...
 
@@ -35,9 +35,9 @@ changes (i.e., I'm never content with my website), I need to know that my
 readers are seeing the new content without waiting too long.
 
 So, I went ahead and set the expiration date at `30d`, which is short enough to
-refresh for readers but long enough that clients/browsers won't be
-re-requesting the static files too often, hopefully resulting in faster loading
-times, as images should be the only thing slowing down my site.
+refresh for readers but long enough that clients/browsers won't be re-requesting
+the static files too often, hopefully resulting in faster loading times, as
+images should be the only thing slowing down my site.
 
 # Testing Results
 
@@ -48,7 +48,7 @@ recent image from my blog.
 
 In the image below, you can see that the `Cache-Control` header is now present
 and set to 2592000, which is 30 days represented in seconds (30 days \_ 24
-hours/day \_ 60 minutes/hour ** 60 seconds/minute = 2,592,000 seconds).
+hours/day \_ 60 minutes/hour \*\* 60 seconds/minute = 2,592,000 seconds).
 
 The `Expires` field is now showing 22 March 2022, which is 30 days from the day
 of this post, 20 February 2022.

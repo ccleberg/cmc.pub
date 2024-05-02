@@ -12,9 +12,8 @@ While exploring some interesting Linux applications, I stumbled across
 player based on Python.
 
 This application is fantastic and incredibly easy to install, so I wanted to
-dedicate a post today to this app. Let's look at the features within the app
-and then walk through the installation process I took to get `curseradio`
-working.
+dedicate a post today to this app. Let's look at the features within the app and
+then walk through the installation process I took to get `curseradio` working.
 
 # Features
 
@@ -35,7 +34,7 @@ radio player in the `Favourites` category.
 ## Commands/Shortcuts
 
 | Key(s)     | Command                         |
-|------------|---------------------------------|
+| ---------- | ------------------------------- |
 | ↑, ↓       | navigate                        |
 | PgUp, PgDn | navigate quickly                |
 | Home, End  | to top/bottom                   |

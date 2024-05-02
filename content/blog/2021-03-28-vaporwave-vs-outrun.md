@@ -47,8 +47,8 @@ specific aspects that make Vaporwave unique:
 
 The time frame for references, logos, etc. focuses mostly on the 1990s in
 Vaporwave. You'll see old school Pepsi logos, Microsoft 95 screens, tropical
-plants, classic marble sculptures, and many references from Japan's influence
-in the 90s.
+plants, classic marble sculptures, and many references from Japan's influence in
+the 90s.
 
 ## Art
 

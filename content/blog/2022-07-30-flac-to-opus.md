@@ -16,7 +16,7 @@ of the files, especially if you're using a weak connection.
 
 So, in order to archive the music in a lossless format and still be able to
 stream it easily, I opted to create a copy of my FLAC files in the [Opus audio
-codec](https://en.wikipedia.org/wiki/Opus_(audio_format)). This allows me to
+codec](<https://en.wikipedia.org/wiki/Opus_(audio_format)>). This allows me to
 archive a quality, lossless version of the music and then point my streaming
 service to the smaller, stream-ready version.
 
@@ -47,20 +47,20 @@ following logic into the script.
 
 You **MUST** edit the following variables in order for it to work:
 
-- `source`: The source directory where your FLAC files are stored.
-- `dest`: The destination directory where you want the resulting Opus files to
-  be stored.
+-   `source`: The source directory where your FLAC files are stored.
+-   `dest`: The destination directory where you want the resulting Opus files to
+    be stored.
 
 You **MAY** want to edit the following variables to suit your needs:
 
-- `filename`: If you are converting to a file format other than Opus, you'll
-  need to edit this so that your resulting files have the correct filename
-  extension.
-- `reldir`: This variable can be edited to strip out more leading directories in
-  the file path. As you'll see later, I ignore this for now and simply clean it
-  up afterward.
-- `opusenc`: This is the actual conversion process. You may want to edit the
-  bitrate to suit your needs. I set mine at 128 but some prefer 160 or higher.
+-   `filename`: If you are converting to a file format other than Opus, you'll
+    need to edit this so that your resulting files have the correct filename
+    extension.
+-   `reldir`: This variable can be edited to strip out more leading directories
+    in the file path. As you'll see later, I ignore this for now and simply
+    clean it up afterward.
+-   `opusenc`: This is the actual conversion process. You may want to edit the
+    bitrate to suit your needs. I set mine at 128 but some prefer 160 or higher.
 
 ```sh
 #!/bin/bash
@@ -168,7 +168,7 @@ du -h --max-depth=1 .
 
 In my case, my small library went from 78GB to 6.3GB!
 
-``` txt
+```txt
 78G    ./archives
 6.3G   ./library
 ```

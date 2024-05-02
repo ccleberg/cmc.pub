@@ -24,8 +24,7 @@ Start by creating a directory for the container's files.
 mkdir ~/otterwiki
 ```
 
-Next, create the `docker-compose.yml` file to define the container's
-parameters.
+Next, create the `docker-compose.yml` file to define the container's parameters.
 
 ```sh
 nano ~/otterwiki/docker-compose.yml
@@ -34,7 +33,7 @@ nano ~/otterwiki/docker-compose.yml
 Within the file, paste the following content. You can read the project's
 documentation if you want to further override or customize the container.
 
-``` conf
+```conf
 version: '3'
 services:
   otterwiki:
@@ -72,7 +71,7 @@ have a TLS/SSL cert to use with this subdomain. If not, simply remove the
 `ssl_*` variables, remove the `80` server block, and change the `443` server
 block to `80` to serve the app without SSL.
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.example\.com$) {
         return 301 https://$host$request_uri;
@@ -129,8 +128,8 @@ Wiki. Start by creating your admin account and configure the app as necessary.
 ![An Otter Wiki - Initial
 Screen](https://img.cleberg.net/blog/20240221-otterwiki/otterwiki.png)
 
-You can also see the default editing screen for creating and editing pages.
-It's as easy as typing Markdown and hitting the save button.
+You can also see the default editing screen for creating and editing pages. It's
+as easy as typing Markdown and hitting the save button.
 
 ![An Otter Wiki - Editing
 Screen](https://img.cleberg.net/blog/20240221-otterwiki/otterwiki-edit.png)

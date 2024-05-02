@@ -24,7 +24,7 @@ Per their website:
 > other systems.
 >
 > Roughly speaking, the goal is a marriage between the aesthetic of late-1990s
-> productivity software and the power-user accessibility of late-2000s *nix.
+> productivity software and the power-user accessibility of late-2000s \*nix.
 >
 > This is a system by us, for us, based on the things we like.
 

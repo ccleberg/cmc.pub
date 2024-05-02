@@ -10,9 +10,9 @@ draft = false
 ![Debian +
 neofetch](https://img.cleberg.net/blog/20220216-migrating-to-debian-and-nginx/neofetch.png)
 
-I've used various Linux distributions throughout the years, but I've never
-used anything except Ubuntu for my servers. Why? I really have no idea, mostly
-just comfort around the commands and software availability.
+I've used various Linux distributions throughout the years, but I've never used
+anything except Ubuntu for my servers. Why? I really have no idea, mostly just
+comfort around the commands and software availability.
 
 However, I have always wanted to try Debian as a server OS after testing it out
 in a VM a few years ago (side-note: I'd love to try Alpine too, but I always

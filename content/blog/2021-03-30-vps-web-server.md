@@ -85,9 +85,9 @@ increase the resources at any time.
 # Configuring DNS Settings
 
 Okay, so now let's get into some actual work that has to be done to get content
-moved from a shared host to a VPS. At this point, I'm assuming you have a
-shared host with website content that you can still access, and you've
-purchased a new VPS and can SSH into that server.
+moved from a shared host to a VPS. At this point, I'm assuming you have a shared
+host with website content that you can still access, and you've purchased a new
+VPS and can SSH into that server.
 
 The first change is minor, but it should be done immediately in order to get
 things moving: DNS settings. Go to wherever your DNS settings are handled. If
@@ -98,15 +98,15 @@ DNS over to your new VPS provider. For me, I route my DNS through
 Once you know where your DNS settings are, go ahead and update the `A` records
 to match the public IP address of your VPS. For example:
 
-``` txt
+```txt
 A         example.com     xxx.xxx.xxx.xxx
 A         subdomain       xxx.xxx.xxx.xxx
 CNAME     www             example.com.
 ```
 
 If you have any other records that require updates, such as MX or TXT records
-for a mail server, be sure to update those accordingly. Personally, I don't
-host my own mail server. I route all mail on my custom domains to
+for a mail server, be sure to update those accordingly. Personally, I don't host
+my own mail server. I route all mail on my custom domains to
 [Migadu](https://www.migadu.com). Hosting your own email server can become
 complex quickly and is not for beginners.
 
@@ -132,8 +132,8 @@ set it up.
 
 First, let's update and upgrade our server.
 
-**NOTE:** Since we have logged in to the server as `root` for now, we don't
-need to use the `sudo` modifier before our commands.
+**NOTE:** Since we have logged in to the server as `root` for now, we don't need
+to use the `sudo` modifier before our commands.
 
 ```sh
 apt update && apt upgrade -y
@@ -173,8 +173,8 @@ from the VPS):
 ssh-copy-id testuser@xxx.xxx.xxx.xxx
 ```
 
-If you've disabled password-based SSH, you'll need to manually copy your SSH
-key into the `~/.ssh/authorized_keys` file.
+If you've disabled password-based SSH, you'll need to manually copy your SSH key
+into the `~/.ssh/authorized_keys` file.
 
 # Install Software
 
@@ -209,9 +209,9 @@ sudo mkdir example.com
 ```
 
 We have a folder for `example.com` now, so let's add an `index.html` file and
-put it within a specific `public_html` folder. You don't need this
-`public_html` if you don't want it, but it helps with organizing items related
-to `example.com` that you don't want to publish to the internet.
+put it within a specific `public_html` folder. You don't need this `public_html`
+if you don't want it, but it helps with organizing items related to
+`example.com` that you don't want to publish to the internet.
 
 ```sh
 cd example.com
@@ -222,23 +222,22 @@ sudo nano index.html
 You can put anything you want in this `index.html` file. If you can't think of
 anything, paste this in there:
 
-``` html
+```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Hello, world!</title>
-    </head>
-    <body>
-        <h1>Hello, world!</h1>
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Hello, world!</title>
+	</head>
+	<body>
+		<h1>Hello, world!</h1>
+	</body>
 </html>
 ```
 
-If you want something to be served at `example.com/page01/file.txt`, you'll
-have to create the `page01` directory under the `example.com` directory. For
-example:
+If you want something to be served at `example.com/page01/file.txt`, you'll have
+to create the `page01` directory under the `example.com` directory. For example:
 
 ```sh
 cd /var/www/example.com/public_html
@@ -261,7 +260,7 @@ sudo nano example.com.conf
 This configuration file will have a few default lines, but you'll need to edit
 it to look similar to this (settings may change based on your personal needs):
 
-``` config
+```config
 <VirtualHost *:80>
     ServerAdmin your-email@email-provider.com
     ServerName example.com
@@ -290,8 +289,8 @@ sudo apache2ctl configtest
 
 Now, restart the web server entirely. After this, you should be able to browse
 to `http://example.com` and see the HTML content you provided earlier. Note that
-SSL/TLS has not been enabled yet, so you won't be able to use the secure
-version yet (`https://example.com`).
+SSL/TLS has not been enabled yet, so you won't be able to use the secure version
+yet (`https://example.com`).
 
 ```sh
 sudo systemctl restart apache2

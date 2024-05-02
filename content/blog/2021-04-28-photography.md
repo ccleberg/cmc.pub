@@ -48,10 +48,10 @@ perfect for me.
 For lenses, I decided to buy two lenses that could carry me through most
 situations:
 
-- [Vario-Tessar T** FE 24-70 mm F4 ZA
-  OSS](https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2470z)
-- [Tamron 70-300mm f4.5-6.3 Di III
-  RXD](https://www.tamron-usa.com/product/lenses/a047.html)
+-   [Vario-Tessar T\*\* FE 24-70 mm F4 ZA
+    OSS](https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2470z)
+-   [Tamron 70-300mm f4.5-6.3 Di III
+    RXD](https://www.tamron-usa.com/product/lenses/a047.html)
 
 In addition, I grabbed a couple [HGX Prime
 67mm](https://www.promaster.com/Product/6725) protection filters for the lenses.

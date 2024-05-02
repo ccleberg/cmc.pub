@@ -46,7 +46,7 @@ of the server and an `AAAA` record with the IPv6 address of the server. Note:
 assigning an IPv6 (`AAAA`) record is optional, but I like to enable IPV6 for my
 services.
 
-``` config
+```config
 rss.example.com     A       xxx.xxx.xxx.xxx
 rss.example.com     AAAA    xxxx:xxxx: ... :xxxx
 ```
@@ -55,8 +55,8 @@ rss.example.com     AAAA    xxxx:xxxx: ... :xxxx
 
 I initially tried to set up a `docker-compose.yml` file with a `.env` file
 because I prefer to have a file I can look back at later to see how I initially
-started the container, but it simply wouldn't work for me. I'm not sure why,
-but I assume I wasn't telling `docker-compose` where the `.env` file was.
+started the container, but it simply wouldn't work for me. I'm not sure why, but
+I assume I wasn't telling `docker-compose` where the `.env` file was.
 
 Regardless, I chose to simply run the service with `docker run`. See the
 following command for my `docker run` configuration:
@@ -79,8 +79,8 @@ instance at `localhost:8080`.
 
 I **HIGHLY** suggest that you set up your user account prior to exposing this
 service to the public. It's unlikely that someone is trying to access the exact
-domain or IP/port you're assigning here, but as soon as you expose this
-service, the first person to open the URL will be able to create the admin user.
+domain or IP/port you're assigning here, but as soon as you expose this service,
+the first person to open the URL will be able to create the admin user.
 
 In order to set up your FreshRSS service, open the `localhost:8080` URL in your
 browser (you may need to use a local IP instead of `localhost` if you're
@@ -104,7 +104,7 @@ sudo nano /etc/nginx/sites-available/rss.example.com
 
 Within the config file, I pasted the following code:
 
-``` config
+```config
 upstream freshrss {
         server 127.0.0.1:8080;
         keepalive 64;
@@ -171,7 +171,7 @@ Once that is set and saved, click the link below the API password field to open
 the API check tool. It should look something like `https://localhost:8080/api/`
 or `https://rss.example.com/api/`.
 
-Within this page, you *should* see your correct external URL and "PASS" at the
+Within this page, you _should_ see your correct external URL and "PASS" at the
 bottom of each API type. This would mean everything is set up correctly, and you
 can now move on and login to any RSS apps that support self-hosted options.
 
@@ -205,7 +205,7 @@ Within `config.php`, you will need to update the `base_url` variable and update
 it to match your external URL. In my case, I simply commented-out the incorrect
 URL with `//` and added the correct one on a new line:
 
-``` php
+```php
 <?php
     return array (
         ...
@@ -231,8 +231,8 @@ Next, just restart the container:
 sudo docker restart freshrss
 ```
 
-Voilà! Your API check should now "PASS" and you should be able to use one of
-the API URLs in your RSS apps.
+Voilà! Your API check should now "PASS" and you should be able to use one of the
+API URLs in your RSS apps.
 
 In my case, I use [NetNewsWire](https://netnewswire.com) on my desktop and
 phone.

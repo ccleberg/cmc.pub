@@ -43,30 +43,31 @@ nano ~/ddns-updater/data/config.json
 
 When setting up the configuration for Cloudflare, you'll need the following:
 
-- Required Parameters
-    - `"zone_identifier"` is the Zone ID of your site from the domain overview
-      page
-    - `"host"` is your host and can be `"@"`, a subdomain or the wildcard `"*"`.
-      See [this issue comment for
-      context](https://github.com/qdm12/ddns-updater/issues/243#issuecomment-928313949).
-    - `"ttl"` integer value for record TTL in seconds (specify 1 for automatic)
-    - One of the following ([how to find API
-      keys](https://developers.cloudflare.com/fundamentals/api/get-started/)):
-        - Email `"email"` and Global API Key `"key"`
-        - User service key `"user_service_key"`
-        - API Token `"token"`, configured with DNS edit permissions for your DNS
-          name's zone
-- Optional Parameters
-    - `"proxied"` can be set to `true` to use the proxy services of Cloudflare
-    - `"ip_version"` can be `ipv4` (A records), or `ipv6` (AAAA records) or
-      `ipv4   or ipv6` (update one of the two, depending on the public ip
-      found). It defaults to `ipv4 or ipv6`.
-    - `"ipv6_suffix"` is the IPv6 interface identifier suffix to use. It can be
-      for example `0:0:0:0:72ad:8fbb:a54e:bedd/64`. If left empty, it defaults
-      to no suffix and the raw public IPv6 address obtained is used in the
-      record updating.
+-   Required Parameters
+    -   `"zone_identifier"` is the Zone ID of your site from the domain overview
+        page
+    -   `"host"` is your host and can be `"@"`, a subdomain or the wildcard
+        `"*"`. See [this issue comment for
+        context](https://github.com/qdm12/ddns-updater/issues/243#issuecomment-928313949).
+    -   `"ttl"` integer value for record TTL in seconds (specify 1 for
+        automatic)
+    -   One of the following ([how to find API
+        keys](https://developers.cloudflare.com/fundamentals/api/get-started/)):
+        -   Email `"email"` and Global API Key `"key"`
+        -   User service key `"user_service_key"`
+        -   API Token `"token"`, configured with DNS edit permissions for your
+            DNS name's zone
+-   Optional Parameters
+    -   `"proxied"` can be set to `true` to use the proxy services of Cloudflare
+    -   `"ip_version"` can be `ipv4` (A records), or `ipv6` (AAAA records) or
+        `ipv4   or ipv6` (update one of the two, depending on the public ip
+        found). It defaults to `ipv4 or ipv6`.
+    -   `"ipv6_suffix"` is the IPv6 interface identifier suffix to use. It can
+        be for example `0:0:0:0:72ad:8fbb:a54e:bedd/64`. If left empty, it
+        defaults to no suffix and the raw public IPv6 address obtained is used
+        in the record updating.
 
-``` conf
+```conf
 {
   "settings": [
     {
@@ -106,7 +107,7 @@ file.
 nano ~/ddns_-pdater/docker-compose.yml
 ```
 
-``` config
+```config
 version: "3.7"
 services:
   ddns-updater:
@@ -169,7 +170,7 @@ sudo nano /etc/nginx/sites-available/ddns
 
 Here's a basic example that should work properly.
 
-``` conf
+```conf
 server {
     # If using 443, remember to include your ssl_certificate
     # and ssl_certificate_key
@@ -190,7 +191,7 @@ server {
 Here's a full example that uses my Authelia authentication service to require
 authentication before someone can access the web page.
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.example\.com$) {
         return 301 https://$host$request_uri;

@@ -5,7 +5,7 @@ description = ""
 draft = false
 +++
 
-# Synpase
+# Synapse
 
 If you're reading this, you likely know that
 [Synapse](https://github.com/matrix-org/synapse/) is a popular
@@ -72,7 +72,7 @@ are a lot of other configuration options found in the [Configuring
 Synapse](https://matrix-org.github.io/synapse/develop/usage/configuration/config_documentation.html)
 documentation that can be enabled/disabled at any point.
 
-``` yaml
+```yaml
 server_name: "example.com"
 ```
 
@@ -97,7 +97,7 @@ doas nano /etc/nginx/http.d/example.com.conf
 If you already have TLS certificates for this domain (`example.com`), you can
 simply use the SSL configuration and point toward your TLS certificates.
 
-``` conf
+```conf
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -139,11 +139,11 @@ server {
 ```
 
 If you need to generate TLS certificates (I recommend
-[Certbot](https://certbot.eff.org/)), you'll need a more minimal Nginx conf
-file before you can use the TLS-enabled example above. Instead, use this
+[Certbot](https://certbot.eff.org/)), you'll need a more minimal Nginx conf file
+before you can use the TLS-enabled example above. Instead, use this
 configuration file during the Certbot certificate generation process:
 
-``` conf
+```conf
 server {
   server_name example.com;
   location / {
@@ -196,8 +196,8 @@ Router from the internet to your server's IP address.
 
 ## Adding Matrix Users
 
-Finally, if you didn't enable public registration in the `homeserver.yaml`
-file, you can manually create users via the command-line:
+Finally, if you didn't enable public registration in the `homeserver.yaml` file,
+you can manually create users via the command-line:
 
 ```sh
 cd ~/synapse

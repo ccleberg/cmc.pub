@@ -7,7 +7,7 @@ draft = false
 
 # More Information
 
-For inspiration on designing your *nix computer, check out the
+For inspiration on designing your \*nix computer, check out the
 [r/unixporn](https://libredd.it/r/unixporn) subreddit!
 
 # Customizing Ubuntu
@@ -36,10 +36,9 @@ following command:
 sudo apt install gnome-tweaks
 ```
 
-After you've finished installing the tool, simply launch the Tweaks
-application, and you'll be able to access the various customization options
-available by default on Ubuntu. You might even like some of the pre-installed
-options.
+After you've finished installing the tool, simply launch the Tweaks application,
+and you'll be able to access the various customization options available by
+default on Ubuntu. You might even like some of the pre-installed options.
 
 ## GNOME Application Themes
 
@@ -66,8 +65,8 @@ Steps to import themes into Tweaks:
 4. Close tweaks if it is open. Re-open Tweaks and your new theme will be
    available in the Applications dropdown in the Appearance section of Tweaks.
 
-If the theme is not showing up after you've moved it into the themes folder,
-you may have uncompressed the folder into a sub-folder. You can check this by
+If the theme is not showing up after you've moved it into the themes folder, you
+may have uncompressed the folder into a sub-folder. You can check this by
 entering the theme folder and listing the contents:
 
 ```sh
@@ -129,7 +128,7 @@ folders to the `/usr/share/fonts/` directory instead.
 If you spend a lot of time typing commands, you know how important the style and
 functionality of the terminal is. After spending a lot of time using the default
 GNOME terminal with [unix
-shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), I decided to try some
+shell](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>), I decided to try some
 different options. I ended up choosing
 [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) with
 [zsh](https://en.wikipedia.org/wiki/Z_shell).

@@ -23,9 +23,9 @@ nano change_git_authors.sh
 The following information can be pasted directly into your bash script. The only
 changes you need to make are to the following variables:
 
-- `OLD_EMAIL`
-- `CORRECT_NAME`
-- `CORRECT_EMAIL`
+-   `OLD_EMAIL`
+-   `CORRECT_NAME`
+-   `CORRECT_EMAIL`
 
 ```sh
 #!/bin/sh

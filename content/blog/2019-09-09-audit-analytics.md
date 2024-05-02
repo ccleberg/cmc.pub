@@ -23,10 +23,10 @@ One of the common mistakes that managers (and anyone new to the process) make is
 assuming that everything involved with this process is "data analytics". In
 fact, data analytics are only a small part of the process.
 
-See **Figure 1** for a more accurate representation of where data analysis
-sits within the full process. This means that data analysis does not include
-querying or extracting data, selecting samples, or performing audit tests. These
-steps can be necessary for an audit (and may even be performed by the same
+See **Figure 1** for a more accurate representation of where data analysis sits
+within the full process. This means that data analysis does not include querying
+or extracting data, selecting samples, or performing audit tests. These steps
+can be necessary for an audit (and may even be performed by the same
 associates), but they are not data analytics.
 
 ![The Intelligence
@@ -45,7 +45,7 @@ companies to perform their roles).
 > a systematic, disciplined approach to evaluate and improve the effectiveness
 > of risk management, control and governance processes.
 >
-> - The IIA's Definition of Internal Audit
+> -   The IIA's Definition of Internal Audit
 
 Part of the blame for the slow adoption of data analysis can be attributed to
 the fact that internal auditing is strongly based on tradition and following the
@@ -73,15 +73,15 @@ look at **Figure 2** for a quick overview of the model.
 The DELTA model sets a few guidelines for areas wanting to implement data
 analytics so that the results can be as comprehensive as possible:
 
-- **Data**: Must be clean, accessible, and (usually) unique.
-- **Enterprise-Wide Focus**: Key data systems and analytical resources must be
-  available for use (by the Internal Audit Function).
-- **Leaders**: Must promote a data analytics approach and show the value of
-  analytical results.
-- **Targets**: Must be set for key areas and risks that the analytics can be
-  compared against (KPIs).
-- **Analysts**: There must be auditors willing and able to perform data
-  analytics or else the system cannot be sustained.
+-   **Data**: Must be clean, accessible, and (usually) unique.
+-   **Enterprise-Wide Focus**: Key data systems and analytical resources must be
+    available for use (by the Internal Audit Function).
+-   **Leaders**: Must promote a data analytics approach and show the value of
+    analytical results.
+-   **Targets**: Must be set for key areas and risks that the analytics can be
+    compared against (KPIs).
+-   **Analysts**: There must be auditors willing and able to perform data
+    analytics or else the system cannot be sustained.
 
 ![The Delta
 Model](https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/delta-min.png)
@@ -110,12 +110,11 @@ some applicable standards, such as IPPF Standard 1300.
 Additionally, IPPF Standard 2060 discusses reporting:
 
 > The chief audit executive must report periodically to senior management and
-> the board on the internal audit activity's purpose, authority,
-> responsibility, and performance relative to its plan and on its conformance
-> with the Code of Ethics and the Standards. Reporting must also include
-> significant risk and control issues, including fraud risks, governance issues,
-> and other matters that require the attention of senior management and/or the
-> board.
+> the board on the internal audit activity's purpose, authority, responsibility,
+> and performance relative to its plan and on its conformance with the Code of
+> Ethics and the Standards. Reporting must also include significant risk and
+> control issues, including fraud risks, governance issues, and other matters
+> that require the attention of senior management and/or the board.
 >
 > -   IPPF Standard 2060
 
@@ -163,12 +162,12 @@ where the auditor must write the scripts manually. Python and the R-language are
 solely scripting languages.
 
 The general trend in the data analytics environment is that if the tool allows
-you to do everything by clicking buttons or dragging elements, you won't be
-able to fully utilize the analytics you need. The most robust solutions are
-created by those who understand how to write the scripts manually. It should be
-noted that as the utility of a tool increases, it usually means that the
-learning curve for that tool will also be higher. It will take auditors longer
-to learn how to utilize Python, R, or ACL versus learning how to utilize Excel.
+you to do everything by clicking buttons or dragging elements, you won't be able
+to fully utilize the analytics you need. The most robust solutions are created
+by those who understand how to write the scripts manually. It should be noted
+that as the utility of a tool increases, it usually means that the learning
+curve for that tool will also be higher. It will take auditors longer to learn
+how to utilize Python, R, or ACL versus learning how to utilize Excel.
 
 # Visualization
 
@@ -192,13 +191,13 @@ Lastly, let's take a look at an example of data visualization. This example
 comes from a [blog post written by Kushal
 Chakrabarti](https://talent.works/2018/03/28/the-science-of-the-job-search-part-iii-61-of-entry-level-jobs-require-3-years-of-experience/)
 in 2018 about the percent of entry-level US jobs that require experience.
-**Figure 3** shows us an easy-to-digest picture of the data. We can quickly
-tell that only about 12.5% of entry-level jobs don't require experience.
+**Figure 3** shows us an easy-to-digest picture of the data. We can quickly tell
+that only about 12.5% of entry-level jobs don't require experience.
 
 This is the kind of result that easily describes the data for you. However, make
 sure to include an explanation of what the results mean. Don't let the reader
-assume what the data means, especially if it relates to a complex subject. *Tell
-a story* about the data and why the results matter. For example, **Figure 4**
+assume what the data means, especially if it relates to a complex subject. _Tell
+a story_ about the data and why the results matter. For example, **Figure 4**
 shows a part of the explanation the author gives to illustrate his point.
 
 ![Entry-Level

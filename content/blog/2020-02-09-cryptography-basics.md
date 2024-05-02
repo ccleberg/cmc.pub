@@ -23,7 +23,7 @@ Glossary's definition:
 > transformation is reversible, cryptography also deals with restoring encrypted
 > data to an intelligible form.
 >
-> - [Internet Security Glossary (2000)](https://tools.ietf.org/html/rfc2828)
+> -   [Internet Security Glossary (2000)](https://tools.ietf.org/html/rfc2828)
 
 Cryptography cannot offer protection against the loss of data; it simply offers
 encryption methods to protect data at-rest and data in-traffic. At a high-level,
@@ -37,15 +37,15 @@ utilizes one or more values called keys to encrypt or decrypt the data.
 To create or evaluate a cryptographic system, you need to know the essential
 pieces to the system:
 
-- **Encryption Algorithm (Primitive):** A mathematical process that encrypts
-  and decrypts data.
-- **Encryption Key:** A string of bits used within the encryption algorithm as
-  the secret that allows successful encryption or decryption of data.
-- **Key Length (Size):** The maximum number of bits within the encryption key.
-  It's important to remember that key size is regulated in many countries.
-- **Message Digest:** A smaller, fixed-size bit string version of the original
-  message. This is practically infeasible to reverse, which is why it's
-  commonly used to verify integrity.
+-   **Encryption Algorithm (Primitive):** A mathematical process that encrypts
+    and decrypts data.
+-   **Encryption Key:** A string of bits used within the encryption algorithm as
+    the secret that allows successful encryption or decryption of data.
+-   **Key Length (Size):** The maximum number of bits within the encryption key.
+    It's important to remember that key size is regulated in many countries.
+-   **Message Digest:** A smaller, fixed-size bit string version of the original
+    message. This is practically infeasible to reverse, which is why it's
+    commonly used to verify integrity.
 
 # Symmetric Systems (Secret Key Cryptography)
 
@@ -136,9 +136,9 @@ encrypts just the data portion of packets in the transport methods, but it
 encrypts both the data and headers in the tunnel method (introducing an
 additional header for authentication).
 
-**Secure Shell (SSH):** SSH is another network protocol used to protect
-network services by authenticating users through a secure channel. This protocol
-is often used for command-line (shell) functions such as remote shell commands,
+**Secure Shell (SSH):** SSH is another network protocol used to protect network
+services by authenticating users through a secure channel. This protocol is
+often used for command-line (shell) functions such as remote shell commands,
 logins, and file transfers.
 
 **Kerberos:** Developed by MIT, Kerberos is a computer-network authentication
@@ -152,16 +152,16 @@ encryption method for Windows Active Directory (AD).
 If you're someone who needs solutions on how to control risks associated with
 utilizing a crytograhpic system, start with a few basic controls:
 
-- **Policies:** A policy on the use of cryptographic controls for protection
-  of information is implemented and is in accordance with organizational
-  objectives.
-- **Key management:** A policy on the use, protection and lifetime of
-  cryptographic keys is implemented through the entire application lifecycle.
-- **Key size:** The organization has researched the optimal key size for their
-  purposes, considering national laws, required processing power, and longevity
-  of the solution.
-- **Algorithm selection:** Implemented algorithms are sufficiently appropriate
-  for the business of the organization, robust, and align with recommended
-  guidelines.
-- **Protocol configuration:** Protocols have been reviewed and configured
-  suitable to the purpose of the business.
+-   **Policies:** A policy on the use of cryptographic controls for protection
+    of information is implemented and is in accordance with organizational
+    objectives.
+-   **Key management:** A policy on the use, protection and lifetime of
+    cryptographic keys is implemented through the entire application lifecycle.
+-   **Key size:** The organization has researched the optimal key size for their
+    purposes, considering national laws, required processing power, and
+    longevity of the solution.
+-   **Algorithm selection:** Implemented algorithms are sufficiently appropriate
+    for the business of the organization, robust, and align with recommended
+    guidelines.
+-   **Protocol configuration:** Protocols have been reviewed and configured
+    suitable to the purpose of the business.

@@ -25,7 +25,7 @@ doas mv *.conf /etc/wireguard/
 
 The default configuration files will look something like this:
 
-``` conf
+```conf
 [Interface]
 # Device: <redacted>
 PrivateKey = <redacted>
@@ -40,9 +40,9 @@ AllowedIPs = <redacted>
 Endpoint = <redacted>
 ```
 
-> Note: If you didn't select the kill switch option, you won't see the
-> `PostUp` and `PreDown` lines. In this case, you'll need to modify the script
-> below to simply append those lines to the `[Interface]` block.
+> Note: If you didn't select the kill switch option, you won't see the `PostUp`
+> and `PreDown` lines. In this case, you'll need to modify the script below to
+> simply append those lines to the `[Interface]` block.
 
 # Editing the Configuration Files
 
@@ -51,15 +51,15 @@ Once you have the files, you'll need to edit them and replace the `PostUp` and
 
 I recommend that you do this process as root, since you'll need to be able to
 access files in `/etc/wireguard`, which are generally owned by root. You can
-also try using `sudo` or `doas`, but I didn't test that scenario so you may
-need to adjust, as necessary.
+also try using `sudo` or `doas`, but I didn't test that scenario so you may need
+to adjust, as necessary.
 
 ```sh
 su
 ```
 
-Create the Python file that we'll be using to update the Wireguard
-configuration files.
+Create the Python file that we'll be using to update the Wireguard configuration
+files.
 
 ```sh
 nano replace.py
@@ -73,7 +73,7 @@ commands.
 > Note: If your LAN is on a subnet other than `192.168.1.0/24`, you'll need to
 > update the Python script below appropriately.
 
-``` python
+```python
 import os
 import fileinput
 
@@ -94,8 +94,8 @@ for file in os.listdir(dir):
 print("--- done ---")
 ```
 
-Once you're done, save and close the file. You can now run the Python script
-and watch as each file is updated.
+Once you're done, save and close the file. You can now run the Python script and
+watch as each file is updated.
 
 ```sh
 python3 replace.py
@@ -110,7 +110,7 @@ cat /etc/wireguard/us-chi-wg-001.conf
 
 The configuration files should now look like this:
 
-``` conf
+```conf
 [Interface]
 # Device: <redacted>
 PrivateKey = <redacted>

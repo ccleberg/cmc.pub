@@ -12,8 +12,8 @@ Overview](https://img.cleberg.net/blog/20200922-what-is-internal-audit/internal-
 
 One of the many reasons that Internal Audit needs such thorough explaining to
 non-auditors is that Internal Audit can serve many purposes, depending on the
-organization's size and needs. However, the Institute of Internal Auditors
-(IIA) defines Internal Auditing as:
+organization's size and needs. However, the Institute of Internal Auditors (IIA)
+defines Internal Auditing as:
 
 > Internal auditing is an independent, objective assurance and consulting
 > activity designed to add value and improve an organization's operations. It
@@ -54,9 +54,10 @@ function, process, system, or other subject matters. The internal auditor
 determines the nature and scope of an assurance engagement. Generally, three
 parties are participants in assurance services: (1) the person or group directly
 involved with the entity, operation, function, process, system, or other subject
-- (the process owner), (2) the person or group making the assessment - (the
-internal auditor), and (3) the person or group using the assessment - (the
-user).
+
+-   (the process owner), (2) the person or group making the assessment - (the
+    internal auditor), and (3) the person or group using the assessment - (the
+    user).
 
 ## Consulting
 
@@ -121,10 +122,10 @@ model.
 Looking at this model from an auditing perspective shows us that auditors will
 need to align, communicate, and collaborate with management, including business
 area managers and chief officers, as well as reporting to the governing body.
-The governing body will instruct internal audit *functionally* on their goals
+The governing body will instruct internal audit _functionally_ on their goals
 and track their progress periodically.
 
-However, the internal audit department will report *administratively* to a chief
+However, the internal audit department will report _administratively_ to a chief
 officer in the company for the purposes of collaboration, direction, and
 assistance with the business. Note that in most situations, the governing body
 is the audit committee on the company's board of directors.
@@ -136,8 +137,8 @@ objective function that can provide assurance over the topics they audit.
 
 A normal audit will generally follow the same process, regardless of the topic.
 However, certain special projects or abnormal business areas may call for
-changes to the audit process. The audit process is not set in stone, it's
-simply a set of best practices so that audits can be performed consistently.
+changes to the audit process. The audit process is not set in stone, it's simply
+a set of best practices so that audits can be performed consistently.
 
 ![The Internal Audit
 Process](https://img.cleberg.net/blog/20200922-what-is-internal-audit/internal-audit-process.jpg)

@@ -14,8 +14,8 @@ and manually running the Flatpak app with the lengthy `flatpak run ...` command.
 In the past, I manually created aliases in my `.zshrc` file for certain apps.
 For example, an alias would look like the example below.
 
-This would allow me to run the command fast within the terminal, but it
-wouldn't allow me to run it in an application launcher.
+This would allow me to run the command fast within the terminal, but it wouldn't
+allow me to run it in an application launcher.
 
 ```sh
 # ~/.zshrc
@@ -27,8 +27,7 @@ tiling WMs I use and their application launchers - `dmenu` and `bemenu`.
 
 # Creating Symlinks for Flatpak Apps
 
-Let's use the example of Librewolf below. I can install the application like
-so:
+Let's use the example of Librewolf below. I can install the application like so:
 
 ```sh
 flatpak install flathub io.gitlab.librewolf-community

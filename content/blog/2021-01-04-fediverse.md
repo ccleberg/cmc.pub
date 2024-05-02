@@ -34,13 +34,13 @@ users.
 This strategy is great for making sure control of the social web isn't
 controlled by a single organization, but it also has some downsides. If I create
 a Mastodon instance and get a ton of users to sign up, I can shut the server
-down at any time. That means you're at risk of losing the content you've
-created unless you back it up, or the server backs it up for you. Also,
-depending on the software used (e.g. Mastodon, Pixelfed, etc.), censorship may
-still be an issue if the server admins decide they want to censor their users.
-Now, censorship isn't always a bad thing and can even benefit the community as
-a whole, but you'll want to determine which servers align with your idea of
-proper censorship.
+down at any time. That means you're at risk of losing the content you've created
+unless you back it up, or the server backs it up for you. Also, depending on the
+software used (e.g. Mastodon, Pixelfed, etc.), censorship may still be an issue
+if the server admins decide they want to censor their users. Now, censorship
+isn't always a bad thing and can even benefit the community as a whole, but
+you'll want to determine which servers align with your idea of proper
+censorship.
 
 However, these are risks that we take when we sign up for any online platform.
 Whatever your reason is for trying out federated social networks, they are part
@@ -58,39 +58,39 @@ might just find the perfect home.
 
 ## Reddit
 
-- [Lemmy](https://lemmy.ml/instances)
+-   [Lemmy](https://lemmy.ml/instances)
 
 ## Twitter/Facebook/Tumblr
 
-- [Mastodon](https://joinmastodon.org)
-- [Diaspora](https://diasporafoundation.org)
-- [Friendica](https://friendi.ca)
-- [GNU Social](https://gnusocial.network)
-- [Pleroma](https://pleroma.social)
+-   [Mastodon](https://joinmastodon.org)
+-   [Diaspora](https://diasporafoundation.org)
+-   [Friendica](https://friendi.ca)
+-   [GNU Social](https://gnusocial.network)
+-   [Pleroma](https://pleroma.social)
 
 ## Instagram
 
-- [Pixelfed](https://pixelfed.org)
+-   [Pixelfed](https://pixelfed.org)
 
 ## Slack/Discord
 
-- [Matrix](https://element.io)
+-   [Matrix](https://element.io)
 
 ## Youtube/Vimeo
 
-- [Peertube](https://joinpeertube.org)
+-   [Peertube](https://joinpeertube.org)
 
 ## Spotify/Soundcloud
 
-- [Funkwhale](https://funkwhale.audio)
+-   [Funkwhale](https://funkwhale.audio)
 
 ## Podcasting
 
-- [Pubcast](https://pubcast.pub)
+-   [Pubcast](https://pubcast.pub)
 
 ## Medium/Blogger
 
-- [WriteFreely](https://writefreely.org)
+-   [WriteFreely](https://writefreely.org)
 
 # Get Started
 

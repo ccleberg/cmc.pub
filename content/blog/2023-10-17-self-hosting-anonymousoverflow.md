@@ -28,19 +28,19 @@ nano docker-compose.yml
 Within this file, paste the following information. Be sure to change the
 `APP_URL`, `JWT_SIGNING_SECRET`, and `ports` to match your needs.
 
-``` yaml
-version: '3'
+```yaml
+version: "3"
 
 services:
     anonymousoverflow:
-        container_name: 'app'
-        image: 'ghcr.io/httpjamesm/anonymousoverflow:release'
+        container_name: "app"
+        image: "ghcr.io/httpjamesm/anonymousoverflow:release"
         environment:
             - APP_URL=https://ao.example.com
             - JWT_SIGNING_SECRET=secret #pwgen 40 1
         ports:
-            - '9380:8080'
-        restart: 'always'
+            - "9380:8080"
+        restart: "always"
 ```
 
 Save and exit the file when complete. You can now launch the container and
@@ -65,7 +65,7 @@ Within this file, paste the following content and repace `ao.example.com` with
 your URL. You may need to update the SSL certificate statements if your
 certificates are in a different location.
 
-``` conf
+```conf
 server {
     if ($host ~ ^[^.]+\.cleberg\.net$) {
         return 301 https://$host$request_uri;

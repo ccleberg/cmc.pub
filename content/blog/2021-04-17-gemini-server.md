@@ -76,9 +76,9 @@ sudo ./install.sh
 # Configure the Gemini Service
 
 We have a little more to do, but since this script tries to immediately run the
-service, it will likely fail with an exit code. Let's add our finishing
-touches. Edit the following file and replace the hostname with your desired URL.
-You can also change the directory where content will be served.
+service, it will likely fail with an exit code. Let's add our finishing touches.
+Edit the following file and replace the hostname with your desired URL. You can
+also change the directory where content will be served.
 
 ```sh
 sudo nano /etc/systemd/system/gemini.service
@@ -130,19 +130,18 @@ sudo ufw reload
 
 # Creating Content
 
-Let's create the Gemini capsule. Note that wherever you set the
-WorkingDirectory variable to earlier, Agate will expect you to put your Gemini
-capsule contents in a sub-folder called "content." So, I place my files in
-"/var/gmi/content." I'm going to create that folder now and put a file in
-there.
+Let's create the Gemini capsule. Note that wherever you set the WorkingDirectory
+variable to earlier, Agate will expect you to put your Gemini capsule contents
+in a sub-folder called "content." So, I place my files in "/var/gmi/content."
+I'm going to create that folder now and put a file in there.
 
 ```sh
 sudo mkdir /var/gemini/content
 sudo nano /var/gemini/content/index.gmi
 ```
 
-You can put whatever you want in the "index.gmi" file, just make sure it's
-valid Gemtext.
+You can put whatever you want in the "index.gmi" file, just make sure it's valid
+Gemtext.
 
 # The Results
 
@@ -153,9 +152,9 @@ Here are some screenshots of the Gemini page I just created in the
 ![GUI Gemini
 browser](https://img.cleberg.net/blog/20210417-hosting-a-gemini-server/lagrange.png)
 
-*Lagrange*
+_Lagrange_
 
 ![CLI Gemini
 browser](https://img.cleberg.net/blog/20210417-hosting-a-gemini-server/amfora.png)
 
-*Amfora*
+_Amfora_

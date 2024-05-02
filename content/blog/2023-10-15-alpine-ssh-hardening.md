@@ -68,7 +68,7 @@ ssh-audit localhost
 If everything succeeded, the results will show as all green. If anything is
 yellow, orange, or red, you may need to tweak additional settings.
 
-``` txt
+```txt
 #+caption: ssh audit
 ```
 

@@ -14,8 +14,8 @@ and apk as the package manager. According to their website, an Alpine container
 130 MB of storage." An actual bare metal machine is recommended to have 100 MB
 of RAM and 0-700 MB of storage space.
 
-Historically, I've used Ubuntu's minimal installation image as my server OS
-for the last five years. Ubuntu worked well and helped as my original server
+Historically, I've used Ubuntu's minimal installation image as my server OS for
+the last five years. Ubuntu worked well and helped as my original server
 contained an nVidia GPU and no onboard graphics, so quite a few distros won't
 boot or install without a lot of tinkering.
 
@@ -53,24 +53,24 @@ setup-alpine
 The setup script will ask a series of questions to configure the system. Be sure
 to answer carefully or else you may have to re-configure the system after boot.
 
-- Keyboard Layout (Local keyboard language and usage mode, e.g., us and variant
-  of us-nodeadkeys.)
-- Hostname (The name for the computer.)
-- Network (For example, automatic IP address discovery with the "DHCP"
-  protocol.)
-- DNS Servers (Domain Name Servers to query. For privacy reasons, it is NOT
-  recommended to route every local request to servers like Google's 8.8.8.8.)
-- Timezone
-- Proxy (Proxy server to use for accessing the web. Use "none" for direct
-  connections to the internet.)
-- Mirror (From where to download packages. Choose the organization you trust
-  giving your usage patterns to.)
-- SSH (Secure SHell remote access server. "Openssh" is part of the default
-  install image. Use "none" to disable remote login, e.g. on laptops.)
-- NTP (Network Time Protocol client used for keeping the system clock in sync
-  with a time-server. Package "chrony" is part of the default install image.)
-- Disk Mode (Select between diskless (disk="none"), "data" or "sys", as
-  described above.)
+-   Keyboard Layout (Local keyboard language and usage mode, e.g., us and
+    variant of us-nodeadkeys.)
+-   Hostname (The name for the computer.)
+-   Network (For example, automatic IP address discovery with the "DHCP"
+    protocol.)
+-   DNS Servers (Domain Name Servers to query. For privacy reasons, it is NOT
+    recommended to route every local request to servers like Google's 8.8.8.8.)
+-   Timezone
+-   Proxy (Proxy server to use for accessing the web. Use "none" for direct
+    connections to the internet.)
+-   Mirror (From where to download packages. Choose the organization you trust
+    giving your usage patterns to.)
+-   SSH (Secure SHell remote access server. "Openssh" is part of the default
+    install image. Use "none" to disable remote login, e.g. on laptops.)
+-   NTP (Network Time Protocol client used for keeping the system clock in sync
+    with a time-server. Package "chrony" is part of the default install image.)
+-   Disk Mode (Select between diskless (disk="none"), "data" or "sys", as
+    described above.)
 
 Once the setup script is finished, be sure to reboot the machine and remove the
 USB device.
@@ -82,8 +82,8 @@ reboot
 ## Post-Installation
 
 There are many things you can do once your Alpine Linux system is up and
-running, and it largely depends on what you'll use the machine for. I'm going
-to walk through my personal post-installation setup for my web server.
+running, and it largely depends on what you'll use the machine for. I'm going to
+walk through my personal post-installation setup for my web server.
 
 1.  Upgrade the System
 
@@ -96,8 +96,8 @@ to walk through my personal post-installation setup for my web server.
 2.  Adding a User
 
     I needed to add a user so that I don't need to log in as root. Note that if
-    you're used to using the `sudo` command, you will now need to use the
-    `doas` command on Alpine Linux.
+    you're used to using the `sudo` command, you will now need to use the `doas`
+    command on Alpine Linux.
 
     ```sh
     apk add doas
@@ -120,8 +120,7 @@ to walk through my personal post-installation setup for my web server.
     doas nano /etc/apk/repositories
     ```
 
-    Uncomment the community line for whichever version of Alpine you're
-    running:
+    Uncomment the community line for whichever version of Alpine you're running:
 
     ```sh
     /media/usb/apks
@@ -258,9 +257,9 @@ doas lchsh git
 # Thoughts on Alpine
 
 So far, I love Alpine Linux. I have no complaints about anything at this point,
-but I'm not completely finished with the migration yet. Once I'm able to
-upgrade my hardware to a rack-mounted server, I will migrate Plex and Syncthing
-over to Alpine as well - possibly putting Plex into a container or VM.
+but I'm not completely finished with the migration yet. Once I'm able to upgrade
+my hardware to a rack-mounted server, I will migrate Plex and Syncthing over to
+Alpine as well - possibly putting Plex into a container or VM.
 
 The performance is stellar, the `apk` package manager is seamless, and system
 administration tasks are effortless. My only regret is that I didn't install

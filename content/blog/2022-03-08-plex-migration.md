@@ -52,9 +52,9 @@ with the device - it's a good idea to take a photo of this screen, so you can
 enter these commands on the next screen (along with adding support for Nvidia).
 
 Finally, type `Ctrl + C` to enter the command line. From this command line,
-enter the commands found on the `e` screen. *Remember to add `nomodeset` to the
+enter the commands found on the `e` screen. _Remember to add `nomodeset` to the
 `linux ...` line so that your Nvidia device will display the installation
-screens properly!*
+screens properly!_
 
 Here's an example of the commands I pulled from the `e` screen and entered on
 the command line.
@@ -101,7 +101,7 @@ source/destination.
 
 ## Step 01: [Client] Update Settings
 
-Open up a Plex app and *disable* the `Account` > `Library` > `Empty trash
+Open up a Plex app and _disable_ the `Account` > `Library` > `Empty trash
 automatically after every scan` preference for the source server.
 
 ## Step 02: [Destination] Install Plex
@@ -133,8 +133,8 @@ Server data directory
 located?](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/).
 
 There are many ways to copy the data to the new server and will largely depend
-on the size of the folder being copied. Personally, my data folder was ~23GB
-and I opted to simply use the `scp` command to copy the files over SSH.
+on the size of the folder being copied. Personally, my data folder was ~23GB and
+I opted to simply use the `scp` command to copy the files over SSH.
 
 This process was throttled by the old server's slow HDD and ports and took
 approximately 90 minutes to complete. In comparison, moving the data from the
@@ -179,12 +179,12 @@ drives from the source server to the destination server.
 Next, perform the following actions in the client:
 
 1. On the left sidebar, click `More` > Three-Dot Menu > `Scan Library Files`
-2. *Enable* the `Account` > `Library` > `Empty trash automatically after every
-   scan` preference for the source server.
-3. On the left sidebar, click `More` > Three-Dot Menu > `Manage Server` >
-   `Empty Trash`
-4. On the left sidebar, click `More` > Three-Dot Menu > `Manage Server` >
-   `Clean Bundles`
+2. _Enable_ the `Account` > `Library` > `Empty trash automatically after every
+scan` preference for the source server.
+3. On the left sidebar, click `More` > Three-Dot Menu > `Manage Server` > `Empty
+   Trash`
+4. On the left sidebar, click `More` > Three-Dot Menu > `Manage Server` > `Clean
+   Bundles`
 5. On the left sidebar, click `More` > Three-Dot Menu > `Manage Server` >
    `Optimize Database`
 

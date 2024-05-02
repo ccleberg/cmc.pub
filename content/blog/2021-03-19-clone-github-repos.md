@@ -20,8 +20,8 @@ nano clone_github_repos.sh
 ```
 
 Next, paste in the following information. Note that you can replace the word
-`users` in the first line with `orgs` and type an organization's name instead
-of a user's name.
+`users` in the first line with `orgs` and type an organization's name instead of
+a user's name.
 
 ```sh
 CNTX=users; NAME=YOUR-USERNAME; PAGE=1
@@ -45,8 +45,8 @@ Now you can run the script and should see the cloning process begin.
 
 # Cloning from Sourcehut
 
-I haven't fully figured out how to directly incorporate Sourcehut's GraphQL
-API into a bash script yet, so this one will take two steps.
+I haven't fully figured out how to directly incorporate Sourcehut's GraphQL API
+into a bash script yet, so this one will take two steps.
 
 First, log-in to Sourcehut and go to their [GraphQL playground for
 Git](https://git.sr.ht/graphql). Next, paste the following query into the left

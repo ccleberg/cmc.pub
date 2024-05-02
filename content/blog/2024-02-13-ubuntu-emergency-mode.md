@@ -14,7 +14,7 @@ creating the ZFS pool.
 My server was stuck in the boot process and showed the following error on the
 screen:
 
-``` txt
+```txt
 You are in emergency mode.
 After logging in, type "journalctl -xb" to view system logs,
 "systemctl reboot" to reboot, "systemctl default"
@@ -25,7 +25,7 @@ After rebooting the server and watching the logs scroll on a monitor, I noticed
 the root cause was related to a very long search for certain drives. I kept
 seeing errors like this:
 
-``` txt
+```txt
 [ TIME ] Timed out waiting of device dev-disk-by/[disk-uuid]
 ```
 
@@ -49,7 +49,7 @@ Within the `fstab` file, I needed to comment/remove the following lines at the
 bottom of the file. You can comment-out a line by prepending a `#` symbol at the
 beginning of the line. You can also delete the line entirely.
 
-``` conf
+```conf
 # What it looked like when running into the issue:
 UUID=B64E53824E5339F7 /mnt/white-01 ntfs-3g uid=1000,gid=1000 0 0
 UUID=E69867E59867B32B /mnt/white-02 ntfs-3g uid=1000,gid=1000 0 0

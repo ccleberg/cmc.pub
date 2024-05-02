@@ -10,8 +10,8 @@ draft = false
 As the world of business evolves, managers must approach business planning and
 strategy with a contemporary mindset. According to Dess, McNamara, Eisner, and
 Lee, managers must be willing to adapt to the modern business environment by
-going beyond "'incremental management', whereby they view their job as making
-a series of small, minor changes to improve the efficiency of the firm's
+going beyond "'incremental management', whereby they view their job as making a
+series of small, minor changes to improve the efficiency of the firm's
 operations"(2019).
 
 One reason that strategic management is crucial is because most businesses that
@@ -34,8 +34,8 @@ companies to use in this framework: market penetration, market development,
 product development, and diversification (see **Figure 1**). The x-axis of the
 matrix focuses on the firm's markets and also determines if the firm is looking
 to enter new markets or innovate in its current markets. The y-axis of the
-matrix focuses on the firm's products and determines if the firm wants to
-pursue strategies around their existing products or explore new products.
+matrix focuses on the firm's products and determines if the firm wants to pursue
+strategies around their existing products or explore new products.
 
 ![The Ansoff Matrix by JaisonAbeySabu, Own work, CC BY-SA
 3.0](https://img.cleberg.net/blog/20191203-the-ansoff-matrix/ansoff_matrix-min.png)
@@ -75,8 +75,8 @@ increases in their investor dividends for 57 consecutive years(2019).
 Diversification, the final strategy of the Ansoff Matrix, is more difficult than
 the others since it involves exploring both new markets and new products.
 Related diversification is a diversification strategy that closely relates to
-the firm's core business. Coca-Cola's best example of related diversification
-is its acquisition of Glaceau and Vitamin Water, which expanded their drinking
+the firm's core business. Coca-Cola's best example of related diversification is
+its acquisition of Glaceau and Vitamin Water, which expanded their drinking
 lines of business(2019).
 
 ## Unrelated Diversification

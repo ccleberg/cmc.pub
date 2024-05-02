@@ -52,20 +52,20 @@ processes and controls at hand.
 
 Audit Examples:
 
-- Engagement teams must value the team members, client contacts, and their
-  interactions over the historical processes and tools that have been used.
-- Engagement teams must value a final report that contains sufficient audit
-  documentation over excessive documentation or scope creep.
-- Engagement teams must collaborate with the audit clients as much as feasible
-  to ensure that both sides are constantly updated with current knowledge of the
-  engagement's status and any potential findings, rather than waiting for
-  pre-set meetings or the end of the engagement to communicate.
-- Engagement teams must be able to respond to change in an engagement's
-  schedule, scope, or environment to ensure that the project is completed in a
-  timely manner and that all relevant areas are tested.
-    - In terms of an audit department's portfolio, they must be able to respond
-      to changes in their company's or client's environment and be able to
-      dynamically change their audit plan accordingly.
+-   Engagement teams must value the team members, client contacts, and their
+    interactions over the historical processes and tools that have been used.
+-   Engagement teams must value a final report that contains sufficient audit
+    documentation over excessive documentation or scope creep.
+-   Engagement teams must collaborate with the audit clients as much as feasible
+    to ensure that both sides are constantly updated with current knowledge of
+    the engagement's status and any potential findings, rather than waiting for
+    pre-set meetings or the end of the engagement to communicate.
+-   Engagement teams must be able to respond to change in an engagement's
+    schedule, scope, or environment to ensure that the project is completed in a
+    timely manner and that all relevant areas are tested.
+    -   In terms of an audit department's portfolio, they must be able to
+        respond to changes in their company's or client's environment and be
+        able to dynamically change their audit plan accordingly.
 
 # Scrum
 
@@ -74,9 +74,9 @@ how an audit team can potentially mold that mindset into the audit world, but
 how does a team implement these ideas?
 
 There are many methods that use an Agile mindset, but I prefer
-[Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)). Scrum is a
-framework based on Agile that enables a team to work through a project through a
-series of roles, ceremonies, artifacts, and values.
+[Scrum](<https://en.wikipedia.org/wiki/Scrum_(software_development)>). Scrum is
+a framework based on Agile that enables a team to work through a project through
+a series of roles, ceremonies, artifacts, and values.
 
 Let's dive into each of these individually.
 

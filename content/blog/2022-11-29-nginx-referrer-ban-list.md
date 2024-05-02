@@ -20,7 +20,7 @@ doas nano /etc/nginx/banlist.conf
 Next, paste the following contents in and fill out the regexes with whichever
 domains you're blocking.
 
-``` conf
+```conf
 # /etc/nginx/banlist.conf
 
 map $http_referer $bad_referer {
@@ -45,7 +45,7 @@ doas nano /etc/nginx/nginx.conf
 Within this file, find the `http` block and add your ban list file location to
 the end of the block.
 
-``` conf
+```conf
 # /etc/nginx/nginx.conf
 
 http {
@@ -76,7 +76,7 @@ Code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) you want. Code
 403 (Forbidden) is logical in this case since you are preventing a client
 connection due to a banned domain.
 
-``` conf
+```conf
 server {
   ...
 
@@ -108,7 +108,7 @@ curl https://cleberg.net
 
 The HTML contents of the page come back successfully:
 
-``` html
+```html
 <!doctype html>...</html>
 ```
 
@@ -122,12 +122,15 @@ This time, I'm met with a 403 Forbidden response page. That means we are
 successful and any clients being referred from a banned domain will be met with
 this same response code.
 
-``` html
+```html
 <html>
-<head><title>403 Forbidden</title></head>
-<body>
-<center><h1>403 Forbidden</h1></center>
-<hr><center>nginx</center>
-</body>
+	<head>
+		<title>403 Forbidden</title>
+	</head>
+	<body>
+		<center><h1>403 Forbidden</h1></center>
+		<hr />
+		<center>nginx</center>
+	</body>
 </html>
 ```

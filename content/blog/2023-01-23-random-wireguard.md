@@ -7,8 +7,8 @@ draft = false
 
 # Mullvad Wireguard
 
-If you're using an OS that does not support one of Mullvad's apps, you're
-likely using the Wireguard configuration files instead.
+If you're using an OS that does not support one of Mullvad's apps, you're likely
+using the Wireguard configuration files instead.
 
 If not, the first step is to visit Mullvad's [Wireguard configuration
 files](https://mullvad.net/en/account/#/wireguard-config) page and download a
@@ -64,7 +64,7 @@ chmod +x ~/vpn.sh
 
 The output should look like the following:
 
-``` txt
+```txt
 doas (user@host) password:
 
 # ... The script will process all of the iptables and wg commands here
@@ -75,8 +75,8 @@ Printing new IP info:
 You are connected to Mullvad (server country-city-wg-num). Your IP address is 12.345.678.99
 ```
 
-That's all there is to it. You can see your new location and IP via the
-`printf` and `curl` commands included in the script.
+That's all there is to it. You can see your new location and IP via the `printf`
+and `curl` commands included in the script.
 
 You can also go to the [Connection Check ​\|
 Mullvad](https://mullvad.net/en/check/) page to see if you are fully connected
@@ -104,8 +104,8 @@ wg-quick down /home/user/mullvad/us-lax-wg-104.conf
 ```
 
 I have a TODO item on figuring out how to easily export an environment variable
-that contains the configuration file's full name, so that I can just execute
-the following:
+that contains the configuration file's full name, so that I can just execute the
+following:
 
 ```sh
 # Ideal situation if I can export the $file variable to the environment

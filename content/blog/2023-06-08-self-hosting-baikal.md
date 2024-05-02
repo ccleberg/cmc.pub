@@ -28,14 +28,14 @@ the `ports` section to use any port on your server to pass through to port 80 in
 the container. You can also edit the `volumes` section to use docker volumes
 instead of local folders.
 
-``` conf
+```conf
 version: "2"
 services:
   baikal:
     image: ckulka/baikal:nginx
     restart: always
     ports:
-      - "8567:80" 
+      - "8567:80"
     volumes:
       - ./config:/var/www/baikal/config
       - ./data:/var/www/baikal/Specific
@@ -93,7 +93,7 @@ nano dav
 Within this file, paste in the configuration from below and change
 `dav.example.com` to match the URL you'll be using.
 
-``` conf
+```conf
 server {
         if ($host ~ ^[^.]+\.example\.com$) {
                 return 301 https://$host$request_uri;

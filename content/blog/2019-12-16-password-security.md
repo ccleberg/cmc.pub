@@ -32,10 +32,10 @@ Once you think you have a good idea of all your different authentication
 methods, I recommend using a password manager such as
 [Bitwarden](https://bitwarden.com/). Using a password manager allows you to
 automatically save your logins, create randomized passwords, and transfer
-passwords across devices. However, you'll need to memorize your "vault
-password" that allows you to open the password manager. It's important to make
-this something hard to guess since it would allow anyone who has it to access
-every password you've stored in there.
+passwords across devices. However, you'll need to memorize your "vault password"
+that allows you to open the password manager. It's important to make this
+something hard to guess since it would allow anyone who has it to access every
+password you've stored in there.
 
 Personally, I recommend using a
 [passphrase](https://en.wikipedia.org/wiki/Passphrase) instead of a
@@ -88,25 +88,25 @@ Guidelines and Authentication and Lifecycle Management.
 > it would be impractical for an attacker to guess or otherwise discover the
 > correct secret value. A memorized secret is something you know.
 >
-> - NIST Special Publication 800-63B
+> -   NIST Special Publication 800-63B
 
 NIST offers a lot of guidance on passwords, but I'm going to highlight just a
 few of the important factors:
 
-- Require passwords to be a minimum of 8 characters (6 characters if randomly
-  generated and be generated using an approved random bit generator).
-- Compare potential passwords against a list that contains values known to be
-  commonly-used, expected, or compromised.
-- Offer guidance on password strength, such as a strength meter.
-- Implement a rate-limiting mechanism to limit the number of failed
-  authentication attempts for each user account.
-- Do not require composition rules for passwords and do not require passwords to
-  be changed periodically (unless compromised).
-- Allow pasting of user identification and passwords to facilitate the use of
-  password managers.
-- Allow users to view the password as it is being entered.
-- Use secure forms of communication and storage, including salting and hashing
-  passwords using a one-way key derivation function.
+-   Require passwords to be a minimum of 8 characters (6 characters if randomly
+    generated and be generated using an approved random bit generator).
+-   Compare potential passwords against a list that contains values known to be
+    commonly-used, expected, or compromised.
+-   Offer guidance on password strength, such as a strength meter.
+-   Implement a rate-limiting mechanism to limit the number of failed
+    authentication attempts for each user account.
+-   Do not require composition rules for passwords and do not require passwords
+    to be changed periodically (unless compromised).
+-   Allow pasting of user identification and passwords to facilitate the use of
+    password managers.
+-   Allow users to view the password as it is being entered.
+-   Use secure forms of communication and storage, including salting and hashing
+    passwords using a one-way key derivation function.
 
 NIST offers further guidance on other devices that require specific security
 policies, querying for passwords, and more. All the information discussed so far

@@ -5,8 +5,8 @@ description = ""
 draft = false
 +++
 
-*This is a brief post so that I personally remember the solution as it has
-occurred multiple times for me.*
+_This is a brief post so that I personally remember the solution as it has
+occurred multiple times for me._
 
 # The Problem
 
@@ -45,7 +45,7 @@ doas chown -R nginx:nginx /var/lib/nginx
 sudo chown -R nginx:nginx /var/lib/nginx
 ```
 
-You *may* also be able to change the `proxy_temp_path` in your Nginx config, but
+You _may_ also be able to change the `proxy_temp_path` in your Nginx config, but
 I did not try this. Here's a suggestion I found online that may work if the
 above solution does not:
 
@@ -53,11 +53,11 @@ above solution does not:
 nano /etc/nginx/http.d/example.com.conf
 ```
 
-``` conf
+```conf
 server {
   ...
 
-  # Set the proxy_temp_path to your preference, make sure it's owned by the 
+  # Set the proxy_temp_path to your preference, make sure it's owned by the
   # `nginx` user
   proxy_temp_path /tmp;
 

@@ -10,15 +10,15 @@ draft = false
 [Convos](https://convos.chat/) is an always-online web client for IRC. It has a
 few features that made it attractive to me as a self-hosted option:
 
-- Extremely simple Docker Compose installation method.
-- Runs in the background and monitors chats even while you're not logged in.
-- Neatly organized sidebar for conversation and client settings.
-- Ability to connect to different hosts and create profiles for hosts.
-- By default, registration is closed to the public. You can enable public
-  registration on the Settings page or generate invitation links on the Users
-  page.
-- Customization of the client theme, organization name and URL, admin email, and
-  video service.
+-   Extremely simple Docker Compose installation method.
+-   Runs in the background and monitors chats even while you're not logged in.
+-   Neatly organized sidebar for conversation and client settings.
+-   Ability to connect to different hosts and create profiles for hosts.
+-   By default, registration is closed to the public. You can enable public
+    registration on the Settings page or generate invitation links on the Users
+    page.
+-   Customization of the client theme, organization name and URL, admin email,
+    and video service.
 
 # Docker Installation
 
@@ -34,7 +34,7 @@ file. You can customize the host port to be something unique, such as
 `21897:3000`. You can also change the `data` folder to be a docker volume
 instead, if you prefer.
 
-``` config
+```config
 version: '3'
 
 services:
@@ -71,7 +71,7 @@ Within the nginx configuration file, paste the following content and be sure to
 update `convos.example.com` to match your domain and `127.0.0.1:3000` to match
 the port you opened in the `docker-compose.yml` file.
 
-``` config
+```config
 # Host and port where convos is running
 upstream convos_upstream { server 127.0.0.1:3000; }
 
@@ -138,22 +138,22 @@ Convos, the default sever is libera.chat. Simply click the `libera` conversation
 at the top of the sidebar to open it. Once the chat is open, you can claim a
 nickname by typing:
 
-``` txt
+```txt
 /nick <nick>
 ```
 
 If the nickname is available, and you'd like to register the nickname to
 yourself, you'll need to type another command:
 
-``` txt
-/msg NickServ REGISTER 
+```txt
+/msg NickServ REGISTER
 <password> <email>
 ```
 
 On libera.chat, the server will send a confirmation email with a command that
 you must message in IRC to verify registration of the nickname:
 
-``` txt
+```txt
 /msg NickServ VERIFY REGISTER <nick> <verification_code>
 ```
 

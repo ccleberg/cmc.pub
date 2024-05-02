@@ -8,21 +8,21 @@ draft = false
 # What is Gemini?
 
 [Gemini](https://gemini.circumlunar.space/) is an internet protocol introduced
-in June 2019 as an alternative to HTTP(S) or Gopher. In layman's terms, it's
-an alternative way to browse sites (called capsules) that requires a special
+in June 2019 as an alternative to HTTP(S) or Gopher. In layman's terms, it's an
+alternative way to browse sites (called capsules) that requires a special
 browser. Since Gemini is not standardized as an internet standard, normal web
-browsers won't be able to load a Gemini capsule. Instead, you'll need to use
-[a Gemini-specific browser](https://gemini.%20circumlunar.space/clients.html).
+browsers won't be able to load a Gemini capsule. Instead, you'll need to use [a
+Gemini-specific browser](https://gemini.%20circumlunar.space/clients.html).
 
 The content found within a Gemini page is called
 [Gemtext](https://gemini.circumlunar.space/docs/cheatsheet.gmi) and is
-*extremely* basic (on purpose). Gemini only processes the text, no media content
+_extremely_ basic (on purpose). Gemini only processes the text, no media content
 like images. However, you're able to style 3 levels of headings, regular text,
 links (which will display on their own line), quotes, and an unordered list.
 
 Here's a complete listing of valid Gemtext:
 
-``` txt
+````txt
 # Heading 1
 ## Heading 2
 ### Heading 3
@@ -39,7 +39,7 @@ My List:
 ** Item
 
 ```Anything between three backticks will be rendered as code.```
-```
+````
 
 ### Free Option
 
@@ -87,8 +87,8 @@ tools, but mostly surrounds their hosted Git repository service. Simply put,
 it's a minimal and more private alternative to services like GitHub.
 
 This walkthrough is more advanced and involves things like Git, SSH, the command
-line. If you don't think you know enough to do this, check out my walkthrough
-on creating a Gemini capsule for the Midnight Pub instead.
+line. If you don't think you know enough to do this, check out my walkthrough on
+creating a Gemini capsule for the Midnight Pub instead.
 
 The first thing you'll need to do is create an SSH key pair, if you don't
 already have one on your system. Once created, grab the contents of `id_rsa.pub`
@@ -107,8 +107,8 @@ format exactly:
 mkdir your-username.srht.site && cd your-username.srht.site
 ```
 
-Now that we've created the repo, let's initialize Git and add the proper
-remote URL.
+Now that we've created the repo, let's initialize Git and add the proper remote
+URL.
 
 ```sh
 git init
@@ -121,13 +121,13 @@ git remote add origin git@git.sr.ht:~your-username/your-username.srht.site
 Now that our repository is set up and configured, we will need to create at
 least two files:
 
-- `index.gmi`
-- `.build.yml`
+-   `index.gmi`
+-   `.build.yml`
 
 For your `.build.yml` file, use the following content and be sure to update the
 `site` line with your username!
 
-``` yaml
+```yaml
 image: alpine/latest
 oauth: pages.sr.ht/PAGES:RW
 environment:
@@ -146,7 +146,7 @@ even just copy and paste the Gemtext cheatsheet.
 If you want to serve both HTML and Gemini files from this repository, just add a
 second command to the `upload` section:
 
-``` yaml
+```yaml
 - upload: |
       acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz -Fprotocol=GEMINI
       acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz
@@ -158,9 +158,9 @@ Lastly, commit your changes and push them to the remote repo.
 git add .; git commit -m "initial commit"; git push --set-upstream origin HEAD
 ```
 
-If you've successfully created the files with the proper format, you'll see
-the terminal print a message that lets you know where the automatic build is
-taking place. For example, here's what the terminal tells me:
+If you've successfully created the files with the proper format, you'll see the
+terminal print a message that lets you know where the automatic build is taking
+place. For example, here's what the terminal tells me:
 
 ```sh
 remote: Build started:

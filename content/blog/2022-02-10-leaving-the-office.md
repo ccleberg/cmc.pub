@@ -61,9 +61,9 @@ desk feature (I'm over 6 feet tall, so probably not an issue for most people).
 
 I loved this environment, it allowed me to focus on my work with minimal
 distractions, but also allowed easy access, so I could spin around in my chair
-and chat with my friends without leaving my chair. This is the closest I've
-been to a home office environment (which is my personal favorite, as I'll get
-to later in this post).
+and chat with my friends without leaving my chair. This is the closest I've been
+to a home office environment (which is my personal favorite, as I'll get to
+later in this post).
 
 ## Semi-Open Floor Concept
 
@@ -108,8 +108,8 @@ pairs of desk rows are repeated through the office.
 This means that when I go, I need to rent a random desk or try to remember the
 unique ID numbers on desks I like. Once I rent it, I have to make sure no one
 sat down in that desk without renting it. Then, I can sit down and work, but
-will probably need to adjust the monitors so that I'm not staring in the face
-of the person across from me all day. Finally, I need to wear headphones as this
+will probably need to adjust the monitors so that I'm not staring in the face of
+the person across from me all day. Finally, I need to wear headphones as this
 environment does nothing to provide you with peace or quiet.
 
 Luckily, you can rent offices with doors that offer quiet and privacy, which can

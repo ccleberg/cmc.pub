@@ -59,7 +59,7 @@ For v3.17, the `repositories` file should look like this:
 nano /etc/apk/repositories
 ```
 
-``` conf
+```conf
 #/media/sda/apks
 http://mirrors.gigenet.com/alpinelinux/v3.17/main
 http://mirrors.gigenet.com/alpinelinux/v3.17/community
@@ -193,7 +193,7 @@ Then, I added the Wi-Fi entry to the bottom of the networking interface file:
 nano /etc/network/interfaces
 ```
 
-``` conf
+```conf
 auto wlan0
 iface wlan0 inet dhcp
 ```
@@ -215,7 +215,7 @@ Really, the solution was to enable the `NameResolvingService=resolvconf` in
 doas nano /etc/iwd/main.conf
 ```
 
-``` conf
+```conf
 [Network]
 
 NameResolvingService=resolvconf
@@ -248,7 +248,7 @@ sway.
 nano ~/.config/sway/config
 ```
 
-``` conf
+```conf
 # Run pipewire audio server
 exec /usr/libexec/pipewire-launcher
 

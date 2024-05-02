@@ -46,7 +46,7 @@ For this demo, we are using the `list-records` and `edit-record` requests.
 The `list-records` request requires the following payload to be sent when
 calling the API:
 
-``` txt
+```txt
 params: {
     domain: string
 }
@@ -55,7 +55,7 @@ params: {
 The `edit-record` request requires the following payload to be sent when calling
 the API:
 
-``` txt
+```txt
 params: {
     domain: string
     id: int
@@ -84,19 +84,21 @@ Next, create a Python script file:
 nano ~/ddns/ddns.py
 ```
 
-The following code snippet is quite long, so I won't go into depth on each
-part. However, I suggest you read through the entire script before running it;
-it is quite simple and contains comments to help explain each code block.
+The following code snippet is quite long, so I won't go into depth on each part.
+However, I suggest you read through the entire script before running it; it is
+quite simple and contains comments to help explain each code block.
 
 :warning: **Note**: You will need to update the following variables for this to
 work:
 
-- `token`: This is the Njalla API token you created earlier.
-- `user_domain`: This is the top-level domain you want to modify.
-- `include_subdomains`: Set this to `True` if you also want to modify subdomains found under the TLD.
-- `subdomains`: If `include_subdomains` = `True`, you can include your list of subdomains to be modified here.
+-   `token`: This is the Njalla API token you created earlier.
+-   `user_domain`: This is the top-level domain you want to modify.
+-   `include_subdomains`: Set this to `True` if you also want to modify
+    subdomains found under the TLD.
+-   `subdomains`: If `include_subdomains` = `True`, you can include your list of
+    subdomains to be modified here.
 
-``` python
+```python
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Import Python modules

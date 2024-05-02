@@ -66,7 +66,7 @@ Once installed, you can configure Doom by editing the files within the
 3.  `init.el` - Doom modules and load order, must run `doom sync` after
     modifying
 4.  `packages.el` - Declare packages to install in this file, then run `doom
-    sync` to install
+sync` to install
 
 I only needed a few customizations for my configuration, so I'll list them
 below.
@@ -167,7 +167,7 @@ changes, close files, and switch between open files. Here are some example
 shortcuts I've written down in order to accomplish file-based actions.
 
 | Doom Hotkey     | Emacs Hotkey | Description                            |
-|-----------------|--------------|----------------------------------------|
+| --------------- | ------------ | -------------------------------------- |
 | `SPC :`         | `C-x`        | Run functions                          |
 | `SPC f f`       | `C-x f`      | Open file in buffer                    |
 | `SPC f d`       | `C-x d`      | Open directory with `dired`            |
@@ -178,8 +178,8 @@ shortcuts I've written down in order to accomplish file-based actions.
 | `SPC w h/j/k/l` | `C-x o`[^1]  | Move left/down/up/right to next buffer |
 
 [^1]: Doom's evil-window functionality is a bit different from GNU Emacs, but
-you can always switch to the "other" buffer with `C-x o` or `C-x b` to get a
-list of buffers to select.
+    you can always switch to the "other" buffer with `C-x o` or `C-x b` to get a
+    list of buffers to select.
 
 In general, when in Doom, you can press `SPC` and wait a second for the help
 pane to appear with all available hotkey options. For example, you can press
@@ -205,7 +205,7 @@ expands further, allowing you to insert various markdown elements and toggle
 things like link hiding.
 
 | Doom Hotkey                  | Function                 |
-|------------------------------|--------------------------|
+| ---------------------------- | ------------------------ |
 | `SPC m '`                    | markdown-edit-code-block |
 | `SPC m e`                    | markdown-export          |
 | `SPC m i`                    | +insert                  |
@@ -226,7 +226,7 @@ are 865 possible org-related functions you can run. I won't possibly be able to
 list them all, so I will simply cover a few of the basic commands I use myself.
 
 | Doom Hotkey    | Function                              |
-|----------------|---------------------------------------|
+| -------------- | ------------------------------------- |
 | `SPC m t`      | org-todo                              |
 | `SPC n t`      | org-todo-list                         |
 | `SPC o A`      | org-agenda                            |
@@ -262,8 +262,8 @@ list them all, so I will simply cover a few of the basic commands I use myself.
     2. Add an empty `.projectile` file in the project root.
 
     Once a project has been created, you can create custom publishing actions
-    within your `~/.doom.d/config.el` file. For example, here's a test project
-    I created to try and convert this blog to org-mode recently.
+    within your `~/.doom.d/config.el` file. For example, here's a test project I
+    created to try and convert this blog to org-mode recently.
 
     ```lisp
     ;; org-publish

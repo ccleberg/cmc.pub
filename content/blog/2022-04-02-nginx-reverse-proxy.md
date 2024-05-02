@@ -16,13 +16,13 @@ where each request should be sent.
 
 For example, let's say that I run three servers in my home:
 
-- Server01 (`example.com`)
-- Server02 (`service01.example.com`)
-- Server03 (`service02.example.com`)
+-   Server01 (`example.com`)
+-   Server02 (`service01.example.com`)
+-   Server03 (`service02.example.com`)
 
 I also run a reverse proxy in my home that intercepts all public traffic:
 
-- Reverse Proxy
+-   Reverse Proxy
 
 Assume that I have a domain name (`example.com`) that allows clients to request
 websites or services from my home servers.
@@ -36,7 +36,7 @@ Server~01~ holds that data, Nginx will send the user to Server~01~. If I were to
 change the configuration so that `example.com` is routed to Server~02~, that
 same user would be sent to Server~02~ instead.
 
-``` txt
+```txt
 ┌──────┐                                              ┌───────────┐
 │ User │─┐                                         ┌──► Server_01 │
 └──────┘ │                                         │  └───────────┘
@@ -54,11 +54,11 @@ There are a lot of options when it comes to reverse proxy servers, so I'm just
 going to list a few of the options I've heard recommended over the last few
 years:
 
-- [Nginx](https://nginx.com)
-- [Caddy](https://caddyserver.com)
-- [Traefik](https://traefik.io/)
-- [HAProxy](https://www.haproxy.org/)
-- [Squid](https://ubuntu.com/server/docs/proxy-servers-squid)
+-   [Nginx](https://nginx.com)
+-   [Caddy](https://caddyserver.com)
+-   [Traefik](https://traefik.io/)
+-   [HAProxy](https://www.haproxy.org/)
+-   [Squid](https://ubuntu.com/server/docs/proxy-servers-squid)
 
 In this post, we will be using Nginx as our reverse proxy, running on Ubuntu
 Server 20.04.4 LTS.
@@ -118,8 +118,8 @@ search box and ensuring the results are showing the correct IP address.
 ## Step 2: Open Network Ports
 
 This step will be different depending on which router you have in your home. If
-you're not sure, try to visit [192.168.1.1](http://192.168.1.1) in your
-browser. Login credentials are usually written on a sticker somewhere on your
+you're not sure, try to visit [192.168.1.1](http://192.168.1.1) in your browser.
+Login credentials are usually written on a sticker somewhere on your
 modem/router.
 
 Once you're able to log in to your router, find the Port Forwarding settings.
@@ -131,7 +131,7 @@ this table, `xxx.xxx.xxx.xxx` is the local device IP of the reverse proxy
 server, it will probably be an IP between `192.168.1.1` and `192.168.1.255`.
 
 | NAME  | FROM PORT | DEST PORT/IP    | ENABLED |
-|-------|-----------|-----------------|---------|
+| ----- | --------- | --------------- | ------- |
 | HTTP  | 80        | xxx.xxx.xxx.xxx | TRUE    |
 | HTTPS | 443       | xxx.xxx.xxx.xxx | TRUE    |
 
@@ -172,7 +172,7 @@ Dashy:
 nano /etc/nginx/sites-available/dashy.example.com
 ```
 
-``` config
+```config
 server {
     listen 80;
     server_name dashy.example.com;
@@ -189,7 +189,7 @@ Uptime:
 nano /etc/nginx/sites-available/uptime.example.com
 ```
 
-``` config
+```config
 server {
     listen 80;
     server_name uptime.example.com;

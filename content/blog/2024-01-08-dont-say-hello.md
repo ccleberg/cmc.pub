@@ -20,10 +20,10 @@ Therefore, I have always held a deep displeasure for conversations where people
 start with "Hello" and then.
 
 I searched back through my work messages and found that I received ~50 messages
-from ~10 people last year from people that contained "hi", "hey", or
-"hello" and did not contain any indication of the purpose of the conversation.
-I also noticed that a few of the users were responsible for the large majority
-of the cliffhangers.
+from ~10 people last year from people that contained "hi", "hey", or "hello" and
+did not contain any indication of the purpose of the conversation. I also
+noticed that a few of the users were responsible for the large majority of the
+cliffhangers.
 
 There's no real point to this post, just a desparate request for people to
 please stop doing this.

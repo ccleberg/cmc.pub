@@ -17,7 +17,7 @@ copying and pasting the code from their library's documentation. For example,
 here's the code I use to authenticate users with the Tumblr OAuth API for my
 Tumblr client, Vox Populi:
 
-``` php
+```php
 // Start the session
 session_start();
 
@@ -52,13 +52,13 @@ MySQL database and PHP.
 The beginning to any type of user authentication is to create a user account.
 This process can take many formats, but the simplest is to accept user input
 from a form (e.g., username and password) and send it over to your database. For
-example, here's a snippet that shows how to get username and password
-parameters that would come when a user submits a form to your PHP script.
+example, here's a snippet that shows how to get username and password parameters
+that would come when a user submits a form to your PHP script.
 
 **Note**: Ensure that your password column is large enough to hold the hashed
 value (at least 60 characters or longer).
 
-``` php
+```php
 // Get the values from the URL
 $username = $_POST['username'];
 $raw_password = $_POST['password'];
@@ -99,7 +99,7 @@ To be able to verify that a returning user has a valid username and password in
 your database is as simple as having users fill out a form and comparing their
 inputs to your database.
 
-``` php
+```php
 // Query the database for username and password
 // ...
 
@@ -115,24 +115,24 @@ if(password_verify($password_input, $hashed_password)) {
 # Storing Authentication State
 
 Once you've created the user's account, now you're ready to initialize the
-user's session. **You will need to do this on every page you load while the
-user is logged in.** To do so, simply enter the following code snippet:
+user's session. **You will need to do this on every page you load while the user
+is logged in.** To do so, simply enter the following code snippet:
 
-``` php
+```php
 session_start();
 ```
 
 Once you've initialized the session, the next step is to store the session in a
 cookie so that you can access it later.
 
-``` php
+```php
 setcookie(session_name());
 ```
 
-Now that the session name has been stored, you'll be able to check if there's
-an active session whenever you load a page.
+Now that the session name has been stored, you'll be able to check if there's an
+active session whenever you load a page.
 
-``` php
+```php
 if(isset(session_name())) {
     // The session is active
 }
@@ -144,7 +144,7 @@ The next logical step is to give your users the option to log out once they are
 done using your application. This can be tricky in PHP since a few of the
 standard ways do not always work.
 
-``` php
+```php
 // Initialize the session.
 // If you are using session_name("something"), don't forget it now!
 session_start();

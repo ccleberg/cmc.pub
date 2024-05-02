@@ -16,7 +16,7 @@ executed. There are many steps and intricacies to the compilation process, and
 this post was a personal exercise to learn and remember as much information as I
 can.
 
-``` cpp
+```cpp
 #include <iostream>
 
 int main()
@@ -76,7 +76,7 @@ dynamically.
 For example, the `Hello, world!` code snippet above compiles into the following
 assembly code:
 
-``` asm
+```asm
 .LC0:
         .string "Hello, world!\n"
 main:
