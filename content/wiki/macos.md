@@ -1,6 +1,6 @@
 +++
 title = "macOS"
-updated = 2024-04-10
+updated = 2024-05-01
 draft = false
 +++
 
@@ -135,11 +135,13 @@ echo "yabai configuration loaded.."
 - [Bartender 5](https://www.macbartender.com/Bartender5/) (`*`) - Easy control and customization over the native macOS menu bar
 - [BetterDisplay](https://betterdisplay.pro/) - Allows you to tweak a ton of features of built-in and external screens, such as scaling, configuration overrides, and color/brightness upscaling
 - [Bitwarden](https://bitwarden.com/) - An open source password manager
-- [Ollama](https://ollama.com/) - Run Llama 2, Code Llama, and other models locally on your machine
-    - [Ollama Swift](https://github.com/kghandour/Ollama-SwiftUI) - User Interface made for Ollama.ai using Swift
 - [LittleSnitch](https://obdev.at/products/littlesnitch/index.html) - Shows all network connections on your Macbook, including system and privileged services
 - [MicroSnitch](https://obdev.at/products/microsnitch/index.html) - Camera & microphone monitoring and alterting service
 - [Mullvad](https://mullvad.net/) (`*`) - A private VPN service
+- [Ollama](https://ollama.com/) - Run Llama 2, Code Llama, and other models locally on your machine
+    - [Ollama Swift](https://github.com/kghandour/Ollama-SwiftUI) - User Interface made for Ollama.ai using Swift
+- [OrbStack](https://orbstack.dev/) - A fast and convenient GUI to manage Docker contains and Linux VMs
+- [Raycast](https://www.raycast.com/) - A collection of tools and shortcuts, an alternative to Spotlight
 - [skhd](https://github.com/koekeishiya/skhd) (`*`) - Simple hotkey daemon for macOS
 - [Strongbox](https://strongboxsafe.com/) - Keepass password manager for iOS & macOS
 - [Syncthing](https://syncthing.net/) (`*`) - Continuous file synchronization
