@@ -19,10 +19,10 @@ machine to take advantage of the Linux system.
 ## Installing OrbStack
 
 OrbStack has a [download page](https://orbstack.dev/download) if you prefer to
-use `*.dmg` files to isntall applications.
+use `*.dmg` files to install applications.
 
 Personally, I prefer to install everything through Homebrew. For OrbStack, run
-the following:
+the following to install the application via Homebrew:
 
 ```sh
 brew install orbstack
@@ -31,7 +31,7 @@ brew install orbstack
 ## Creating a Linux Machine
 
 Once installed, you can launch OrbStack and create a Linux machine in a matter
-of seconds. This creation module defaults to Ubuntu.
+of seconds. The creation dialog defaults to Ubuntu.
 
 ![OrbStack's Linux Machine Creation
 Page](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/create.png)
@@ -46,16 +46,19 @@ List](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/machine.png)
 
 When you run the machine for the first time, it may warn you that a program is
 attempting to run a shell script. You can choose to manually inspect this shell
-script via the provided path, if you wish. When you're comfortable with the
-script, toggle the `Suppress this message permanently` button and click OK to
-run the machine.
+script via the provided path if you wish. When you're comfortable with the
+script, you can toggle the `Suppress this message permanently` button and click
+OK to run the machine.
 
 ![First-Time Run
 Warning](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/warning.png)
 
-You will always be able to launch the OrbStack application and control the
-machine via the Machines menu, but you can also use the OrbStack icon in the
-macOS menu bar to quickly control the machine without launching OrbStack itself.
+> **Quick Tip**!
+>
+> You will always be able to launch the OrbStack application and
+> control the machine via the Machines page, but you can also use the OrbStack
+> icon in the macOS menu bar to quickly control the machine without launching
+> OrbStack itself.
 
 ## Working in Linux
 
