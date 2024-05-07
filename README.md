@@ -2,8 +2,7 @@
 
 [cleberg.net](https://cleberg.net) is my personal webpage.
 
-This README is viewable on
-[git.cleberg.net](https://git.cleberg.net/?p=cleberg.net.git;a=blob;f=README.org;h=155f4696a09503411730afc422b7fb49acbef8f3;hb=HEAD).
+This README is viewable on [sourcehut](https://git.sr.ht/~cyborg/cleberg.net).
 
 ## Overview
 
@@ -20,7 +19,7 @@ the Zola documentation for further configuration options.
 To get running:
 
 ```sh
-git clone https://git.cleberg.net/cleberg.net.git && \
+git clone https://git.sr.ht/~cyborg/cleberg.net && \
 cd cleberg.net && \
 zola build
 ```
