@@ -1,6 +1,11 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
+<section>
+	<div class="alert">
+		<b><u>Service Outage</u></b
+		>: Please note that all services and subdomains on
+		<code>cleberg.net</code> will be unavailable for a few days.
+	</div>
+</section>
 <section>
 	<h1>cleberg.net</h1>
 	<pre>pub   rsa4096 2022-11-16 [SC]
@@ -9,18 +14,18 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 </section>
 <section>
 	<h2>Recent Blog Posts</h2>
-	{% set section = get_section(path="blog/_index.md") %}
-	{% set i = 0 %}
-	{% for page in section.pages %}
-	{% if i < 3%}
-	{% set_global i = i + 1%}
-			<div class="post">
-				<time datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S')
-				}}">{{ page.date | date(format='%Y-%m-%d') }}</time>
-				<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
-			</div>
-		{% endif %} {% endfor %}
-	<br>
+	{% set section = get_section(path="blog/_index.md") %} {% set i = 0 %} {%
+	for page in section.pages %} {% if i < 3%} {% set_global i = i + 1%}
+	<div class="post">
+		<time
+			datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S')
+				}}"
+			>{{ page.date | date(format='%Y-%m-%d') }}</time
+		>
+		<a href="/blog/{{ page.slug }}/">{{ page.title }}</a>
+	</div>
+	{% endif %} {% endfor %}
+	<br />
 	<a href="/blog/">All Posts &rarr;</a>
 </section>
 <section>
@@ -35,10 +40,19 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 	<h2>Contact</h2>
 	<ul>
 		<li>hello [at] cleberg.net (<a href="/gpg.txt">GPG</a>)</li>
-		<li><a href="https://matrix.to/#/@cyborg:matrix.tchncs.de"
-		target="_blank" rel="noopener">@cyborg:@matrix.tchncs.de</a></li>
-		<li><a href="https://git.sr.ht/~cyborg/" target="_blank"
-		rel="noopener">Sourcehut</a></li>
+		<li>
+			<a
+				href="https://matrix.to/#/@cyborg:matrix.tchncs.de"
+				target="_blank"
+				rel="noopener"
+				>@cyborg:@matrix.tchncs.de</a
+			>
+		</li>
+		<li>
+			<a href="https://git.sr.ht/~cyborg/" target="_blank" rel="noopener"
+				>Sourcehut</a
+			>
+		</li>
 	</ul>
 </section>
 {% endblock content %}
