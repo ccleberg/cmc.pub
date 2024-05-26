@@ -369,7 +369,12 @@ template {
 body {
     background-color: var(--bg);
     color: var(--fg);
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    font-family:
+        Menlo,
+        Consolas,
+        Monaco,
+        Liberation Mono,
+        Lucida Console,
         monospace;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -433,7 +438,12 @@ table {
     border-collapse: collapse;
     color: var(--fg);
     border-color: var(--bg-bright);
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    font-family:
+        Menlo,
+        Consolas,
+        Monaco,
+        Liberation Mono,
+        Lucida Console,
         monospace;
     font-size: 0.9rem;
 }
@@ -449,7 +459,12 @@ td {
 pre > code,
 time,
 code {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    font-family:
+        Menlo,
+        Consolas,
+        Monaco,
+        Liberation Mono,
+        Lucida Console,
         monospace;
     font-size: inherit;
 }
@@ -548,14 +563,6 @@ summary {
 .footnote-definition p {
     display: inline-block;
     margin: 0;
-}
-
-.alert {
-    background-color: rgba(255,0,0,0.2);
-    border: 1px solid rgba(255,0,0,1);
-    padding: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
