@@ -7,8 +7,8 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 </section>
 <section>
 	<h2>Recent Blog Posts</h2>
-	{% set section = get_section(path="blog/_index.md") %} {% set i = 0 %} {%
-	for page in section.pages %} {% if i < 3%} {% set_global i = i + 1%}
+	{% set section = get_section(path="blog/_index.md") %} {% set i = 0 %} {% for
+	page in section.pages %} {% if i < 3%} {% set_global i = i + 1%}
 	<div class="post">
 		<time
 			datetime="{{ page.date | date(format='%Y-%m-%d %H:%M:%S')
@@ -33,6 +33,12 @@ uid           [ultimate] Christian Cleberg &lt;hello@cleberg.net&gt;</pre>
 	<h2>Contact</h2>
 	<ul>
 		<li>hello [at] cleberg.net (<a href="/gpg.txt">GPG</a>)</li>
+		<li>
+			cyb0rg on
+			<a href="https://libera.chat" target="_blank" rel="noopener"
+				>libera.chat</a
+			>
+		</li>
 		<li>
 			<a
 				href="https://matrix.to/#/@cyborg:matrix.tchncs.de"
