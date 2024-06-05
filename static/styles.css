@@ -526,7 +526,7 @@ blockquote p {
 
 .post-metadata {
     border: 1px dotted var(--fg);
-    /* border-top: none; */
+    border-top: none;
     padding: 1rem;
 }
 
