@@ -9,7 +9,6 @@ draft = false
 -   [FlashPaper](https://paste.cleberg.net/) - One-time encrypted
     password/secret sharing
 -   [GotHub](https://gh.cleberg.net/) - An alternative front-end for GitHub
--   [ifconfig.php](https://ip.cleberg.net/) - A "whatsmyip" tool
 -   [Invidious](https://invidious.cleberg.net/) - A YouTube proxy
 -   [Office](https://office.cleberg.net/) - The world's smallest office suite
 -   [Org-Live](https://org.cleberg.net/) - A basic org-mode editor for the web I
