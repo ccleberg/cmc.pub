@@ -398,6 +398,10 @@ footer p {
     margin: 0;
 }
 
+ul {
+    list-style-type: "- ";
+}
+
 .site-nav {
     border-bottom: 1px dotted;
 }
