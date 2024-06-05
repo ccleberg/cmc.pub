@@ -162,12 +162,11 @@ echo "yabai configuration loaded.."
 
 ### Utilities
 
--   [Bartender 5](https://www.macbartender.com/Bartender5/) (`*`) - Easy control
-    and customization over the native macOS menu bar
 -   [BetterDisplay](https://betterdisplay.pro/) - Allows you to tweak a ton of
     features of built-in and external screens, such as scaling, configuration
     overrides, and color/brightness upscaling
 -   [Bitwarden](https://bitwarden.com/) - An open source password manager
+-   [Ice](https://icemenubar.app/) (`*`)- A powerful menu bar management tool
 -   [LittleSnitch](https://obdev.at/products/littlesnitch/index.html) - Shows
     all network connections on your Macbook, including system and privileged
     services
