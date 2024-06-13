@@ -13,6 +13,7 @@ draft = false
 -   [Office](https://office.cleberg.net/) - The world's smallest office suite
 -   [Org-Live](https://org.cleberg.net/) - A basic org-mode editor for the web I
     built
+-   [Rimgo](https://rimgo.cleberg.net/) - An alternative frontend for Imgur
 -   [SearXNG](https://search.cleberg.net/) - A privacy-respecting, open
     metasearch engine
 
