@@ -3,7 +3,9 @@ title = "Salary"
 draft = false
 +++
 
-# Salary Transparency
+<link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css">
+
+## Salary Transparency
 
 The data below details the base salary information for each job I've held. This
 information is posted publicly to ensure others in my position have a solid
@@ -24,7 +26,7 @@ paid differently (expertise, years of experience, certifications, education,
 etc.) and that the data in this table should only be used as a single point of
 reference, not the whole story.
 
-# Salary Data
+## Salary Data
 
 Note: When in a role that gives periodic raises, I will create a new record with
 the new base salary in the table below. See the KPMG records for an example of a
@@ -42,6 +44,13 @@ raise while in the same role.
 | Internal Audit Intern                          | Ameritas               | Lincoln, NE    | 2018-02 | 2019-06 | $16/hour |
 | Teaching Assistant                             | University of Nebraska | Lincoln, NE    | 2017-08 | 2018-05 | $7/hour  |
 | Community Management Intern                    | Walgreens              | Lincoln, NE    | 2017-06 | 2018-02 | $14/hour |
+
+## Salary Visualization
+
+See the graph below for a visualization of each job's salary over time, as well
+as percentage increases or decreases between jobs.
+
+![Salary Visualization](https://img.cleberg.net/blog/salary/salary.png)
 
 This page was inspired by [Xe](https://xeiaso.net/salary-transparency/), and I'm
 quoting the following wording from them as I want to reiterate this piece:
