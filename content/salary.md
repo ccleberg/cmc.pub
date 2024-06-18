@@ -3,8 +3,6 @@ title = "Salary"
 draft = false
 +++
 
-<link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css">
-
 ## Salary Transparency
 
 The data below details the base salary information for each job I've held. This
