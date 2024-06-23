@@ -18,12 +18,12 @@ jobs:
       - uses: taiki-e/install-action@v2
         with:
           tool: zola@0.19.0
-      - name: Build Zola Site
-        run: zola build
       - uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
+      - name: Build Zola Site
+        run: zola build
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
