@@ -2,8 +2,6 @@
 
 [cleberg.net](https://cleberg.net) is my personal webpage.
 
-This README is viewable on [sourcehut](https://git.sr.ht/~cyborg/cleberg.net).
-
 ## Overview
 
 This website & blog uses [Markdown](https://spec.commonmark.org/current/),
@@ -19,7 +17,7 @@ the Zola documentation for further configuration options.
 To get running:
 
 ```sh
-git clone https://git.sr.ht/~cyborg/cleberg.net && \
+git clone https://github.com/ccleberg/cleberg.net && \
 cd cleberg.net && \
 zola build
 ```

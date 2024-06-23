@@ -18,5 +18,5 @@ draft = false
     metasearch engine
 
 See the [git
-log](https://git.sr.ht/~cyborg/cleberg.net/log/main/item/content/services.md) if
+log](https://github.com/ccleberg/cleberg.net/commits/main/content/services.md) if
 you want to see changes that have been made.
