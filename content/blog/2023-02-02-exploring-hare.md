@@ -48,12 +48,12 @@ Installation](https://harelang.org/installation/) page.
 ## Creating a Test Project
 
 In order to play with the language, I created
-[hare-test](https://github.com/ccleberg/daily-poem/learning-hare) and will be putting any of my
+[hare-test](https://git.sr.ht/~cyborg/learning-hare) and will be putting any of my
 Hare-related adventures in here.
 
 > **Update:** I also created a simple Hare program for creating a file from user
 > input:
-> [files.ha](hhttps://github.com/ccleberg/learning-hare/blob/main/files/files.ha)
+> [files.ha](hhttps://git.sr.ht/~cyborg/learning-hare/blob/main/files/files.ha)
 
 Luckily, Hare doesn't require any complex set-up tools or build environment.
 Once you have Hare installed, you simply need to create a file ending with `.ha`

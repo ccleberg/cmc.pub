@@ -17,7 +17,7 @@ the Zola documentation for further configuration options.
 To get running:
 
 ```sh
-git clone https://github.com/ccleberg/cleberg.net && \
+git clone https://git.sr.ht/~cyborg/cleberg.net && \
 cd cleberg.net && \
 zola build
 ```
