@@ -1,4 +1,4 @@
-# %pip install plotly pandas
+%pip install plotly pandas
 
 import pandas as pd
 import plotly.graph_objs as go
@@ -6,7 +6,11 @@ import locale
 
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
-df = pd.read_csv('~/Downloads/salary.csv')
+df = pd.read_csv('~/git/cleberg.net/static/salary.csv')
+
+# Function to format salary as US currency
+def format_currency(value):
+    return f"${value:,.2f}"
 
 # Reverse the order of the DataFrame
 df = df.iloc[::-1].reset_index(drop=True)
