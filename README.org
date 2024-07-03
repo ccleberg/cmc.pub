@@ -1,0 +1,41 @@
+#+title: README
+
+* cleberg.net
+
+[[https://cleberg.net][cleberg.net]] is my personal webpage.
+
+** Overview
+
+This website & blog uses [[https://spec.commonmark.org/current/][Markdown]], published with [[https://www.getzola.org/][Zola]].
+
+** Configuration
+
+All configuration options are available within the =config.toml= file. Refer to
+the Zola documentation for further configuration options.
+
+** Building
+
+To get running:
+
+#+begin_src sh
+git clone https://git.sr.ht/~cyborg/cleberg.net && \
+cd cleberg.net && \
+zola build
+#+end_src
+
+** Publishing
+
+Use =zola build= and deploy to whichever deployment target you prefer.
+
+** Tasks
+
+- [ ] Add descriptions to blog posts
+- [ ] Figure out how to get file tags to show up
+- [ ] Fix missing images
+  - [X] 2024
+  - [ ] 2023
+  - [ ] 2022
+  - [ ] 2021
+  - [ ] 2020
+  - [ ] 2019
+  - [ ] 2018
