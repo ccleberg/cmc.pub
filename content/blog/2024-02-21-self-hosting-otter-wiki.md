@@ -120,19 +120,3 @@ Once enabled, restart the Nginx server to start serving the app externally.
 sudo systemctl restart nginx.service
 ```
 
-# Screenshots
-
-In the screenshot below, you can see the initial launch screen for An Otter
-Wiki. Start by creating your admin account and configure the app as necessary.
-
-![An Otter Wiki - Initial
-Screen](https://img.cleberg.net/blog/20240221-otterwiki/otterwiki.png)
-
-You can also see the default editing screen for creating and editing pages. It's
-as easy as typing Markdown and hitting the save button.
-
-![An Otter Wiki - Editing
-Screen](https://img.cleberg.net/blog/20240221-otterwiki/otterwiki-edit.png)
-
-Overall, I like An Otter Wiki and will be looking forward to seeing how much use
-I get out of it going forward.

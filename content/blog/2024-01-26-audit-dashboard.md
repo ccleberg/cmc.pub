@@ -9,10 +9,8 @@ Alteryx and Power BI are powerful tools that can help turn your old-school audit
 trackers into interactive tools that provide useful insights and potential
 action plans.
 
-With these tools, we are going to build the following dashboard:
-
-![](https://img.cleberg.net/blog/20240126-audit-dashboard/dashboard_01.png)
-![](https://img.cleberg.net/blog/20240126-audit-dashboard/dashboard_02.png)
+With these tools, we are going to build a dashboard that can effectively
+communicate project status.
 
 # Requirements
 
@@ -37,9 +35,6 @@ and let Alteryx determine the format for you. For this example, we will be
 importing an Excel file and changing the `Start Data Import on Line` variable to
 `2`.
 
-![Alteryx Excel
-Import](https://img.cleberg.net/blog/20240126-audit-dashboard/alteryx_import.png)
-
 ## Transform Data
 
 Next, let's replace null data and remove whitespace to clean up our data. We can
@@ -53,16 +48,10 @@ Ensure that the following options are enabled:
 -   Remove Unwanted Characters
     -   Leading and Trailing Whitespace
 
-![Data
-Cleansing](https://img.cleberg.net/blog/20240126-audit-dashboard/alteryx_cleansing.png)
-
 For our next step, we will transform the date fields from strings to datetime
 format. Add a `Datetime` tool for each field you want to transform - in the
 example below, I am using the tool twice for the "Started On" and "Submitted On"
 fields.
-
-![Data
-Transformation](https://img.cleberg.net/blog/20240126-audit-dashboard/alteryx_transformation.png)
 
 Now that the dates are in the correct format, let's perform a calculation based
 on those fields. Start by adding a `Filter` tool, naming a new Output Column,
@@ -71,18 +60,12 @@ match the output of the `Datetime` tools above):
 
 ```txt
 DateTimeDiff([SubmittedOn_Out],[StartedOn_Out], "days")
-```
-
-![Data
-Analysis](https://img.cleberg.net/blog/20240126-audit-dashboard/alteryx_analysis.png)
+`
 
 ## Export Data
 
 Finalize the process by exporting the transformed data set to a new file, for
 use in the following visualization step.
-
-![Data
-Export](https://img.cleberg.net/blog/20240126-audit-dashboard/alteryx_export.png)
 
 # Power BI: Data Visualization
 
@@ -98,19 +81,10 @@ for this project.
 During this process, I also imported the export from the Alteryx workflow above.
 Therefore, we have two different files available for use in our dashboard.
 
-![Excel
-Tracker](https://img.cleberg.net/blog/20240126-audit-dashboard/excel_tracker.png)
-
-![Power BI Excel
-Import](https://img.cleberg.net/blog/20240126-audit-dashboard/powerbi_import.png)
-
 ## Add Visuals
 
-To create the dashboard below, you will need to follow the list instructions
-below and format as needed:
-
-![](https://img.cleberg.net/blog/20240126-audit-dashboard/dashboard_01.png)
-![](https://img.cleberg.net/blog/20240126-audit-dashboard/dashboard_02.png)
+To create the dashboard, you will need to follow the list instructions
+below and format as needed.
 
 Instructions to create the visuals above:
 

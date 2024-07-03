@@ -42,11 +42,9 @@ I use [iTerm2](https://iterm2.com/), which can be installed with Homebrew:
 brew install iterm2
 ```
 
-![iTerm2](https://img.cleberg.net/blog/20240109-macos-customization/iterm2.png)
-
-To install color schemes, such as the Dracula scheme shown in the screenshot
-above, you visit [iTerm Themes](https://iterm2colorschemes.com/) and follow
-their installation instructions to install any of the themes.
+To install color schemes, such as the Dracula scheme, you visit [iTerm
+Themes](https://iterm2colorschemes.com/) and follow their installation
+instructions to install any of the themes.
 
 # Desktop
 
@@ -64,12 +62,6 @@ Refer to the [yabai
 wiki](<https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)>)
 for installation instructions. You will need to ensure that yabai is allowed to
 access the accessibility and screen recording APIs.
-
-You can see a basic three-pane layout atuomatically configured by yabai for me
-as I opened the windows below.
-
-![yabai window
-manager](https://img.cleberg.net/blog/20240109-macos-customization/yabai.png)
 
 ## Keyboard Shortcuts
 
@@ -116,9 +108,6 @@ folder.
 See below for an example of the
 [Mond](https://tracesof.net/uebersicht-widgets/#Mond) widget in action.
 
-![uebersicht desktop
-widgets](https://img.cleberg.net/blog/20240109-macos-customization/uebersicht.png)
-
 ## Status Bar
 
 [SketchyBar](https://github.com/FelixKratz/SketchyBar) is a customizable
@@ -127,11 +116,6 @@ replacement for the macOS status or menu bar.
 You can browse a discussion where various users shared their
 [configurations](https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top)
 for inspiration or to copy their dotfiles.
-
-See below for a quick (& slightly broken) copy of
-[zer0yu's](https://github.com/zer0yu/dotfiles) SketchyBar configuration.
-
-![SketchyBar](https://img.cleberg.net/blog/20240109-macos-customization/sketchybar.png)
 
 ## Dock
 
@@ -145,8 +129,6 @@ cursor passes closely to the dock edge of the screen. Because of this, I simply
 use the built-in dock instead of customizing it with third-party software.
 
 Regardless, see below for the default installation style of uBar.
-
-![uBar](https://img.cleberg.net/blog/20240109-macos-customization/ubar.png)
 
 ## Application Icons
 
@@ -163,8 +145,3 @@ them by following this process.
    over it).
 5. Release the new icon on top of the old icon and it will update!
 
-You can see an example of me dragging a new `signal.icns` file onto my
-Signal.app information window to update it below:
-
-![replace macOS
-icons](https://img.cleberg.net/blog/20240109-macos-customization/replace_icon.png)

@@ -25,15 +25,6 @@ To start, export any pages or tabs from OneNote to the Word format (`.docx`):
 
 See below for a visual walkthrough of the export process.
 
-![OneNote
-Notebook](https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/onenote.png)
-
-![OneNote Section Export
-Options](https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/export.png)
-
-![Exported Word
-Document](https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/word.png)
-
 # Download Pandoc
 
 Start by downloading Pandoc from their [GitHub
@@ -92,9 +83,6 @@ This loop will perform the following actions:
 6. Within the pandoc command, the final step is to specify the output path with
    `-o`. This option adds the `.md` file extension to recognize the output files
    as Markdown files.
-
-![Pandoc
-Conversion](https://img.cleberg.net/blog/20240406-convert-onenote-to-markdown/command.png)
 
 If you want to export to another format, simply specify the `-f=`/`--from=` and
 `-t=`/`--to=` options.

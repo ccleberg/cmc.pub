@@ -50,9 +50,6 @@ script via the provided path if you wish. When you're comfortable with the
 script, you can toggle the `Suppress this message permanently` button and click
 OK to run the machine.
 
-![First-Time Run
-Warning](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/warning.png)
-
 > **Quick Tip**!
 >
 > You will always be able to launch the OrbStack application and
@@ -65,7 +62,7 @@ Warning](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/warning.png)
 Once successful, OrbStack will launch your default terminal and log you into the
 Linux machine you created above.
 
-In the example below, we can see that the machine is using `Linux ubuntu 6.7.11`
+In the example below, we can see that the machine is using `Linux ubuntu 6.9.6`
 and operates similar to a fresh Ubuntu install on bare metal.
 
 ![Ubuntu CLI](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/cli.png)
@@ -82,11 +79,10 @@ defaults to opening in Xcode on my system.
 
 ![Ubuntu Files](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/xcode.png)
 
-
 ### Test Examples
 
-As a quick example of the system, I added a `test` user, installed `neofetch`,
-and switched the `test` user's shell to `zsh`:
+As a quick example of the system, I installed `neofetch`, switched to the `zsh`
+shell, and ran a few common commands.
 
 ![Test Examples](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/test.png)
 
