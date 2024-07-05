@@ -1,10 +1,11 @@
 * cleberg.net
 
-[[https://cleberg.net][cleberg.net]] is my personal webpage.
+cleberg.net is my personal webpage and blog.
 
 ** Overview
 
-This website & blog uses [[https://spec.commonmark.org/current/][Markdown]], published with [[https://www.getzola.org/][Zola]].
+This website & blog uses Markdown for content, HTML for templates, built and 
+published with Zola.
 
 ** Configuration
 
@@ -27,13 +28,6 @@ Use =zola build= and deploy to whichever deployment target you prefer.
 
 ** Tasks
 
-- [ ] Add descriptions to blog posts
-- [ ] Figure out how to get file tags to show up
-- [ ] Fix missing images
-  - [X] 2024
-  - [ ] 2023
-  - [ ] 2022
-  - [ ] 2021
-  - [ ] 2020
-  - [ ] 2019
-  - [ ] 2018
+Refer to the todo page [1] for open tickets or to submit a new ticket.
+
+[1]: https://todo.sr.ht/~cyborg/cleberg.net
