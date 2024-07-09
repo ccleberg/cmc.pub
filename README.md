@@ -1,18 +1,18 @@
-* cleberg.net
+# cleberg.net
 
 [cleberg.net](https://cleberg.net) is my personal webpage and blog.
 
-** Overview
+## Overview
 
 This website & blog uses Markdown for content, HTML for templates, built and
 published with [Zola](https://getzola.org).
 
-** Configuration
+## Configuration
 
 All configuration options are available within the =config.toml= file. Refer to
 the Zola documentation for further configuration options.
 
-** Building
+## Building
 
 To get running:
 
@@ -22,11 +22,11 @@ cd cleberg.net && \
 zola build
 ```
 
-** Publishing
+## Publishing
 
 Use `zola build` and deploy to whichever deployment target you prefer.
 
-** Tasks
+## Tasks
 
 Refer to the [todo page](https://todo.sr.ht/~cyborg/cleberg.net) for open
 tickets or to submit a new ticket.
