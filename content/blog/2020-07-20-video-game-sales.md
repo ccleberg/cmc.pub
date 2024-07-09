@@ -43,9 +43,6 @@ df = pd.read_csv(file)
 df
 ```
 
-![Dataframe
-Results](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/01_dataframe-min.png)
-
 # Explore the Data
 
 ```python
@@ -53,8 +50,6 @@ Results](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales
 # also see that the 'Year' column has some incomplete values.
 df.describe()
 ```
-
-![df.describe()](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/02_describe-min.png)
 
 ```python
 # This function shows the rows and columns of NaN values. For example, df[179,3] = nan
@@ -71,24 +66,15 @@ np.where(pd.isnull(df))
 sns.catplot(x='Platform', y='Global_Sales', data=df, jitter=False).set_xticklabels(rotation=90)
 ```
 
-![Plot of Global Sales by
-Platform](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/03_plot-min.png)
-
 ```python
 # This function plots the global sales by genre
 sns.catplot(x='Genre', y='Global_Sales', data=df, jitter=False).set_xticklabels(rotation=45)
 ```
 
-![Plot of Global Sales by
-Genre](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/04_plot-min.png)
-
 ```python
 # This function plots the global sales by year
 sns.lmplot(x='Year', y='Global_Sales', data=df).set_xticklabels(rotation=45)
 ```
-
-![Plot of Global Sales by
-Year](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/05_plot-min.png)
 
 ```python
 # This function plots four different lines to show sales from different regions.
@@ -116,9 +102,6 @@ ax.legend()
 plt.show()
 ```
 
-![Plot of Regional Sales by
-Year](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/06_plot-min.png)
-
 ## Investigate Outliers
 
 ```python
@@ -143,25 +126,16 @@ df3 = df[(df['Year'] == 2006)]
 df3.describe()
 ```
 
-![Descriptive Statistics of 2006
-Sales](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/07_2006_stats-min.png)
-
 ```python
 # Plot the results of the previous dataframe (games from 2006) - we can see the year's results were largely carried by Wii Sports
 sns.catplot(x="Genre", y="Global_Sales", data=df3, jitter=False).set_xticklabels(rotation=45)
 ```
-
-![Plot of 2006
-Sales](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/08_plot-min.png)
 
 ```python
 # We can see 4 outliers in the graph above, so let's get the top 5 games from that dataframe
 # The results below show that Nintendo had all top 5 games (3 on the Wii and 2 on the DS)
 df3.sort_values(by=['Global_Sales'], ascending=False).head(5)
 ```
-
-![Outliers of 2006
-Sales](https://img.cleberg.net/blog/20200720-data-exploration-video-game-sales/09_outliers-min.png)
 
 # Discussion
 

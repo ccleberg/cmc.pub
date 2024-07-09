@@ -37,9 +37,6 @@ to enter new markets or innovate in its current markets. The y-axis of the
 matrix focuses on the firm's products and determines if the firm wants to pursue
 strategies around their existing products or explore new products.
 
-![The Ansoff Matrix by JaisonAbeySabu, Own work, CC BY-SA
-3.0](https://img.cleberg.net/blog/20191203-the-ansoff-matrix/ansoff_matrix-min.png)
-
 # Strategic Options
 
 ## Market Penetration

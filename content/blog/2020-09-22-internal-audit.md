@@ -5,9 +5,6 @@ description = ""
 draft = false
 +++
 
-![Internal Audit
-Overview](https://img.cleberg.net/blog/20200922-what-is-internal-audit/internal-audit-overview.jpg)
-
 # Definitions
 
 One of the many reasons that Internal Audit needs such thorough explaining to
@@ -102,17 +99,10 @@ audit work.
 # Three Lines of Defense
 
 [The IIA](https://theiia.org) released the original Three Lines of Defense model
-in 2013, but have released an updated version in 2020. Here is what the Three
-Lines of Defense model has historically looked like:
-
-![2013 Three Lines of Defense
-Model](https://img.cleberg.net/blog/20200922-what-is-internal-audit/three_lines_model.png)
+in 2013, but have released an updated version in 2020.
 
 I won't go into depth about the changes made to the model in this article.
 Instead, let's take a look at the most current model.
-
-![2020 Three Lines of Defense
-Model](https://img.cleberg.net/blog/20200922-what-is-internal-audit/updated_three_lines_model.png)
 
 The updated model forgets the strict idea of areas performing their own
 functions or line of defense. Instead of talking about management, risk, and
@@ -139,9 +129,6 @@ A normal audit will generally follow the same process, regardless of the topic.
 However, certain special projects or abnormal business areas may call for
 changes to the audit process. The audit process is not set in stone, it's simply
 a set of best practices so that audits can be performed consistently.
-
-![The Internal Audit
-Process](https://img.cleberg.net/blog/20200922-what-is-internal-audit/internal-audit-process.jpg)
 
 While different organizations may tweak the process, it will generally follow
 this flow:
@@ -232,9 +219,6 @@ they develop new processes, instead of coming in periodically to audit an area
 and file issues that could have been fixed at the beginning.
 
 # Data Science & Data Analytics
-
-![Data Science Skill
-Set](https://img.cleberg.net/blog/20200922-what-is-internal-audit/data-science-skillset.png)
 
 One major piece of the internal audit function in the modern world is data
 science. While the process is data science, most auditors will refer to anything

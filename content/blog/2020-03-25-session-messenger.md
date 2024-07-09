@@ -71,9 +71,6 @@ following command:
 sudo chmod u+x session-messenger-desktop-linux-x86_64-1.0.5.AppImage
 ```
 
-![Session Download
-Options](https://img.cleberg.net/blog/20200325-session-private-messenger/session_downloads.png)
-
 # Creating an Account
 
 Once you've installed the app, simply run the app and create your unique Session
@@ -82,15 +79,6 @@ ID. It will look something like this:
 
 You'll need to set a display name and, optionally, a password. If you set a
 password, you will need to enter it every time you open the app.
-
-![Session Login
-(Linux)](https://img.cleberg.net/blog/20200325-session-private-messenger/session_linux_login.png)
-
-![Session Login
-(macOS)](https://img.cleberg.net/blog/20200325-session-private-messenger/session_macos_login.png)
-
-![Password
-Authentication](https://img.cleberg.net/blog/20200325-session-private-messenger/session_password_authentication.png)
 
 # Start Messaging
 
@@ -101,22 +89,13 @@ any other messaging app, so I won't dive into much detail here.
 
 ## macOS
 
-![macOS
-Conversations](https://img.cleberg.net/blog/20200325-session-private-messenger/session_macos_conversations.png)
-
 One key feature to note is that the desktop application now provides a helpful
 pop-up box explaining the process that Session uses to hide your IP address:
-
-![IP Address Help
-Box](https://img.cleberg.net/blog/20200325-session-private-messenger/session_ip.png)
 
 ## iOS
 
 The mobile app is quite simple and effective, giving you all the standard mobile
 messaging options you'd expect.
-
-![iOS
-App](https://img.cleberg.net/blog/20200325-session-private-messenger/session_ios.png)
 
 # Potential Issues
 

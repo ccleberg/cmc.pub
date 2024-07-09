@@ -24,9 +24,6 @@ tutorials out there on customizations.
 
 ## Required Tools
 
-![Gnome
-Tweaks](https://img.cleberg.net/blog/20200519-customizing-ubuntu/gnome-tweaks-min.png)
-
 Ubuntu 20.04 ships with the default desktop environment
 [Gnome](https://www.gnome.org/), which includes the handy `gnome-tweaks` tool to
 quickly change designs. To install this, just open your terminal and enter the
@@ -90,9 +87,6 @@ themes](https://extensions.gnome.org/extension/19/user-themes/) extension on
 extensions, you will first need to install the browser extension that the
 website instructs you to. See this screenshot for the blue box with a link to
 the extension.
-
-![Gnome
-Extensions](https://img.cleberg.net/blog/20200519-customizing-ubuntu/gnome-extensions-min.png)
 
 After the browser extension is installed, you will need to install the native
 host connector:

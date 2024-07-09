@@ -145,16 +145,6 @@ Gemtext.
 
 # The Results
 
-Here are some screenshots of the Gemini page I just created in the
-[Lagrange](https://gmi.skyjake.fi/lagrange/) browser and the
-[amfora](https://github.com/makeworld-the-better-one/amfora) browser.
-
-![GUI Gemini
-browser](https://img.cleberg.net/blog/20210417-hosting-a-gemini-server/lagrange.png)
-
-_Lagrange_
-
-![CLI Gemini
-browser](https://img.cleberg.net/blog/20210417-hosting-a-gemini-server/amfora.png)
-
-_Amfora_
+To view the results, you can use a Gemini browser, such as
+[Lagrange](https://gmi.skyjake.fi/lagrange/) or
+[amfora](https://github.com/makeworld-the-better-one/amfora).

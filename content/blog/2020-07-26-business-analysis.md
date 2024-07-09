@@ -51,9 +51,6 @@ map_LNK = folium.Map(location=[latitude, longitude], zoom_start=12)
 map_LNK
 ```
 
-![Blank
-Map](https://img.cleberg.net/blog/20200726-ibm-data-science/01_blank_map-min.png)
-
 Now that we have defined our city and created the map, we need to go get the
 business data. The Foursquare API will limit the results to 100 per API call, so
 we use our first API call below to determine the total results that Foursquare
@@ -194,9 +191,6 @@ nearby_venues = nearby_venues.reset_index(drop=True)
 nearby_venues
 ```
 
-![Clean
-Data](https://img.cleberg.net/blog/20200726-ibm-data-science/02_clean_data-min.png)
-
 # Visualize the Data
 
 We now have a complete, clean data set. The next step is to visualize this data
@@ -220,9 +214,6 @@ for lat, lng, name, categories in zip(nearby_venues['lat'], nearby_venues['lng']
 
 map_LNK
 ```
-
-\![Initial data
-map](https://img.cleberg.net/blog/20200726-ibm-data-science/03_data_map-min.png)
 
 # Clustering: _k-means_
 
@@ -310,9 +301,6 @@ for lat, lng, name, categories, cluster in zip(nearby_venues['lat'], nearby_venu
 map_clusters
 ```
 
-![Clustered
-Map](https://img.cleberg.net/blog/20200726-ibm-data-science/04_clusters-min.png)
-
 # Investigate Clusters
 
 Now that we have figured out our clusters, let's do a little more analysis to
@@ -329,9 +317,6 @@ for x in range(0,6):
     print("Venues found in Cluster", x, ":", nearby_venues.loc[nearby_venues['Cluster Labels'] == x, nearby_venues.columns[:]].shape[0])
     print("---")
 ```
-
-![Venues per
-Cluster](https://img.cleberg.net/blog/20200726-ibm-data-science/05_venues_per_cluster-min.png)
 
 Our last piece of analysis is to summarize the categories of businesses within
 each cluster. With these results, we can clearly see that restaurants, coffee
@@ -358,12 +343,6 @@ with pd.option_context('display.max_rows', None, 'display.max_columns', None):
     print("\n\n", "Cluster 4:", "\n", cluster4_grouped.loc[cluster4_grouped['Cluster Labels'] > 1])
     print("\n\n", "Cluster 5:", "\n", cluster5_grouped.loc[cluster5_grouped['Cluster Labels'] > 1])
 ```
-
-![Venues per Cluster, pt.
-1](https://img.cleberg.net/blog/20200726-ibm-data-science/06_categories_per_cluster_pt1-min.png)
-
-![Venues per Cluster, pt.
-2](https://img.cleberg.net/blog/20200726-ibm-data-science/07_categories_per_cluster_pt2-min.png)
 
 # Discussion
 

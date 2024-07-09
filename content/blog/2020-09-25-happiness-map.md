@@ -64,9 +64,6 @@ geo_data = gpd.read_file('https://raw.githubusercontent.com/datasets/geo-countri
 geo_data.head()
 ```
 
-![GeoJSON
-Dataframe](https://img.cleberg.net/blog/20200925-world-choropleth-map/geojson_df.png)
-
 Next, let's load the data from the Kaggle dataset. I've downloaded this file, so
 update the file path if you have it somewhere else. After loading, let's take a
 look at this dataframe:
@@ -76,9 +73,6 @@ look at this dataframe:
 happy_data = pd.read_csv(r'~/Downloads/world_happiness_data_2019.csv')
 happy_data.head()
 ```
-
-![Happiness
-Dataframe](https://img.cleberg.net/blog/20200925-world-choropleth-map/happiness_df.png)
 
 # Clean the Data
 
@@ -126,9 +120,6 @@ merged_df = merged_df.rename(columns = {'ADMIN':'GeoJSON_Country'})
 merged_df = merged_df.rename(columns = {'Country or region':'Country'})
 ```
 
-![Merged
-Dataframe](https://img.cleberg.net/blog/20200925-world-choropleth-map/merged_df.png)
-
 # Create the Map
 
 The data is finally ready to be added to a map. The code below shows the
@@ -163,9 +154,6 @@ folium.Choropleth(
 ```
 
 Let's look at the resulting map.
-
-![Choropleth
-Map](https://img.cleberg.net/blog/20200925-world-choropleth-map/map.png)
 
 # Create a Tooltip on Hover
 
@@ -216,8 +204,4 @@ folium.LayerControl().add_to(world_map)
 world_map
 ```
 
-The final image below will show you what the tooltip looks like whenever you
-hover over a country.
-
-![Choropleth Map
-Tooltip](https://img.cleberg.net/blog/20200925-world-choropleth-map/tooltip_map.png)
+The tooltip will now appear whenever you hover over a country.

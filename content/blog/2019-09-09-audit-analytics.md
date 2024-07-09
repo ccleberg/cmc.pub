@@ -29,9 +29,6 @@ or extracting data, selecting samples, or performing audit tests. These steps
 can be necessary for an audit (and may even be performed by the same
 associates), but they are not data analytics.
 
-![The Intelligence
-Cycle](https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/intelligence_cycle-min.png)
-
 # Current Use of Analytics in Auditing
 
 While data analysis has been an integral part of most businesses and departments
@@ -82,9 +79,6 @@ analytics so that the results can be as comprehensive as possible:
     compared against (KPIs).
 -   **Analysts**: There must be auditors willing and able to perform data
     analytics or else the system cannot be sustained.
-
-![The Delta
-Model](https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/delta-min.png)
 
 # Finding the Proper KPIs
 
@@ -197,14 +191,7 @@ that only about 12.5% of entry-level jobs don't require experience.
 This is the kind of result that easily describes the data for you. However, make
 sure to include an explanation of what the results mean. Don't let the reader
 assume what the data means, especially if it relates to a complex subject. _Tell
-a story_ about the data and why the results matter. For example, **Figure 4**
-shows a part of the explanation the author gives to illustrate his point.
-
-![Entry-Level
-Visualization](https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/vis_example-min.png)
-
-![Visualization
-Explanation](https://img.cleberg.net/blog/20190909-data-analysis-in-auditing/vis_example_explanation-min.png)
+a story_ about the data and why the results matter.
 
 # Wrap-Up
 

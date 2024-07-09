@@ -9,9 +9,6 @@ draft = false
 
 ## Etcher
 
-![Etcher
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/etcher.png)
-
 [Etcher](https://www.balena.io/etcher/) is a quick and easy way to burn ISO
 images to CDs and USB devices. There are two different ways you can install this
 program. First, you can navigate to the [official
@@ -56,9 +53,6 @@ sudo pacman -S etcher
 
 ## Atom
 
-![Atom
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/atom.png)
-
 [Atom](https://atom.io) is the self-proclaimed "hackable text editor for the
 21st century". This text editor is made by GitHub, [now owned by
 Microsoft](https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/),
@@ -102,9 +96,6 @@ sudo pacman -S atom
 
 ## Visual Studio Code
 
-![Visual Studio Code
-Code](https://img.cleberg.net/blog/20200125-the-best-linux-software/vscode.png)
-
 [Visual Studio Code](https://code.visualstudio.com) is yet another fantastic
 choice for programming on Linux, especially if you need those extra add-ons to
 spice up your late-night coding sessions. The theme used in the screenshot is
@@ -138,9 +129,6 @@ sudo pacman -S yay binutils make gcc pkg-config fakeroot yay -S visual-studio-co
 
 ## GNOME Tweaks
 
-![Gnome Tweaks
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/gnome-tweaks.png)
-
 [Gnome Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks) is the ultimate tool
 to use if you want to customize your GNOME desktop environment. This is how you
 can switch application themes (GTK), shell themes, icons, fonts, and more. To
@@ -159,9 +147,6 @@ sudo dnf install gnome-tweaks
 ```
 
 ## Steam
-
-![Steam
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
 
 [Steam](https://steampowered.com) is one of the most popular gaming libraries
 for computers and is one of the main reasons that many people have been able to
@@ -207,9 +192,6 @@ Here.](./2020-01-26-steam-on-ntfs-drives.html)
 
 ## neofetch
 
-![Neofetch
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/neofetch.png)
-
 [Neofetch](https://github.com/dylanaraps/neofetch) is a customizable tool used
 in the command-line to show system information. This is exceptionally useful if
 you want to see your system's information quickly without the clutter of some
@@ -236,9 +218,6 @@ sudo pacman -S neofetch
 ```
 
 ## yt-dlp
-
-![yt-dlp
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/yt-dlp.png)
 
 [yt-dlp](https://github.com/yt-dlp/yt-dlp) is an extremely handy command-line
 tool that allows you to download video or audio files from various websites,

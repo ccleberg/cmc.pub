@@ -7,9 +7,6 @@ draft = false
 
 # Auto-Mount Steam Drives
 
-![Steam
-Screenshot](https://img.cleberg.net/blog/20200125-the-best-linux-software/steam.png)
-
 If you want to see how to install Steam on Linux, see my other post: [Linux
 Software](../linux-software/).
 
