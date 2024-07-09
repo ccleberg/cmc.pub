@@ -67,12 +67,6 @@ initrd /casper/initrd
 boot
 ```
 
-![Ubuntu Server Installation
-01](https://img.cleberg.net/blog/20220308-plex-media-server-migration/ubuntu_server_installation_01.png)
-
-![Ubuntu Server Installation
-02](https://img.cleberg.net/blog/20220308-plex-media-server-migration/ubuntu_server_installation_02.png)
-
 Once the machine is rebooted, enter the `e` screen again and add `nomodeset` to
 the `linux ...` line again and press `Ctrl + X` to save the boot options.
 
@@ -194,9 +188,6 @@ caused issues with accessing the server from outside the network.
 In my case, I use a single port forwarding rule in my router and needed to
 update the Local LAN IP Address to the new server IP address.
 
-![Router port
-forwarding](https://img.cleberg.net/blog/20220308-plex-media-server-migration/port_forwarding.png)
-
 # Phase 3: Configure GPU Transcoding
 
 The final piece to the migration is enabling hardware transcoding so that Plex
@@ -224,9 +215,4 @@ following command to view the available GPUs, statistics, and processes:
 sudo nvidia-smi
 ```
 
-![nvidia-smi](https://img.cleberg.net/blog/20220308-plex-media-server-migration/nvidia_smi.png)
-
-Finally, enable hardware transcoding settings in the Plex application:
-
-![Plex transcoding
-settings](https://img.cleberg.net/blog/20220308-plex-media-server-migration/plex_transcoding.png)
+Finally, enable hardware transcoding settings in the Plex application to finish the process.

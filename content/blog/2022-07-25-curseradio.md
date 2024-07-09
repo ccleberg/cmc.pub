@@ -17,8 +17,6 @@ then walk through the installation process I took to get `curseradio` working.
 
 # Features
 
-![curseradio](https://img.cleberg.net/blog/20220725-curseradio/curseradio.png)
-
 The radio player itself is quite minimal. As you can see in the screenshot
 above, it contains a simple plaintext list of all available categories, which
 can be broken down further and further. In addition, radio shows are available

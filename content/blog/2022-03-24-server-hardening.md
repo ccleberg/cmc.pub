@@ -131,8 +131,6 @@ sudo ufw allow 22
 sudo ufw enable
 ```
 
-![ufw](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ufw.png)
-
 ## `ssh`
 
 1.  Using SSH Keys
@@ -202,9 +200,6 @@ sudo ufw enable
     MFA for `ssh`, see my other post: [Enabling MFA for
     SSH](../enable-totp-mfa-for-ssh/).
 
-    ![SSH
-MFA](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/ssh_mfa.png)
-
 ## `fail2ban`
 
 I haven't written a post on how I use `fail2ban`, but it's quite simple. I use
@@ -222,8 +217,6 @@ sudo fail2ban-client status sshd
 
 This should be used as a last-resort defense and shouldn't be a replacement for
 the security measures mentioned above.
-
-![fail2ban](https://img.cleberg.net/blog/20220324-hardening-a-public-facing-home-server/fail2ban.png)
 
 # Switch
 

@@ -69,14 +69,9 @@ I am using [Lynx](https://lynx.invisible-island.net), a text-based browser that
 runs quickly and easily in the terminal. Lynx allows me to browser most websites
 by simply typing `g` and then typing in the URL I want.
 
-![Lynx](https://img.cleberg.net/blog/20220616-terminal-lifestyle/lynx.png)
-
 If you need a search engine while in Lynx, I recommend [DuckDuckGo
 (Lite)](https://lite.duckduckgo.com/lite/), which allows you to search the web
 using their text-only interface.
-
-![DuckDuckGo
-!Lite](https://img.cleberg.net/blog/20220616-terminal-lifestyle/ddg.png)
 
 Eventually, you will run into websites that don't work (or are just too ugly and
 messy) in a text-only mode, and you'll be forced to switch over to a GUI browser
@@ -120,8 +115,6 @@ Overall, I like gomuks and am able to enjoy all the features I was using in
 Element. The only hiccup I have occurred is manually downloading images to view
 them, which can be annoying.
 
-![gomuks](https://img.cleberg.net/blog/20220616-terminal-lifestyle/gomuks.png)
-
 ## Email
 
 Moving email to the terminal has been the hardest of the tasks for me. Unlike
@@ -147,10 +140,6 @@ that's a problem for another day.
 
 I have just started using [Newsboat](https://newsboat.org/) to read articles in
 my terminal and have found quick success with it.
-
-I'll show you a quick screenshot first:
-
-![Newsboat](https://img.cleberg.net/blog/20220616-terminal-lifestyle/newsboat.png)
 
 The configuration was super easy for this app; I simply installed the app,
 created a file for URLs, and imported my OPML subscriptions that I had exported
@@ -198,5 +187,3 @@ With my current life demands, I am not programming at the moment and have not
 explored the best terminal set-up for programming. However, I have seen many
 peers find success configuring `vim` and `emacs`, so that's where I will start
 when I pick my projects back up.
-
-![nano](https://img.cleberg.net/blog/20220616-terminal-lifestyle/nano.png)

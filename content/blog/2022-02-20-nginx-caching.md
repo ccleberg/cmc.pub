@@ -53,9 +53,6 @@ hours/day \_ 60 minutes/hour \*\* 60 seconds/minute = 2,592,000 seconds).
 The `Expires` field is now showing 22 March 2022, which is 30 days from the day
 of this post, 20 February 2022.
 
-![Image
-Headers](https://img.cleberg.net/blog/20220220-caching-static-content-with-nginx/image_headers.png)
-
 # Caveats
 
 Remember that this caching system is **client-side**, which means that content

@@ -7,9 +7,6 @@ draft = false
 
 # Server OS: Debian
 
-![Debian +
-neofetch](https://img.cleberg.net/blog/20220216-migrating-to-debian-and-nginx/neofetch.png)
-
 I've used various Linux distributions throughout the years, but I've never used
 anything except Ubuntu for my servers. Why? I really have no idea, mostly just
 comfort around the commands and software availability.
@@ -29,9 +26,6 @@ All of this has been similar, apart from small things such as the location of
 users' home folders. No complaints at all from me - Debian seems great.
 
 # Web Server: Nginx
-
-![Nginx
-status](https://img.cleberg.net/blog/20220216-migrating-to-debian-and-nginx/nginx.png)
 
 Once I had the baseline server configuration set-up for Debian, I moved on to
 trying out [Nginx](https://nginx.org) as my web server software. This required
@@ -159,9 +153,6 @@ easier to use these days. I will certainly be exploring the Nginx docs to see
 what other fun things I can do with all of this.
 
 # Gemini Server: Agate
-
-![Agate
-status](https://img.cleberg.net/blog/20220216-migrating-to-debian-and-nginx/agate.png)
 
 Finally, I set up the Agate software on this server again to host my Gemini
 server content, using Rust as I have before. You can read my other post for more

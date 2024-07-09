@@ -42,9 +42,6 @@ and support, I believe these jobs could be both comfortable and efficient.
 
 ## Semi-Private Cubicles
 
-![Semi-Private
-Cubicles](https://img.cleberg.net/blog/20220210-leaving-office-based-work-in-the-past/private_cubicles.png)
-
 After about a year, I was able to find another internship - this time, it was in
 my field of interest: internal auditing. This was for a life insurance company
 that was well over 100 years old. The age of the company shows if you work
@@ -66,9 +63,6 @@ to a home office environment (which is my personal favorite, as I'll get to
 later in this post).
 
 ## Semi-Open Floor Concept
-
-![Semi-Open Floor
-Concept](https://img.cleberg.net/blog/20220210-leaving-office-based-work-in-the-past/semi_open_office.png)
 
 When I shifted to my first full-time internal audit job out of college, I was
 working at a company that was headquartered on a floor in a downtown high-rise
@@ -92,9 +86,6 @@ to get work done, that was a non-starter.
 
 ## Hotel Office Concept
 
-![Hotel Office
-Concept](https://img.cleberg.net/blog/20220210-leaving-office-based-work-in-the-past/hotel_desks.png)
-
 I currently work for a company remotely (for now) and travel to the office every
 once in a while for events and to help coach the staff underneath me. The office
 I visit uses the hotel desk concept, where you need to check in at a touch
@@ -116,9 +107,6 @@ Luckily, you can rent offices with doors that offer quiet and privacy, which can
 be very nice if you have a lot of meetings or webinars on a certain day.
 
 # Home Office
-
-![Home
-Office](https://img.cleberg.net/blog/20220210-leaving-office-based-work-in-the-past/home_office.png)
 
 Okay, now let's finally get to the home office concept. I have worked from home
 for a little over two years at this point, across three different
@@ -217,8 +205,3 @@ open-office layouts.
 
 If I do need to return to an office part-time in the future, I really hope the
 office will have privacy and quietness in order for me to get my work done.
-
-Cubicles are good! I agree with Alice (from the comic Dilbert):
-
-![Dilbert comic
-strip](https://img.cleberg.net/blog/20220210-leaving-office-based-work-in-the-past/dilbert_120109.png)

@@ -86,30 +86,18 @@ wasn't connecting to my Fedora host properly.
 # Screenshots
 
 The initial launch of the image displays the SerenityOS desktop, with a simple
-terminal already launched:
+terminal already launched.
 
-![SerenityOS
-Terminal](https://img.cleberg.net/blog/20220917-serenityos/initial_launch.png)
-
-Here you can see the Fire application (literally just shows fire burning), a
+There is also a "Fire" application (literally just shows fire burning), a
 browser with the local Serenity Browser page loaded, and a text editor.
 
-![SerenityOS
-Fire](https://img.cleberg.net/blog/20220917-serenityos/basic_apps.png)
-
 I also poked around the system utilities and found most tools you'd expect to
-find within a standard desktop.
-
-![SerenityOS System
-Monitor](https://img.cleberg.net/blog/20220917-serenityos/system_monitor.png)
+find within a standard desktop, such as a system monitoring tool.
 
 Lastly, I noted that the default desktop contains numerous pre-defined themes to
 choose from. This is a small piece, but it's actually wonderful to see desktop
 developers consider theming directly out of the box rather than using an
 addon-based mentality.
-
-![SerenityOS
-Themes](https://img.cleberg.net/blog/20220917-serenityos/themes.png)
 
 I didn't take a screenshot of the other pre-installed games, but I did spend
 nearly 30 minutes playing Solitaire before remembering that I was supposed to be

@@ -147,16 +147,3 @@ sudo certbot --apache
 
 Voilà! You're all done and should be able to access Nextcloud from your domain
 or IP address.
-
-See the screenshots below for the dashboard and a settings page on my instance
-of Nextcloud, using the `Breeze Dark` theme I installed from the Apps page.
-
-![Nextcloud
-Dashboard](https://img.cleberg.net/blog/20220323-installing-nextcloud-on-ubuntu/nextcloud_dashboard.png)
-
-_Figure 01: Nextcloud Dashboard_
-
-![Nextcloud
-Settings](https://img.cleberg.net/blog/20220323-installing-nextcloud-on-ubuntu/nextcloud_settings.png)
-
-_Figure 02: Nextcloud Security Settings_
