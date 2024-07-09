@@ -82,9 +82,6 @@ You can also go to the [Connection Check ​\|
 Mullvad](https://mullvad.net/en/check/) page to see if you are fully connected
 to Mullvad and if any leaks exist.
 
-![Mullvad Connection
-Check](https://img.cleberg.net/blog/20230123-random-mullvad-wireguard/mullvad_check.png)
-
 # Disconnecting from the Wireguard Connection
 
 If you forget which connection you're using, you can execute the following

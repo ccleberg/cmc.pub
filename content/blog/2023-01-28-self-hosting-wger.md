@@ -140,9 +140,3 @@ terms of reps and weight.
 
 I haven't tried the food log yet and I likely will not, at least for a while. I
 have no need for a food log or calorie tracker at the moment.
-
-## Screenshot Example
-
-You can see an example of a dashboard with placeholder data here:
-
-![wger dashboard](https://img.cleberg.net/blog/20230128-wger/wger.png)

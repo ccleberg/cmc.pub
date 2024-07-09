@@ -65,9 +65,6 @@ which will show the version of the app, status of the admin/CalDAV/CardDAV
 services, and the number of users, calendars, events, address books, and
 contacts.
 
-![Baikal
-Dashboard](https://img.cleberg.net/blog/20230608-baikal/baikal-dashboard.png)
-
 To create a new user, navigate to the `Users and resources` page. This process
 is as simple as entering a username, password, and email.
 

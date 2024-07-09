@@ -41,9 +41,6 @@ Page](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/create.png)
 Once created, the dialog will close and you will be presented with your new list
 of machines. Simply double-click on a machine to run it.
 
-![OrbStack Machines
-List](https://img.cleberg.net/blog/20240503-ubuntu-on-macos/machine.png)
-
 When you run the machine for the first time, it may warn you that a program is
 attempting to run a shell script. You can choose to manually inspect this shell
 script via the provided path if you wish. When you're comfortable with the

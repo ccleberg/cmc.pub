@@ -27,14 +27,9 @@ blocked yet.
 
 # Create an IP Group Profile
 
-To start, login to the Unifi machine's web GUI and navigate to the Network app
-
-> Settings > Profiles.
+To start, login to the Unifi machine's web GUI and navigate to the Network app > Settings > Profiles.
 
 Within this page, choose the `IP Groups` tab and click `Create New`.
-
-![Network
-Profiles](https://img.cleberg.net/blog/20230618-unifi-ip-blocklist/unifi_profiles.png)
 
 Each IP Group profile can be used as one of three options:
 
@@ -45,9 +40,6 @@ Each IP Group profile can be used as one of three options:
 In this example, I'm creating an IPv4 Address/Subnet group and adding a few
 different IP addresses and a subnet. Once you've added all IP addresses and
 subnets, click the `Apply` button that should appear at the bottom.
-
-![Network Profile
-IPs](https://img.cleberg.net/blog/20230618-unifi-ip-blocklist/abusive_ips.png)
 
 At this point, the IPv4 Address/Subnet has been created but not yet used.
 
@@ -68,9 +60,6 @@ entry should contain the following settings:
 
 Customize the remaining configurations to your liking, and then save and enable
 the firewall rule.
-
-![Firewall
-Rule](https://img.cleberg.net/blog/20230618-unifi-ip-blocklist/firewall_drop_rule.png)
 
 Once enabled, the Unifi machine will be able to drop all incoming connections
 from the defined IP addresses and subnets within the created profile.

@@ -50,19 +50,3 @@ zcat /var/log/nginx/example.access.log.*.gz | goaccess     \
 -o output.html                                             \
 /var/log/nginx/example.access.log -
 ```
-
-## Example Output
-
-See below for an example of the HTML output:
-
-![GoAccess
-HTML](https://img.cleberg.net/blog/20230608-goaccess/goaccess-dashboard.png)
-
-You can also see the GeoIP card created by the integration of the MaxMind
-database information.
-
-![GoAccess
-GeoIP](https://img.cleberg.net/blog/20230608-goaccess/goaccess-geoip.png)
-
-That's all there is to it! Informational data is provided in an organized
-fashion with minimal effort.

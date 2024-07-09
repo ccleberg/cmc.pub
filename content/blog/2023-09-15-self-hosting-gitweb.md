@@ -14,10 +14,6 @@ the `lighttpd` or `webrick` web servers.
 However, this guide will show you how to keep GitWeb running in the background
 and display information for all repositories in a chosen directory.
 
-See below for the final result:
-
-![Gitweb](https://img.cleberg.net/blog/20230915-gitweb/gitweb.png)
-
 # Install Dependencies
 
 To start, you'll need install the following packages:

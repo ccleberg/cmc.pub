@@ -90,23 +90,14 @@ anything private.
 After creating an account, you can click the `Create` > `Web Authoring` link to
 create your first visualization.
 
-![Create
-Button](https://img.cleberg.net/blog/20240127-tableau-dashboard/create_button.png)
-
 ## Upload the Data
 
 Once you've opened your first project, Tableau will ask you to connect to your
 data. For this project, click the `Upload from computer` button and select the
 CSV file previously combined in the step above.
 
-![Connect
-Data](https://img.cleberg.net/blog/20240127-tableau-dashboard/connect_data.png)
-
 Once connected, you can refresh the preview of the data with the `Refresh Data
 Source` button in the toolbar.
-
-![Data
-Preview](https://img.cleberg.net/blog/20240127-tableau-dashboard/data_preview.png)
 
 If you need to edit any of the data types, column names, etc., you can do so
 now. Once complete, generate an extract so that you can start creating
@@ -129,9 +120,6 @@ following fields:
     -   Datetime
 -   `Filters`: Datetime
 
-![Worksheet
-Editing](https://img.cleberg.net/blog/20240127-tableau-dashboard/worksheet_edit.png)
-
 You can repeat this process for each visualization you want to create. Explore
 your options by dragging data fields to different areas and by opening the field
 options to explore what operations can be performed on different data types
@@ -142,9 +130,6 @@ options to explore what operations can be performed on different data types
 To create a dashboard, click the button on the toolbar at the bottom of the
 screen. Within the dashboard, drag each sheet from the left side bar onto the
 dashboard canvas.
-
-![Dashboard
-Editing](https://img.cleberg.net/blog/20240127-tableau-dashboard/dashboard_edit.png)
 
 ## Formatting
 
