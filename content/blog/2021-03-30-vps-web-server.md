@@ -387,7 +387,7 @@ your actions and make sure you didn't miss any steps.
 
 Many websites have fantastic guides to setting up various web servers. This is
 one of the areas [where DigitalOcean
-shines](https://www.digitalocean.%20com/community/tutorials). For simpler or
+shines](https://www.digitalocean.com/community/tutorials). For simpler or
 more Linux-oriented questions, I suggest using [Linuxize]
 (<https://linuxize.com>).
 

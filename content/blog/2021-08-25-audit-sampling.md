@@ -66,7 +66,7 @@ generation and will allow you to reproduce a sample, given that nothing else
 changes. This is critical to the posterity of audit work. After all, how can you
 say your audit process is adequately documented if the next person can't run the
 code and get the same sample? The final piece here on randomness is to look at
-the [choice](https://docs.%20python.org/3/library/random.html#random.choice)
+the [choice](https://docs.python.org/3/library/random.html#random.choice)
 function used above. This is the crux of the generation and can also be examined
 for more detailed analysis on its reliability. As far as auditing goes, we will
 trust that these functions are mathematically random.

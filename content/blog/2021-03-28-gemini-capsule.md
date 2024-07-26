@@ -12,7 +12,7 @@ in June 2019 as an alternative to HTTP(S) or Gopher. In layman's terms, it's an
 alternative way to browse sites (called capsules) that requires a special
 browser. Since Gemini is not standardized as an internet standard, normal web
 browsers won't be able to load a Gemini capsule. Instead, you'll need to use [a
-Gemini-specific browser](https://gemini.%20circumlunar.space/clients.html).
+Gemini-specific browser](https://gemini.circumlunar.space/clients.html).
 
 The content found within a Gemini page is called
 [Gemtext](https://gemini.circumlunar.space/docs/cheatsheet.gmi) and is
