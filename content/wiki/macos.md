@@ -108,6 +108,8 @@ echo "yabai configuration loaded.."
 -   [dust](https://github.com/bootandy/dust) - A more intuitive version of du in
     rust
 -   [eza](https://github.com/eza-community/eza) - A modern alternative to ls
+-   [macchina](https://github.com/Macchina-CLI/macchina) - A system information
+    frontend with an emphasis on performance.
 -   [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A youtube-dl fork with
     additional features and fixes
 
