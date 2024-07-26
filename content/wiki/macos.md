@@ -99,6 +99,18 @@ echo "yabai configuration loaded.."
 -   [eww](https://www.gnu.org/software/emacs/manual/html_mono/eww.html) - Emacs
     Web Wowser, for TUI browsing
 
+### Command Line Tools
+
+-   [doggo](https://github.com/mr-karan/doggo) - Command-line DNS Client for
+    Humans
+-   [duf](https://github.com/muesli/duf) - Disk Usage/Free Utility - a better
+    'df' alternative
+-   [dust](https://github.com/bootandy/dust) - A more intuitive version of du in
+    rust
+-   [eza](https://github.com/eza-community/eza) - A modern alternative to ls
+-   [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A youtube-dl fork with
+    additional features and fixes
+
 ### Communications
 
 -   [Element](https://element.io/) (`*`) - Matrix's default GUI client
@@ -190,5 +202,3 @@ echo "yabai configuration loaded.."
     configuration options for macOS
 -   [yabai](https://github.com/koekeishiya/yabai) (`*`) - Automatic window
     tiling
--   [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A youtube-dl fork with
-    additional features and fixes
