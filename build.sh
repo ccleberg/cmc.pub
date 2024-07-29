@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "Did you update the 'Recent Blog Posts' section? [yn]"
+printf "Did you update the 'Recent Blog Posts' section? [yn] "
 read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ; then
@@ -8,7 +8,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ; then
 		echo "Environment = Production"              && \
 		rm -rf .build/*                              && \
 		emacs --script publish.el                    && \
-		rsync -av --delete-before public/* ubuntu:/var/www/cleberg.net/
+		rsync -av --delete-before .build/* ubuntu:/var/www/cleberg.net/
 	else
 		echo "Environment = Development"             && \
 		rm -rf .build/*                              && \
