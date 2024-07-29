@@ -546,6 +546,10 @@ summary {
     font-weight: bold;
 }
 
+span.tag::before {
+    content: "#";
+}
+
 .footnote-definition {
     display: flex;
     justify-content: flex-start;
