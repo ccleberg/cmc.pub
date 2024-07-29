@@ -1,0 +1,75 @@
+#+date: <2023-06-18>
+#+title: Block IP Addresses and Subnets with Unifi Network Firewall
+#+description: 
+
+
+* Identifying Abusive IPs
+
+If you're like me and use Unifi network equipment at the edge of the
+network you manage, you may know that Unifi is only somewhat decent at
+identifying and blocking IPs that represent abusive or threat actors.
+
+While Unifi has a
+[[https://help.ui.com/hc/en-us/articles/360006893234-UniFi-Gateway-Threat-Management][threat
+management]] tool inside their Network application, it can be lacking in
+functionality and identification. For example, I have my UDM Pro set to
+identify and block almost all categories of threats available within the
+Unifi settings. However, I regularly identify abusive actors on my web
+server via the server logs.
+
+In addition, I have identified IP addresses and subnets directly within
+Unifi's logs that the UDM did not block for whatever reason.
+
+This guide is meant to be another step in the process to manually block
+abusive IP addresses or subnets that you have identified but are not
+being automatically blocked yet.
+
+* Create an IP Group Profile
+
+To start, login to the Unifi machine's web GUI and navigate to the
+Network app > Settings > Profiles.
+
+Within this page, choose the =IP Groups= tab and click =Create New=.
+
+Each IP Group profile can be used as one of three options:
+
+1. Port Group
+2. IPv4 Address/Subnet
+3. IPv6 Address/Subnet
+
+In this example, I'm creating an IPv4 Address/Subnet group and adding a
+few different IP addresses and a subnet. Once you've added all IP
+addresses and subnets, click the =Apply= button that should appear at
+the bottom.
+
+At this point, the IPv4 Address/Subnet has been created but not yet
+used.
+
+* Drop IP Group Profile via the Unifi Firewall
+
+To instruct the Unifi machine to block the profile we just created, we
+need to navigate to the Network app > Settings > Firewall & Security.
+
+Within this screen, find the Firewall Rules table and click
+=Create Entry=. This entry should contain the following settings:
+
+- Type: =Internet In=
+- Description: =<Your Custom Rule>=
+- Rule Applied: =Before Predefined Rules=
+- Action: =Drop=
+- Source Type: =Port/IP Group=
+- IPv4 Address Group: =<Name of the Group Profile You Created Above>=
+
+Customize the remaining configurations to your liking, and then save and
+enable the firewall rule.
+
+Once enabled, the Unifi machine will be able to drop all incoming
+connections from the defined IP addresses and subnets within the created
+profile.
+
+#+begin_quote
+As a personal aside to this topic, I'm looking for a convenient way to
+update the firewall rules or profiles remotely (within the LAN) from the
+web server to accelerate this process. If you have an idea on how to
+automatically update Unifi IP groups or firewall rules, let me know!
+#+end_quote

@@ -1,0 +1,119 @@
+#+title: Internet
+#+date: <2024-05-02>
+
+** Gemini
+:PROPERTIES:
+:CUSTOM_ID: gemini
+:END:
+The [[https://geminiprotocol.net/][Gemini Protocol]] is a network of
+interconnected plaintext documents. If you've used
+[[https://en.wikipedia.org/wiki/Gopher_(protocol)][Gopher]] before,
+Gemini will feel very familiar.
+
+Instead of web sites, Gemini uses the term "capsules" that can be access
+via =gemini://= links.
+
+In order to browse Gemini capsules, you will need a client capable of
+supporting Gemini. The Gemini Protocol website has a
+[[https://geminiprotocol.net/software/][Gemini software]] page with a
+list of clients for each platform.
+
+*** Gemtext
+:PROPERTIES:
+:CUSTOM_ID: gemtext
+:END:
+[[https://geminiprotocol.net/docs/cheatsheet.gmi][Gemtext]] is a
+plaintext syntax, very similar to Markdown.
+
+To quote the Gemini Protocol's documentation:
+
+- Long lines get wrapped by the client to fit the screen.
+- Short lines /don't/ get joined together.
+- Write paragraphs as single long lines.
+- Blank lines are rendered verbatim.
+
+#+begin_src md
+[//]: <> (Headings)
+# Heading
+## Sub-heading
+### Sub-subheading
+
+[//]: <> (Lists)
+-   Mercury
+-   Gemini
+-   Apollo
+
+[//]: <> (Quotes)
+> I contend that text-based websites should not exceed in size the major works of Russian literature.
+
+[//]: <> (Links)
+=> gemini://geminiprotocol.net/docs/cheatsheet.gmi
+=> gemini://geminiprotocol.net/docs/cheatsheet.gmi Gemtext cheatsheet
+
+[//]: <> (Preformatted text)
+Any line starting with three backticks (```) will tell the client to toggle to
+"preformatted mode", which disables the client's logical checks to render links,
+headings, etc. and will render the text as-is.
+#+end_src
+
+** Gopher
+:PROPERTIES:
+:CUSTOM_ID: gopher
+:END:
+The [[https://en.wikipedia.org/wiki/Gopher_(protocol)][Gopher Protocol]]
+is a communication protocol, similar to Gemini, that allows for browsing
+of any ones of
+[[https://datatracker.ietf.org/doc/html/rfc1436#section-3.8][the 14
+supported item types]]:
+
+#+begin_src txt
+0   Item is a file
+1   Item is a directory
+2   Item is a CSO phone-book server
+3   Error
+4   Item is a BinHexed Macintosh file.
+5   Item is DOS binary archive of some sort.
+    Client must read until the TCP connection closes.  Beware.
+6   Item is a UNIX uuencoded file.
+7   Item is an Index-Search server.
+8   Item points to a text-based telnet session.
+9   Item is a binary file!
+        Client must read until the TCP connection closes.  Beware.
++   Item is a redundant server
+T   Item points to a text-based tn3270 session.
+g   Item is a GIF format graphics file.
+I   Item is some kind of image file.  Client decides how to display.
+#+end_src
+
+*** Simplicity is Intentional
+:PROPERTIES:
+:CUSTOM_ID: simplicity-is-intentional
+:END:
+Gopher is
+[[https://datatracker.ietf.org/doc/html/rfc1436#section-4][meant to be
+simplistic]].
+
+#+begin_src txt
+As far as possible we desire any new features to be carried as new
+protocols that will be hidden behind new document-types.  The
+internet Gopher philosophy is:
+
+    (a) Intelligence is held by the server.  Clients have the option
+    of being able to access new document types (different, other types
+    of servers) by simply recognizing the document-type character.
+    Further intelligence to be borne by the protocol should be
+    minimized.
+
+    (b) The well-tempered server ought to send "text" (unless a file
+    must be transferred as raw binary).  Should this text include
+    tabs, formfeeds, frufru?  Probably not, but rude servers will
+    probably send them anyway.  Publishers of documents should be
+    given simple tools (filters) that will alert them if there are any
+    funny characters in the documents they wish to publish, and give
+    them the opportunity to strip the questionable characters out; the
+    publisher may well refuse.
+
+    (c) The well-tempered client should do something reasonable with
+    funny characters received in text; filter them out, leave them in,
+    whatever.
+#+end_src

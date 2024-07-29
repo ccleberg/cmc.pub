@@ -1,0 +1,59 @@
+#+date: <2022-02-17>
+#+title: Stripping Image Metadata with Exiftool
+#+description: 
+
+
+** Why Strip Metadata?
+
+Okay, so you want to strip metadata from your photos. Perhaps you take
+pictures of very rare birds, and the location metadata is a gold mine
+for poachers, or perhaps you're just privacy-oriented like me and prefer
+to strip metadata from publicly-available images.
+
+There are various components of image metadata that you may want to
+delete before releasing a photo to the public. Here's an incomplete list
+of things I could easily see just by inspecting a photo on my laptop:
+
+- Location (Latitude & Longitude)
+- Dimensions
+- Device Make & Model
+- Color Space
+- Color Profile
+- Focal Length
+- Alpha Channel
+- Red Eye
+- Metering Mode
+- F Number
+
+Regardless of your reasoning, I'm going to explain how I used the
+=exiftool= package in Linux to automatically strip metadata from all
+images in a directory (+ subdirectories).
+
+** Installing =exiftool=
+
+First things first: we need to install the tool. I'm running Debian 11
+on my server (Ubuntu will work the same), so the command is as simple
+as:
+
+#+begin_src sh
+sudo apt install exiftool
+#+end_src
+
+There are different tools that can accomplish the same thing across
+distributions, but I really only care to test out this one package.
+
+** Recursively Strip Data
+
+I actually use this tool extensively to strip any photos uploaded to the
+website that serves all the images for my blog (=img.cleberg.net=).
+
+The following command is incredibly useful and can be modified to
+include any image extensions that =exiftool= supports:
+
+#+begin_src sh
+exiftool -r -all= -ext jpg -ext png /path/to/directory/
+#+end_src
+
+The output of the command will let you know how many directories were
+scanned, how many images were updated, and how many images were
+unchanged.

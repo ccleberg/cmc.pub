@@ -1,0 +1,44 @@
+* cleberg.net
+
+[[https://cleberg.net][cleberg.net]] is my personal webpage and blog.
+
+** Overview
+
+This website & blog uses [[https://orgmode.org/][Org-Mode]], published with [[https://github.com/emacs-love/weblorg][weblorg]].
+
+** Configuration
+
+All configuration options are available within the =publish.el= file. Refer to
+the weblorg documentation for further configuration options.
+
+** Building & Publishing
+
+Local testing is available via [[https://www.gnu.org/software/emacs/][Emacs]] or through the command line.
+
+#+begin_src sh
+git clone https://git.cleberg.net/cleberg.net.git && \
+cd cleberg.net && \
+emacs -nw
+#+end_src
+
+Within Emacs, open any of the repository files. In Doom, I do this with =Spc f
+f= and selecting =README.org=. Make any changes necessary to customize the
+project.
+
+To publish, you can use the =build.sh= script (change the deployment target!) or
+you can run the following commands.
+
+Use the =ENV= environment variable to determine which base URL weblorg will use.
+If ENV is ommitted, it will default to =localhost:8000=. If =ENV=prod=, weblorg
+will look in the =publish.el= file for the production base URL.
+
+#+begin_src sh
+ENV=prod emacs --script publish.el
+#+end_src
+
+The files will be published to the =.build= directory. You can deploy these
+files to the target through any number of methods, such as =scp= or SFTP.
+
+** Tasks
+
+Refer to the [[https://todo.sr.ht/~cyborg/cleberg.net][todo page]] for open tickets or to submit a new ticket.

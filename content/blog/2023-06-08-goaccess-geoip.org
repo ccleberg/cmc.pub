@@ -1,0 +1,52 @@
+#+date: <2023-06-08>
+#+title: Inspecting Nginx Logs with GoAccess and MaxMind GeoIP Data
+#+description: 
+
+
+* Overview
+
+[[https://goaccess.io/][GoAccess]] is an open source real-time web log
+analyzer and interactive viewer that runs in a terminal in *nix systems
+or through your browser.
+
+* Installation
+
+To start, you'll need to install GoAccess for your OS. Here's an example
+for Debian-based distros:
+
+#+begin_src sh
+sudo apt install goaccess
+#+end_src
+
+Next, find any number of the MaxMind GeoIP database files on GitHub or
+another file hosting website. We're going to use P3TERX's version in
+this example:
+
+#+begin_src sh
+wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb
+#+end_src
+
+Be sure to save this file in an easy to remember location!
+
+* Usage
+
+In order to utilize the full capabilities of GoAccess and MMDB, start
+with the command template below and customize as necessary. This will
+export an HTML view of the GoAccess dashboard, showing all relevant
+information related to that site's access log. You can also omit the
+=-o output.html= parameter if you prefer to view the data within the CLI
+instead of creating an HTML file.
+
+With the addition of the GeoIP Database parameter, section
+=16 - Geo Location= will be added with the various countries that are
+associated with the collected IP addresses.
+
+#+begin_src sh
+zcat /var/log/nginx/example.access.log.*.gz | goaccess     \
+--geoip-database=/home/user/GeoLite2-City.mmdb             \
+--date-format=%d/%b/%Y                                     \
+--time-format=%H:%M:%S                                     \
+--log-format=COMBINED                                      \
+-o output.html                                             \
+/var/log/nginx/example.access.log -
+#+end_src

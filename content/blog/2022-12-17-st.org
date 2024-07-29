@@ -1,0 +1,92 @@
+#+date: <2022-12-17>
+#+title: Simple Terminal
+#+description: 
+
+
+* st
+
+[[https://st.suckless.org][st]] standards for Simple Terminal, a simple
+terminal implementation for X made by the
+[[https://suckless.org][suckless]] team.
+
+This post walks through the dependencies needed and process to build and
+install =st= on Fedora Workstation.
+
+** Obtain Files
+
+To start, obtain the source files for =st= via =git clone=.
+
+#+begin_src sh
+mkdir ~/suckless && cd ~/suckless
+git clone https://git.suckless.org/st && cd st
+#+end_src
+
+** Dependencies
+
+Once you have the files and are in the =st= directory, ensure the
+following packages are installed.
+
+#+begin_src sh
+sudo dnf update && sudo dnf upgrade
+sudo dnf install gcc patch libX11-devel libXft-devel
+#+end_src
+
+** Building
+
+Before building, ensure that you read the README file.
+
+#+begin_src sh
+cat README
+#+end_src
+
+Once you've read the instructions, open the =config.mk= file and ensure
+it matches your setup. If you're not sure, leave the default options
+within the file.
+
+Finally, you can build =st= with the following command. Ensure you run
+as root (e.g., =sudo=) or else you may not end up with a usable
+application file.
+
+#+begin_src sh
+sudo make clean install
+#+end_src
+
+** Customization (Patches)
+
+Note that customizing =st= requires you to modify the source files or to
+download one of the [[https://st.suckless.org/patches/][available
+patches]] for suckless.org.
+
+If you've already installed =st= and want to customize or install a
+patch, start by uninstalling the current program.
+
+#+begin_src sh
+cd ~/suckless/st
+sudo make uninstall
+#+end_src
+
+Next, grab the =<path>.diff= file from the page of the patch you chose.
+For example, I will be using the
+[[https://st.suckless.org/patches/defaultfontsize/][defaultfontsize]]
+patch in the below example.
+
+#+begin_src sh
+wget https://st.suckless.org/patches/defaultfontsize/st-defaultfontsize-20210225-4ef0cbd.diff
+#+end_src
+
+Once the file is downloaded inside the =st= folder, apply the patch and
+re-install the program. You may need to install the =patch= command if
+you don't have it installed already (you should have installed it
+above).
+
+#+begin_src sh
+patch -i st-defaultfontsize-20210225-4ef0cbd.diff
+sudo make clean install
+#+end_src
+
+Once installed, you can use the default font size patch to launch =st=
+with any font size you wish:
+
+#+begin_src sh
+st -z 16
+#+end_src

@@ -1,0 +1,246 @@
+#+title: iOS
+#+date: <2024-05-01>
+
+Related:
+
+- [[/wiki/hardware.html][Hardware]]
+
+My primary mobile OS. Currently running iOS 17. This wiki page contains
+most of the apps I have used at one point or another across my different
+iPhones.
+
+(=*=) = My favorites
+
+** Configuration
+:PROPERTIES:
+:CUSTOM_ID: configuration
+:END:
+*** Display
+:PROPERTIES:
+:CUSTOM_ID: display
+:END:
+- Light Mode
+  - 10:00 to 16:00
+- Dark Mode
+  - 16:00 to 10:00
+
+*** Focus Modes
+:PROPERTIES:
+:CUSTOM_ID: focus-modes
+:END:
+- Personal Focus
+  - 06:00 to 21:00
+  - Allow Notifications From:
+    - Alarms
+    - Calendar
+    - Contacts (1 person)
+    - Messages
+    - Phone
+    - Reminders
+    - Signal
+    - UniFi Protect
+- Sleep Focus
+  - 21:00 to 06:00
+  - Allow Notifications From:
+    - Alarms
+    - Contacts (1 person)
+    - Reminders
+    - Signal
+
+*** Privacy & Security
+:PROPERTIES:
+:CUSTOM_ID: privacy-security
+:END:
+I generally follow the
+[[https://en.wikipedia.org/wiki/Principle_of_least_privilege][principle
+of least privilege]] by only permitting the bare minimum privileges and
+revoking as soon as they are no longer required.
+
+Here's the baseline I start with:
+
+- Disable:
+  - Analytics & Improvements
+  - Apple Advertising
+  - Apple ID > Sign-In & Security > Two-Factor Authentication
+  - Location Services > System Services > Product Improvement
+  - Tracking > Allow Apps to Request to Track
+  - Safari > Advanced > Privacy Preserving Ad Measurement
+- Enable:
+  - Apple ID > iCloud > Advanced Data Protection
+  - Apple ID > Personal Information > Communication Preferences
+  - App Privacy Report
+  - Location Services only for Camera, Find My, UDisc, & WiFiman
+    (=While     Using=)
+  - Safari > Prevent Cross-Site Tracking
+  - Safari > Hide IP Address
+  - Safari > Advanced > Advanced Tracking and Fingerprinting Protection
+
+** Native Apps
+:PROPERTIES:
+:CUSTOM_ID: native-apps
+:END:
+*** Business
+:PROPERTIES:
+:CUSTOM_ID: business
+:END:
+- [[https://apps.apple.com/us/app/element-messenger/id1083446067][Element]] -
+  A cross-platform messenger, based on Matrix
+- [[https://apps.apple.com/us/app/linkedin-network-job-finder/id288429040][LinkedIn]]
+  - One of the only social media apps I use
+
+*** Developer Tools
+:PROPERTIES:
+:CUSTOM_ID: developer-tools
+:END:
+- [[https://testflight.apple.com/join/F2vK7xo4][Harbour]] - Easily
+  manage your Portainer service
+- [[https://apps.apple.com/us/app/ish-shell/id1436902243][iSH]] - A
+  local shell with SSH functionality
+
+*** Entertainment
+:PROPERTIES:
+:CUSTOM_ID: entertainment
+:END:
+- [[https://apps.apple.com/us/app/plex-watch-live-tv-and-movies/id383457673][Plex]]
+  - A client for the Plex Media Server
+- [[https://apps.apple.com/us/app/steam-mobile/id495369748][Steam]] -
+  The top gaming marketplace for computers
+
+*** Lifestyle
+:PROPERTIES:
+:CUSTOM_ID: lifestyle
+:END:
+- [[https://apps.apple.com/us/app/home/id1110145103][Home]] (=*=) -
+  Apple homekit powered smart home manager
+- [[https://apps.apple.com/us/app/philips-hue/id1055281310][Hue]] -
+  Philips Hue smart home manager
+- [[https://apps.apple.com/us/app/irobot-home/id1012014442][iRobot]] -
+  Manage iRobot Roomba devices
+- [[https://apps.apple.com/us/app/unifi-protect/id1392492235][UniFi
+  Protect]] - View and manage most UniFi Protect cameras and settings
+
+*** Music
+:PROPERTIES:
+:CUSTOM_ID: music
+:END:
+- [[https://apps.apple.com/us/app/apple-music/id1108187390][Apple
+  Music]] (=*=)
+  - Apple's native music streaming app
+- [[https://apps.apple.com/us/app/plexamp/id1500797510][Plexamp]]
+  (=*=) - Top-notch music app for your Plex Media Server, with a neural
+  network that provides excellent radio/shuffle suggestions
+
+*** Navigation
+:PROPERTIES:
+:CUSTOM_ID: navigation
+:END:
+- [[https://apps.apple.com/us/app/deedum/id1546810946][deedum]] - A
+  Gemini Protocol browser
+
+*** News
+:PROPERTIES:
+:CUSTOM_ID: news
+:END:
+- [[https://apps.apple.com/us/app/netnewswire-rss-reader/id1480640210][NetNewsWire]]
+  - A free and open source RSS reader for Mac, iPhone, and iPad
+
+*** Photo & Video
+:PROPERTIES:
+:CUSTOM_ID: photo-video
+:END:
+- [[https://testflight.apple.com/join/Q6WyyEpS][Aislingeach]] - A quick
+  way to generate and rate images from the Stable Horde
+- [[https://apps.apple.com/us/app/unsplash/id1290631746][Unsplash]] -
+  Premium images, mostly free
+
+*** Productivity
+:PROPERTIES:
+:CUSTOM_ID: productivity
+:END:
+- [[https://apps.apple.com/us/app/beorg-to-do-list-agenda/id1238649962][beorg]]
+  - An org-mode editor, outline, and scheduler with paid extensions
+- [[https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744][Bitwarden]]
+  (=*=) - An open source password manager
+- [[https://apps.apple.com/us/app/bitwarden-authenticator/id6497335175][Bitwarden
+  Authenticator]] (=*=) - Generate 2FA on your device
+- [[https://apps.apple.com/us/app/cryptomator/id1560822163][Cryptomator]] -
+  A cross-platform encryption program
+- [[https://apps.apple.com/us/app/obsidian-connected-notes/id1557175442][Obsidian]]
+  (=*=) - A nice Markdown-based editor based on a "vault" structure.
+  Offers a paid sync solution and community extensions
+- [[https://apps.apple.com/us/app/strongbox-password-manager/id897283731][Strongbox]]
+  - Keepass password manager for iOS & macOS
+- [[https://apps.apple.com/us/app/unifi/id1057750338][UniFi Network]] -
+  View and manage most UniFi Network settings
+
+*** Safari Extensions
+:PROPERTIES:
+:CUSTOM_ID: safari-extensions
+:END:
+- [[https://apps.apple.com/us/app/adguard-adblock-privacy/id1047223162][AdGuard]]
+  - Ad blocker
+- [[https://apps.apple.com/us/app/dark-reader-for-safari/id1438243180][Dark
+  Reader]] - Dark mode for all the sites
+- [[https://apps.apple.com/us/app/pipifier/id1234771095][PiPifier]] -
+  Force videos to support PiP
+- [[https://apps.apple.com/us/app/privacy-redirect/id1578144015][Privacy
+  Redirect]] - Redirect select websites to others, usually to
+  privacy-focused alternatives
+
+*** Social Networking
+:PROPERTIES:
+:CUSTOM_ID: social-networking
+:END:
+- [[https://apps.apple.com/us/app/multitab-for-tumblr/id1071533778][MultiTab
+  T]] (=*=) - A gallery-based Tumblr client with some unique features,
+  such as tab history and sync
+- [[https://apps.apple.com/us/app/signal-private-messenger/id874139669][Signal]]
+  (=*=) - A simple, powerful, and secure messenger
+- [[https://testflight.apple.com/join/mpVk1qIy][Three Cheers]] - A
+  client for Tildes.net with a design focus that matches the intent of
+  Tildes
+- [[https://apps.apple.com/us/app/voyager-for-lemmy/id6451429762][Voyager]] -
+  A Lemmy client
+
+*** Sports
+:PROPERTIES:
+:CUSTOM_ID: sports
+:END:
+- [[https://apps.apple.com/us/app/apple-sports/id6446788829][Apple
+  Sports]] - Apple's new sports app - lacks notifications and live
+  events
+- [[https://apps.apple.com/us/app/udisc-disc-golf/id1072228953][UDisc]] -
+  Disc golf course maps, score cards, and more
+
+*** Utilities
+:PROPERTIES:
+:CUSTOM_ID: utilities
+:END:
+- [[https://apps.apple.com/us/app/backblaze/id628638330][Backblaze]] -
+  Quickly view and manage Backblaze b2 cloud storage
+- [[https://apps.apple.com/us/app/mullvad-vpn/id1488466513][Mullvad
+  VPN]] (=*=)
+  - A private VPN service
+- [[https://apps.apple.com/us/app/otp-auth/id659877384][OTP Auth]]
+  (=*=) - A minimalistic OTP app with support for biometrics, custom
+  icons, import/export, and iCloud sync
+- [[https://apps.apple.com/us/app/plex-dash/id1500797677][Plex Dash]] -
+  Stats about your Plex Media Server
+- [[https://apps.apple.com/us/app/safari/id1146562112][Safari]] - iOS
+  default browser
+- [[https://apps.apple.com/us/app/ubiquiti-wifiman/id1385561119][Unifi
+  WiFiman]]
+  - Create visual layouts of WiFi strength and save heat maps to your
+    phone
+
+** Web Apps & Shortcuts
+:PROPERTIES:
+:CUSTOM_ID: web-apps-shortcuts
+:END:
+- [[https://brutalist.report/][Brutalist Report]] - Minimal news
+  aggregator
+- [[https://cyber.report/][_Cyber.Report]] - Cybersecurity news
+  aggregator
+- [[https://news.ycombinator.com/][Hacker News]] - Mostly technical news
+- [[https://nextdns.io/][NextDNS]] - NextDNS statistics dashboard
+- [[https://readspike.com/][Readspike]] - Minimal news aggregator
