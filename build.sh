@@ -5,9 +5,12 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ; then
 	if [ "$ENV" == "prod" ]; then
-		echo "Environment = Production"              && \
-		rm -rf .build/*                              && \
-		emacs --script publish.el                    && \
+		echo "Environment = Production"                  && \
+		rm -rf .build/*                                  && \
+		emacs --script publish.el			 && \
+		pandoc -f org -t html readme.org  -o readme.html && \
+		hut git update --readme readme.html --repo          \
+		https://git.sr.ht/\~cyborg/cleberg.net           && \
 		rsync -av --delete-before .build/* ubuntu:/var/www/cleberg.net/
 	else
 		echo "Environment = Development"             && \
