@@ -2,6 +2,7 @@
 #+title: Emacs on iPadOS
 #+description: Learn how to install and use Emacs on the Apple Silicon iPad natively.
 #+filetags: :emacs:apple:
+#+slug: emacs-on-ipad
 
 
 This post describes the process to install and use Emacs on the iPad Air

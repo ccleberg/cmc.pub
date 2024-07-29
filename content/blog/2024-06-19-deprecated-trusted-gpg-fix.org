@@ -1,7 +1,7 @@
 #+date: <2024-06-19 08:00:00>
 #+title: Fixing Ubuntu Error: 'Key is stored in legacy trusted.gpg keyring'
 #+description: Learn how to update GPG keys from the trusted.gpg keyring in Ubuntu.
-
+#+slug: deprecated-trusted-gpg-fix
 
 ** System Warning
 

@@ -1,7 +1,7 @@
 #+date: <2024-05-03>
 #+title: Running Ubuntu Linux on macOS with OrbStack
 #+description: Learn how to run Linux machines as applications on macOS with minimal hassle.
-
+#+slug: ubuntu-on-macos
 
 Being a macOS user who previously used Linux for many years, I often
 find myself searching for alternatives to the Linux-native tools and
