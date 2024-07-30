@@ -1,7 +1,7 @@
 #+date: <2022-06-22>
 #+title: Daily Plaintext Poetry via Email
 #+description: 
-
+#+slug: daily-poetry
 
 * Source Code
 
