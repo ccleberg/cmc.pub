@@ -1,7 +1,7 @@
 #+date: <2022-04-02>
 #+title: Set-Up a Reverse Proxy with Nginx
 #+description: 
-
+#+slug: nginx-reverse-proxy
 
 * What is a Reverse Proxy?
 

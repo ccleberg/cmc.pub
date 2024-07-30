@@ -1,7 +1,7 @@
 #+date: <2024-01-26>
 #+title: Building an Audit Status Dashboard
 #+description: 
-
+#+slug: audit-dashboard
 
 Alteryx and Power BI are powerful tools that can help turn your
 old-school audit trackers into interactive tools that provide useful

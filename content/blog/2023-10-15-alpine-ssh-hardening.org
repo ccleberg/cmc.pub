@@ -1,7 +1,7 @@
 #+date: <2023-10-15>
 #+title: SSH Hardening for Alpine Linux
 #+description: 
-
+#+slug: alpine-ssh-hardening
 
 * Overview
 

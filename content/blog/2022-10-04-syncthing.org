@@ -1,7 +1,7 @@
 #+date: <2022-10-04>
 #+title: Syncthing: A Minimal Self-Hosted Cloud Storage Solution
 #+description: 
-
+#+slug: syncthing
 
 * An Overview of Syncthing
 

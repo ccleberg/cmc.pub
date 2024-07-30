@@ -1,7 +1,7 @@
 #+date: <2020-12-27>
 #+title: Redesigning My Website: The 5 KB Result
 #+description: 
-
+#+slug: website-redesign
 
 * A Brief History
 

@@ -1,7 +1,7 @@
 #+date: <2022-03-08>
 #+title: Migrating Plex to a New Server with Nvidia GPU Transcoding
 #+description: 
-
+#+slug: plex-migration
 
 * Migration Phases
 :PROPERTIES:

@@ -1,7 +1,7 @@
 #+date: <2022-07-30>
 #+title: Recursive Command-Line FLAC to Opus Conversion
 #+description: 
-
+#+slug: flac-to-opus
 
 * Converting FLAC to OPUS
 

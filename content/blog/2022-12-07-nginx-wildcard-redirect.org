@@ -1,7 +1,7 @@
 #+date: <2022-12-07>
 #+title: Redirect Nginx Subdomains and Trailing Content with Regex
 #+description: 
-
+#+slug: nginx-wildcard-redirect
 
 * Problem
 

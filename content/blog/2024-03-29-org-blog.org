@@ -1,7 +1,7 @@
 #+date: <2024-03-29>
 #+title: Blogging in Org-Mode 
 #+description: 
-
+#+slug: org-blog
 
 First and foremost, apologies to those who subscribe via RSS as I know
 that my feed duplicated itself when I moved this blog over to org-mode

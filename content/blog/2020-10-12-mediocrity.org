@@ -1,7 +1,7 @@
 #+date: <2020-10-12>
 #+title: On the Pursuit of Mediocrity
 #+description:
-
+#+slug: mediocrity
 
 * Perfect is the Enemy of Good
 

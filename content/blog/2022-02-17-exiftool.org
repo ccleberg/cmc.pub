@@ -1,7 +1,7 @@
 #+date: <2022-02-17>
 #+title: Stripping Image Metadata with Exiftool
 #+description: 
-
+#+slug: exiftool
 
 ** Why Strip Metadata?
 

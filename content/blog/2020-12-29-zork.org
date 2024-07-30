@@ -1,7 +1,7 @@
 #+date: <2020-12-29>
 #+title: Zork: Let's Explore a Classic
 #+description: 
-
+#+slug: zork
 
 * Download (Free)
 

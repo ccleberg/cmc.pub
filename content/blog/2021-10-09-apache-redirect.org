@@ -1,7 +1,7 @@
 #+date: <2021-10-09>
 #+title: Apache Redirect HTML Files to a Directory
 #+description: 
-
+#+slug: apache-redirect
 
 * The Problem
 

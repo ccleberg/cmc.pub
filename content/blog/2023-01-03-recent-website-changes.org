@@ -1,7 +1,7 @@
 #+date: <2023-01-03>
 #+title: Recent Website Changes 
 #+description: 
-
+#+slug: recent-website-changes
 
 * The State of This Website
 

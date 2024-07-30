@@ -1,7 +1,7 @@
 #+date: <2024-01-08>
 #+title: Don't Say Hello
 #+description: 
-
+#+slug: dont-say-hello
 
 I recently came back from a winter break and have started working
 again... only to immediately run into the dilemma of people sending me

@@ -1,7 +1,7 @@
 #+date: <2022-06-24>
 #+title: Rebooting My Love Affair with Linux
 #+description: 
-
+#+slug: fedora-i3
 
 * Leaving macOS
 

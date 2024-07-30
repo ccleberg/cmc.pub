@@ -1,7 +1,7 @@
 #+date: <2021-05-30>
 #+title: Changing Git Authors 
 #+description: 
-
+#+slug: changing-git-authors
 
 * Changing Git Author/Email Based on Previously Committed Email
 

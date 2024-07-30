@@ -1,7 +1,7 @@
 #+date: <2023-06-08>
 #+title: Inspecting Nginx Logs with GoAccess and MaxMind GeoIP Data
 #+description: 
-
+#+slug: goaccess-geoip
 
 * Overview
 

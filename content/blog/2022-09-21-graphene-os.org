@@ -1,7 +1,7 @@
 #+date: <2022-09-21>
 #+title: Installing Graphene OS on the Pixel 6 Pro
 #+description: 
-
+#+slug: graphene-os
 
 * Introduction
 

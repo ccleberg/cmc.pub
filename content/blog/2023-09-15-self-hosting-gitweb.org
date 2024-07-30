@@ -1,7 +1,7 @@
 #+date: <2023-09-15>
 #+title: Self-Hosting Gitweb via Nginx
 #+description: 
-
+#+slug: self-hosting-gitweb
 
 * Overview
 

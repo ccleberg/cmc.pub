@@ -1,6 +1,7 @@
 #+date: <2022-03-02>
 #+title: Easy, Reliable Note-Taking
 #+description:
+#+slug: reliable-notes
 
 * Choosing Durable File Formats
 :PROPERTIES:

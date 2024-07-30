@@ -1,7 +1,7 @@
 #+date: <2023-10-04>
 #+title: Digital Minimalism 
 #+description: 
-
+#+slug: digital-minimalism
 
 I've written [[file:///wiki/#digital-garden][a note about minimalism]]
 before, but I wanted to dedicate some time to reflect on digital

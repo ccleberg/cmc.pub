@@ -1,7 +1,7 @@
 #+date: <2021-01-01>
 #+title: SEUM: Spreedrunners from Hell
 #+description: 
-
+#+slug: seum
 
 * Game Description
 

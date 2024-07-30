@@ -1,7 +1,7 @@
 #+date: <2024-03-13>
 #+title: Doom Emacs & Org-Mode 
 #+description: 
-
+#+slug: doom-emacs
 
 ** Screenshots
 

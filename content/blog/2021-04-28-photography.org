@@ -1,7 +1,7 @@
 #+date: <2021-04-28>
 #+title: Jumping Back Into Photography
 #+description: 
-
+#+slug: photography
 
 * Why Photography?
 

@@ -1,7 +1,7 @@
 #+date: <2020-12-28>
 #+title: Neon Drive: A Nostalgic 80s Arcade Racing Game
 #+description: 
-
+#+slug: neon-drive
 
 * Game Description
 

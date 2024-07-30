@@ -1,7 +1,7 @@
 #+date: <2024-03-15>
 #+title: Self-Hosting DDNS Updater
 #+description:
-
+#+slug: self-hosting-ddns-updater
 
 #+caption: DDNS Updater Web View
 [[https://img.cleberg.net/blog/20240315-ddns-updater/ddns.png]]

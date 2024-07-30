@@ -1,7 +1,7 @@
 #+date: <2018-11-28>
 #+title: The C++ Compiler
 #+description: 
-
+#+slug: cpp-compiler
 
 * A Brief Introduction
 

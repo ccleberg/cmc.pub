@@ -1,7 +1,7 @@
 #+date: <2024-01-09>
 #+title: Customizing macOS
 #+description: 
-
+#+slug: macos-customization
 
 I have been using macOS more than Linux lately, so I wrote this post to
 describe some simple options to customize macOS beyond the normal

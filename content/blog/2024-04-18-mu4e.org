@@ -1,7 +1,7 @@
 #+date: <2024-04-18>
 #+title: Email in Doom Emacs with Mu4e on macOS
 #+description: 
-
+#+slug: mu4e
 
 This post was heavily inspired by
 [[https://macowners.club/posts/email-emacs-mu4e-macos/][Email setup in

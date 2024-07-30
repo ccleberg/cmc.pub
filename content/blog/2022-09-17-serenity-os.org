@@ -1,7 +1,7 @@
 #+date: <2022-09-17>
 #+title: Serenity OS: Testing Out a Unique System
 #+description: 
-
+#+slug: serenity-os
 
 * Overview
 

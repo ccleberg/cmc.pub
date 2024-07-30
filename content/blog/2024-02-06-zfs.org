@@ -1,7 +1,7 @@
 #+date: <2024-02-06>
 #+title: How to Create a ZFS Pool on Ubuntu Linux
 #+description: 
-
+#+slug: zfs
 
 This post details the process I used to create ZFS pools, datasets, and
 snapshots on Ubuntu Server.

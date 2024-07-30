@@ -1,7 +1,7 @@
 #+date: <2023-06-18>
 #+title: Block IP Addresses and Subnets with Unifi Network Firewall
 #+description: 
-
+#+slug: unifi-ip-blocklist
 
 * Identifying Abusive IPs
 

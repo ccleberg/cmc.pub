@@ -1,7 +1,7 @@
 #+date: <2021-03-19>
 #+title: How to Clonse All Repositories from a GitHub or Sourcehut Account
 #+description: 
-
+#+slug: clone-github-repos
 
 * Cloning from GitHub
 

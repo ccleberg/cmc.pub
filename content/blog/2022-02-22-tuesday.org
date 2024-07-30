@@ -1,7 +1,7 @@
 #+date: <2022-02-22>
 #+title: Tuesday
 #+description: 
-
+#+slug: tuesday
 
 * Tuesday, Twosday
 

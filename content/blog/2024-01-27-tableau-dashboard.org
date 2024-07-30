@@ -1,7 +1,7 @@
 #+date: <2024-01-27>
 #+title: Data Visualization: Mapping Omaha Crime Data with Tableau
 #+description: 
-
+#+slug: tableau-dashboard
 
 In this project, I am going to show you how to use Tableau Public for
 free to create simple dashboards.

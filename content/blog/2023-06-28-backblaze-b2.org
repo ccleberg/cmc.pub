@@ -1,7 +1,7 @@
 #+date: <2023-06-28>
 #+title: Getting Started with Backblaze B2 Cloud Storage
 #+description: 
-
+#+slug: backblaze-b2
 
 * Overview
 

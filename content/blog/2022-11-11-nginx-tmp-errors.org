@@ -1,7 +1,7 @@
 #+date: <2022-11-11>
 #+title: Fixing Permission Errors in /var/lib/nginx
 #+description: 
-
+#+slug: nginx-tmp-errors
 
 /This is a brief post so that I personally remember the solution as it
 has occurred multiple times for me./

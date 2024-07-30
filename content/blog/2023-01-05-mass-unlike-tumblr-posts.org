@@ -1,7 +1,7 @@
 #+date: <2023-01-05>
 #+title: How to Easily Mass Unlike Tumblr Posts with Javascript
 #+description: 
-
+#+slug: mass-unlike-tumblr-posts
 
 * The Dilemma
 

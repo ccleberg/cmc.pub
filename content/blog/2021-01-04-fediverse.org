@@ -1,7 +1,7 @@
 #+date: <2021-01-04>
 #+title: A Simple Guide to the Fediverse
 #+description: 
-
+#+slug: fediverse
 
 * What is the Fediverse?
 

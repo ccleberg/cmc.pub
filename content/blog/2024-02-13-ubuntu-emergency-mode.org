@@ -1,7 +1,7 @@
 #+date: <2024-02-13>
 #+title: Stuck in Ubuntu's Emergency Mode? Try Fixing the Fstab File
 #+description: 
-
+#+slug: ubuntu-emergency-mode
 
 * The Problem
 

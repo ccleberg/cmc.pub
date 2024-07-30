@@ -1,7 +1,7 @@
 #+date: <2022-04-09>
 #+title: PineTime: An Open-Source Smart Watch
 #+description: 
-
+#+slug: pinetime
 
 * PineTime Product Information
 

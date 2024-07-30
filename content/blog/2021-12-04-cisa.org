@@ -1,7 +1,7 @@
 #+date: <2021-12-04>
 #+title: I Passed the CISA! 
 #+description: 
-
+#+slug: cisa
 
 * What is the CISA?
 

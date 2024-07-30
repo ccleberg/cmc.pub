@@ -1,7 +1,7 @@
 #+date: <2020-05-03>
 #+title: An Inside Look at My Home Lab
 #+description: 
-
+#+slug: homelab
 
 * What is a Homelab?
 

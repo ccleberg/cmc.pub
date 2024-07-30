@@ -1,7 +1,7 @@
 #+date: <2023-09-19>
 #+title: Useful SQL Scripts for Auditing Logical Access
 #+description: 
-
+#+slug: audit-sql-scripts
 
 * Overview
 

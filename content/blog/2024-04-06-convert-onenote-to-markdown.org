@@ -1,7 +1,7 @@
 #+date: <2024-04-06>
 #+title: Convert OneNote to Markdown or Org-Mode
 #+description: 
-
+#+slug: convert-onenote-to-markdown
 
 If you're looking to convert your OneNote content to another format,
 such as Markdown or Org-Mode, you're in luck. I use a solution that

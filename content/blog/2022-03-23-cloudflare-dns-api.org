@@ -1,7 +1,7 @@
 #+date: <2022-03-23>
 #+title: Dynamic DNS with Cloudflare API
 #+description: 
-
+#+slug: cloudflare-dns-api
 
 * DDNS: Dynamic DNS
 :PROPERTIES:

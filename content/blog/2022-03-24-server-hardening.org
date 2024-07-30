@@ -1,7 +1,7 @@
 #+date: <2022-03-24>
 #+title: Hardening a Public-Facing Home Server
 #+description: 
-
+#+slug: server-hardening
 
 * Post Updates
 

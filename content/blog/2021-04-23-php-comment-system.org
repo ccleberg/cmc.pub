@@ -1,7 +1,7 @@
 #+date: <2021-04-23>
 #+title: Roll Your Own Static Commenting System in PHP
 #+description: 
-
+#+slug: php-comment-system
 
 * The Terrible-ness of Commenting Systems
 

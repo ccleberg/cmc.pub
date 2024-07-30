@@ -1,7 +1,7 @@
 #+date: <2020-07-20>
 #+title: Data Exploration: Video Games Sales
 #+description: 
-
+#+slug: video-game-sales
 
 * Background Information
 

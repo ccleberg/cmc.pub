@@ -1,7 +1,7 @@
 #+date: <2020-09-25>
 #+title: Data Visualization: World Choropleth Map of Happiness
 #+description: 
-
+#+slug: happiness-map
 
 * Background Information
 

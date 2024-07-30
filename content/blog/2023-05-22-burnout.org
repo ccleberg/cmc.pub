@@ -1,7 +1,7 @@
 #+date: <2023-05-22>
 #+title: RE: Burnout
 #+description: 
-
+#+slug: burnout
 
 * RE: Burnout
 

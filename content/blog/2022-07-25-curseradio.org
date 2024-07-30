@@ -1,7 +1,7 @@
 #+date: <2022-07-25>
 #+title: CurseRadio: Listening to the Radio on the Command Line
 #+description: 
-
+#+slug: curseradio
 
 * Overview
 

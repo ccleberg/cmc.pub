@@ -1,7 +1,7 @@
 #+date: <2021-02-19>
 #+title: macOS: Testing Out a New OS
 #+description:
-
+#+slug: macos
 
 * Diving into macOS
 

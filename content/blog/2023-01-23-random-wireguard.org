@@ -1,7 +1,7 @@
 #+date: <2023-01-23>
 #+title: Connecting to a Random Mullvad Wireguard Host on Boot
 #+description: 
-
+#+slug: random-wireguard
 
 * Mullvad Wireguard
 

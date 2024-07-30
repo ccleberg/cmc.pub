@@ -1,7 +1,7 @@
 #+date: <2022-07-31>
 #+title: Upgrade Bash with Bash-It and Ble.sh
 #+description: 
-
+#+slug: bash-it
 
 * Bash
 

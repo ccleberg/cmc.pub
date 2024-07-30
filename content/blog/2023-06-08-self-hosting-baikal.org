@@ -1,7 +1,7 @@
 #+date: <2023-06-08>
 #+title: Self-Hosting Baikal Server (CalDAV & CardDAV)
 #+description: 
-
+#+slug: self-hosting-baikal
 
 * What is Baikal?
 

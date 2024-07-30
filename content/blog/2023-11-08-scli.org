@@ -1,7 +1,7 @@
 #+date: <2023-11-08>
 #+title: Installing scli on Alpine Linux (musl)
 #+description: 
-
+#+slug: scli
 
 [[https://github.com/isamert/scli][scli]] is a command-line tool that
 allows you to connect to your Signal messenger account. This program

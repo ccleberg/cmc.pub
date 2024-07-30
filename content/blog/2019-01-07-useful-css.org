@@ -1,7 +1,7 @@
 #+date: <2019-01-07>
 #+title: Useful CSS Snippets 
 #+description: 
-
+#+slug: useful-css
 
 * Introduction to CSS
 

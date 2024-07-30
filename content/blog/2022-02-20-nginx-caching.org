@@ -1,7 +1,7 @@
 #+date: <2022-02-20>
 #+title: Caching Static Content with Nginx
 #+description: 
-
+#+slug: nginx-caching
 
 * Update Your Nginx Config to Cache Static Files
 

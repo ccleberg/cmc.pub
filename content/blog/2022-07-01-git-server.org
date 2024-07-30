@@ -1,7 +1,7 @@
 #+date: <2022-07-01>
 #+title: Self-Hosting a Personal Git Server
 #+description: 
-
+#+slug: git-server
 
 * My Approach to Self-Hosting Git
 

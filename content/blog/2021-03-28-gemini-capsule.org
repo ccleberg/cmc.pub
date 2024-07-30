@@ -1,7 +1,7 @@
 #+date: <2021-03-28>
 #+title: Launching a Gemini Capsule
 #+description:
-
+#+slug: gemini-capsule
 
 * What is Gemini?
 

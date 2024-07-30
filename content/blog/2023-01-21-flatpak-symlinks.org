@@ -1,7 +1,7 @@
 #+date: <2023-01-21>
 #+title: Running Flatpak Apps with Symlinks
 #+description: 
-
+#+slug: flatpak-symlinks
 
 * Running Flatpak Apps Should Be Faster
 

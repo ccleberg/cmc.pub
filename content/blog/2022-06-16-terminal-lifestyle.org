@@ -1,7 +1,7 @@
 #+date: <2022-06-16>
 #+title: A Terminal Lifestyle 
 #+description: 
-
+#+slug: terminal-lifestyle
 
 * Text-Based Simplicity
 

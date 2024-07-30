@@ -1,7 +1,7 @@
 #+date: <2022-03-23>
 #+title: Self-Hosting Nextcloud 
 #+description: 
-
+#+slug: nextcloud-on-ubuntu
 
 * What is Nextcloud?
 :PROPERTIES:

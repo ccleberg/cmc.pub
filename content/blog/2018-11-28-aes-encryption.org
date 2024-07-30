@@ -1,6 +1,7 @@
 #+title: AES Encryption
 #+date: <2018-11-28>
 #+description: A beginner's guide to AES encryption.
+#+slug: aes-encryption
 
 * Basic AES
 

@@ -1,7 +1,7 @@
 #+date: <2022-12-23>
 #+title: Alpine Linux as a Desktop OS
 #+description:
-
+#+slug: alpine-desktop
 
 * Isn't Alpine Linux for Servers?
 

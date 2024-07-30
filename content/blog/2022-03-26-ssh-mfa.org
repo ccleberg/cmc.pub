@@ -1,7 +1,7 @@
 #+date: <2022-03-26>
 #+title: Enable TOTP MFA for SSH 
 #+description: 
-
+#+slug: ssh-mfa
 
 * Why Do I Need MFA for SSH?
 

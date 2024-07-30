@@ -1,7 +1,7 @@
 #+date: <2022-10-22>
 #+title: Alpine Linux: My New Server OS
 #+description: 
-
+#+slug: alpine-linux
 
 * Alpine Linux
 

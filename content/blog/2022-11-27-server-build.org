@@ -1,7 +1,7 @@
 #+date: <2022-11-27>
 #+title: Building a Custom Rack-Mounted Server
 #+description: 
-
+#+slug: server-build
 
 * The Dilemma
 

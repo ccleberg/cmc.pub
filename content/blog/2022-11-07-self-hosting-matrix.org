@@ -1,7 +1,7 @@
 #+date: <2022-11-07>
 #+title: Self-Hosting Matrix Synapse on Alpine Linux
 #+description: 
-
+#+slug: self-hosting-matrix
 
 * Synapse
 

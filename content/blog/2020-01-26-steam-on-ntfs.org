@@ -1,7 +1,7 @@
 #+date: <2020-01-26>
 #+title: Linux Gaming Tweak: Steam on NTFS Drives
 #+description: 
-
+#+slug: steam-on-ntfs
 
 * Auto-Mount Steam Drives
 

@@ -1,7 +1,7 @@
 #+date: <2021-03-30>
 #+title: How to Set Up a VPS Web Server
 #+description: 
-
+#+slug: vps-web-server
 
 * Shared Hosting vs. VPS
 

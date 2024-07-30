@@ -1,7 +1,7 @@
 #+date: <2022-02-16>
 #+title: Migrating to a New Web Server Setup with Debian, Nginx, and Agate
 #+description: 
-
+#+slug: debian-and-nginx
 
 * Server OS: Debian
 

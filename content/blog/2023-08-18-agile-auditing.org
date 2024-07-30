@@ -1,7 +1,7 @@
 #+date: <2023-08-18>
 #+title: Agile Auditing: An Introduction
 #+description: 
-
+#+slug: agile-auditing
 
 * What is Agile Auditing?
 

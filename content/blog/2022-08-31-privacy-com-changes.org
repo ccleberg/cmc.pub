@@ -1,7 +1,7 @@
 #+date: <2022-08-31>
 #+title: Concerning Changes on Privacy.com
 #+description: 
-
+#+slug: privacy-com-changes
 
 * Privacy.com Changes Their Terms
 

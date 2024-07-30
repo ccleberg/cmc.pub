@@ -1,7 +1,7 @@
 #+date: <2022-03-03>
 #+title: Maintaining a Personal Financial Database
 #+description: 
-
+#+slug: financial-database
 
 * Personal Financial Tracking
 :PROPERTIES:

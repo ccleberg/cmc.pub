@@ -1,7 +1,7 @@
 #+date: <2022-02-10>
 #+title: Leaving Office-Based Work in the Past
 #+description: 
-
+#+slug: leaving-the-office
 
 * The Working World is Changing
 

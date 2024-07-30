@@ -1,7 +1,7 @@
 #+date: <2020-09-01>
 #+title: IBM Watson Visual Recognition
 #+description: 
-
+#+slug: visual-recognition
 
 * What is IBM Watson?
 

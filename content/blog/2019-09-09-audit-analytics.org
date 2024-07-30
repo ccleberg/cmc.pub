@@ -1,7 +1,7 @@
 #+date: <2019-09-09>
 #+title: Audit Analytics
 #+description: 
-
+#+slug: audit-analytics
 
 * What Are Data Analytics?
 

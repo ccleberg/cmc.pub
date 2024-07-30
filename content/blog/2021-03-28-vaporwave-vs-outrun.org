@@ -1,7 +1,7 @@
 #+date: <2021-03-28>
 #+title: Vaporware vs. Outrun 
 #+description: 
-
+#+slug: vaporwave-vs-outrun
 
 * Overview
 

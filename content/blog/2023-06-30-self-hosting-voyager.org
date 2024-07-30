@@ -1,7 +1,7 @@
 #+date: <2023-06-30>
 #+title: Self-Hosting Voyager - A Lemmy Web Client
 #+description: 
-
+#+slug: self-hosting-voyager
 
 * Installation Guide
 

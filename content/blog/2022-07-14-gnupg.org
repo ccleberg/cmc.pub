@@ -1,7 +1,7 @@
 #+date: <2022-07-14>
 #+title: GNU Privacy Guard (GPG) 
 #+description: 
-
+#+slug: gnupg
 
 * The History of GPG
 

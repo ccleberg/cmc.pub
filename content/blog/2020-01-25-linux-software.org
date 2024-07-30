@@ -1,7 +1,7 @@
 #+date: <2020-01-25>
 #+title: My Favorite Linux Software
 #+description:
-
+#+slug: linux-software
 
 * GUI Applications
 

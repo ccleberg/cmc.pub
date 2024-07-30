@@ -1,7 +1,7 @@
 #+date: <2023-02-02>
 #+title: Exploring the Hare Programming Language
 #+description: 
-
+#+slug: exploring-hare
 
 * A Quick Note
 

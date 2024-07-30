@@ -1,7 +1,7 @@
 #+date: <2024-01-13>
 #+title: Running Local LLMs on macOS and iOS
 #+description: 
-
+#+slug: local-llm
 
 * Requirements
 

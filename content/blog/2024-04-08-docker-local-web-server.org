@@ -1,7 +1,7 @@
 #+date: <2024-04-08>
 #+title: Using Docker Desktop to Create a Development Web Server
 #+description: 
-
+#+slug: docker-local-web-server
 
 When developing websites locally, I often use a simple Python web server
 to observe the changes.
