@@ -55,7 +55,7 @@ at the top of the buffer:
 * TODO Lists
 
 #+begin_quote
-[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L58][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L55][View this section]] in org-mode.
 #+end_quote
 
 Next up on in this post are [[https://orgmode.org/manual/TODO-Items.html][TODO Lists]]. Being able to combine note taking and
@@ -336,7 +336,7 @@ external [[https://orgmode.org/tools.html][tools]], including [[https://orgmode.
 * Agenda
 
 #+begin_quote
-[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L339][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L336][View this section]] in org-mode.
 #+end_quote
 
 Last, but not least, are [[https://orgmode.org/manual/Agenda-Views.html][Agenda Views]]. With agenda views, you can easily view
