@@ -1,0 +1,351 @@
+#+date: <2024-08-12 Mon 12:48:00>
+#+title: My Top 8 Most Used Org-Mode Features
+#+description: Read about my personal favorite org-mode features and how I use them.
+#+filetags: :org-mode:
+#+slug: org-mode-features
+
+* Cycling (Folding)
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L7][View this section]] in org-mode.
+#+end_quote
+
+My absolute top-used feature is [[https://orgmode.org/manual/Global-and-local-cycling.html][global and local cycling]] and it's not even
+close. Being able to hit =S-TAB= and collapse all headings when opening a file
+or needing to see a file's headings is an under appreciated trait.
+
+** Local Cycling
+
+When focused on a heading, you can press =TAB= (=org-cycle=) to cycle that
+subtree among the states =folded=, =children=, and =subtree=.
+
+#+begin_src txt
+,-> FOLDED -> CHILDREN -> SUBTREE --.
+'-----------------------------------'
+#+end_src
+
+** Global Cycling
+
+If you're looking to cycle more than one subtree or heading at a time, you can
+press =S-TAB= or =C-u TAB= to cycle the entire buffer among the states
+=overview=, =contents=, and =show all=.
+
+#+begin_src txt
+,-> OVERVIEW -> CONTENTS -> SHOW ALL --.
+'--------------------------------------'
+#+end_src
+
+** Default Views
+
+If you need to set a default view for a certain file, you can run =C-u C-u TAB=
+to set the =org-set-startup-visibility=. Alternatively, just put the following
+at the top of the buffer:
+
+#+begin_src org
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+#+STARTUP: show2levels
+#+STARTUP: show3levels
+#+STARTUP: show4levels
+#+STARTUP: show5levels
+#+STARTUP: showeverything
+#+end_src
+
+* TODO Lists
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L58][View this section]] in org-mode.
+#+end_quote
+
+Next up on in this post are [[https://orgmode.org/manual/TODO-Items.html][TODO Lists]]. Being able to combine note taking and
+reminders was the primary reason I switched to org-mode in the first place.
+
+TODO lists are more than just the Markdown equivalent of =- [ ] Task=. Instead,
+you can utilize org-mode's native functionality to dynamically create TODO
+items, have fast access to TODO states, log progress on tasks, clocking work
+time, prioritization, breaking down tasks into subtasks, and even using checkbox
+formatting as well.
+
+** Prioritizing Tasks
+
+One of my favorite ways to separate my tasks are to assign priorities. You can
+do this by placing a priority cookie into the headline of a TODO item.
+
+#+begin_src org
+,*** TODO [#A] My Task
+,*** TODO [#C] My Other Task
+#+end_src
+
+You can quickly shift priorities with =S-UP= and =S-DOWN=, as well as set the
+allowed priorities for a buffer with the following syntax:
+
+#+begin_src org
+#+PRIORITIES: A C B
+#+PRIORITIES: 1 10 5
+#+end_src
+
+** Deadlines
+
+Plans can be set per task by settings special keywords with a date. You can set
+a =DEADLINE= to note when the task will appear in the agenda or set the
+=SCHEDULED= variable to note when you plan to start working on the task.
+
+#+begin_src org
+,* TODO My Task
+DEADLINE: <2004-02-29 Sun>
+
+,* My Other Task
+SCHEDULED: <2004-12-25 Sat>
+#+end_src
+
+As a side note, I use [[https://www.beorgapp.com/][Beorg]] on iOS to sync and edit my org-mode files on the go.
+Within this app, I use the =SCHEDULED= variable by default and rely heavily on
+that variable to alert me of tasks with iOS native notifications.
+
+* Time Stamping
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L106][View this section]] in org-mode.
+#+end_quote
+
+Another great feature are the [[https://orgmode.org/manual/Dates-and-Times.html][dates and times]] functionalities within org-mode.
+Timestamps follow this format in org-mode:
+
+#+begin_src org
+,* An active timestamp
+<2006-11-01 Wed 19:15>
+
+,* An inactive timestamp
+[2006-11-01 Wed 19:15>
+
+,* Repeated timestamps
+<2006-11-01 Wed 19:15 +1m>
+
+,* Time range
+<2006-11-02 Thu 10:00-12:00>
+
+,* Date range
+<2004-08-23 Mon>--<2004-08-26 Thu>
+#+end_src
+
+In addition to the deadlines mentioned above, you can insert timestamps into any
+marker within the buffer with =C-c .= for an active timestamp and =C-c != for an
+inactive timestamp. You can read more on [[https://orgmode.org/manual/Creating-Timestamps.html][creating timestamps]] to figure out the
+different options available when creating timestamps.
+
+* Tags
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L137][View this section]] in org-mode.
+#+end_quote
+
+Next up are [[https://orgmode.org/manual/Tags.html][Tags]], which provide a way to document contexts within and across
+buffers and files.
+
+You can assign tags directly to headlines or at the file level and can contain
+letters, numbers, underscores, and the =@= symbol.
+
+#+begin_src org
+,#+FILETAGS: :Fruits:
+
+,* Pick fruits off the trees      :work:
+,** Start with the orange grove   :orange:tree:
+,*** TODO Pick bananas last       :banana:
+#+end_src
+
+** Filtering and Searching by Tag
+
+You can search for tags with =C-c \= or open the org-agenda with =M-x org-agenda
+m= and search for a tag of your choosing.
+
+* Tables
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L162][View this section]] in org-mode.
+#+end_quote
+
+One of the most inconvenient parts of writing in Markdown was dealing with
+tables. In org-mode, [[https://orgmode.org/manual/Tables.html][Tables]] are a breeze due to Emacs's built-in table editor
+and formatter.
+
+** Built-In Table Editor
+
+With the built-in table editor, press =C-c |= to convert the active region to a
+table or create an empty table.
+
+When focused on a table, press =TAB= to re-align the table. There are more
+commands available to re-align, traverse, and edit cells and regions within
+tables in Emacs.
+
+For example, refer to the following table. This table uses the =TBLFM= variable
+to define functions that will apply to the cells within the table. When I press
+=C-c C-c=, the table cells updated to their resulting values.
+
+| N | N^2 | N^3 | N^4 |   sqrt(n) | sqrt[4](N) |
+|---+-----+-----+-----+-----------+------------|
+| / |   < |     |   > |         < |          > |
+| 1 |   1 |   1 |   1 |         1 |          1 |
+| 2 |   4 |   8 |  16 | 1.4142136 |  1.1892071 |
+| 3 |   9 |  27 |  81 | 1.7320508 |  1.3160740 |
+|---+-----+-----+-----+-----------+------------|
+#+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+
+** Spreadsheet
+
+If you spend a lot of time in spreadsheets, you'll appreciate the Emacs Calc
+package, which Emacs uses to implement spreadsheet-like capabilities within
+org-mode tables.
+
+Read through the [[https://orgmode.org/manual/The-Spreadsheet.html][spreadsheet]] documentation to learn more about field references
+(=@ROW$COLUMN=), range references (=$1..$3=), coordinates, formulas, and more.
+
+For example, refer to the following table. Here is a table that computes the
+Taylor series of degree n at location x for a couple of functions. You can clear
+the values out of the =Result= column for each row, press =C-c C-c=, and watch
+as the table re-calculates the results for each.
+
+|---+-------------+---+-----+--------------------------------------|
+|   | Func        | n | x   | Result                               |
+|---+-------------+---+-----+--------------------------------------|
+| # | exp(x)      | 1 | x   | 1 + x                                |
+| # | exp(x)      | 2 | x   | 1 + x + x^2 / 2                      |
+| # | exp(x)      | 3 | x   | 1 + x + x^2 / 2 + x^3 / 6            |
+| # | x^2+sqrt(x) | 2 | x=0 | x*(0.5 / 0) + x^2 (2 - 0.25 / 0) / 2 |
+| # | x^2+sqrt(x) | 2 | x=1 | 2 + 2.5 x - 2.5 + 0.875 (x - 1)^2    |
+| * | tan(x)      | 3 | x   | x pi / 180 + 5.72e-8 x^3 pi^3        |
+|---+-------------+---+-----+--------------------------------------|
+#+TBLFM: $5=taylor($2,$4,$3);n3
+
+Alternatively, you can also refer to the following table. This table will update
+to different values based on the =TBLFM= I select when I'm pressing =C-c C-c=.
+The results are =[1,2]= when focused on the first line and =[2,4]= when focused
+on the second line.
+
+| x | y |
+|---+---|
+| 1 | 2 |
+| 2 | 4 |
+#+TBLFM: $2=$1*1
+#+TBLFM: $2=$1*2
+
+* Source Code Blocks
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L232][View this section]] in org-mode.
+#+end_quote
+
+** Introduction to Source Code Blocks
+
+If you run a technical blog, write code frequently, or like to take notes with
+source code examples, you will appreciate the [[https://orgmode.org/manual/Working-with-Source-Code.html][source code]] functionality of
+org-mode.
+
+With this feature, org-mode can manage the source code you define with features
+such as editing, formatting, extracting, exporting, and publishing.
+Additionally, you can compile and execute source code dynamically within the
+org-mode file or buffer.
+
+A full source code block uses the following structure:
+
+#+begin_src org
+,#+NAME: <name>
+,#+BEGIN_SRC <language> <switches> <header arguments>
+  <body>
+,#+END_SRC
+#+end_src
+
+You can also use inline blocks:
+
+#+begin_src org
+src_<language>[<header arguments>]{<body>}
+#+end_src
+
+** Editing Source Code Blocks
+
+When focused on a code block, press =C-c'= to edit the code block in a special
+editor. Press =C-x C-x= to save the buffer and =C-c '= again to close the
+buffer.
+
+** Syntax Highlighting and Formatting
+
+Emacs provides syntax highlighting by default within org-mode's source code
+blocks. Org-mode will copy the text to a temporary buffer, highlight it using
+the major mode relevant to the language (e.g., [[https://www.gnu.org/software/emacs/manual/html_mono/ccmode.html][CC Mode]]), and then return the
+resulting highlighted text.
+
+** Buffer Evaluation
+
+By default, org-mode will only evaluate Emacs Lisp code blocks. You will need to
+enable other [[https://orgmode.org/manual/Languages.html][languages]] in order to evaluate code blocks written in languages
+other than elisp.
+
+When focused on a code block, you can execute the block with =C-c C-c=. The
+results of the evaluation will appear below the code block in a =RESULTS= block.
+
+For example, here is a code block in elisp that I have written and evaluated with
+org-mode inside this blog post. I will press =C-c C-c= and you will see the
+results below the code block.
+
+#+begin_src elisp
+(defun greet-me ()
+  (message "Hello, world!"))
+
+(greet-me)
+#+end_src
+
+#+begin_src org
+,#+RESULTS:
+: Hello, world!
+#+end_src
+
+* Exporting and Publishing
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L302][View this section]] in org-mode.
+#+end_quote
+
+I would be remiss if I did not mention the native [[https://orgmode.org/manual/Exporting.html][exporting and publishing]]
+functionality within Emacs and org-mode.
+
+** Built-In Publishing
+
+This functionality allows you to translate Org to the following formats
+(additional formats may be available via external packages):
+
+- ascii (ASCII format)
+- beamer (LaTeX Beamer format)
+- html (HTML format)
+- icalendar (iCalendar format)
+- latex (LaTeX format)
+- md (Markdown format)
+- odt (OpenDocument Text format)
+- org (Org format)
+- texinfo (Texinfo format)
+- man (Man page format)
+
+  You can export with =C-c C-h= and then select your preferred destination
+  format. For example, an export from org to HTML as a file would use =C-c C-e h
+  h=.
+
+** External Publishing Tools
+
+If the native functionality isn't useful enough for you, there are a myriad of
+external [[https://orgmode.org/tools.html][tools]], including [[https://orgmode.org/worg/org-blog-wiki.html][blogs and wikis]], that work with org-mode.
+
+* Agenda
+
+#+begin_quote
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L339][View this section]] in org-mode.
+#+end_quote
+
+Last, but not least, are [[https://orgmode.org/manual/Agenda-Views.html][Agenda Views]]. With agenda views, you can easily view
+your agenda of TODO items, scheduled items, projects, etc. across your
+collection of org-mode files.
+
+Org-mode will extract all of this information from your org files
+(=org-agenda-files=) and display it within the agenda buffer.
+
+You can open the agenda with =M-x org-agenda=. Once inside the buffer, you can
+use shortcuts in the [[https://orgmode.org/manual/Agenda-Dispatcher.html][Agenda Dispatcher]] to quickly view calendars, TODOs, create
+items, filter items, and more.
