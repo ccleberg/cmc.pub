@@ -39,6 +39,14 @@ ENV=prod emacs --script publish.el
 The files will be published to the =.build= directory. You can deploy these
 files to the target through any number of methods, such as =scp= or SFTP.
 
+Alternatively, customize and run the =build.sh= script as needed.
+
+*** Tips
+
+You can quickly create a new blog post by running =C-x C-f= (=SPC f f= in Doom),
+running =C-x i= (=insert-file-contents=), and then direct it to the
+=template.org= file (e.g., =~/git/cleberg.net/utils/template.org=).
+
 ** Tasks
 
 Refer to the [[https://todo.sr.ht/~cyborg/cleberg.net][todo page]] for open tickets or to submit a new ticket.
