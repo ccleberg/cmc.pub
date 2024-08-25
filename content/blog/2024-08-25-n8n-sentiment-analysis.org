@@ -1,0 +1,154 @@
+#+date: <2024-08-25 Sun 09:45:30>
+#+title: Automatic Email Sentiment Analysis With n8n
+#+description: Learn how to configure a basic workflow in n8n to analyze the sentiment of incoming emails.
+#+filetags: :automation:n8n:
+#+slug: n8n-sentiment-analysis
+
+* n8n
+
+This guide will show you how to self-host [[https://n8n.io/][n8n]], a workflow automation platform,
+and use it to create a workflow that automatically analyzes the sentiment of all
+incoming emails on your account.
+
+This is a completely free process that only requires that you have access to (1)
+an email account with IMAP/SMTP options and (2) a computer or machine where you
+can install and use Docker.
+
+** Installation
+
+To get started, read the [[https://github.com/n8n-io/self-hosted-ai-starter-kit][self-hosted-ai-starter-kit]] project README or simply
+clone the repository and set it up with Docker using the command below.
+
+#+begin_src sh
+git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+cd self-hosted-ai-starter-kit
+docker compose --profile cpu up
+#+end_src
+
+This will clone the repository, start the stack of Docker containers with
+=compose=, and make the n8n web page available at [[https://localhost:5678]]. The
+first run will ask you to configure the administrator account for n8n.
+
+** Reverse Proxy
+
+If you want to use n8n from a public domain name, you'll need to configure a
+reverse proxy. I use Nginx on my server for reverse proxies. Nginx configuration
+locations and practices vary by distribution, but the following commands will
+show you my general reverse proxy configuration.
+
+#+begin_src sh
+cd /etc/nginx/conf.d
+nano n8n.conf
+#+end_src
+
+#+begin_src conf
+server {
+	listen                  443 ssl;
+	listen                  [::]:443 ssl;
+	http2			on;
+	server_name             n8n.example.com;
+
+	# SSL
+	ssl_certificate         /etc/letsencrypt/live/example.com/fullchain.pem;
+	ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
+	ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;
+
+	# reverse proxy
+	location / {
+		set $upstream_n8n http://127.0.0.1:5678;
+
+        proxy_set_header Remote-User $user;
+		proxy_set_header Remote-Email $email;
+		proxy_set_header Remote-Groups $groups;
+
+		client_body_buffer_size 128k;
+		proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+
+		send_timeout 5m;
+		proxy_read_timeout 360;
+		proxy_send_timeout 360;
+		proxy_connect_timeout 360;
+
+		proxy_set_header Host $host;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection upgrade;
+		proxy_set_header Accept-Encoding gzip;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header X-Forwarded-Host $http_host;
+		proxy_set_header X-Forwarded-Uri $request_uri;
+		proxy_set_header X-Forwarded-Ssl on;
+		proxy_redirect  http://  $scheme://;
+		proxy_http_version 1.1;
+		proxy_set_header Connection "";
+		proxy_cache_bypass $cookie_session;
+		proxy_no_cache $cookie_session;
+		proxy_buffers 64 256k;
+    }
+
+# HTTP redirect
+server {
+	listen      80;
+	listen      [::]:80;
+	server_name n8n.example.com;
+	include     custom.d/letsencrypt.conf;
+
+	if ($host ~ ^[^.]+\.example\.com$) {
+		return 301 https://$host$request_uri;
+	}
+}
+#+end_src
+
+** Workflow Configuration
+
+You can open the included workflow at
+[[http://localhost:5678/workflow/srOnR8PAY3u4RSwb]] or simply open the web interface
+and create a new configuration.
+
+#+caption: n8n Workflow
+[[https://img.cleberg.net/blog/20240825-n8n-sentiment-analysis/workflow.png]]
+
+This workflow contains the following nodes:
+1. Email Trigger (IMAP)
+   + Create an IMAP credential with your email's IMAP settings to allow n8n to
+      monitor for new emails.
+2. If
+   + Check ={{ $json.subject }}= to see if it =contains= "n8n Sentiment
+     Analysis" to ensure we don't re-check our own emails.
+3. Sentiment Analysis
+   + Analyze the ={{ $json.textPlain }}= input coming from each email.
+   + Ensure you have =Include Detailed Results= enabled so that we can access
+     the confidence and strength variables.
+4. Ollama Chat Model
+   + The Docker stack we used includes Ollama and Llama3, which provide the
+     easiest way to test this workflow.
+5. Send Email
+   + Create an SMTP credential to allow n8n to send emails.
+   + Subject: =n8n Sentiment Analysis: {{ $json.sentimentAnalysis.category }}=
+   + Email Format: =Text=
+   + Text (Expression): This can contain anything you want, but be sure to
+     include the variables ={{ $json.sentimentAnalysis.category }}=, ={{
+     $json.sentimentAnalysis.strength }}=, and ={{
+     $json.sentimentAnalysis.confidence }}=.
+   + In the additional options, I enabled the =Append n8n Attribution= option in
+     the screenshots below.
+
+** Testing
+
+You can use the =Test Workflow= button at the bottom of the canvas area to test
+the workflow. This relies on receiving new messages in your inbox, so be sure to
+send yourself a test email!
+
+** Results
+
+After testing each step noted above, n8n provided the results below - it works!
+
+#+caption: Positive Results
+[[https://img.cleberg.net/blog/20240825-n8n-sentiment-analysis/positive_results.png]]
+
+#+caption: Negative Results
+[[https://img.cleberg.net/blog/20240825-n8n-sentiment-analysis/negative_results.png]]
+
+While this isn't anything earth-shattering, it does show easy it is to get
+started with n8n and large language models in a self-hosted environment.
