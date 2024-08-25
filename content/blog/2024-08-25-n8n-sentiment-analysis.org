@@ -100,6 +100,12 @@ server {
 }
 #+end_src
 
+Simply restart Nginx to ensure the new configuration is in-effect.
+
+#+begin_src sh
+sudo systemctl restart nginx.service
+#+end_src
+
 ** Workflow Configuration
 
 You can open the included workflow at
