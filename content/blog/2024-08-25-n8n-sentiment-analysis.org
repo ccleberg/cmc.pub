@@ -1,5 +1,5 @@
 #+date: <2024-08-25 Sun 09:45:30>
-#+title: Automatic Email Sentiment Analysis With n8n
+#+title : Email Sentiment Analysis With n8n
 #+description: Learn how to configure a basic workflow in n8n to analyze the sentiment of incoming emails.
 #+filetags: :automation:n8n:
 #+slug: n8n-sentiment-analysis
