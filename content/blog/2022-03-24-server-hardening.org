@@ -110,7 +110,7 @@ via your randomized port.
 
 ** =ufw=
 
-To see how to configure =ufw=, see my other post: [[/blog/ufw.html][Secure Your 
+To see how to configure =ufw=, see my other post: [[https://cleberg.net/blog/ufw.html][Secure Your 
 Network with the Uncomplicated Firewall]].
 
 The general notion with an on-device firewall is that you want to deny all
@@ -196,7 +196,7 @@ sudo ufw enable
 
    This process involves editing a couple files and installing an MFA package,
    so I will not include all the details in this post. To see how to configure
-   MFA for =ssh=, see my other post: [[/blog/ssh-mfa.html][Enabling MFA for 
+   MFA for =ssh=, see my other post: [[https://cleberg.net/blog/ssh-mfa.html][Enabling MFA for 
    SSH]].
 
 ** =fail2ban=

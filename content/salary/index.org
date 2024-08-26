@@ -45,7 +45,7 @@ for an example of a raise while in the same role.
 | Teaching Assistant                             | University of Nebraska | Lincoln, NE    | 2017-08 | 2018-05 | $7/hour  |
 | Community Management Intern                    | Walgreens              | Lincoln, NE    | 2017-06 | 2018-02 | $14/hour |
 
-[[[/static/salary.csv][source data]]]
+[[[https://cleberg.net/static/salary.csv][source data]]]
 
 ** Salary Visualization
 :PROPERTIES:

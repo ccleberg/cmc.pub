@@ -10,7 +10,7 @@ last night.
 This post focuses specifically on the configuration and tools I use to
 blog from Emacs with Org-Mode and does not focus on Emacs or Org-Mode
 themselves. Refer to the post I wrote about
-[[file:///blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for
+[[https://cleberg.net/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for
 more information about my base Emacs configuration.
 
 * Weblorg
