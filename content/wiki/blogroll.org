@@ -2,9 +2,6 @@
 #+date: <2024-04-12>
 
 ** Aggregators
-:PROPERTIES:
-:CUSTOM_ID: aggregators
-:END:
 - [[https://1mb.club/][1MB Club]]
 - [[https://250kb.club/][250KB Club]]
 - [[https://512kb.club/][512KB Club]]
@@ -14,33 +11,21 @@
 - [[https://blogroll.org/][Ye Olde Blogroll]]
 
 ** Plain Text
-:PROPERTIES:
-:CUSTOM_ID: plain-text
-:END:
 A list of various plaintext websites and lists.
 
-- [[https://greycoder.com/a-list-of-text-only-new-sites/][A List Of
-  Text-Only & Minimalist News Sites]]
+- [[https://greycoder.com/a-list-of-text-only-new-sites/][A List Of Text-Only & Minimalist News Sites]]
 - [[https://harvardlawreview.org/][Harvard Law Review]]
 - [[https://sjmulder.nl/en/textonly.html][Hyperlinked Text]]
-- [[https://medium.com/@letsworkshop/plain-text-web-design-a78ccaf9dbc0][Plain-text
-  web design]]
+- [[https://medium.com/@letsworkshop/plain-text-web-design-a78ccaf9dbc0][Plain-text web design]]
 - [[https://plaintextworld.com/][Plaintext World]]
 - [[https://github.com/masonarmand/txt2web][txt2web]]
 - [[https://justinjackson.ca/words.html][Words]]
 
 ** Webrings
-:PROPERTIES:
-:CUSTOM_ID: webrings
-:END:
-Instead of listing my personal favorites, I'm just going to drop a link
-to [[https://brisray.com/web/webring-list.htm][brisay's webring list]],
-which contains 237 webrings for a total of 7078 websites, as of
-2024-03-15.
+Instead of listing my personal favorites, I'm just going to drop a link to
+[[https://brisray.com/web/webring-list.htm][brisay's webring list]], which contains 237 webrings for a total of 7078 websites,
+as of 2024-03-15.
 
 ** Everything Else
-:PROPERTIES:
-:CUSTOM_ID: everything-else
-:END:
 - [[https://deadsimplesites.com/][Dead Simple Sites]]
 - [[https://planet.emacslife.com/][Planet Emacslife]]
