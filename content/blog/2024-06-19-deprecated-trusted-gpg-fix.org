@@ -5,8 +5,8 @@
 
 ** System Warning
 
-When running an update on an Ubuntu system, you may have run into a
-system warning that looks like the example below.
+When running an update on an Ubuntu system, you may have run into a system
+warning that looks like the example below.
 
 #+begin_src txt
 W: https://dl.yarnpkg.com/debian/dists/stable/InRelease: Key is stored in legacy
@@ -14,34 +14,33 @@ trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in
 apt-key(8) for details.
 #+end_src
 
-While this example references the =yarn= package, the warning message is
-the same for any repository using the deprecated =trusted.gpg= key ring.
+While this example references the =yarn= package, the warning message is the
+same for any repository using the deprecated =trusted.gpg= key ring.
 
-The issue arises from managing keys with the =apt-key= command, which
-utilizes the =/etc/apt/trusted.gpg= file by default. Instead, Ubuntu has
-moved to managing key rings with individual =.gpg= files in the
-=/etc/apt/trusted.gpg.d/= directory.
+The issue arises from managing keys with the =apt-key= command, which utilizes
+the =/etc/apt/trusted.gpg= file by default. Instead, Ubuntu has moved to
+managing key rings with individual =.gpg= files in the =/etc/apt/trusted.gpg.d/=
+directory.
 
-To fix this issue, let's check to see which keys are using the
-=trusted.gpg= key ring and move them into their own dedicated key ring.
+To fix this issue, let's check to see which keys are using the =trusted.gpg= key
+ring and move them into their own dedicated key ring.
 
 ** Finding All Keys in the Keyring
 
-Let's start by simply listing the keys used by the =apt= commands. To do
-this, run the following command.
+Let's start by simply listing the keys used by the =apt= commands. To do this,
+run the following command.
 
 #+begin_src sh
 sudo apt-key list
 #+end_src
 
 This command will show an output similar to the one below. You may see
-additional keys in the =/etc/apt/trusted.gpg.d/= directory - this is
-where we will be moving any keys currently found in the =trusted.gpg=
-key ring.
+additional keys in the =/etc/apt/trusted.gpg.d/= directory - this is where we
+will be moving any keys currently found in the =trusted.gpg= key ring.
 
-In the below example, we can see that this system has four different GPG
-keys stored within the =trusted.gpg= key ring. Let's go ahead and move
-them into their own files.
+In the below example, we can see that this system has four different GPG keys
+stored within the =trusted.gpg= key ring. Let's go ahead and move them into
+their own files.
 
 #+begin_src txt
 Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead
@@ -73,24 +72,24 @@ uid           [ unknown] nginx signing key <signing-key-3@nginx.com>
 
 *** Exporting Keys to New Files
 
-Now that we know the keys, we will need to move them into their own key
-ring. We can do this by copying the last eight (8) characters from the
-key's signature and exporting it from this key ring into its own.
+Now that we know the keys, we will need to move them into their own key ring. We
+can do this by copying the last eight (8) characters from the key's signature
+and exporting it from this key ring into its own.
 
-Using the yarn example from the beginning, here's the command to move
-this key into its own key ring.
+Using the yarn example from the beginning, here's the command to move this key
+into its own key ring.
 
 #+begin_src sh
 sudo apt-key export 86E50310 | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/yarn.gpg
 #+end_src
 
-You can repeat this process for any other keys, such as the =nginx= keys
-in the example above.
+You can repeat this process for any other keys, such as the =nginx= keys in the
+example above.
 
 *** Cleaning Up
 
-If you run =sudo apt-key list= again, you should see the keys within
-their own key rings:
+If you run =sudo apt-key list= again, you should see the keys within their own
+key rings:
 
 #+begin_src txt
 /etc/apt/trusted.gpg.d/nginx-archive-keyring.gpg
@@ -117,17 +116,16 @@ sub   rsa4096 2019-01-02 [S] [expires: 2026-01-23]
 sub   rsa4096 2019-01-11 [S] [expires: 2026-01-23]
 #+end_src
 
-Once you have verified that the keys are valid and stored in their own
-key rings, you can archive the =trusted.gpg= file and run a system
-update to test the new files.
+Once you have verified that the keys are valid and stored in their own key
+rings, you can archive the =trusted.gpg= file and run a system update to test
+the new files.
 
 #+begin_src sh
 sudo mv /etc/apt/trusted.gpg /etc/apt/trusted.gpg.bkp
 sudo apt update
 #+end_src
 
-Once you've verified that updates work as expected and that the keys are
-working as intended, you can delete the =.bkp= file created above. If
-you're storing keys that are not easily re-attainable, I suggest keeping
-the =.bkp= file stored in a safe location until you are positive that
-you no longer need it.
+Once you've verified that updates work as expected and that the keys are working
+as intended, you can delete the =.bkp= file created above. If you're storing
+keys that are not easily re-attainable, I suggest keeping the =.bkp= file stored
+in a safe location until you are positive that you no longer need it.

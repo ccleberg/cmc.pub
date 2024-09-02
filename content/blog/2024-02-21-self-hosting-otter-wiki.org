@@ -5,14 +5,14 @@
 
 * An Otter Wiki
 
-[[https://otterwiki.com/][An Otter Wiki]] is an easy to use wiki
-software that takes almost no effort to set up and maintain.
+[[https://otterwiki.com/][An Otter Wiki]] is an easy to use wiki software that takes almost no effort to set
+up and maintain.
 
 * Installation
 
 To install An Otter Wiki, I'm going to use Docker Compose to create the
-container and then use Nginx as a reverse proxy to allow external access
-via a subdomain I own.
+container and then use Nginx as a reverse proxy to allow external access via a
+subdomain I own.
 
 ** Docker Compose
 
@@ -22,16 +22,14 @@ Start by creating a directory for the container's files.
 mkdir ~/otterwiki
 #+end_src
 
-Next, create the =docker-compose.yml= file to define the container's
-parameters.
+Next, create the =docker-compose.yml= file to define the container's parameters.
 
 #+begin_src sh
 nano ~/otterwiki/docker-compose.yml
 #+end_src
 
 Within the file, paste the following content. You can read the project's
-documentation if you want to further override or customize the
-container.
+documentation if you want to further override or customize the container.
 
 #+begin_src conf
 version: '3'
@@ -54,22 +52,22 @@ cd ~/otterwiki
 sudo docker-compose up -d
 #+end_src
 
-The container is now available at =localhost:8337=. Next, we will use
-Nginx to serve this app externally.
+The container is now available at =localhost:8337=. Next, we will use Nginx to
+serve this app externally.
 
 ** Nginx
 
-To access the app externally, let's set up a reverse proxy. I'll start
-by creating the Nginx configuration file for my wiki.
+To access the app externally, let's set up a reverse proxy. I'll start by
+creating the Nginx configuration file for my wiki.
 
 #+begin_src sh
 sudo nano /etc/nginx/sites-available/wiki
 #+end_src
 
-Within the file, I have saved the following content. This assumes you
-already have a TLS/SSL cert to use with this subdomain. If not, simply
-remove the =ssl_*= variables, remove the =80= server block, and change
-the =443= server block to =80= to serve the app without SSL.
+Within the file, I have saved the following content. This assumes you already
+have a TLS/SSL cert to use with this subdomain. If not, simply remove the
+=ssl_*= variables, remove the =80= server block, and change the =443= server
+block to =80= to serve the app without SSL.
 
 #+begin_src conf
 server {
@@ -107,15 +105,14 @@ server {
 }
 #+end_src
 
-Save and close the configuration file. On Nginx, we need to symlink the
-file to enable it.
+Save and close the configuration file. On Nginx, we need to symlink the file to
+enable it.
 
 #+begin_src sh
 sudo ln -s /etc/nginx/sites-available/wiki /etc/nginx/sites-enabled/wiki
 #+end_src
 
-Once enabled, restart the Nginx server to start serving the app
-externally.
+Once enabled, restart the Nginx server to start serving the app externally.
 
 #+begin_src sh
 sudo systemctl restart nginx.service

@@ -3,20 +3,18 @@
 #+description: 
 #+slug: mu4e
 
-This post was heavily inspired by
-[[https://macowners.club/posts/email-emacs-mu4e-macos/][Email setup in
-Emacs with Mu4e on macOS]], but with my own tweaks for a single-account
-configuration and some Doom-specific configurations.
+This post was heavily inspired by [[https://macowners.club/posts/email-emacs-mu4e-macos/][Email setup in Emacs with Mu4e on macOS]], but
+with my own tweaks for a single-account configuration and some Doom-specific
+configurations.
 
 * Overview
 
-[[https://github.com/emacsmirror/mu4e][Mu4e]] is an Emacs-based email
-client based on [[https://www.djcbsoftware.nl/code/mu/][mu]], an indexer
-that stores email in the Maildir format.
+[[https://github.com/emacsmirror/mu4e][Mu4e]] is an Emacs-based email client based on [[https://www.djcbsoftware.nl/code/mu/][mu]], an indexer that stores email in
+the Maildir format.
 
-This blog post covers the installation of Mu4e in Doom Emacs on macOS.
-This guide should be very similar to GNU Emacs and Linux-based systems,
-with a few tweaks required in the various configuration files.
+This blog post covers the installation of Mu4e in Doom Emacs on macOS. This
+guide should be very similar to GNU Emacs and Linux-based systems, with a few
+tweaks required in the various configuration files.
 
 * Installation
 
@@ -34,21 +32,21 @@ mkdir ~/.maildir/certificates # used to store system root certificates
 
 *** Store Email Account Passwords in macOS Keychain
 
-Next, I will be using the macOS Keychain to store my email account
-passwords using the command below.
+Next, I will be using the macOS Keychain to store my email account passwords
+using the command below.
 
 #+begin_src sh
 security add-generic-password -s mu4e-example -a you@example.com -w
 #+end_src
 
 This will prompt you to input your password twice to confirm. Keep the
-=mu4e-example= name in mind, as you will need to reference it later in
-the IMAP and SMTP configuration files.
+=mu4e-example= name in mind, as you will need to reference it later in the IMAP
+and SMTP configuration files.
 
 *** Store Root Certificates
 
-In order to use IMAP and SMTP, we need to provide certificates to the
-local services. We will use the macOS defaults for this.
+In order to use IMAP and SMTP, we need to provide certificates to the local
+services. We will use the macOS defaults for this.
 
 1. Open =Keychain Access.app=.
 2. Select =System Roots= in the sidebar.
@@ -58,8 +56,8 @@ local services. We will use the macOS defaults for this.
 
 *** Install Dependencies
 
-Install =mbsync= (via =isync=) to fetch emails via IMAP, =mu= to index
-emails, and =msmtp= to send emails via SMTP.
+Install =mbsync= (via =isync=) to fetch emails via IMAP, =mu= to index emails,
+and =msmtp= to send emails via SMTP.
 
 #+begin_src sh
 brew install mu isync msmtp
@@ -73,8 +71,8 @@ Within Doom Emacs, we can install Mu4e by enabling the package.
 nano ~/.doom.d/init.el
 #+end_src
 
-In this file, uncomment the =mu4e= line within the =:email= section. You
-can also enable the =+org= and =+gmail= options if you prefer.
+In this file, uncomment the =mu4e= line within the =:email= section. You can
+also enable the =+org= and =+gmail= options if you prefer.
 
 #+begin_src lisp
 (doom! :input
@@ -88,9 +86,9 @@ can also enable the =+org= and =+gmail= options if you prefer.
 
 * Configuration
 
-As an overall suggestion, I create the following configuration files in
-the =~/.maildir= directory and using symlinks to their proper locations
-so that I can backup and restore these files easily.
+As an overall suggestion, I create the following configuration files in the
+=~/.maildir= directory and using symlinks to their proper locations so that I
+can backup and restore these files easily.
 
 #+begin_src sh
 touch ~/.maildir/.mbsyncrc && \
@@ -99,14 +97,13 @@ ln -s /Users/username/.maildir/.mbsyncrc /Users/username/.mbsyncrc && \
 ln -s /Users/username/.maildir/.msmtprc /Users/username/.msmtprc
 #+end_src
 
-You can also create these files in your home directory and skip the
-symlinking process above.
+You can also create these files in your home directory and skip the symlinking
+process above.
 
 ** IMAP
 
-Next, let's configure =mbsync= in the file created above. Paste the
-following information and customize it to match your mail provider's
-information.
+Next, let's configure =mbsync= in the file created above. Paste the following
+information and customize it to match your mail provider's information.
 
 #+begin_src sh
 nano ~/.maildir/.mbsyncrc
@@ -142,9 +139,8 @@ SyncState *
 
 ** SMTP
 
-Next, let's configured =msmtprc= in the file created above. Paste the
-following information and customize it to match your mail provider's
-information.
+Next, let's configured =msmtprc= in the file created above. Paste the following
+information and customize it to match your mail provider's information.
 
 #+begin_src sh
 nano ~/.maildir/.msmtprc
@@ -176,8 +172,8 @@ account default : startmail
 
 ** Doom Emacs
 
-Finally, we need to configure Doom Emacs to use the proper packages and
-set some variables and functions.
+Finally, we need to configure Doom Emacs to use the proper packages and set some
+variables and functions.
 
 #+begin_src sh
 nano ~/.doom.d/config.el
@@ -275,14 +271,12 @@ Be sure to sync Doom to update the current configurations.
 doom sync
 #+end_src
 
-If you have Doom open, execute =SPC h r r= to reload the new
-configurations.
+If you have Doom open, execute =SPC h r r= to reload the new configurations.
 
 * Initial Sync
 
-Once you have configured all of the relevant files, you can perform an
-initial sync. Note that you can perform syncing within Mu4e itself after
-this.
+Once you have configured all of the relevant files, you can perform an initial
+sync. Note that you can perform syncing within Mu4e itself after this.
 
 #+begin_src sh
 mbsync -aV
@@ -299,11 +293,11 @@ The emails will now to be ready to use!
 
 * Screenshots
 
-You can now launch Doom and open Mu4e with =SPC o m=. You can also
-explore the Mu4e options with =SPC : mu4e=.
+You can now launch Doom and open Mu4e with =SPC o m=. You can also explore the
+Mu4e options with =SPC : mu4e=.
 
-The home page shows various options and metadata about the account
-you've opened.
+The home page shows various options and metadata about the account you've
+opened.
 
 #+caption: Mu4e Home Page
 [[https://img.cleberg.net/blog/20240418-mu4e/mu4e.png]]
