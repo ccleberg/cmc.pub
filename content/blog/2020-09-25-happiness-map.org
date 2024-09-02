@@ -5,10 +5,9 @@
 
 * Background Information
 
-The dataset (obtained from
-[[https://www.kaggle.com/unsdsn/world-happiness][Kaggle]]) used in this
-article contains a list of countries around the world, their happiness
-rankings and scores, as well as other national scoring measures.
+The dataset (obtained from [[https://www.kaggle.com/unsdsn/world-happiness][Kaggle]]) used in this article contains a list of
+countries around the world, their happiness rankings and scores, as well as
+other national scoring measures.
 
 Fields include:
 
@@ -21,8 +20,8 @@ Fields include:
 - Generosity
 - Perceptions of corruption
 
-There are 156 records. Since there are ~195 countries in the world, we
-can see that around 40 countries will be missing from this dataset.
+There are 156 records. Since there are ~195 countries in the world, we can see
+that around 40 countries will be missing from this dataset.
 
 * Install Packages
 
@@ -35,9 +34,8 @@ analysis.
 
 * Import the Data
 
-We only need a couple packages to create a choropleth map. We will use
-[[https://python-visualization.github.io/folium/][Folium]], which
-provides map visualizations in Python. We will also use geopandas and
+We only need a couple packages to create a choropleth map. We will use [[https://python-visualization.github.io/folium/][Folium]],
+which provides map visualizations in Python. We will also use geopandas and
 pandas to wrangle our data before we put it on a map.
 
 #+begin_src python
@@ -47,14 +45,14 @@ import geopandas as gpd
 import pandas as pd
 #+end_src
 
-To get anything to show up on a map, we need a file that will specify
-the boundaries of each country. Luckily, GeoJSON files exist (for free!)
-on the internet. To get the boundaries of every country in the world, we
-will use the GeoJSON link shown below.
+To get anything to show up on a map, we need a file that will specify the
+boundaries of each country. Luckily, GeoJSON files exist (for free!) on the
+internet. To get the boundaries of every country in the world, we will use the
+GeoJSON link shown below.
 
-GeoPandas will take this data and load it into a dataframe so that we
-can easily match it to the data we're trying to analyze. Let's look at
-the GeoJSON dataframe:
+GeoPandas will take this data and load it into a dataframe so that we can easily
+match it to the data we're trying to analyze. Let's look at the GeoJSON
+dataframe:
 
 #+begin_src python
 # Load the GeoJSON data with geopandas
@@ -62,9 +60,9 @@ geo_data = gpd.read_file('https://raw.githubusercontent.com/datasets/geo-countri
 geo_data.head()
 #+end_src
 
-Next, let's load the data from the Kaggle dataset. I've downloaded this
-file, so update the file path if you have it somewhere else. After
-loading, let's take a look at this dataframe:
+Next, let's load the data from the Kaggle dataset. I've downloaded this file, so
+update the file path if you have it somewhere else. After loading, let's take a
+look at this dataframe:
 
 #+begin_src python
 # Load the world happiness data with pandas
@@ -74,12 +72,11 @@ happy_data.head()
 
 * Clean the Data
 
-Some countries need to be renamed, or they will be lost when you merge
-the happiness and GeoJSON dataframes. This is something I discovered
-when the map below showed empty countries. I searched both data frames
-for the missing countries to see the naming differences. Any countries
-that do not have records in the =happy_data= df will not show up on the
-map.
+Some countries need to be renamed, or they will be lost when you merge the
+happiness and GeoJSON dataframes. This is something I discovered when the map
+below showed empty countries. I searched both data frames for the missing
+countries to see the naming differences. Any countries that do not have records
+in the =happy_data= df will not show up on the map.
 
 #+begin_src python
 # Rename some countries to match our GeoJSON data
@@ -104,11 +101,11 @@ happy_data.at[democratic_congo_index, 'Country or region'] = 'Democratic Republi
 * Merge the Data
 
 Now that we have clean data, we need to merge the GeoJSON data with the
-happiness data. Since we've stored them both in dataframes, we just need
-to call the =.merge()= function.
+happiness data. Since we've stored them both in dataframes, we just need to call
+the =.merge()= function.
 
-We will also rename a couple columns, just so that they're a little
-easier to use when we create the map.
+We will also rename a couple columns, just so that they're a little easier to
+use when we create the map.
 
 #+begin_src python
 # Merge the two previous dataframes into a single geopandas dataframe
@@ -122,10 +119,9 @@ merged_df = merged_df.rename(columns = {'Country or region':'Country'})
 * Create the Map
 
 The data is finally ready to be added to a map. The code below shows the
-simplest way to find the center of the map and create a Folium map
-object. The important part is to remember to reference the merged
-dataframe for our GeoJSON data and value data. The columns specify which
-geo data and value data to use.
+simplest way to find the center of the map and create a Folium map object. The
+important part is to remember to reference the merged dataframe for our GeoJSON
+data and value data. The columns specify which geo data and value data to use.
 
 #+begin_src python
 # Assign centroids to map
@@ -157,10 +153,9 @@ Let's look at the resulting map.
 
 * Create a Tooltip on Hover
 
-Now that we have a map set up, we could stop. However, I want to add a
-tooltip so that I can see more information about each country. The
-=tooltip_data= code below will show a popup on hover with all the data
-fields shown.
+Now that we have a map set up, we could stop. However, I want to add a tooltip
+so that I can see more information about each country. The =tooltip_data= code
+below will show a popup on hover with all the data fields shown.
 
 #+begin_src python
     # Adding labels to map
