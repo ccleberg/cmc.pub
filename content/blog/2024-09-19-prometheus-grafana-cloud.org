@@ -1,0 +1,347 @@
+#+date: <2024-09-20 Fri 13:38:52>
+#+title: Linux Observability with Self-Hosted Prometheus and Grafana Cloud
+#+description: Learn how to self-host a Prometheus data collection tool with Docker and visualize the results with Grafana Cloud.
+#+filetags: :linux:grafana:
+#+slug: prometheus-grafana-cloud
+
+This tutorial will guide you through the process of:
+
+1. Configuring a free Grafana cloud account.
+2. Installing Prometheus to store metrics.
+3. Installing Node Exporter to export machine metrics for Prometheus.
+4. Installing Nginx Exporter to export Nginx metrics for Prometheus.
+5. Visualizing data in Grafana dashboards.
+6. Configure alerts based on Grafana metrics.
+
+* Grafana Cloud
+
+To get started, visit the [[https://grafana.com/auth/sign-up/create-user][Grafana website]] and create a free account.
+
+** Prometheus Data Source
+
+By default, a Prometheus data source should exist in your data sources page
+(=$yourOrg.grafana.net/connections/datasources=). If not, add a new data source
+using the Prometheus type.
+
+Once you have a valid Prometheus data source, open the data source and note the
+following items:
+
+| Data                  | Example                                                        |
+|-----------------------+----------------------------------------------------------------|
+| Prometheus Server URL | https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom |
+|-----------------------+----------------------------------------------------------------|
+| User                  | 1234567                                                        |
+|-----------------------+----------------------------------------------------------------|
+| Password              | configured                                                     |
+
+** Cloud Access Policy Token
+
+Now let's create an access token in Grafana. Navigate to the Administration
+> Users and Access > Cloud Access Policies page and create an access policy.
+
+The =metrics > write= scope must be enabled within the access policy you choose.
+
+Once you have an access policy with the correct scope, click the Add Token
+button and be sure to copy and save the token since it will disappear once the
+modal window is closed.
+
+** Dashboards
+
+Finally, let's create a couple dashboards so that we can easily explore the data
+that we will be importing from the server.
+
+I recommend importing the following dashboards:
+
+- [[https://grafana.com/grafana/dashboards/1860-node-exporter-full/][Node Exporter Full]]
+- [[https://github.com/nginxinc/nginx-prometheus-exporter/blob/main/grafana][nginx-prometheus-exporter]]
+- Prometheus 2.0 Stats
+
+Refer to the bottom of the post for dashboard screenshots!
+
+* Docker
+
+On the machine that you want to observe, make sure Docker and Docker Compose are
+installed. This tutorial will be using Docker Compose to create a group of
+containers that will work together to send metrics to Grafana.
+
+Let's start by creating a working directory.
+
+#+begin_src shell
+mkdir ~/prometheus && \
+cd ~/prometheus    && \
+nano compose.yml
+#+end_src
+
+Within the =compose.yml= file, let's paste the following:
+
+#+begin_src yaml
+# compose.yml
+
+networks:
+  monitoring:
+    driver: bridge
+
+volumes:
+  prometheus_data: {}
+
+services:
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter
+    container_name: nginx-exporter
+    restart: unless-stopped
+    command:
+      - '--nginx.scrape-uri=http://host.docker.internal:8080/stub_status'
+    expose:
+      - 9113
+    networks:
+      - monitoring
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    expose:
+      - 9090
+    networks:
+      - monitoring
+#+end_src
+
+#+begin_src shell
+sudo docker compose up -d
+#+end_src
+
+> I'm not sure if it made a difference but I also whitelisted port 8080 on my
+> local firewall with =sudo ufw allow 8080=.
+
+Next, let's create a =prometheus.yml= configuration file.
+
+,#+begin_src sh
+nano prometheus.yml
+#+end_src
+
+#+begin_src yaml
+# prometheus.yml
+
+global:
+  scrape_interval: 1m
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  - job_name: 'nginx'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['nginx-exporter:9113']
+
+remote_write:
+  - url: 'https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push'
+    basic_auth:
+      username: 'prometheus-grafana-username'
+      password: 'access-policy-token'
+#+end_src
+
+** Nginx
+
+To enable to the Nginx statistics we need for the nginx-exporter container, we
+need to modify the Nginx configuration on the host.
+
+More specifically, we need to create a path for the =stub_status= to be returned
+when we query port 8080 on our localhost.
+
+#+begin_src shell
+sudo nano /etc/nginx/conf.d/default.conf
+#+end_src
+
+#+begin_src conf
+server {
+        listen 8080;
+        listen [::]:8080;
+
+        location /stub_status {
+                stub_status;
+        }
+}
+#+end_src
+
+#+begin_src shell
+sudo systemctl restart nginx.service
+#+end_src
+
+** Debugging
+
+At this point, everything should be running smoothly. If not, here are a few
+areas to check and see if any obvious errors exist.
+
+Nginx: Curl the stub_status from the Nginx web server on the host machine to see
+if Nginx and stub_status are working properly.
+
+#+begin_src shell
+curl http://127.0.0.1:8080/stub_status
+
+# EXPECTED RESULTS:
+Active connections: 101
+server accepts handled requests
+ 7510 7510 9654
+Reading: 0 Writing: 1 Waiting: 93
+#+end_src
+
+Nginx-Exporter: Curl the exported Nginx metrics.
+
+#+begin_src sh
+# Figure out the IP address of the Docker container
+sudo docker network inspect grafana_monitoring
+
+...
+"Name": "nginx-exporter",
+"EndpointID": "ef999a53eb9e0753199a680f8d78db7c2a8d5f442626df0b1bb945f03b73dcdd",
+"MacAddress": "02:42:c0:a8:40:02",
+"IPv4Address": "192.168.64.2/20",
+...
+
+# Curl the exported Nginx metrics
+curl 192.168.64.2:9113/metrics
+
+# EXPECTED RESULTS:
+...
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 2.9927e-05
+go_gc_duration_seconds{quantile="0.25"} 4.24e-05
+go_gc_duration_seconds{quantile="0.5"} 4.8531e-05
+...
+#+end_src
+
+Node-Exporter: Curl the exporter node machine metrics.
+
+#+begin_src shell
+# Curl the exported Node metrics
+curl 192.168.64.3:9100/metrics
+
+# EXPECTED RESULTS:
+...
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 47
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0
+...
+#+end_src
+
+Grafana: Open the Explore panel and look to see if any metrics are coming
+through the Prometheus data source. If not, something on the machine is
+preventing data from flowing through.
+
+* Alerts & IRM
+
+Now that we have our data connected and visualized, we can define alerting rules
+and determine what Grafana should do when an alert is triggered.
+
+** OnCall
+
+#+caption: OnCall
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/oncall.png]]
+
+Within the Alerts & IRM section of Grafana (=/alerts-and-incidents=), open the
+Users page.
+
+The Users page allows you to configure user connections such as:
+
+- Mobile App
+- Slack
+- Telegram
+- MS Teams
+- iCal
+- Google Calendar
+
+In addition to the connections of each user, you can specify how each user or
+team is alerted for Default Notifications and Important Notifications.
+
+Finally, you can access the Schedules page within the OnCall module to schedule
+users and teams to be on call for specific date and time ranges. For my
+purposes, I put myself on-call 24/7 so that I receive all alerts.
+
+#+caption: User Information
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/irm_user_info.png]]
+
+** Alerting
+
+#+caption: Alerting Insights
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/alerting_insights.png]]
+
+Now that we have defined users and team associated with an on-call schedule and
+configured to receive the proper alerts, let's define a rule that will generate
+alerts.
+
+Within the Alerting section of the Alerts & IRM module, you can create alert
+rules, contact points, and notification policies.
+
+Let's start by opening the Alert Rules page and click the New Alert Rule button.
+
+As shown in the image below, we will create an alert for high CPU temperature by querying the =node_hwmon_temp_celsius= metric from our Prometheus data source.
+
+Next, we will set the threshold to be anything above 50 (degrees Celsius).
+Finally, we will tell Grafana to evaluate this every 1 minute via our Default
+evaluation group. This is connected to our Grafana email, but can be associated
+with any notification policy.
+
+#+caption: New Alert Rule
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/new_alert.png]]
+
+When the alert fires, it will generate an email (or whatever notification policy
+you assigned) and will look something like the following image.
+
+#+caption: Alerting Example
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/email_alert.png]]
+
+** Dashboards
+
+As promised above, here are some dashboard screenshots based on the
+configurations above.
+
+#+caption: Nginx Dashboard
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/dashboard_nginx.png]]
+
+#+caption: Node Dashboard
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/dashboard_node.png]]
+
+#+caption: OnCall Dashboard
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/dashboard_oncall.png]]
+
+#+caption: Prometheus Dashboard
+[[https://img.cleberg.net/blog/20240920-prometheus-grafana-cloud/dashboard_prometheus.png]]
