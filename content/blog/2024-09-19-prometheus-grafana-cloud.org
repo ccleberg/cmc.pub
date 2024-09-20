@@ -26,13 +26,13 @@ using the Prometheus type.
 Once you have a valid Prometheus data source, open the data source and note the
 following items:
 
-| Data                  | Example                                                        |
-|-----------------------+----------------------------------------------------------------|
-| Prometheus Server URL | https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom |
-|-----------------------+----------------------------------------------------------------|
-| User                  | 1234567                                                        |
-|-----------------------+----------------------------------------------------------------|
-| Password              | configured                                                     |
+| Data                  | Example                                                             |
+|-----------------------+---------------------------------------------------------------------|
+| Prometheus Server URL | https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push |
+|-----------------------+---------------------------------------------------------------------|
+| User                  | 1234567                                                             |
+|-----------------------+---------------------------------------------------------------------|
+| Password              | configured                                                          |
 
 ** Cloud Access Policy Token
 
@@ -139,8 +139,10 @@ services:
 sudo docker compose up -d
 #+end_src
 
-> I'm not sure if it made a difference but I also whitelisted port 8080 on my
-> local firewall with =sudo ufw allow 8080=.
+#+begin_quote
+I'm not sure if it made a difference but I also whitelisted port 8080 on my
+local firewall with =sudo ufw allow 8080=.
+#+end_quote
 
 Next, let's create a =prometheus.yml= configuration file.
 
