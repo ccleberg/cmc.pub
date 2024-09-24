@@ -1,0 +1,182 @@
+#+date: <2024-09-23 Mon 19:52:20>
+#+title: Self-Hosting Transmission Bittorrent Client
+#+description: Learn how to self-host the Transmission torrent client with an Nginx reverse proxy.
+#+filetags: :self-hosting:
+#+slug: self-hosting-transmission
+
+#+begin_quote
+If you're torrenting anything sensitive, I *highly* recommend you use a VPN.
+Something like mullvad-cli is incredibly simple to use and can be configured to
+have a "killswitch" or "lockdown mode" to ensure that if the VPN disconnects,
+your traffic won't be leaked to your ISP.
+#+end_quote
+
+* Transmission
+
+[[https://transmissionbt.com/][Transmission]] is a cross-platform bittorrent client that supports running a
+[[https://linux.die.net/man/1/transmission-remote][remote control utility]], a [[https://linux.die.net/man/1/transmission-daemon][daemon service]] for running as a background service,
+and a [[https://linux.die.net/man/1/transmission-cli][command-line client]].
+
+Since I love torrenting Linux ISOs and providing them back to the community,
+let's walk through a tutorial of setting up Transmission on a headless server
+and connecting it to a domain name (=transmission.example.com=) so that we can
+manage our torrents remotely.
+
+This tutorial assumes you have a Linux machine, have Nginx installed, and have a
+domain name pointing at your Linux machine.
+
+** Installation
+
+First, let's install a couple Transmission packages on the system. We don't need
+the GUI components, so we'll only install the daemon and command line interface
+utilities.
+
+#+begin_src sh
+sudo apt install transmission-cli transmission-common transmission-daemon
+#+end_src
+
+You will need to run the program to initialize the files before you can edit the
+configurations, so let's run it and end the process.
+
+#+begin_src sh
+# Run the program
+transmission-daemon -e ~/.local/log/transmission.log
+
+# End the program after it finishes running
+transmission-remote --exit
+#+end_src
+
+** Configuration
+
+Now that we've run the program for the first time and initialized the relevant
+files, let's edit those files.
+
+#+begin_quote
+If you edit the files while Transmission is running, your changes won't be
+saved! Make sure to end the service, update the configuration files, and restart
+the service.
+#+end_quote
+
+To start, let's edit the main configuration file.
+
+#+begin_src sh
+nano ~/.config/transmission-daemon/settings.json
+#+end_src
+
+Within this file, I suggesting skimming *every* option and determining if you
+want to change any of those options.
+
+For remote access, we will focus on the following =rpc= options. This
+configuration will not require authentication, will allow any device with access
+(I suggest that you have a firewall restricting access) to access the service
+(="rpc-bind-access": "0.0.0.0"=), will open the service on port =9091=, and will
+whitelist a few LAN IPs (="rpc-whitelist":
+"127.0.0.1,::1,192.168.0.98,192.168.0.97"=).
+
+#+begin_src json
+{
+    ...
+    "rpc-authentication-required": false,
+    "rpc-bind-address": "0.0.0.0",
+    "rpc-enabled": true,
+    "rpc-host-whitelist": "",
+    "rpc-host-whitelist-enabled": true,
+    "rpc-password": "{7fc02520b97e054f7a15274c7cfafe3cd7330169.OQUAUS4",
+    "rpc-port": 9091,
+    "rpc-socket-mode": "0750",
+    "rpc-url": "/transmission/",
+    "rpc-username": "",
+    "rpc-whitelist": "127.0.0.1,::1,192.168.0.98,192.168.0.97",
+    "rpc-whitelist-enabled": true,
+    ...
+}
+#+end_src
+
+Once you've finished configuring the service, start the service up again.
+
+#+begin_src sh
+transmission-daemon -e ~/.local/log/transmission.log
+#+end_src
+
+At this point, you should be able to access the website at =localhost:9091= (if
+you're browsing on the machine where Transmission is running) or
+=$server_ip:9091= (if you're browsing from a different LAN device).
+
+If you want to make further changes to Transmission's configuration, I suggest
+doing so now. Once you start working on remote access via a reverse proxy,
+you'll be adding an additional layer of complexity that bring in more confusion
+when errors occur.
+
+* Reverse Proxy
+
+Now that the service is running and configured properly, let's work on remote
+access.
+
+This tutorial will use Nginx, but you can use any reverse proxy or something
+like Cloudflare Tunnels if that's your thing.
+
+** Configuration
+
+If you have Nginx installed, you should have either the =/etc/nginx/conf.d= or
+=/etc/nginx/sites-available= directories available to create website
+configuration files. This tutorial assumes the =conf.d= structure, but it's
+essentially the same except using the =sites-available= structure requires you
+to symlink your files into the =sites-enabled= directory.
+
+Let's start by creating the website configuration file.
+
+#+begin_src sh
+sudo nano /etc/nginx/conf.d/transmission.conf
+#+end_src
+
+Within the file, you will need a configuration similar to the code below. Note
+that this uses SSL and requires a valid TLS/SSL certificate. You can use [[https://letsencrypt.org/][Let's
+Encrypt]] if you don't have a certificate yet.
+
+#+begin_src conf
+server {
+	listen                  443 ssl;
+	listen                  [::]:443 ssl;
+	http2			on;
+	server_name             transmission.example.com;
+
+	# SSL
+	ssl_certificate         /etc/letsencrypt/live/example.com/fullchain.pem;
+	ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
+	ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;
+
+    # reverse proxy
+	location / {
+		set $upstream_transmission http://localhost:9091;
+		proxy_pass $upstream_transmission;
+		proxy_pass_header X-Transmission-Session-Id;
+	}
+}
+
+# HTTP redirect
+server {
+	listen      80;
+	listen      [::]:80;
+	server_name transmission.example.com;
+
+	if ($host ~ ^[^.]+\.example\.com) {
+		return 301 https://$host$request_uri;
+	}
+}
+#+end_src
+
+Once you've saved the configuration file, restart the Nginx web server to enable
+the remote access connection.
+
+#+begin_src sh
+sudo systemctl restart nginx.service
+#+end_src
+
+At this point, Transmission should now be available at
+=transmission.example.com=, same as it's available on the LAN.
+
+#+begin_quote
+Pro Tip: If you dislike something about the website UI, you can edit the
+website's files in the =/usr/share/transmission/public_html/= directory. You can
+modify the HTML, CSS, and JS files in this directory.
+#+end_quote
