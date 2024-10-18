@@ -11,7 +11,7 @@ reference point when determining if their current or proposed salary is
 appropriate.
 
 While sites like Glassdoor are locking salary data behind a paywall, LinkedIn is
-discontinuing LinkedIn Salary, and helpful websites like Big 4 Transparency are
+discontinuing LinkedIn Salary, and helpful websites like [[https://www.big4transparency.com/][Big 4 Transparency]] are
 extremely rare, I wanted to provide my personal data publicly and freely to
 those who need it.
 
@@ -34,7 +34,7 @@ raise while in the same role.
 
 | Title                                          | Company                | Location       |   Start |     End | Salary   |
 |------------------------------------------------+------------------------+----------------+---------+---------+----------|
-| Manager, Technology Assurance - Audit          | KPMG                   | Omaha, NE      | 2024-10 | Current | TBD      |
+| Manager, Technology Assurance - Audit          | KPMG                   | Omaha, NE      | 2024-10 | Current | $141,200 |
 | Senior Associate, Technology Assurance - Audit | KPMG                   | Omaha, NE      | 2023-10 | 2024-10 | $116,700 |
 | Senior Associate, Technology Assurance - Audit | KPMG                   | Omaha, NE      | 2022-06 | 2023-10 | $110,000 |
 | Senior Technology Risk Consultant              | Ernst & Young          | Des Moines, IA | 2021-09 | 2022-06 | $89,500  |
