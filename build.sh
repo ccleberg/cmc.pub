@@ -10,9 +10,6 @@ if [ "$answer" != "${answer#[Yy]}" ] ; then
 		emacs --script publish.el &>/dev/null		 && \
 		minify -o theme/static/styles.min.css		    \
 		theme/static/styles.css				 && \
-		pandoc -f org -t html readme.org  -o readme.html && \
-		hut git update --readme readme.html --repo          \
-		https://git.sr.ht/\~cyborg/cleberg.net           && \
 		rsync -r --delete-before .build/*		    \
 		ubuntu:/var/www/cleberg.net/
 	else

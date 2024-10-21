@@ -49,4 +49,4 @@ running =C-x i= (=insert-file-contents=), and then direct it to the
 
 ** Tasks
 
-Refer to the [[https://todo.sr.ht/~cyborg/cleberg.net][todo page]] for open tickets or to submit a new ticket.
+Refer to the [[https://github.com/ccleberg/cleberg.net/issues][issues page]] for open tickets or to submit a new ticket.
