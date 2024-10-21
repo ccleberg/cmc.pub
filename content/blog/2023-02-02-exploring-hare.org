@@ -43,21 +43,19 @@ was quite easy as there is a package for Hare in the =apk= repositories.
 doas apk add hare hare-doc
 #+end_src
 
-However, I was able to install Hare from scratch on Fedora Linux a short
-while ago, which was also very easy to do. If you need further
-instructions and Hare doesn't have a package on your system, take a look
-at the [[https://harelang.org/installation/][Hare Installation]] page.
+However, I was able to install Hare from scratch on Fedora Linux a short while
+ago, which was also very easy to do. If you need further instructions and Hare
+doesn't have a package on your system, take a look at the [[https://harelang.org/installation/][Hare Installation]]
+page.
 
 ** Creating a Test Project
 
-In order to play with the language, I created
-[[https://git.sr.ht/~cyborg/learning-hare][hare-test]] and will be
-putting any of my Hare-related adventures in here.
+In order to play with the language, I created [[https://github.com/ccleberg/learn-hare][hare-test]] and will be putting any
+of my Hare-related adventures in here.
 
 #+begin_quote
-*Update:* I also created a simple Hare program for creating a file from
-user input:
-[[https://git.sr.ht/~cyborg/learning-hare/blob/main/files/files.ha][files.ha]]
+*Update:* I also created a simple Hare program for creating a file from user
+input: [[https://github.com/ccleberg/learn-hare/blob/main/files/files.ha][files.ha]]
 #+end_quote
 
 Luckily, Hare doesn't require any complex set-up tools or build

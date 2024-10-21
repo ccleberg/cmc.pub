@@ -167,9 +167,8 @@ doas apk add brightnessctl   \ # Brightness controller
              gnupg             # GPG key manager
 #+end_src
 
-From here, I use my Syncthing storage to pull all the configuration
-files I stored from prior desktops, such as
-[[https://git.sr.ht/~cyborg/dotfiles][my dotfiles]].
+From here, I use my Syncthing storage to pull all the configuration files I
+stored from prior desktops, such as my [[https://github.com/ccleberg/dotfiles][dotfiles]].
 
 * Resolving Issues
 
