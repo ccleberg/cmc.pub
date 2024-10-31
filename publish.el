@@ -1,22 +1,26 @@
-;; explicity load packages since I'm using Doom Emacs
+;; Explicitly load packages for Doom Emacs
+
 (add-to-list 'load-path "~/.emacs.d/.local/straight/repos/emacs-htmlize")
 (add-to-list 'load-path "~/.emacs.d/.local/straight/repos/weblorg")
 (add-to-list 'load-path "~/.emacs.d/.local/straight/repos/templatel")
+
 (require 'htmlize)
 (require 'weblorg)
 
-;; defaults to http://localhost:8000
-;; ENV=prod emacs --script publish.el
+;; Set default URL for Weblorg
 (if (string= (getenv "ENV") "prod")
     (setq weblorg-default-url "https://cleberg.net"))
 
+;; Define site configuration
 (weblorg-site
  :theme nil
- :template-vars '(("site_name" . "cleberg.net")
+  :template-vars `(("site_name" . "cleberg.net")
                   ("site_owner" . "Christian Cleberg <hello@cleberg.net>")
                   ("site_description" . "Just a blip of ones and zeroes.")))
 
-;; route for rendering the index page of the website
+;; Define routes for rendering content
+
+;; Index page route
 (weblorg-route
  :name "index"
  :input-pattern "content/index.org"
@@ -24,7 +28,7 @@
  :output ".build/index.html"
  :url "/")
 
-;; route for rendering each post
+;; Blog post route
 (weblorg-route
  :name "blog"
  :input-pattern "content/blog/*.org"
@@ -32,7 +36,7 @@
  :output ".build/blog/{{ slug }}.html"
  :url "/blog/{{ slug }}.html")
 
-;; route for rendering the index page of the blog
+;; Blog index page route
 (weblorg-route
  :name "blog-index"
  :input-pattern "content/blog/*.org"
@@ -41,7 +45,7 @@
  :output ".build/blog/index.html"
  :url "/blog/")
 
-;; route for rendering each wiki post
+;; Wiki post route
 (weblorg-route
  :name "wiki"
  :input-pattern "content/wiki/*.org"
@@ -49,7 +53,7 @@
  :output ".build/wiki/{{ slug }}.html"
  :url "/wiki/{{ slug }}.html")
 
-;; route for rendering the index page of the wiki
+;; Wiki index page route
 (weblorg-route
  :name "wiki-index"
  :input-pattern "content/wiki/*.org"
@@ -58,7 +62,7 @@
  :output ".build/wiki/index.html"
  :url "/wiki/")
 
-;; route for rendering each page
+;; Page post route
 (weblorg-route
  :name "pages"
  :input-pattern "content/*.org"
@@ -66,6 +70,7 @@
  :output ".build/{{ slug }}.html"
  :url "/{{ slug }}.html")
 
+;; Salary page route
 (weblorg-route
  :name "salary"
  :input-pattern "content/salary/*.org"
@@ -73,6 +78,7 @@
  :output ".build/salary/{{ slug }}.html"
  :url "/salary/{{ slug }}.html")
 
+;; Services page route
 (weblorg-route
  :name "services"
  :input-pattern "content/services/*.org"
@@ -80,7 +86,7 @@
  :output ".build/services/{{ slug }}.html"
  :url "/services/{{ slug }}.html")
 
-;; RSS Feed
+;; RSS feed route
 (weblorg-route
  :name "rss"
  :input-pattern "content/blog/*.org"
@@ -89,10 +95,10 @@
  :output ".build/feed.xml"
  :url "/feed.xml")
 
-;; route for static assets that also copies files to .build directory
+;; Copy static assets and output to .build directory
 (weblorg-copy-static
  :output ".build/{{ file }}"
  :url "/{{ file }}")
 
-;; fire the engine and export all the files declared in the routes above
+;; Export all content using Weblorg engine
 (weblorg-export)
