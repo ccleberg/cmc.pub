@@ -1,0 +1,233 @@
+#+date: <2024-10-31 Thu 11:01:05>
+#+title: Using Ollama As a Code Assistant in VS Codium
+#+description: This post describes a starting point for using Ollama as a code assistant inside VS Codium (or VS Code).
+#+filetags: :ai:
+#+slug: continue-ollama-code-assistant
+
+* Background
+
+As someone who doesn't do software development full time and intends to actually
+enjoy it as a hobby, I've been interested in the /concept/ of code assistants
+for a while. However, I had a few issues:
+
+1. I'm not a full-time developer, so I wanted to actually learn all the various
+   features and rules of the projects I was building.
+2. The quality was quite low until recently.
+3. I wanted to use an open-source solution. Ideally, one with a free tier so
+   that I could test it before paying for a subscription.
+
+I recently discovered [[https://www.continue.dev/][Continue]], which allows for local LLM configurations via
+[[https://ollama.com/][Ollama]], so I've decided to try it out and see how helpful a code assistant can
+really be for someone like me, who doesn't do this professionally.
+
+* Installation
+
+Installation is a quick and painless process if you already have Ollama
+installed, but I'll assume that we're starting from scratch.
+
+** Ollama
+
+First, install Ollama for your system. For macOS devices, I'd recommend using
+Homebrew via the following command. However, you can also visit their website
+and install the software manually.
+
+#+begin_src sh
+brew install ollama
+brew services start ollama
+#+end_src
+
+Next, we will need to install the models requested by the Continue extension. By
+default, Continue asks you to install the =llama3.1:8b= and =starcoder2:3b=
+models. However, you can customize the configuration to specify different
+models, if preferred.
+
+#+begin_src sh
+ollama pull llama3.1:8b 
+ollama pull starcoder2:3b
+#+end_src
+
+At this point, Ollama should be running on your local machine and have two
+models available for use.
+
+You can test this by visiting =http://localhost:11434/= in your browser or use
+cURL in your shell:
+
+#+begin_src sh
+curl http://localhost:11434
+
+# If running, the response will look like this:
+# Ollama is running
+#+end_src
+
+** Continue
+
+To get started with using Ollama as a code assistant in VS Codium, you'll first
+need to install the Continue extension. This extension is available for free on
+the Visual Studio Code marketplace and can be easily installed via the built-in
+Extension view.
+
+Follow these steps:
+1. Open VS Codium and navigate to the Extensions view by clicking on the square
+   icon next to the file menu or pressing =Ctrl+Shift+X= (Windows/Linux) or
+   =Cmd+Shift+X= (Mac).
+2. Search for "Continue" in the Extensions marketplace.
+3. Click on the Continue extension and click Install.
+
+Once installed, restart VS Codium to ensure that the extension is properly
+loaded.
+
+* Continue: Extension Configuration
+
+When you first install Continue, it will ask which service you'll be using. If
+you select Ollama, it will check to make sure Ollama is running and you have
+installed the two default models from Ollama.
+
+After this initial setup, you can open the =config.json= file by pressing =Cmd +
+p= and entering => Continue: Open config.json=. This will show a config such as
+the following:
+
+#+begin_src json
+{
+  "models": [
+    {
+      "title": "Llama 3.1 8B",
+      "provider": "ollama",
+      "model": "llama3.1:8b"
+    },
+    {
+      "model": "claude-3-5-sonnet-20240620",
+      "provider": "anthropic",
+      "apiKey": "",
+      "title": "Claude 3.5 Sonnet"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Starcoder 3b",
+    "provider": "ollama",
+    "model": "starcoder2:3b"
+  },
+  "customCommands": [
+    {
+      "name": "test",
+      "prompt": "{{{ input }}}\n\nWrite a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.",
+      "description": "Write unit tests for highlighted code"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    },
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit selected code"
+    },
+    {
+      "name": "comment",
+      "description": "Write comments for the selected code"
+    },
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    },
+    {
+      "name": "commit",
+      "description": "Generate a git commit message"
+    }
+  ],
+  "embeddingsProvider": {
+    "provider": "ollama",
+    "model": "nomic-embed-text"
+  }
+}
+#+end_src
+
+You can modify this file with many different customizations. Refer to the
+[[https://docs.continue.dev/customize/config][Configuration options]] page for more information.
+
+* Use Cases
+
+While I'm sure there are a ton of use cases that I can't think of, I decided to
+test it out with this blog and some basic Python scripts I am currently using.
+Here are the most common ones I've used so far:
+
+- Improving README documentation
+- Refactor my =salary_visualization.py= script to align with PEP8.
+- Auto-complete thoughts and suggest further ideas for topics in this blog post.
+
+As an example, the following list of possible use cases was auto-generated by
+Continue:
+
+- Auto-complete function names and variables: With Ollama enabled, typing a few
+  characters into the editor will suggest matching functions or variables from
+  the entire project.
+- Code suggestions for common tasks: Ollama can provide suggestions for common
+  programming tasks, such as converting types or formatting code.
+- Live coding assistance: As you type, Ollama can offer live suggestions and
+  corrections to help ensure your code is correct.
+
+** Screenshots
+
+Below are a few screenshots from my current VS Codium window:
+
+#+caption: Available Continue Commands
+[[https://img.cleberg.net/blog/20241031-continue-ollama-code-assistant/continue_commands.png]]
+
+#+caption: Continue Fullscreen Chat Window
+[[https://img.cleberg.net/blog/20241031-continue-ollama-code-assistant/continue_fullscreen.png]]
+
+#+caption: Inline Hotkeys
+[[https://img.cleberg.net/blog/20241031-continue-ollama-code-assistant/continue_inline_hotkeys.png]]
+
+#+caption: Inline Editing Suggestions
+[[https://img.cleberg.net/blog/20241031-continue-ollama-code-assistant/continue_inline.png]]
+
+#+caption: Sidebar Context Window
+[[https://img.cleberg.net/blog/20241031-continue-ollama-code-assistant/continue_sidebar.png]]
+
+* Conclusion
+
+As it stands, it seems that the current iteration of code completion and review
+models from Ollama are quite good for my use case. In particular, it is able to
+suggest logical continuations of my thoughts in a blog post, generate accurate
+documentation based on my files, explain code to me with references within the
+project, and align my existing files to standards.
+
+However, it is not perfect. I have noticed that it often goes off in a random
+direction, unrelated to the intent of what I'm writing (either blogging or
+programming). It also struggles to understand the full context without clear,
+specific, repeated instructions to refer to certain files, standards, etc. while
+suggesting improvements.
+
+All together, I think it's useful enough to suggest as an add-on tool, but I
+would be highly skeptical of any suggestions it provides.
