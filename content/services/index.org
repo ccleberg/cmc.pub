@@ -8,6 +8,7 @@
 - [[https://invidious.cleberg.net/][Invidious]] - A YouTube proxy
 - [[https://office.cleberg.net/][Office]] - The world's smallest office suite
 - [[https://org.cleberg.net/][Org-Live]] - A basic org-mode editor for the web I built
+- [[https://priviblur.cleberg.net][Priviblur]] - A privacy-focused alternative frontend to Tumblr
 - [[https://rimgo.cleberg.net/][Rimgo]] - An alternative frontend for Imgur
 - [[https://search.cleberg.net/][SearXNG]] - A privacy-respecting, open metasearch engine
 
