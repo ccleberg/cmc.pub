@@ -12,4 +12,4 @@
 - [[https://rimgo.cleberg.net/][Rimgo]] - An alternative frontend for Imgur
 - [[https://search.cleberg.net/][SearXNG]] - A privacy-respecting, open metasearch engine
 
-See the [[https://github.com/ccleberg/cleberg.net/commits/main/content/services/index.org][git log]] if you want to see changes that have been made.
+See the [[https://git.sr.ht/~cyborg/cleberg.net/log/main/item/content/services/index.org][git log]] if you want to see changes that have been made.
