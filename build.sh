@@ -35,8 +35,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
         # Update README on Sourcehut
         pandoc -f org -t html readme.org  -o readme.html
-		hut git update --readme readme.html --repo
-		https://git.sr.ht/\~cyborg/cleberg.net
+		hut git update --readme readme.html --repo https://git.sr.ht/\~cyborg/cleberg.net
         
         # Deploy changes
         rsync -r --delete-before .build/* $ubuntu_server:/var/www/cleberg.net/
