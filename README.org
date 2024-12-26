@@ -19,7 +19,7 @@ a local copy of the repository. This can be accomplished by running the
 following commands within Emacs:
 
 #+begin_src sh
-git clone https://git.cleberg.net/cleberg.net.git && \
+git clone https://github.com/ccleberg/cleberg.net.git && \
 cd cleberg.net && \
 emacs -nw
 #+end_src
@@ -39,7 +39,11 @@ If ENV is omitted, it will default to =localhost:8000=. If =ENV=prod=, weblorg
 will look in the =publish.el= file for the production base URL.
 
 #+begin_src sh
+# production:
 ENV=prod emacs --script publish.el
+
+# development:
+emacs --script publish.el
 #+end_src
 
 The resulting files can then be deployed to your desired target using any method
@@ -47,6 +51,14 @@ of your choice, such as =scp= or SFTP.
 
 Alternatively, you may prefer to utilize the provided =build.sh= script to
 automate this process. To do so, simply customize and run the script as needed.
+
+#+begin_src sh
+# production:
+ENV=prod ./build.sh
+
+# development:
+./build.sh
+#+end_src
 
 *** Creating New Blog Posts
 
