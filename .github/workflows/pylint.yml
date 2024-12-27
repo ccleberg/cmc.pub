@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint locale pandas plotly
+        pip install pylint pandas plotly
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
