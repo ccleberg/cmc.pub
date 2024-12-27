@@ -62,8 +62,8 @@ def create_trace(row: pd.Series) -> go.Scatter:
 fig = go.Figure()
 
 # Add each data point as a separate trace to display the text
-for index, row in df.iterrows():
-    fig.add_trace(create_trace(row))
+for index, df_row in df.iterrows():
+    fig.add_trace(create_trace(df_row))
 
 # Update visual styles of the figure
 fig.update_layout(
