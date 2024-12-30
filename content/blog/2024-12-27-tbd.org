@@ -1,0 +1,164 @@
+#+date: <2024-12-29 Sun 17:45:00>
+#+title: Self-Hosting The Lounge: An IRC Web Client
+#+description: Learn how to deploy The Lounge, an IRC web client, via Docker Compose on Linux.
+#+filetags: :self-hosting:
+#+slug: self-hosting-the-lounge
+
+* The Lounge
+
+[[https://thelounge.chat/][The Lounge]] is a self-hosted IRC client for the web, which supports a lot of
+desirable features for a modern IRC client. The Lounge supports push
+notifications, link previews, file uploads, always connected, multi-user
+support, and is available as a PWA for mobile devices.
+
+I wanted to write this as I had written a post about [[https://cleberg.net/blog/self-hosting-convos.html][self-hosting Convos]] and
+have recently migrated over to The Lounge instead.
+
+If you'd like to try a demo first, head over to [[https://demo.thelounge.chat/][the official demo website]].
+
+** Installation (Docker)
+
+I install everything I can via Docker, so this tutorial will install The Lounge
+with the Docker Compose platform.
+
+You can find the official docker version of The Lounge's repository on GitHub at
+[[https://github.com/thelounge/thelounge-docker][thelounge-docker]].
+
+To start, let's create a directory for this app and create the =compose.yml= file.
+
+#+begin_src shell
+mkdir thelounge
+cd thelounge
+nano compose.yml
+#+end_src
+
+Within this configuration file, you can paste the content below and customize as
+needed. If you want to use a different port on your machine, change the first
+port on the =9000:9000= line. Additionally, you may move the volume to a
+different location if required.
+
+#+begin_src yaml
+services:
+  thelounge:
+    image: ghcr.io/thelounge/thelounge:latest
+    container_name: thelounge
+    ports:
+      - "9000:9000"
+    restart: always
+    volumes:
+      - ./.thelounge:/var/opt/thelounge
+#+end_src
+
+Save and close the file and you can now launch the service.
+
+#+begin_src shell
+sudo docker compose up -d
+#+end_src
+
+The service is now available at =localhost:9000= or =machine_ip:9000= if you're
+browsing from a different device. Don't forget to allow the port through your
+machine's firewall, if you have one enabled.
+
+#+caption: Login
+[[https://img.cleberg.net/blog/20241229-thelounge/login.png]]
+
+** Nginx Reverse Proxy
+
+If you want to access the service via a domain name (=thelounge.example.com=),
+you can use Nginx as a reverse proxy.
+
+First, create the Nginx configuration file.
+
+#+begin_src shell
+sudo nano /etc/nginx/conf.d/
+#+end_src
+
+The configuration below assumes you have a wildcard certificate for HTTPS (:443)
+traffic via =example.com=. If you don't, you'll need to obtain an SSL
+certificate to use HTTPS.
+
+#+begin_src configuration
+upstream irc_upstream { server 127.0.0.1:9000; }
+
+# HTTP redirect
+server {
+	listen      80;
+	listen      [::]:80;
+	server_name thelounge.example.com;
+	include     custom.d/letsencrypt.conf;
+
+	if ($host ~ ^[^.]+\.example\.com) {
+		return 301 https://$host$request_uri;
+	}
+}
+
+# HTTPS
+server {
+	listen                  443 ssl;
+	listen                  [::]:443 ssl;
+	http2			on;
+	server_name             thelounge.example.com;
+
+	# SSL
+	ssl_certificate         /etc/letsencrypt/live/example.com/fullchain.pem;
+	ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
+	ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;
+
+	# reverse proxy
+	location / {
+	        proxy_pass           http://irc_upstream;
+	        client_max_body_size 0;
+	        proxy_set_header     X-Request-Base "$scheme://$host/";
+
+		# Standard reverse proxy settings
+		proxy_set_header Host $host;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection upgrade;
+		proxy_set_header Accept-Encoding gzip;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header X-Forwarded-Host $http_host;
+		proxy_set_header X-Forwarded-Uri $request_uri;
+		proxy_set_header X-Forwarded-Ssl on;
+		proxy_redirect  http://  $scheme://;
+		proxy_http_version 1.1;
+		proxy_set_header Connection "";
+		proxy_cache_bypass $cookie_session;
+		proxy_no_cache $cookie_session;
+		proxy_buffers 64 256k;
+	}
+}
+#+end_src
+
+Finally, restart Nginx to see the effects.
+
+#+begin_src shell
+sudo systemctl restart nginx.service
+#+end_src
+
+** Initial Setup
+
+The first thing you'll need to do is create a user. You can do this with the
+docker container with the following command, which will ask for a password.
+
+#+begin_src shell
+sudo docker exec --user node -it thelounge thelounge add [username]
+#+end_src
+
+Once the user has been created, you'll be able to log in to the web interface.
+Once created, you can change your password in the settings panel of the web
+interface.
+
+Finally, you can connect to an IRC server with the plus (=+=) button at the
+bottom of the sidebar and connect to individual channels or users via the plus
+(=+=) button next to your server's name in the sidebar.
+
+#+caption: New Server Connection
+[[https://img.cleberg.net/blog/20241229-thelounge/new_connection.png]]
+
+#+caption: Existing Server Connection
+[[https://img.cleberg.net/blog/20241229-thelounge/existing_connection.png]]
+
+#+caption: Channel View
+[[https://img.cleberg.net/blog/20241229-thelounge/channel.png]]
