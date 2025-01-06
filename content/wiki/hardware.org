@@ -67,6 +67,7 @@ extender, and a couple ethernet switches.
 - [[https://store.ui.com/us/en/collections/unifi-switching-utility-poe/products/usw-lite-8-poe][USW-Lite-8-PoE]]
 - [[https://store.ui.com/us/en/collections/unifi-wifi-flagship-high-capacity/products/u6-pro][U6-Pro]]
 - [[https://store.ui.com/us/en/collections/unifi-wifi-inwall-outlet-mesh][U6-Extender]]
+- [[https://store.ui.com/us/en/products/u7-pro-wall][U7-Pro-Wall]] x 2
 - [[https://store.ui.com/us/en/collections/unifi-accessory-tech-installations-rackmount/products/uacc-rack-panel-patch-blank-24][USW 24-Port Patch Panel]]
 
 *** Servers

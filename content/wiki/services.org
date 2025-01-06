@@ -1,0 +1,32 @@
+#+title: Services & Hosting
+#+date: <2025-01-05>
+
+* Domain Registration
+
+- [[https://www.cloudflare.com/][Cloudflare]]: I recently moved my last domain from Njalla over to Cloudflare.
+
+* DNS
+
+- [[https://www.cloudflare.com/][Cloudflare]]: I use DNS and proxying capabilities from Cloudflare. In the past,
+  I've used their secure tunnel services.
+
+* Hosting
+
+** Web
+
+- N/A: I currently host all of my services on my server at home via Cox's
+  residential fiber network. Since I have accounts on AWS, Azure, GCP, & IBM for
+  my job, I use these as temporary backup solutions if I'm away from home and a
+  service goes down that I need to use.
+
+** Email
+
+- [[https://migadu.com/][Migadu]]: I've used a few different email providers over the last few years, but
+  keep coming back to Migadu due to their drop-dead simplicity and proven
+  reliability.
+
+** Source Code
+
+- [[https://sourcehut.org/][Sourcehut]]: I flip back and forth between Sourcehut and GitHub, but I'm
+  currently using Sourcehut. I love the minimal form factor and the company's
+  mission, but tend to use GitHub to explore other's code.

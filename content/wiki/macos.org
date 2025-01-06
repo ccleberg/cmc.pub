@@ -81,6 +81,7 @@ echo "yabai configuration loaded.."
   - [[https://ublockorigin.com/][uBlock Origin]] - Free, open-source ad content blocker
 - [[https://github.com/ungoogled-software/ungoogled-chromium][Ungoogled Chromium]] - Google Chromium, sans integration with Google
 - [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][eww]] - Emacs Web Wowser, for TUI browsing
+- [[https://www.torproject.org/][Tor]] - Browse privately
 
 *** Command Line Tools
 - [[https://github.com/mr-karan/doggo][doggo]] - Command-line DNS Client for Humans
@@ -91,7 +92,7 @@ echo "yabai configuration loaded.."
 - [[https://github.com/yt-dlp/yt-dlp][yt-dlp]] - A youtube-dl fork with additional features and fixes
 
 *** Communications
-- [[https://element.io/][Element]] (=*=) - Matrix's default GUI client
+- [[https://element.io/][Element]] - Matrix's default GUI client
 - [[https://github.com/tulir/gomuks][gomuks]] - A terminal based Matrix client
 - [[https://www.thunderbird.net/][Thunderbird]] (=*=) - An open source email client by Mozilla
 - [[https://signal.org/][Signal]] (=*=) - A simple, powerful, and secure messenger

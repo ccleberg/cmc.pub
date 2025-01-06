@@ -13,9 +13,9 @@ the apps I have used at one point or another across my different iPhones.
 ** Configuration
 *** Display
 - Light Mode
-  - 10:00 to 16:00
+  - 08:00 to 16:00
 - Dark Mode
-  - 16:00 to 10:00
+  - 16:00 to 08:00
 
 *** Focus Modes
 - Personal Focus
