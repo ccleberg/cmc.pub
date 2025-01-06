@@ -50,12 +50,12 @@ page.
 
 ** Creating a Test Project
 
-In order to play with the language, I created [[https://github.com/ccleberg/learn-hare][hare-test]] and will be putting any
+In order to play with the language, I created [[https://git.sr.ht/~cyborg/learn-hare][hare-test]] and will be putting any
 of my Hare-related adventures in here.
 
 #+begin_quote
 *Update:* I also created a simple Hare program for creating a file from user
-input: [[https://github.com/ccleberg/learn-hare/blob/main/files/files.ha][files.ha]]
+input: [[https://git.sr.ht/~cyborg/learn-hare/tree/main/item/files/files.ha][files.ha]]
 #+end_quote
 
 Luckily, Hare doesn't require any complex set-up tools or build

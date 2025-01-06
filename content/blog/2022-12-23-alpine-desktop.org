@@ -168,7 +168,7 @@ doas apk add brightnessctl   \ # Brightness controller
 #+end_src
 
 From here, I use my Syncthing storage to pull all the configuration files I
-stored from prior desktops, such as my [[https://github.com/ccleberg/dotfiles][dotfiles]].
+stored from prior desktops, such as my [[https://git.sr.ht/~cyborg/dotfiles][dotfiles]].
 
 * Resolving Issues
 
