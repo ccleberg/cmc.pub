@@ -1,0 +1,144 @@
+#+date: <2025-01-23 Thu 20:44:45>
+#+title: Self-Hosting Tandoor Recipe Manager
+#+description: Learn how to self-host Tandoor, the smart recipe management web app.
+#+filetags: :self-hosting:
+#+slug: self-hosting-tandoor
+
+* Overview
+
+[[https://tandoor.dev/][Tandoor]] is a smart recipe manager web application that allows you to:
+- Store your recipes
+- Search for recipes and ingredients
+- Share recipes with a link and permission system
+- Put recipes and ingredients into a shopping list
+- Plan your meals with a built-in calendar
+- Calculate nutritional values
+- Import recipes from websites and apps
+- Load existing recipes
+
+* Installation
+
+[[https://docs.tandoor.dev/][The Tandoor docs]] contain all of the relevant information needed to get start
+with the self-hosting process.
+
+This tutorial will use Docker Compose and Nginx on Ubuntu 24.04.1.
+
+** Docker Compose
+
+On your machine, create a directory for Tandoor and copy down the =.env= and
+=docker-compose.yml= templates:
+
+#+begin_src shell
+mkdir ~/tandoor cd ~/tandoor wget
+https://raw.githubusercontent.com/vabene1111/recipes/develop/.env.template -O .env wget
+# Plain version of docker-compose.yml
+https://raw.githubusercontent.com/vabene1111/recipes/develop/docs/install/docker/plain/docker-compose.yml
+#+end_src
+
+Within these files, customize as needed.
+1. =.env=
+   a. Add a =SECRET_KEY=
+   b. Define the =ALLOWED_HOSTS=
+   c. Set the =POSTGRES_PASSWORD=
+2. =docker-compose.yml=
+   a. Update the =ports= since Nginx on my host is already using port 80 (e.g.
+      =8087:80=)
+
+Once you've updated and saved the files, you can launch the container.
+
+#+begin_src shell
+sudo docker compose up -d
+#+end_src
+
+The application is now available at =localhost:8087= or =ip_address:8087= if
+accessing via a different machine. If accessing via a different machine,
+remember to allow port 8087 through any existing firewalls.
+
+** Nginx Reverse Proxy
+
+Now that Tandoor is available locally, let's connect it to the Nginx web server
+running on the host machine.
+
+> Note: I use Nginx configuration files within the =conf.d= directory, but you
+> may need to use the =sites-available= directory, depending on your
+> installation of Nginx.
+
+#+begin_src shell
+cd /etc/nginx/conf.d/
+sudo nano recipes.conf
+#+end_src
+
+Within this file, define your website configuration. The example below is my
+default configuration and utilizes a wildcard certificate for =*.example.com=
+that covers all of my subdomains. If you don't have a wildcard certificate, you
+will need to generate an SSL certificate for your domain.
+
+#+begin_src config
+server {
+        listen                  443 ssl;
+        listen                  [::]:443 ssl;
+        http2                   on;
+        server_name             recipes.example.com;
+
+        # SSL
+        ssl_certificate         /etc/letsencrypt/live/example.com/fullchain.pem;
+        ssl_certificate_key     /etc/letsencrypt/live/example.com/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/example.com/chain.pem;
+
+        # reverse proxy
+        location / {
+                proxy_pass         http://localhost:8087/;
+                proxy_set_header   Host $http_host;
+                proxy_set_header   X-Forwarded-Proto $scheme;
+                proxy_redirect http://127.0.0.1:8080 https://recipes.example.com;
+        }
+
+        location /media/ {
+                root   /media/;
+                index  index.html index.htm;
+        }
+}
+
+# HTTP redirect
+server {
+        listen      80;
+        listen      [::]:80;
+        server_name recipes.example.com;
+        include     custom.d/letsencrypt.conf;
+
+        if ($host ~ ^[^.]+\.example\.com$) {
+                return 301 https://$host$request_uri;
+        }
+}
+#+end_src
+
+Save and close the configuration file and then restart the web server.
+
+#+begin_src shell
+sudo systemctl restart nginx.service
+#+end_src
+
+The app is now available on your custom domain!
+
+** Screenshots
+
+#+caption: Login
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/login.png]]
+
+#+caption: Recipes
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/recipes.png]]
+
+#+caption: Meal Plan
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/mealplan.png]]
+
+#+caption: Shopping Lists
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/shopping.png]]
+
+#+caption: Cook Book
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/cookbook.png]]
+
+#+caption: Import
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/import.png]]
+
+#+caption: Administration Panel
+[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/admin.png]]
