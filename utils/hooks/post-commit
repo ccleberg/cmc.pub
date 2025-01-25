@@ -1,0 +1,4 @@
+# .git/hooks/post-commit
+#!/bin/bash
+echo "Commit added:"
+git show --stat
