@@ -1,4 +1,16 @@
 # .git/hooks/post-commit
 #!/bin/bash
-echo "Commit added:"
-git show --stat
+echo "Environment: Development"
+
+# Remove previous build
+rm -rf .build/*
+
+# Run publishing script
+emacs --script publish.el
+
+# Minify CSS
+minify -o theme/static/styles.min.css theme/static/styles.css
+
+# Launch development web server
+cd .build/
+python3 -m http.server

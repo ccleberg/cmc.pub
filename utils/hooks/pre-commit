@@ -1,0 +1,8 @@
+# .git/hooks/pre-commit
+#!/bin/bash
+for file in $(git diff --cached --name-only | grep -E '\.org$'); do
+  if ! grep -q "^#\+TITLE:" "$file"; then
+    echo "Error: $file is missing a TITLE."
+    exit 1
+  fi
+done
