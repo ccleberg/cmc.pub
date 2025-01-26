@@ -107,6 +107,23 @@ doing so now. Once you start working on remote access via a reverse proxy,
 you'll be adding an additional layer of complexity that bring in more confusion
 when errors occur.
 
+> NOTE: If you are trying to initialize =transmission-daemon= via =systemd=
+> instead of using the manually-executed command above, you may notice that the
+> service will timeout and fail to start.
+
+To fix this timeout issue, you need to edit the service file and change
+=Type=notify= to =Type=simple=.
+
+#+begin_src shell
+# Command to edit the service file:
+sudo systemctl edit --full transmission-daemon.service
+
+# Make the edit noted above and then reload the service file with this command:
+sudo systemctl daemon-reload
+sudo systemctl enable transmission-daemon.service
+sudo systemctl start transmission-daemon.service
+#+end_src
+
 * Reverse Proxy
 
 Now that the service is running and configured properly, let's work on remote
