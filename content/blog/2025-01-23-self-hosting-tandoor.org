@@ -36,13 +36,13 @@ https://raw.githubusercontent.com/vabene1111/recipes/develop/docs/install/docker
 #+end_src
 
 Within these files, customize as needed.
-1. =.env=
-   a. Add a =SECRET_KEY=
-   b. Define the =ALLOWED_HOSTS=
-   c. Set the =POSTGRES_PASSWORD=
-2. =docker-compose.yml=
-   a. Update the =ports= since Nginx on my host is already using port 80 (e.g.
-      =8087:80=)
+- =.env=
+  - Add a =SECRET_KEY=
+  - Define the =ALLOWED_HOSTS=
+  - Set the =POSTGRES_PASSWORD=
+- =docker-compose.yml=
+  - Update the =ports= since Nginx on my host is already using port 80 (e.g.
+    =8087:80=)
 
 Once you've updated and saved the files, you can launch the container.
 
@@ -52,16 +52,18 @@ sudo docker compose up -d
 
 The application is now available at =localhost:8087= or =ip_address:8087= if
 accessing via a different machine. If accessing via a different machine,
-remember to allow port 8087 through any existing firewalls.
+remember to allow port =8087= through any existing firewalls.
 
 ** Nginx Reverse Proxy
 
 Now that Tandoor is available locally, let's connect it to the Nginx web server
 running on the host machine.
 
-> Note: I use Nginx configuration files within the =conf.d= directory, but you
-> may need to use the =sites-available= directory, depending on your
-> installation of Nginx.
+#+begin_quote
+Note: I use Nginx configuration files within the =conf.d= directory, but you may
+need to use the =sites-available= directory, depending on your installation of
+Nginx.
+#+end_quote
 
 #+begin_src shell
 cd /etc/nginx/conf.d/
