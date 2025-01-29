@@ -7,7 +7,7 @@
 * Cycling (Folding)
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L7][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L7][View this section]] in org-mode.
 #+end_quote
 
 My absolute top-used feature is [[https://orgmode.org/manual/Global-and-local-cycling.html][global and local cycling]] and it's not even
@@ -55,7 +55,7 @@ at the top of the buffer:
 * TODO Lists
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L55][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L55][View this section]] in org-mode.
 #+end_quote
 
 Next up on in this post are [[https://orgmode.org/manual/TODO-Items.html][TODO Lists]]. Being able to combine note taking and
@@ -106,7 +106,7 @@ that variable to alert me of tasks with iOS native notifications.
 * Time Stamping
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L106][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L106][View this section]] in org-mode.
 #+end_quote
 
 Another great feature are the [[https://orgmode.org/manual/Dates-and-Times.html][dates and times]] functionalities within org-mode.
@@ -137,7 +137,7 @@ different options available when creating timestamps.
 * Tags
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L137][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L137][View this section]] in org-mode.
 #+end_quote
 
 Next up are [[https://orgmode.org/manual/Tags.html][Tags]], which provide a way to document contexts within and across
@@ -162,7 +162,7 @@ m= and search for a tag of your choosing.
 * Tables
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L162][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L162][View this section]] in org-mode.
 #+end_quote
 
 One of the most inconvenient parts of writing in Markdown was dealing with
@@ -232,7 +232,7 @@ on the second line.
 * Source Code Blocks
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L232][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L232][View this section]] in org-mode.
 #+end_quote
 
 ** Introduction to Source Code Blocks
@@ -302,7 +302,7 @@ results below the code block.
 * Exporting and Publishing
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L302][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L302][View this section]] in org-mode.
 #+end_quote
 
 I would be remiss if I did not mention the native [[https://orgmode.org/manual/Exporting.html][exporting and publishing]]
@@ -336,7 +336,7 @@ external [[https://orgmode.org/tools.html][tools]], including [[https://orgmode.
 * Agenda
 
 #+begin_quote
-[[https://github.com/ccleberg/cleberg.net/blob/main/content/blog/2024-08-11-org-mode-features.org?plain=1#L336][View this section]] in org-mode.
+[[https://git.sr.ht/~cyborg/cleberg.net/tree/main/item/content/blog/2024-08-11-org-mode-features.org#L336][View this section]] in org-mode.
 #+end_quote
 
 Last, but not least, are [[https://orgmode.org/manual/Agenda-Views.html][Agenda Views]]. With agenda views, you can easily view

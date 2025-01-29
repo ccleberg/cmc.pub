@@ -19,7 +19,7 @@ a local copy of the repository. This can be accomplished by running the
 following commands within Emacs:
 
 #+begin_src sh
-git clone https://github.com/ccleberg/cleberg.net && \
+git clone https://git.sr.ht/~cyborg/cleberg.net && \
 cd cleberg.net && \
 emacs -nw
 #+end_src
@@ -75,5 +75,5 @@ cleberg.net, taking advantage of the existing template structure and formatting.
 ** Contributing & Tasks
 
 For those interested in contributing to this project or addressing any
-outstanding issues, please refer to the [[https://github.com/ccleberg/cleberg.net/issues][issues page]]. This is where you can find
+outstanding issues, please refer to the [[https://todo.sr.ht/~cyborg/cleberg.net][ticket tracker]]. This is where you can find
 a comprehensive list of open tickets or submit a new ticket for consideration.
