@@ -1,0 +1,119 @@
+#+date: <2025-02-11 Tue 11:40:00>
+#+title: A Review of Obscura VPN: A Two-Party VPN
+#+description: A simple review of Obscura VPN, a new VPN partner of Mullvad.
+#+filetags: :vpn:privacy:
+#+slug: obscura-vpn
+
+#+begin_quote
+This review is written at a high-level for users, not a technical deep-dive of
+VPN technologies.
+#+end_quote
+
+* What is Obscura?
+
+[[https://obscura.net/][Obscura]] is a new VPN offering that's [[https://mullvad.net/en/blog/mullvad-partnered-with-obscura-vpn][partnered with Mullvad]] to provide a unique
+service: a VPN that "can't log your activity" due to the fact that it uses
+Obscura servers for initial traffic routing and then passes off the traffic to
+Mullvad's WireGuard servers as exit nodes.
+
+This two-party VPN protocol allows you to use Obscura to relay your traffic, but
+they don't see your traffic. On the other hand, the exit nodes from Mullvad will
+see where you're connecting but cannot tell who you are as your traffic will
+come directly from Obscura servers with other users.
+
+* Privacy Features
+
+One of the things I look for when considering a VPN are privacy features
+intended to benefit users. Here are the features I love about Obscura:
+
+- Two-party VPN protocol with Mullvad's servers
+- No email required for sign-up
+- No credit card required, crypto options available
+- Open source [[https://github.com/Sovereign-Engineering/obscuravpn-client][repository]] is available
+- [[http://ngmmbxlzfpptluh4tbdt57prk3zxmq4ztew7l2whmg7hkqaof2nzf7id.onion/][Tor website available]]
+- Transparent display of the exit server's public key (see the Location page in
+  the app) so you can verify with Mullvad that you're connect via a genuine
+  Mullvad exit node using [[https://mullvad.net/en/servers][Mullvad's server listing]]
+
+* Initial Impressions
+
+** Available Platforms
+
+I am testing out Obscura on macOS, as that is the only available platform. This
+is the biggest downside, as I would not want to support different VPNs on
+different devices - if I'm using Obscura, I want to use it on all of my
+platforms (macOS, iOS, and Ubuntu).
+
+However, the macOS app is incredibly easy to install via the =.dmg= file
+available on Obscura's website. Upon first launch, you're presented with a login
+option and can create an account now, if you have not done so already.
+
+** Payment
+
+Once created, the app will ask you to pay if you do not have a subscription. As
+far as I can tell, there is no free tier available. In my opinion, this is a
+good thing as I hesitate to understand how privacy-focused apps make money when
+they offer free services to users.
+
+[[https://img.cleberg.net/blog/20250211-obscura-vpn/payment.png]]
+#+caption: Payment
+
+** Connection
+
+Once you've enrolled in either a subscription or one-time payment, Obscura will
+return you to the app and allow you to connect. You can choose a specific server
+location or automatically connect.
+
+[[https://img.cleberg.net/blog/20250211-obscura-vpn/connect.png]]
+#+caption: Initial Connection
+
+[[https://img.cleberg.net/blog/20250211-obscura-vpn/toolbar.png]]
+#+caption: Toolbar Utility
+
+** Speed
+
+The connection feels naturally smooth and I haven't experienced any disruptions
+or lag in my (very short) time testing out the application. To confirm, I
+checked a speed test while connected to a server location in my country.
+
+Speed test results:
+
+- 85.49 Mbps (Down)
+- 217.75 Mbps (Up)
+- 25 ms (Ping)
+
+** Mullvad Verification
+
+Lastly, I checked with Mullvad's verification tool (=mullvad.net/en/check=) to
+verify Obscura's claims that Obscura sends your traffic through Mullvad's exit
+nodes before connecting to your target.
+
+From the image below, we can see that Mullvad confirmed my traffic to be
+connected through a Mullvad IP address.
+
+[[https://img.cleberg.net/blog/20250211-obscura-vpn/mullvad-check.png]]
+#+caption: Mullvad Check
+
+* Final Thoughts
+
+Overall, I have found the app to be fast and user friendly. The privacy features
+are certainly compelling, but the platform has a ways to go before it can
+displace something like Mullvad in the privacy-focused portion of the VPN
+market.
+
+I wish Obscura offered the following features:
+
+- Available on more platforms
+- Specifics on how many devices will be allowed per account
+- More server locations, especially in countries with stronger data privacy laws
+- Options to pay with other crypto beside Bitcoin, such as Monero
+- Whitepapers or videos that walk through the technical details and show how
+  traffic can be verified to be encrypted and connecting through the various
+  expected nodes
+- Verifiable builds
+
+However, Obscura is a nice tool for now and I hope to see more information from
+the technical side to help more users gain comfort around the security and
+privacy of the tool.
+
+Used Obscura? Send me an email and let me know your thoughts!
