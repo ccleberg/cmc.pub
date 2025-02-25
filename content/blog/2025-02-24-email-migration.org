@@ -83,23 +83,23 @@ import shutil
 
 # Loop through all files in the current folder
 for file in glob.glob("*.eml"):
-    # Create boolean to check if we should move the file
-    move = False
+	# Create boolean to check if we should move the file
+	move = False
 
-    # Open the current file
-	f = open(file, 'r')
+	# Open the current file
+		f = open(file, 'r')
 
-    # For each line in file, find the From header
+	# For each line in file, find the From header
 	for line in f:
 		if line.startswith("From:"):
-            # If we find ourself, mark the message for move
+			# If we find ourself, mark the message for move
 			if "user@example.com" in line:
 				move = True
 
 	# Close the file
-    f.close()
+	f.close()
 
-    # Move the file, if marked for move
+	# Move the file, if marked for move
 	if move == True:
 		filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Archive/cur/", file)
 		new_filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Sent/cur/", file)
@@ -164,24 +164,24 @@ import shutil
 
 # Loop through all files in the sub-folders under Archive
 for file in glob.glob("*.eml"):
-    # Create boolean to check if we should move the file
-    move = False
+	# Create boolean to check if we should move the file
+	move = False
 
-    # Open the current file
+	# Open the current file
 	f = open(file, 'r')
 
-    # For each line in file, find the X-Pm-Date header
+	# For each line in file, find the X-Pm-Date header
 	for line in f:
 		if line.startswith("X-Pm-Date"):
-            # Split the line into a list by spaces;
-            # Then select the item that contains the year
+		# Split the line into a list by spaces;
+		# Then select the item that contains the year
 			year = line.split(" ")[4]
 			move = True
 
 	# Close the file
-    f.close()
+	f.close()
 
-    # Move the file, if marked for move
+	# Move the file, if marked for move
 	if move == True:
 		filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Archive/cur/", file)
 		new_filepath = os.path.join(f"/Users/YOUR_USERNAME/.maildir/migadu/Archive/{year}/cur/", file)
@@ -220,9 +220,10 @@ import shutil
 
 # Loop through all files in the sub-folders under Archive
 for file in glob.glob("*/cur/*"):
-    # Remove the characters at the end of the file name created by =mu=
+	# Remove the characters at the end of the file name created by =mu=
 	new_file = file.split(",U=",1)[0]
-    # Move the file to the new file name
+
+	# Move the file to the new file name
 	shutil.move(file, new_file)
 #+end_src
 
