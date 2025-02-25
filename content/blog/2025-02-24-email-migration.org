@@ -1,0 +1,252 @@
+#+date: <2025-02-25 Mon 19:20:05>
+#+title: A Painful Email Migration
+#+description: Some notes on my painful experience migrating emails out of the Proton Mail platform.
+#+filetags: :email:
+#+slug: email-migration
+
+* The Setup
+
+I recently migrated my emails from Proton Mail to Migadu after a failed attempt
+to get myself into the Proton ecosystem and wanted to detail my process, as it
+was far more painful than expected.
+
+To give some context: I had nearly 5000 messages stored, accounting for around
+2.5 GB of space.
+
+Overall, this process would have taken all day had I done it in one sitting, but
+I decided to break it up and it lasted a couple days before I was able to say that
+all my messages were stored in my new account.
+
+* Exporting Messages
+
+To start, I needed to export my messages from Proton Mail. As I am using macOS,
+I was able to use the [[https://proton.me/support/proton-mail-export-tool][Proton Mail Export Tool]]. However, the downside is that
+this dumps every single email on your account into a single folder in the =.eml=
+format. They also export a JSON file for each message, in the case you're
+importing back into Proton Mail.
+
+This means that anything in my Inbox, Sent, Archive, Trash, and user-created
+folders were all dumped out into a single folder with incomprehensible names.
+
+Without a clear path to easily figure out how to re-organize my emails into a
+new account, I was left a bit annoyed at Proton's export process.
+
+* Importing Messages
+
+Left with a pile of messages and no way to discern what they were without
+opening each one, I decided to try and use Thunderbird to import messages into
+my new Migadu IMAP account.
+
+This led to a dead end as my two methods failed:
+
+1. [[https://addons.thunderbird.net/en-US/thunderbird/addon/importexporttools-ng/][ImportExportTools NG]] does not work with my version of Thunderbird (135).
+2. Manually dragging the =.eml= files onto a folder in Thunderbird worked for
+   small batches of files, but seemed to lock up if I tried to import more than
+   a few hundred at a time. It also seemed a bit buggy, as I ended up with many
+   duplicate, and sometimes triplicate, messages.
+
+At this point, I decided to take a step back and use [[https://github.com/djcb/mu][mu]], a command-line utility
+that would index my files and sync back and forth with Migadu for me.
+
+Using my blog post, [[https://cleberg.net/blog/mu4e.html][Email in Doom Emacs with Mu4e on macOS]], (and skipping the
+mu4e parts) I was able to set up a minimal directory connected to my Migadu IMAP
+account. Using my terminal, I simply moved all of my messages into the =mu=
+directory and synchronized the account, and voila, my messages synchronized
+successfully to the remote server and my other email clients.
+
+However, the remaining issue was that I now had all 5000 messages in the Archive
+folder and needed to figure out how to organize them back into their proper
+directories.
+
+* Organizing Messages Into Folders
+
+As with any problem, I used Python as my hammer to fix the problem. I started by
+creating the directories required in Thunderbird, fetching them with =mbsync= so
+that they appeared in my =mu= directory, and using Python to organize my
+messages into the newly-created sub-folders.
+
+** Sent Messages
+
+I started by organizing my Sent messages. This required checking each file for
+the =From= header and moving them to the Sent folder.
+
+#+begin_src shell
+cd ~/.maildir/migadu/Archive/cur
+nano _sent.py
+#+end_src
+
+#+begin_src python
+# _sent.py
+import os
+import glob
+import shutil
+
+# Loop through all files in the current folder
+for file in glob.glob("*.eml"):
+    # Create boolean to check if we should move the file
+    move = False
+
+    # Open the current file
+	f = open(file, 'r')
+
+    # For each line in file, find the From header
+	for line in f:
+		if line.startswith("From:"):
+            # If we find ourself, mark the message for move
+			if "user@example.com" in line:
+				move = True
+
+	# Close the file
+    f.close()
+
+    # Move the file, if marked for move
+	if move == True:
+		filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Archive/cur/", file)
+		new_filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Sent/cur/", file)
+		shutil.move(filepath, new_filepath)
+#+end_src
+
+#+begin_src python
+python3 _sent.py
+#+end_src
+
+The only downside to my current approach is that it was the quick and dirty
+option, so I re-ran it while editing the =user@example.com= string for each
+email I wanted to move. If I had wanted to create a more well-defined solution,
+I would have created an array of addresses to check for and have the =if=
+statement check against that array.
+
+Regardless, I was able to run this with the addresses I wanted to move to the
+Sent folder and was soon finished.
+
+** Archive Sub-Folders
+
+Next, I needed to move the remaining ~3000 messages from the Archive folder into
+dated sub-folders, organized as such:
+
+- Archive/2016
+- ...
+- Archive/2025
+
+
+To do this, I followed a similar approach as the method above but check for the
+=Date= header instead of the =From= header.
+
+#+begin_src shell
+cd ~/.maildir/migadu/Archive/cur
+nano _archive.py
+#+end_src
+
+This approach requires finding the =X-Pm-Date= header and splitting it by the
+spaces contained within. Once split into a list, we must select the fourth
+element, as that contains the year which will match the directory we should move
+it to.
+
+For example, the header =X-Pm-Date: Fri, 07 Feb 2025 16:12:08 +0000= will be
+split into a list as such:
+
+0. X-Pm-Date:
+1. Fri,
+2. 07
+3. Feb
+4. 2025
+5. 16:12:08
+6. +0000
+
+From this list, we select the fourth element (=2025=) and use that to build the
+destination path.
+
+#+begin_src python
+# _archive.py
+import os
+import glob
+import shutil
+
+# Loop through all files in the sub-folders under Archive
+for file in glob.glob("*.eml"):
+    # Create boolean to check if we should move the file
+    move = False
+
+    # Open the current file
+	f = open(file, 'r')
+
+    # For each line in file, find the X-Pm-Date header
+	for line in f:
+		if line.startswith("X-Pm-Date"):
+            # Split the line into a list by spaces;
+            # Then select the item that contains the year
+			year = line.split(" ")[4]
+			move = True
+
+	# Close the file
+    f.close()
+
+    # Move the file, if marked for move
+	if move == True:
+		filepath = os.path.join("/Users/YOUR_USERNAME/.maildir/migadu/Archive/cur/", file)
+		new_filepath = os.path.join(f"/Users/YOUR_USERNAME/.maildir/migadu/Archive/{year}/cur/", file)
+		shutil.move(filepath, new_filepath)
+#+end_src
+
+#+begin_src python
+python3 _archive.py
+#+end_src
+
+At this point, we've now moved all Sent messages to the Sent box and organized
+all messages under the Archive folder into their correct sub-folders.
+
+If you exported other files, such as files from your Inbox, Trash, etc., you
+could follow a similar approach and determine the best header or attribute to
+identify them for further organization.
+
+** Synchronize the Results
+
+Before synchronizing the files in their new locations, I needed to remove the
+characters at the end of the file name since =mu= appends IDs to the end of file
+names.
+
+#+begin_src shell
+cd ~/.maildir/migadu/Archive
+nano _sync_prep.py
+#+end_src
+
+This script prepares the =Archive= sub-folders for synchronization, but the same
+concept applies to the Sent folder, except you'd replace =*/cur/*= with =*= if
+this script were inside the =Sent/cur= directory.
+
+#+begin_src python
+import glob
+import shutil
+
+# Loop through all files in the sub-folders under Archive
+for file in glob.glob("*/cur/*"):
+    # Remove the characters at the end of the file name created by =mu=
+	new_file = file.split(",U=",1)[0]
+    # Move the file to the new file name
+	shutil.move(file, new_file)
+#+end_src
+
+#+begin_src shell
+python3 _sync_prep.py
+#+end_src
+
+Finally, we can synchronize the results.
+
+#+begin_src shell
+mbsync -aV
+#+end_src
+
+* Removing Duplicates
+
+My only remaining issue at the time of writing is identifying and removing
+duplicate messages. I have toyed with simple Python and command-line solutions
+to identify duplicate files, but could not get them to effectively define all
+the duplicates found in any specific directory.
+
+I've even tried using the [[https://github.com/pkolaczk/fclones][fclones]] utility, to no avail. It seems that something
+in the Proton export, my manual Thunderbird method attempt, or possible sync
+issues between Thunderbird -> Migadu <-> mu caused duplicates where content
+within the message has been modified.
+
+Although I now seem to be wasting space and in need of a deduplication tool, I
+have all of my messages migrated to my new service.
