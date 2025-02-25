@@ -145,18 +145,22 @@ it to.
 For example, the header =X-Pm-Date: Fri, 07 Feb 2025 16:12:08 +0000= will be
 split into a list as such:
 
-0. X-Pm-Date:
-1. Fri,
-2. 07
-3. Feb
-4. 2025
-5. 16:12:08
-6. +0000
+#+begin_src python
+[
+    'X-Pm-Date:', # 0
+    'Fri,',       # 1
+    '07',         # 2
+    'Feb',        # 3
+    '2025',       # 4
+    '16:12:08',   # 5
+    '+0000'       # 6
+]
+#+end_src
 
 From this list, we select the fourth element (=2025=) and use that to build the
 destination path.
 
-#+begin_src python
+,#+begin_src python
 # _archive.py
 import os
 import glob
