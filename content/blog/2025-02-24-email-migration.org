@@ -160,7 +160,7 @@ split into a list as such:
 From this list, we select the fourth element (=2025=) and use that to build the
 destination path.
 
-,#+begin_src python
+#+begin_src python
 # _archive.py
 import os
 import glob
