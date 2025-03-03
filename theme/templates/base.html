@@ -27,11 +27,16 @@
 	</nav>
     <main>{% block main %}{% endblock %}</main>
 	<footer>
-		<p>Last build: &lt;{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</p>
+        <p>Donate: <a href="monero:82frXv83WVsGbTwuqSyb27cvy67JpD7Ktaij12Avy6ogfZatsgPG67YgsmEmvTFLKd1Rk7MUwx8D31ieGwLdD4wa4KdtxDB">XMR</a>
+        | <a href="ethereum:0x11255046Ccd637f1ACc78ae7c8849870f85638B3">ETH</a>
+        | <a href="bitcoin:bc1qw4rg9rsxru2j6kvda3ehl5uc38tygdnd5tu5j2">BTC</a>
+        </p>
+        <p>Last build: &lt;{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</p>
 		<p>
 			<a href="https://git.sr.ht/~cyborg/cleberg.net" target="_blank"
 			rel="noopener">Source Code</a> &middot;
-			<a href="/feed.xml">RSS Feed</a>
+			<a href="/feed.xml">RSS Feed</a> &middot;
+            <a href="/.well-known/security.txt">security.txt</a>
 		</p>
 	</footer>
 </body>
