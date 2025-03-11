@@ -56,7 +56,7 @@ and be sure you're on the "Console" tab. It should look something like
 this (this is in Firefox, Chromium should be similar):
 
 #+caption: Firefox Dev !Tools
-[[https:///img.cleberg.net/blog/20230105-mass-unlike-tumblr-posts/dev_console.png]]
+[[https:///img.cmc.pub/blog/20230105-mass-unlike-tumblr-posts/dev_console.png]]
 
 All you need to do is paste the following snippet into the dev console.
 This code will collect all unlike buttons (=elements=) and then click
@@ -88,7 +88,7 @@ the console, pressed Enter, and then the posts are automatically
 unliked.
 
 #+caption: Script !Results
-[[https:///img.cleberg.net/blog/20230105-mass-unlike-tumblr-posts/script_results.png]]
+[[https:///img.cmc.pub/blog/20230105-mass-unlike-tumblr-posts/script_results.png]]
 
 Thinking about this further, I would bet that this would be fairly
 simple to package into a browser add-on so that users could install the

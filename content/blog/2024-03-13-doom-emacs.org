@@ -12,10 +12,10 @@ and the help pane open at the bottomm.
 The themes are =doom-homage-white= and =doom-homage-black=.
 
 #+caption: Doom Emacs Light Mode
-[[https://img.cleberg.net/blog/20240314-doom-emacs/light.png]]
+[[https://img.cmc.pub/blog/20240314-doom-emacs/light.png]]
 
 #+caption: Doom Emacs Dark Mode
-[[https://img.cleberg.net/blog/20240314-doom-emacs/dark.png]]
+[[https://img.cmc.pub/blog/20240314-doom-emacs/dark.png]]
 
 ** Getting Started
 
@@ -183,7 +183,7 @@ been slowly adoping some Python and general web dev tools as well.
 *** Markdown
 
 #+caption: Markdown Preview
-[[https://img.cleberg.net/blog/20240314-doom-emacs/markdown.png]]
+[[https://img.cmc.pub/blog/20240314-doom-emacs/markdown.png]]
 
 Markdown is fairly simple as the syntax is limited, so just make sure the
 =~/.doom.d/init.el= includes the =markdown= declaration in the =:lang= section.
@@ -205,7 +205,7 @@ things like link hiding.
 *** Org-Mode
 
 #+caption: Org-Mode Preview
-[[https://img.cleberg.net/blog/20240314-doom-emacs/org.png]]
+[[https://img.cmc.pub/blog/20240314-doom-emacs/org.png]]
 
 Similar to the markdown section above, ensure that the =~/.doom.d/init.el=
 includes the =org= declaration in the =:lang= section.
@@ -269,10 +269,10 @@ list them all, so I will simply cover a few of the basic commands I use myself.
 
    (setq org-publish-project-alist
          `(("blog"
-            :base-directory "~/Source/cleberg.net/"
+            :base-directory "~/Source/cmc.pub/"
             :base-extension "org"
             :recursive t
-            :publishing-directory "~/Source/cleberg.net/public/"
+            :publishing-directory "~/Source/cmc.pub/public/"
             :publishing-function org-html-publish-to-html
             ;; HTML5
             :html-doctype "html5"
@@ -311,13 +311,13 @@ list them all, so I will simply cover a few of the basic commands I use myself.
            )
 
            ("static"
-            :base-directory "~/Source/cleberg.net/static/"
+            :base-directory "~/Source/cmc.pub/static/"
             :base-extension "css\\|txt\\|jpg\\|gif\\|png"
             :recursive t
-            :publishing-directory  "~/Source/cleberg.net/public/"
+            :publishing-directory  "~/Source/cmc.pub/public/"
             :publishing-function org-publish-attachment)
 
-           ("cleberg.net" :components ("blog" "static"))))
+           ("cmc.pub" :components ("blog" "static"))))
    #+end_src
 
 ** General Thoughts

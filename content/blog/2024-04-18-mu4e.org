@@ -159,9 +159,9 @@ auth on
 host smtp.startmail.com
 port 465
 protocol smtp
-from hello@cleberg.net
-user hello@cleberg.net
-passwordeval security find-generic-password -s startmail -a hello@cleberg.net -w
+from hello@cmc.pub
+user hello@cmc.pub
+passwordeval security find-generic-password -s startmail -a hello@cmc.pub -w
 tls on
 tls_starttls off
 
@@ -300,4 +300,4 @@ The home page shows various options and metadata about the account you've
 opened.
 
 #+caption: Mu4e Home Page
-[[https://img.cleberg.net/blog/20240418-mu4e/mu4e.png]]
+[[https://img.cmc.pub/blog/20240418-mu4e/mu4e.png]]

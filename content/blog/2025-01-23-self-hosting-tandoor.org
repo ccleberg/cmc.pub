@@ -125,22 +125,22 @@ The app is now available on your custom domain!
 ** Screenshots
 
 #+caption: Login
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/login.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/login.png]]
 
 #+caption: Recipes
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/recipes.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/recipes.png]]
 
 #+caption: Meal Plan
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/mealplan.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/mealplan.png]]
 
 #+caption: Shopping Lists
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/shopping.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/shopping.png]]
 
 #+caption: Cook Book
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/cookbook.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/cookbook.png]]
 
 #+caption: Import
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/import.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/import.png]]
 
 #+caption: Administration Panel
-[[https://img.cleberg.net/blog/20250123-self-hosting-tandoor/admin.png]]
+[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/admin.png]]

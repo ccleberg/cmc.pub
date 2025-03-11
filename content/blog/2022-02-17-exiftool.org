@@ -45,7 +45,7 @@ distributions, but I really only care to test out this one package.
 ** Recursively Strip Data
 
 I actually use this tool extensively to strip any photos uploaded to the
-website that serves all the images for my blog (=img.cleberg.net=).
+website that serves all the images for my blog (=img.cmc.pub=).
 
 The following command is incredibly useful and can be modified to
 include any image extensions that =exiftool= supports:

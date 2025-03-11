@@ -33,7 +33,7 @@ Open the installer and follow the installation process until the application
 finishes the installation process.
 
 #+caption: Docker Desktop on macOS
-[[https://img.cleberg.net/blog/20240408-docker-local-web-server/docker-desktop.png]]
+[[https://img.cmc.pub/blog/20240408-docker-local-web-server/docker-desktop.png]]
 
 ** Creating an Nginx Container
 
@@ -56,7 +56,7 @@ docker run -it --rm -d -p 8000:80 --name web nginx
 You can navigate to [[http://localhost:8000]] to see the resulting page.
 
 #+caption: Default Nginx Container
-[[https://img.cleberg.net/blog/20240408-docker-local-web-server/default-container.png]]
+[[https://img.cmc.pub/blog/20240408-docker-local-web-server/default-container.png]]
 
 ** Customizing the Nginx Container
 
@@ -76,7 +76,7 @@ To see the updates, you can delete the previous container in the GUI or run
 =docker run= command below.
 
 #+begin_src sh
-docker run -it -d -p 8000:80 --name web -v ~/Source/cleberg.net/.build:/usr/share/nginx/html -v ~/Source/cleberg.net/nginx-config.conf:/etc/nginx/conf.d/default.conf nginx
+docker run -it -d -p 8000:80 --name web -v ~/Source/cmc.pub/.build:/usr/share/nginx/html -v ~/Source/cmc.pub/nginx-config.conf:/etc/nginx/conf.d/default.conf nginx
 #+end_src
 
 Here's an example of my development configuration file.
@@ -84,14 +84,14 @@ Here's an example of my development configuration file.
 #+begin_src conf
 # nginx-config.conf
 server {
-       server_name cleberg.net www.cleberg.net;
+       server_name cmc.pub www.cmc.pub;
 
        root /usr/share/nginx/html;
        index index.html;
        autoindex on;
 
-       access_log  /var/log/nginx/cleberg.net.access.log;
-       error_log  /var/log/nginx/cleberg.net.error.log;
+       access_log  /var/log/nginx/cmc.pub.access.log;
+       error_log  /var/log/nginx/cmc.pub.error.log;
 
        location / {
                 try_files $uri $uri/ =404;
@@ -102,14 +102,14 @@ server {
 }
 #+end_src
 
-[[https://img.cleberg.net/blog/20240408-docker-local-web-server/custom-container.png]]
+[[https://img.cmc.pub/blog/20240408-docker-local-web-server/custom-container.png]]
 
 * Customizing Deployment Actions
 
 I am currently blogging with [[https://emacs.love/weblorg/][weblorg]], which uses a custom =publish.el= file to
 build the static site. Within this file, I have configured my deployment process
 to check for the =ENV= variable in thesh and if it's set to =prod=, the script
-will set the base URLs to =https://cleberg.net=. If not, it sets the base URLs
+will set the base URLs to =https://cmc.pub=. If not, it sets the base URLs
 to =localhost:8000= (which matches the port used in the container above).
 
 Therefore, I have modified my =build.sh= script to build with =localhost= URLs
@@ -123,7 +123,7 @@ if [ "$ENV" == "prod" ]; then
     echo "Environment = Production"              && \
     rm -rf .build/*                              && \
     emacs --script publish.el                    && \
-    scp -r .build/* ubuntu:/var/www/cleberg.net/
+    scp -r .build/* ubuntu:/var/www/cmc.pub/
 else
     echo "Environment = Development"             && \
     rm -rf .build/*                              && \

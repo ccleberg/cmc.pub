@@ -18,7 +18,7 @@ alert: it feels identical to Ubuntu for my purposes.
 I did the normal things when first launching the VPS, such as adding a
 new user, locking down SSH, etc. If you want to see that level of
 detail, read my other post about
-[[https://cleberg.net/blog/how-to-set-up-a-vps-web-server/][How to Set
+[[https://cmc.pub/blog/how-to-set-up-a-vps-web-server/][How to Set
 Up a VPS Web Server]].
 
 All of this has been similar, apart from small things such as the
@@ -159,7 +159,7 @@ the Nginx docs to see what other fun things I can do with all of this.
 Finally, I set up the Agate software on this server again to host my
 Gemini server content, using Rust as I have before. You can read my
 other post for more information on installing Agate:
-[[https://cleberg.net/blog/hosting-a-gemini-server/][Hosting a Gemini
+[[https://cmc.pub/blog/hosting-a-gemini-server/][Hosting a Gemini
 Server]].
 
 All in all, Debian + Nginx is very slick and I prefer it over my old

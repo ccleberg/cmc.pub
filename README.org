@@ -1,8 +1,8 @@
 #+title: README
 
-* cleberg.net
+* cmc.pub
 
-[[https://cleberg.net][cleberg.net]] is my personal webpage and blog. This website and blog utilize the
+[[https://cmc.pub][cmc.pub]] is my personal webpage and blog. This website and blog utilize the
 powerful Org-Mode publishing system, courtesy of the [[https://github.com/emacs-love/weblorg][weblorg]] Emacs package.
 
 ** Features & Configuration
@@ -12,15 +12,15 @@ through a simple =publish.el= file. For those who are interested in tweaking the
 underlying configuration, the weblorg documentation provides all necessary
 details on possible settings and options.
 
-** Getting Started with cleberg.net
+** Getting Started with cmc.pub
 
 To begin exploring or contributing to this project, you'll first need to set up
 a local copy of the repository. This can be accomplished by running the
 following commands within Emacs:
 
 #+begin_src sh
-git clone https://git.sr.ht/~cyborg/cleberg.net && \
-cd cleberg.net && \
+git clone https://git.sr.ht/~cyborg/cmc.pub && \
+cd cmc.pub && \
 emacs -nw
 #+end_src
 
@@ -70,10 +70,10 @@ To quickly create a new blog post within Emacs, follow these steps:
    the newly opened file.
 
 This streamlined process allows you to rapidly generate fresh content for
-cleberg.net, taking advantage of the existing template structure and formatting.
+cmc.pub, taking advantage of the existing template structure and formatting.
 
 ** Contributing & Tasks
 
 For those interested in contributing to this project or addressing any
-outstanding issues, please refer to the [[https://todo.sr.ht/~cyborg/cleberg.net][ticket tracker]]. This is where you can find
+outstanding issues, please refer to the [[https://todo.sr.ht/~cyborg/cmc.pub][ticket tracker]]. This is where you can find
 a comprehensive list of open tickets or submit a new ticket for consideration.

@@ -120,4 +120,4 @@ sudo systemctl restart nginx.service
 The site will now be available at the =server_name= you specified above!
 
 You can visit my instance at
-[[https://voyager.cleberg.net][voyager.cleberg.net]] for an example.
+[[https://voyager.cmc.pub][voyager.cmc.pub]] for an example.

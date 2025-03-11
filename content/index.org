@@ -1,2 +1,2 @@
-#+title: cleberg.net
+#+title: cmc.pub
 #+description: Just a blip of ones and zeroes.

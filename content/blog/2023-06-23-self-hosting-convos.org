@@ -130,10 +130,10 @@ There are numerous themes to choose from; the theme shown in the images
 below is Dracula.
 
 #+caption: Convos Home
-[[https://img.cleberg.net/blog/20230623-convos/convos_home.png]]
+[[https://img.cmc.pub/blog/20230623-convos/convos_home.png]]
 
 #+caption: Convos Chat
-[[https://img.cleberg.net/blog/20230623-convos/convos_chat.png]]
+[[https://img.cmc.pub/blog/20230623-convos/convos_chat.png]]
 
 * Registering a Nickname
 

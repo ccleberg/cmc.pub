@@ -46,7 +46,7 @@ raise while in the same role.
 | Teaching Assistant                             | University of Nebraska | Lincoln, NE    | 2017-08 | 2018-05 | $7/hour  |
 | Community Management Intern                    | Walgreens              | Lincoln, NE    | 2017-06 | 2018-02 | $14/hour |
 
-[[[https://cleberg.net/salary.csv][source data]]]
+[[[https://cmc.pub/salary.csv][source data]]]
 
 ** Salary Visualization
 :PROPERTIES:
@@ -56,7 +56,7 @@ See the graph below for a visualization of each job's salary over time, as well
 as percentage increases or decreases between jobs.
 
 #+caption: Salary Visualization
-[[https://img.cleberg.net/blog/salary/salary.png]]
+[[https://img.cmc.pub/blog/salary/salary.png]]
 
 This page was inspired by [[https://xeiaso.net/salary-transparency/][Xe]], and I'm quoting the following wording from them as
 I want to reiterate this piece:

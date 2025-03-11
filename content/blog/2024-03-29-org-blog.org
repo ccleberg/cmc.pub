@@ -8,7 +8,7 @@ feed duplicated itself when I moved this blog over to org-mode last night.
 
 This post focuses specifically on the configuration and tools I use to blog from
 Emacs with Org-Mode and does not focus on Emacs or Org-Mode themselves. Refer to
-the post I wrote about [[https://cleberg.net/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for more information about my base
+the post I wrote about [[https://cmc.pub/blog/doom-emacs-org-mode.html][Doom Emacs & Org-Mode]] for more information about my base
 Emacs configuration.
 
 * Weblorg
@@ -60,7 +60,7 @@ Now that I've installed weblorg, I need to configure the project. I'll start by
 navigating to my site's source code and creating a =publish.el= file.
 
 #+begin_src sh
-cd ~/Source/cleberg.net && nano publish.el
+cd ~/Source/cmc.pub && nano publish.el
 #+end_src
 
 Since I'm using Doom, Emacs will not automatically load the packages I need
@@ -80,13 +80,13 @@ explicitly tell Emacs where Doom stores the =htmlize=, =weblorg=, and
 ;; To build with the custom URL below, call:
 ;;;; ENV=prod emacs --script publish.el
 (if (string= (getenv "ENV") "prod")
- (setq weblorg-default-url "https://cleberg.net"))
+ (setq weblorg-default-url "https://cmc.pub"))
 
 ;; site metadata
 (weblorg-site
  :theme nil
- :template-vars '(("site_name" . "cleberg.net")
-                  ("site_owner" . "hello@cleberg.net")
+ :template-vars '(("site_name" . "cmc.pub")
+                  ("site_owner" . "hello@cmc.pub")
                   ("site_description" . "Just a blip of ones and zeroes.")))
 
 ;; route for rendering the index page of the website
@@ -235,7 +235,7 @@ Within this script, I do the following:
 #+begin_src sh
 rm -rf .build/* && \
 ENV=prod emacs--script publish.el && \
-scp -r .build/* ubuntu:/var/www/cleberg.net/
+scp -r .build/* ubuntu:/var/www/cmc.pub/
 #+end_src
 
 *** Time to Build

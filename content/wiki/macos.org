@@ -3,7 +3,7 @@
 
 Related:
 
-- [[https://cleberg.net/wiki/hardware/][Hardware]]
+- [[https://cmc.pub/wiki/hardware/][Hardware]]
 
 My primary OS. Currently running macOS Sonoma 14. This wiki page contains most
 of the apps I have used at one point or another across my different Macbooks.

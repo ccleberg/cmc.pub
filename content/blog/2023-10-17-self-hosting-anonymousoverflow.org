@@ -6,7 +6,7 @@
 * Overview
 
 I recently launched an instance of AnonymousOverflow at
-[[https://ao.cleberg.net][ao.cleberg.net]] and wanted to write a brief
+[[https://ao.cmc.pub][ao.cmc.pub]] and wanted to write a brief
 post on how easy it is to install with Docker Compose and Nginx.
 
 This guide uses Ubuntu server, Docker Compose, and Nginx as a reverse
@@ -128,4 +128,4 @@ sudo systemctl restart nginx.service
 #+end_src
 
 The website will now be available publicly. Visit
-[[https://ao.cleberg.net][my instance]] for an example.
+[[https://ao.cmc.pub][my instance]] for an example.

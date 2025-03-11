@@ -95,7 +95,7 @@ add/modify connected devices.
 Here's an example web GUI dashboard:
 
 #+caption: Syncthing Dashboard
-[[https://img.cleberg.net/blog/20221020-syncthing/syncthing_gui.png]]
+[[https://img.cmc.pub/blog/20221020-syncthing/syncthing_gui.png]]
 
 ** Remote Devices
 

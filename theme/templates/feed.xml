@@ -10,7 +10,7 @@
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>{{ site_name | default("cleberg.net") }}</title>
+    <title>{{ site_name | default("cmc.pub") }}</title>
     <atom:link
       href="{{ url_for("rss") }}"
       rel="self" type="application/rss+xml" />
@@ -20,13 +20,13 @@
     <pubDate>{{ posts | first | getattr("date") | strftime("%a, %d %b %Y %H:%M:%S %z") }}</pubDate>
     <lastBuildDate>{{ now() | strftime("%a, %d %b %Y %H:%M:%S %z") }}</lastBuildDate>
     <generator>{{ meta.generator }}</generator>
-    <webMaster>{{ site_owner | default("hello@cleberg.net") }}</webMaster>
+    <webMaster>{{ site_owner | default("hello@cmc.pub") }}</webMaster>
 
     {% for post in posts %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ url_for("blog", slug=post.slug) }}</link>
-      <author>{{ post.author|default("hello@cleberg.net") }}</author>
+      <author>{{ post.author|default("hello@cmc.pub") }}</author>
       <guid isPermaLink="false">{{ url_for("blog", slug=post.slug) }}</guid>
       <pubDate>{{ post.date|strftime("%a, %d %b %Y %H:%M:%S %z") }}</pubDate>
       <description><![CDATA[{{ post.html|safe }}]]></description>

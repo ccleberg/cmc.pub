@@ -11,7 +11,7 @@ desirable features for a modern IRC client. The Lounge supports push
 notifications, link previews, file uploads, always connected, multi-user
 support, and is available as a PWA for mobile devices.
 
-I wanted to write this as I had written a post about [[https://cleberg.net/blog/self-hosting-convos.html][self-hosting Convos]] and
+I wanted to write this as I had written a post about [[https://cmc.pub/blog/self-hosting-convos.html][self-hosting Convos]] and
 have recently migrated over to The Lounge instead.
 
 If you'd like to try a demo first, head over to [[https://demo.thelounge.chat/][the official demo website]].
@@ -60,7 +60,7 @@ browsing from a different device. Don't forget to allow the port through your
 machine's firewall, if you have one enabled.
 
 #+caption: Login
-[[https://img.cleberg.net/blog/20241229-thelounge/login.png]]
+[[https://img.cmc.pub/blog/20241229-thelounge/login.png]]
 
 ** Nginx Reverse Proxy
 
@@ -155,10 +155,10 @@ bottom of the sidebar and connect to individual channels or users via the plus
 (=+=) button next to your server's name in the sidebar.
 
 #+caption: New Server Connection
-[[https://img.cleberg.net/blog/20241229-thelounge/new_connection.png]]
+[[https://img.cmc.pub/blog/20241229-thelounge/new_connection.png]]
 
 #+caption: Existing Server Connection
-[[https://img.cleberg.net/blog/20241229-thelounge/existing_connection.png]]
+[[https://img.cmc.pub/blog/20241229-thelounge/existing_connection.png]]
 
 #+caption: Channel View
-[[https://img.cleberg.net/blog/20241229-thelounge/channel.png]]
+[[https://img.cmc.pub/blog/20241229-thelounge/channel.png]]

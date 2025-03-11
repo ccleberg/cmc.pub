@@ -34,7 +34,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         minify -o theme/static/styles.min.css theme/static/styles.css
         
         # Deploy changes
-        rsync -r --delete-before .build/* $ubuntu_server:/var/www/cleberg.net/
+        rsync -r --delete-before .build/* $ubuntu_server:/var/www/cmc.pub/
     else
         echo "Environment: Development"
         

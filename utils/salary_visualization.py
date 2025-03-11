@@ -13,7 +13,7 @@ import plotly.graph_objs as go
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 # Read the CSV file
-df = pd_read_csv('~/git/cleberg.net/theme/static/salary.csv')
+df = pd_read_csv('~/git/cmc.pub/theme/static/salary.csv')
 
 def format_currency(value: float) -> str:
     """
