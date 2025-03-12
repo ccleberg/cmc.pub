@@ -1,0 +1,18 @@
+#+date: <2025-03-11 Tue 18:50:00>
+#+title: My New Domain, Email, & GPG Key
+#+description: Broadcasting an update to my domain, email, and GPG key.
+#+filetags: :web:gpg:
+#+slug: new-domain
+
+I have moved to a new domain and quite a few things have been updated as a
+result:
+
+|----------+-------------------+---------------|
+| Category | Old               | Current       |
+|----------+-------------------+---------------|
+| Domain   | cleberg.net       | [[https://cmc.pub][cmc.pub]]       |
+| Email    | hello@cleberg.net | [[mailto:hello@cmc.pub][hello@cmc.pub]] |
+| GPG Key  | [[https://keys.openpgp.org/search?q=hello%40cleberg.net][hello@cleberg.net]] | [[https://keys.openpgp.org/search?q=hello%40cmc.pub][hello@cmc.pub]] |
+|----------+-------------------+---------------|
+
+/New services will continue to be updated on the [[https://cmc.pub/services/][services]] page./
