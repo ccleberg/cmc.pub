@@ -12,7 +12,7 @@
     {% if site_description is defined %}<meta name="description" content="{{ site_description }}" >{% endif %}
     {% if site_keywords is defined %}<meta name="keywords" content="{{ site_keywords }}" >{% endif %}
     <link rel="stylesheet" href="{{ url_for("static", file="styles.min.css") }}" type="text/css">
-    <link rel="icon" href="data:,">
+    <link rel="icon" type="image/png" href="{{ url_for("static", file="favicon.png") }}">
     {% block meta %}{% endblock %}
     {% endblock %}
 </head>
