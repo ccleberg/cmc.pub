@@ -19,7 +19,7 @@ a local copy of the repository. This can be accomplished by running the
 following commands within Emacs:
 
 #+begin_src sh
-git clone https://git.sr.ht/~cyborg/cmc.pub && \
+git clone https://github.com/ccleberg/cmc.pub && \
 cd cmc.pub && \
 emacs -nw
 #+end_src

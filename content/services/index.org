@@ -11,4 +11,4 @@
 - [[https://rimgo.cmc.pub/][Rimgo]] - An alternative frontend for Imgur
 - [[https://search.cmc.pub/][SearXNG]] - A privacy-respecting, open metasearch engine
 
-See the [[https://git.sr.ht/~cyborg/cmc.pub/log/main/item/content/services/index.org][git log]] if you want to see changes that have been made.
+See the [[https://github.com/ccleberg/cmc.pub/commits/main/content/services/index.org][git log]] if you want to see changes that have been made.
