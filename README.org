@@ -12,7 +12,7 @@ through a simple =publish.el= file. For those who are interested in tweaking the
 underlying configuration, the weblorg documentation provides all necessary
 details on possible settings and options.
 
-** Getting Started with cmc.pub
+** Getting Started
 
 To begin exploring or contributing to this project, you'll first need to set up
 a local copy of the repository. This can be accomplished by running the
