@@ -75,5 +75,5 @@ cmc.pub, taking advantage of the existing template structure and formatting.
 ** Contributing & Tasks
 
 For those interested in contributing to this project or addressing any
-outstanding issues, please refer to the [[https://todo.sr.ht/~cyborg/cmc.pub][ticket tracker]]. This is where you can find
+outstanding issues, please refer to the issues tab. This is where you can find
 a comprehensive list of open tickets or submit a new ticket for consideration.
