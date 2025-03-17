@@ -85,6 +85,14 @@
  :output ".build/services/{{ slug }}.html"
  :url "/services/{{ slug }}.html")
 
+;; Services page route
+(weblorg-route
+ :name "now"
+ :input-pattern "content/now/*.org"
+ :template "page.html"
+ :output ".build/now/{{ slug }}.html"
+ :url "/now/{{ slug }}.html")
+
 ;; RSS feed route
 (weblorg-route
  :name "rss"

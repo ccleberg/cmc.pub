@@ -1,0 +1,43 @@
+#+title: Now
+#+slug: index
+
+This is a [[https://nownownow.com/about][/now]] page.
+
+* Work
+
+- Recently appointed as the US DevOps SMP (Subject Matter Practicioner) at [[https://kpmg.com/us/en.html][KPMG]].
+  Add that to my list of already being the Automation Champion and one of the AI
+  Champions for the North Central business unit.
+- Getting ready for my FY25 engagements at work, with a few new clients this
+  year.
+
+* Media
+
+- Playing a few games:
+  - Black Ops 6
+  - Dynasty Warriors: Origins
+  - Nier: Automata
+  - Stellar Blade
+- Watching some shows:
+  - Ramen Akaneko
+  - Sakamoto Days
+  - Wilfred
+  - Workaholics
+
+* Tech
+
+- Achieved my GitHub Foundations cert. Very easy.
+- Migrated back to [[https://github.com/ccleberg][GitHub]].
+- Migrated domain from =cleberg.net= to [[https://cmc.pub][cmc.pub]].
+- Deleted a bunch of accounts to reduce online footprint. Looking for more ways
+  to reduce.
+
+* Hobbies
+
+- Still looking for ideas in the tech area as I've been fairly tapped out this
+  last year. Feels like most of my innovation happens at work, which I can't
+  share online.
+- Weather's warming up, so disc golf frequency is increasing.
+- Meeting new people at the Irish pub nearby.
+
+View the historical [[https://github.com/ccleberg/cmc.pub/commits/main/content/now/index.org][log of changes]] for this page.
