@@ -5,7 +5,7 @@ This is a [[https://nownownow.com/about][/now]] page.
 
 * Work
 
-- Recently appointed as the US DevOps SMP (Subject Matter Practicioner) at [[https://kpmg.com/us/en.html][KPMG]].
+- Recently appointed as the US DevOps SMP (Subject Matter Practitioner) at [[https://kpmg.com/us/en.html][KPMG]].
   Add that to my list of already being the Automation Champion and one of the AI
   Champions for the North Central business unit.
 - Getting ready for my FY25 engagements at work, with a few new clients this
