@@ -1,8 +1,9 @@
-#+title: sh
+#+title: Shell Commands & Scripts
+#+date: <2025-03-19>
 
 * File Loop
 
-#+begin_sh shell
+#+begin_src shell
 # All files in current directory
 for file in *; do echo "${file}"; done
 
