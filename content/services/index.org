@@ -2,7 +2,7 @@
 #+slug: index
 
 - [[https://ao.cmc.pub/][AnonymousOverflow]] - A StackOverflow proxy
-- [[https://breezewiki.cmc.pub/][BreezeWiki]] - A Fandom frontend
+- [[https://bw.cmc.pub/][BreezeWiki]] - A Fandom frontend
 - [[https://cyberchef.cmc.pub/][CyberChef]] - The Cyber Swiss Army Knife
 - [[https://files.cmc.pub/][FileArchive]] - An interesting file archive
 - [[https://paste.cmc.pub/][FlashPaper]] - One-time encrypted password/secret sharing
