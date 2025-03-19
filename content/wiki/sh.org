@@ -1,0 +1,48 @@
+#+title: sh
+
+* File Loop
+
+#+begin_sh shell
+# All files in current directory
+for file in *; do echo "${file}"; done
+
+# Files only
+for file in *; do if [ -f "$file" ]; then echo "$file"; fi; done
+
+# Directories only
+for file in *; do if [ -d "$file" ]; then echo "$file"; fi; done
+#+end_src
+
+* Exifdata
+
+#+begin_src shell
+sudo exiftool -r -all= -ext jpg -ext png .
+#+end_src
+
+* Optipng
+
+#+begin_src shell
+optipng -o7 image.png
+#+end_src
+
+* Nginx + Goaccess
+
+#+begin_src shell
+zcat /var/log/nginx/access.log.*.gz | goaccess /var/log/nginx/access.log -
+#+end_src
+
+* Distro Information
+
+#+begin_src shell
+echo /etc/*_ver* /etc/*-rel*; cat /etc/*_ver* /etc/*-rel*
+#+end_src
+
+* sed
+
+#+begin_src shell
+# Replace text within file
+sed -i '' 's/SEARCH_TEXT/REPLACEMENT_TEXT/g' file.txt
+
+# Delete empty lines
+sed '/^\s*$/d'
+#+end_src
