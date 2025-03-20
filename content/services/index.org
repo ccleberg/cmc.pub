@@ -5,11 +5,11 @@
 - [[https://br.cmc.pub/][BiblioReads]] - An Alternative Private Goodreads Front-End
 - [[https://pin.cmc.pub/][Binternet]] - A custom Pinterest frontend, made in PHP
 - [[https://bw.cmc.pub/][BreezeWiki]] - A Fandom frontend
-- [[https://cyberchef.cmc.pub/][CyberChef]] - The Cyber Swiss Army Knife
+- [[https://cc.cmc.pub/][CyberChef]] - The Cyber Swiss Army Knife
 - [[https://files.cmc.pub/][FileArchive]] - An interesting file archive
 - [[https://paste.cmc.pub/][FlashPaper]] - One-time encrypted password/secret sharing
 - [[https://ld.cmc.pub][LibremDB]] -  A free & open source IMDb front-end
-- [[https://translate.cmc.pub][LibreTranslate]] - A translation engine
+- [[https://lt.cmc.pub][LibreTranslate]] - A translation engine
 - [[https://office.cmc.pub/][Office]] - The world's smallest office suite
 - [[https://org.cmc.pub/][Org-Live]] - A basic org-mode editor for the web I built
 - [[https://pgp.cmc.pub/][PGP]] - A simple and easy-to-use client-side PGP tool
