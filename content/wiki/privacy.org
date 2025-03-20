@@ -1,0 +1,50 @@
+#+title: Privacy
+#+date: <2025-03-19>
+
+* Operating Systems
+** Desktop
+- macOS
+- Linux & BSD
+
+** Mobile
+- iOS
+- Android
+- GrapheneOS
+
+* Browsers
+- Firefox
+- Librewolf
+- Safari
+
+** Extensions & Add-ons
+- uBlock Origin
+
+* Cloud Storage
+- Tresorit
+
+* Email
+** Providers
+- Migadu
+
+** Clients
+- Thunderbird
+
+* Search Engines
+- SearXNG
+
+* Front-ends
+- https://libredirect.github.io/
+
+* Multi-Factor Authentication (MFA)
+- Bitwarden
+
+* VPNs
+- Mullvad
+
+* Password Managers
+- Bitwarden
+- Keepass
+
+* Messengers
+- Signal
+- Element

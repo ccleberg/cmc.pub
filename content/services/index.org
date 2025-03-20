@@ -8,12 +8,12 @@
 - [[https://cyberchef.cmc.pub/][CyberChef]] - The Cyber Swiss Army Knife
 - [[https://files.cmc.pub/][FileArchive]] - An interesting file archive
 - [[https://paste.cmc.pub/][FlashPaper]] - One-time encrypted password/secret sharing
-- [[https://libremdb.cmc.pub][LibremDB]] -  A free & open source IMDb front-end
+- [[https://ld.cmc.pub][LibremDB]] -  A free & open source IMDb front-end
 - [[https://translate.cmc.pub][LibreTranslate]] - A translation engine
 - [[https://office.cmc.pub/][Office]] - The world's smallest office suite
 - [[https://org.cmc.pub/][Org-Live]] - A basic org-mode editor for the web I built
 - [[https://pgp.cmc.pub/][PGP]] - A simple and easy-to-use client-side PGP tool
-- [[https://priviblur.cmc.pub][Priviblur]] - A privacy-focused alternative frontend to Tumblr
+- [[https://pb.cmc.pub][Priviblur]] - A privacy-focused alternative frontend to Tumblr
 - [[https://rimgo.cmc.pub/][Rimgo]] - An alternative frontend for Imgur
 - [[https://rd.cmc.pub/][Rural Dictionary]] - Private, NoJS Urban Dictionary frontend
 - [[https://search.cmc.pub/][SearXNG]] - A privacy-respecting, open metasearch engine
