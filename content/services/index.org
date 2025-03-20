@@ -2,6 +2,8 @@
 #+slug: index
 
 - [[https://ao.cmc.pub/][AnonymousOverflow]] - A StackOverflow proxy
+- [[https://br.cmc.pub/][BiblioReads]] - An Alternative Private Goodreads Front-End
+- [[https://pin.cmc.pub/][Binternet]] - A custom Pinterest frontend, made in PHP
 - [[https://bw.cmc.pub/][BreezeWiki]] - A Fandom frontend
 - [[https://cyberchef.cmc.pub/][CyberChef]] - The Cyber Swiss Army Knife
 - [[https://files.cmc.pub/][FileArchive]] - An interesting file archive
@@ -10,8 +12,10 @@
 - [[https://translate.cmc.pub][LibreTranslate]] - A translation engine
 - [[https://office.cmc.pub/][Office]] - The world's smallest office suite
 - [[https://org.cmc.pub/][Org-Live]] - A basic org-mode editor for the web I built
+- [[https://pgp.cmc.pub/][PGP]] - A simple and easy-to-use client-side PGP tool
 - [[https://priviblur.cmc.pub][Priviblur]] - A privacy-focused alternative frontend to Tumblr
 - [[https://rimgo.cmc.pub/][Rimgo]] - An alternative frontend for Imgur
+- [[https://rd.cmc.pub/][Rural Dictionary]] - Private, NoJS Urban Dictionary frontend
 - [[https://search.cmc.pub/][SearXNG]] - A privacy-respecting, open metasearch engine
 - [[https://art.cmc.pub/][SkunkyArt]] - Alternative frontend for DeviantArt
 - [[https://small.cmc.pub][Small]] - An alternative frontend for Medium
