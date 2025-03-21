@@ -9,10 +9,10 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     # Check if the environment flag is set to PROD
     if [[ "$ENV" == "prod" ]]; then
         echo "Environment: Production"
-        
+
         # Check if publishing via LAN or remotely
         printf "Publishing on remote or LAN? [r|l] "
-        
+
         # Update ubuntu_server variable based on answer
         read method
         if [[ "$method" =~ ^[Rr]$ ]]; then
@@ -23,29 +23,29 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
             echo "Invalid input. Assuming LAN (ubuntu)"
             ubuntu_server="ubuntu"
         fi
-        
+
         # Remove previous build
         rm -rf .build/*
-        
-        # Run publishing script
-        emacs --script publish.el &>/dev/null
-        
+
         # Minify CSS
         minify -o theme/static/styles.min.css theme/static/styles.css
-        
+
+        # Run publishing script
+        emacs --script publish.el &>/dev/null
+
         # Deploy changes
         rsync -r --delete-before .build/* $ubuntu_server:/var/www/cmc.pub/
     else
         echo "Environment: Development"
-        
+
         # Remove previous build
         rm -rf .build/*
-        
-        # Run publishing script
-        emacs --script publish.el
-        
+
         # Minify CSS
         minify -o theme/static/styles.min.css theme/static/styles.css
+
+        # Run publishing script
+        emacs --script publish.el
 
         # Launch development web server
         cd .build/
