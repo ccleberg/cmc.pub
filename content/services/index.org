@@ -18,16 +18,17 @@
 
 * Other Services
 
-| Service        | Description                                   |
-|----------------+-----------------------------------------------|
-| [[https://cc.cmc.pub/][CyberChef]]      | The Cyber Swiss Army Knife                    |
-| [[https://files.cmc.pub/][FileArchive]]    | An interesting file archive                   |
-| [[https://paste.cmc.pub/][FlashPaper]]     | One-time encrypted password/secret sharing    |
-| [[https://lt.cmc.pub][LibreTranslate]] | A translation engine                          |
-| [[https://office.cmc.pub/][Office]]         | The world's smallest office suite             |
-| [[https://org.cmc.pub/][Org-Live]]       | A basic org-mode editor for the web I built   |
-| [[https://pgp.cmc.pub/][PGP]]            | A simple and easy-to-use client-side PGP tool |
-| [[https://search.cmc.pub/][SearXNG]]        | A privacy-respecting, open metasearch engine  |
+| Service        | Description                                      |
+|----------------+--------------------------------------------------|
+| [[https://cc.cmc.pub/][CyberChef]]      | The Cyber Swiss Army Knife                       |
+| [[https://files.cmc.pub/][FileArchive]]    | An interesting file archive                      |
+| [[https://paste.cmc.pub/][FlashPaper]]     | One-time encrypted password/secret sharing       |
+| [[https://hat.cmc.pub/][Hat.sh]]         | Simple, fast, secure client-side file encryption |
+| [[https://lt.cmc.pub][LibreTranslate]] | A translation engine                             |
+| [[https://office.cmc.pub/][Office]]         | The world's smallest office suite                |
+| [[https://org.cmc.pub/][Org-Live]]       | A basic org-mode editor for the web I built      |
+| [[https://pgp.cmc.pub/][PGP]]            | A simple and easy-to-use client-side PGP tool    |
+| [[https://search.cmc.pub/][SearXNG]]        | A privacy-respecting, open metasearch engine     |
 
 
 See the [[https://github.com/ccleberg/cmc.pub/commits/main/content/services/index.org][git log]] if you want to see a log of changes made to this page.
