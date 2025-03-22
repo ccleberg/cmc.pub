@@ -30,5 +30,6 @@
 | [[https://pgp.cmc.pub/][PGP]]            | A simple and easy-to-use client-side PGP tool    |
 | [[https://search.cmc.pub/][SearXNG]]        | A privacy-respecting, open metasearch engine     |
 | [[https://send.cmc.pub/][Send]]           | Simple, private file sharing                     |
+| [[https://slash.cmc.pub/][Slash]]          | Bookmark and link sharing platform               |
 
 See the [[https://github.com/ccleberg/cmc.pub/commits/main/content/services/index.org][git log]] if you want to see a log of changes made to this page.
