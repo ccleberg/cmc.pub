@@ -15,6 +15,7 @@
 | [[https://rd.cmc.pub/][Rural Dictionary]]  | Urban Dictionary |
 | [[https://art.cmc.pub/][SkunkyArt]]         | DeviantArt       |
 | [[https://small.cmc.pub][Small]]             | Medium           |
+| [[https://yt.cmc.pub/][Invidious]]         | YouTube          |
 
 * Other Services
 
