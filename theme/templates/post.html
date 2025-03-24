@@ -9,7 +9,7 @@
 {% endif %} {% endblock %} {% block main %}
 <article role="article">
 	<section class="post-metadata">
-		<h1 class="post__title">{{ post.title }}</h1>
+		<h1>{{ post.title }}</h1>
 		{% if post.date is defined %}
 		<time datetime='{{ post.date|strftime("%Y-%m-%d") }}'
 			>&lt;{{ post.date|strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</time
