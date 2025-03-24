@@ -1,5 +1,6 @@
 #+title: Now
 #+slug: index
+#+date: <2025-03-17 Mon 11:42:00>
 
 This is a [[https://nownownow.com/about][/now]] page.
 

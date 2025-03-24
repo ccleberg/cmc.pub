@@ -89,7 +89,7 @@
 (weblorg-route
  :name "now"
  :input-pattern "content/now/*.org"
- :template "page.html"
+ :template "post.html"
  :output ".build/now/{{ slug }}.html"
  :url "/now/{{ slug }}.html")
 
