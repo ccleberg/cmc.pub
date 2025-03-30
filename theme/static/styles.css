@@ -573,6 +573,10 @@ span.tag::before {
     margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #141617;
