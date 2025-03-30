@@ -7,7 +7,7 @@
 
 # https://github.com/github/linguist/blob/master/README.md
 
-*.conf linguist-language=Org
+*.org linguist-language=Org
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
