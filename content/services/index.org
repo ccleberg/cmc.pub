@@ -5,32 +5,32 @@
 
 | Service           | Replaces         |
 |-------------------+------------------|
-| [[https://ao.cmc.pub/][AnonymousOverflow]] | StackOverflow    |
-| [[https://br.cmc.pub/][BiblioReads]]       | Goodreads        |
-| [[https://pin.cmc.pub/][Binternet]]         | Pinterest        |
-| [[https://bw.cmc.pub/][BreezeWiki]]        | Fandom           |
-| [[https://ld.cmc.pub][LibremDB]]          | IMDb             |
-| [[https://pb.cmc.pub][Priviblur]]         | Tumblr           |
-| [[https://rimgo.cmc.pub/][Rimgo]]             | Imgur            |
-| [[https://rd.cmc.pub/][Rural Dictionary]]  | Urban Dictionary |
-| [[https://art.cmc.pub/][SkunkyArt]]         | DeviantArt       |
-| [[https://small.cmc.pub][Small]]             | Medium           |
-| [[https://yt.cmc.pub/][Invidious]]         | YouTube          |
+| [[https://ao.cleberg.net/][AnonymousOverflow]] | StackOverflow    |
+| [[https://br.cleberg.net/][BiblioReads]]       | Goodreads        |
+| [[https://pin.cleberg.net/][Binternet]]         | Pinterest        |
+| [[https://bw.cleberg.net/][BreezeWiki]]        | Fandom           |
+| [[https://ld.cleberg.net][LibremDB]]          | IMDb             |
+| [[https://pb.cleberg.net][Priviblur]]         | Tumblr           |
+| [[https://rimgo.cleberg.net/][Rimgo]]             | Imgur            |
+| [[https://rd.cleberg.net/][Rural Dictionary]]  | Urban Dictionary |
+| [[https://art.cleberg.net/][SkunkyArt]]         | DeviantArt       |
+| [[https://small.cleberg.net][Small]]             | Medium           |
+| [[https://yt.cleberg.net/][Invidious]]         | YouTube          |
 
 * Other Services
 
 | Service        | Description                                      |
 |----------------+--------------------------------------------------|
-| [[https://cc.cmc.pub/][CyberChef]]      | The Cyber Swiss Army Knife                       |
-| [[https://files.cmc.pub/][FileArchive]]    | An interesting file archive                      |
-| [[https://paste.cmc.pub/][FlashPaper]]     | One-time encrypted password/secret sharing       |
-| [[https://hat.cmc.pub/][Hat.sh]]         | Simple, fast, secure client-side file encryption |
-| [[https://lt.cmc.pub][LibreTranslate]] | A translation engine                             |
-| [[https://office.cmc.pub/][Office]]         | The world's smallest office suite                |
-| [[https://org.cmc.pub/][Org-Live]]       | A basic org-mode editor for the web I built      |
-| [[https://pgp.cmc.pub/][PGP]]            | A simple and easy-to-use client-side PGP tool    |
-| [[https://search.cmc.pub/][SearXNG]]        | A privacy-respecting, open metasearch engine     |
-| [[https://send.cmc.pub/][Send]]           | Simple, private file sharing                     |
-| [[https://slash.cmc.pub/][Slash]]          | Bookmark and link sharing platform               |
+| [[https://cc.cleberg.net/][CyberChef]]      | The Cyber Swiss Army Knife                       |
+| [[https://files.cleberg.net/][FileArchive]]    | An interesting file archive                      |
+| [[https://paste.cleberg.net/][FlashPaper]]     | One-time encrypted password/secret sharing       |
+| [[https://hat.cleberg.net/][Hat.sh]]         | Simple, fast, secure client-side file encryption |
+| [[https://lt.cleberg.net][LibreTranslate]] | A translation engine                             |
+| [[https://office.cleberg.net/][Office]]         | The world's smallest office suite                |
+| [[https://org.cleberg.net/][Org-Live]]       | A basic org-mode editor for the web I built      |
+| [[https://pgp.cleberg.net/][PGP]]            | A simple and easy-to-use client-side PGP tool    |
+| [[https://search.cleberg.net/][SearXNG]]        | A privacy-respecting, open metasearch engine     |
+| [[https://send.cleberg.net/][Send]]           | Simple, private file sharing                     |
+| [[https://slash.cleberg.net/][Slash]]          | Bookmark and link sharing platform               |
 
-See the [[https://github.com/ccleberg/cmc.pub/commits/main/content/services/index.org][git log]] if you want to see a log of changes made to this page.
+See the [[https://github.com/ccleberg/cleberg.net/commits/main/content/services/index.org][git log]] if you want to see a log of changes made to this page.

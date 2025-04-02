@@ -1,11 +1,11 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Contact: mailto:hello@cmc.pub
+Contact: mailto:hello@cleberg.net
 Expires: 2100-01-01T06:00:00.000Z
-Encryption: https://cmc.pub/gpg.txt
+Encryption: https://cleberg.net/gpg.txt
 Preferred-Languages: en
-Canonical: https://cmc.pub/.well-known/security.txt
+Canonical: https://cleberg.net/.well-known/security.txt
 -----BEGIN PGP SIGNATURE-----
 
 iHUEARYKAB0WIQTGhwCm+ktxg7bO5H3u3Jlc0U8ZPAUCZ9DLeQAKCRDu3Jlc0U8Z

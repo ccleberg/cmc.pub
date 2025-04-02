@@ -269,10 +269,10 @@ list them all, so I will simply cover a few of the basic commands I use myself.
 
    (setq org-publish-project-alist
          `(("blog"
-            :base-directory "~/Source/cmc.pub/"
+            :base-directory "~/Source/cleberg.net/"
             :base-extension "org"
             :recursive t
-            :publishing-directory "~/Source/cmc.pub/public/"
+            :publishing-directory "~/Source/cleberg.net/public/"
             :publishing-function org-html-publish-to-html
             ;; HTML5
             :html-doctype "html5"
@@ -311,13 +311,13 @@ list them all, so I will simply cover a few of the basic commands I use myself.
            )
 
            ("static"
-            :base-directory "~/Source/cmc.pub/static/"
+            :base-directory "~/Source/cleberg.net/static/"
             :base-extension "css\\|txt\\|jpg\\|gif\\|png"
             :recursive t
-            :publishing-directory  "~/Source/cmc.pub/public/"
+            :publishing-directory  "~/Source/cleberg.net/public/"
             :publishing-function org-publish-attachment)
 
-           ("cmc.pub" :components ("blog" "static"))))
+           ("cleberg.net" :components ("blog" "static"))))
    #+end_src
 
 ** General Thoughts

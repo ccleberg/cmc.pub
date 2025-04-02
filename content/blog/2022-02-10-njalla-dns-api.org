@@ -6,9 +6,9 @@
 * Njalla's API
 
 As noted in my recent post about
-[[https://cmc.pub/blog/ditching-cloudflare/][switching to Njalla from
+[[https://cleberg.net/blog/ditching-cloudflare/][switching to Njalla from
 Cloudflare]], I was searching for a way to replace my very easy-to-use
-bash script to [[https://cmc.pub/blog/cloudflare-dns-api/][update Cloudflare's
+bash script to [[https://cleberg.net/blog/cloudflare-dns-api/][update Cloudflare's
 DNS via their API]].
 
 To reiterate what I said in those posts, this is a common necessity for

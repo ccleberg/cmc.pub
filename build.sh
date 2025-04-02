@@ -34,7 +34,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
         emacs --script publish.el &>/dev/null
 
         # Deploy changes
-        rsync -r --delete-before .build/* $ubuntu_server:/var/www/cmc.pub/
+        rsync -r --delete-before .build/* $ubuntu_server:/var/www/cleberg.net/
     else
         echo "Environment: Development"
 

@@ -101,7 +101,7 @@ In order to test the results, let's curl the contents of our site. To
 start, I'll curl the site normally:
 
 #+begin_src sh
-curl https://cmc.pub
+curl https://cleberg.net
 #+end_src
 
 The HTML contents of the page come back successfully:
@@ -113,7 +113,7 @@ The HTML contents of the page come back successfully:
 Next, let's include a banned referrer:
 
 #+begin_src sh
-curl --referer https://news.ycombinator.com https://cmc.pub
+curl --referer https://news.ycombinator.com https://cleberg.net
 #+end_src
 
 This time, I'm met with a 403 Forbidden response page. That means we are

@@ -159,9 +159,9 @@ auth on
 host smtp.startmail.com
 port 465
 protocol smtp
-from hello@cmc.pub
-user hello@cmc.pub
-passwordeval security find-generic-password -s startmail -a hello@cmc.pub -w
+from hello@cleberg.net
+user hello@cleberg.net
+passwordeval security find-generic-password -s startmail -a hello@cleberg.net -w
 tls on
 tls_starttls off
 

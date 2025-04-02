@@ -8,13 +8,13 @@
 
 ;; Set default URL for Weblorg
 (if (string= (getenv "ENV") "prod")
-    (setq weblorg-default-url "https://cmc.pub"))
+    (setq weblorg-default-url "https://cleberg.net"))
 
 ;; Define site configuration
 (weblorg-site
  :theme nil
-  :template-vars `(("site_name" . "cmc.pub")
-                  ("site_owner" . "Christian Cleberg <hello@cmc.pub>")
+  :template-vars `(("site_name" . "cleberg.net")
+                  ("site_owner" . "Christian Cleberg <hello@cleberg.net>")
                   ("site_description" . "Just a blip of ones and zeroes.")))
 
 ;; Define routes for rendering content

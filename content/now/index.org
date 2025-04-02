@@ -29,7 +29,7 @@ This is a [[https://nownownow.com/about][/now]] page.
 
 - Achieved my GitHub Foundations cert. Very easy.
 - Migrated back to [[https://github.com/ccleberg][GitHub]].
-- Migrated domain from =cleberg.net= to [[https://cmc.pub][cmc.pub]].
+- Migrated domain from =cleberg.net= to [[https://cleberg.net][cleberg.net]].
 - Deleted a bunch of accounts to reduce online footprint. Looking for more ways
   to reduce.
 
@@ -41,4 +41,4 @@ This is a [[https://nownownow.com/about][/now]] page.
 - Weather's warming up, so disc golf frequency is increasing.
 - Meeting new people at the Irish pub nearby.
 
-View the historical [[https://github.com/ccleberg/cmc.pub/commits/main/content/now/index.org][log of changes]] for this page.
+View the historical [[https://github.com/ccleberg/cleberg.net/commits/main/content/now/index.org][log of changes]] for this page.

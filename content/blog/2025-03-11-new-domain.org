@@ -10,9 +10,9 @@ result:
 |----------+-------------------+---------------|
 | Category | Old               | Current       |
 |----------+-------------------+---------------|
-| Domain   | cleberg.net       | [[https://cmc.pub][cmc.pub]]       |
-| Email    | hello@cleberg.net | [[mailto:hello@cmc.pub][hello@cmc.pub]] |
-| GPG Key  | [[https://keys.openpgp.org/search?q=hello%40cleberg.net][hello@cleberg.net]] | [[https://keys.openpgp.org/search?q=hello%40cmc.pub][hello@cmc.pub]] |
+| Domain   | cleberg.net       | [[https://cleberg.net][cleberg.net]]       |
+| Email    | hello@cleberg.net | [[mailto:hello@cleberg.net][hello@cleberg.net]] |
+| GPG Key  | [[https://keys.openpgp.org/search?q=hello%40cleberg.net][hello@cleberg.net]] | [[https://keys.openpgp.org/search?q=hello%40cleberg.net][hello@cleberg.net]] |
 |----------+-------------------+---------------|
 
-/New services will continue to be updated on the [[https://cmc.pub/services/][services]] page./
+/New services will continue to be updated on the [[https://cleberg.net/services/][services]] page./

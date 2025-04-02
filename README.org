@@ -1,8 +1,8 @@
 #+title: README
 
-* cmc.pub
+* cleberg.net
 
-[[https://cmc.pub][cmc.pub]] is my personal webpage and blog. This website and blog utilize the
+[[https://cleberg.net][cleberg.net]] is my personal webpage and blog. This website and blog utilize the
 powerful Org-Mode publishing system, courtesy of the [[https://github.com/emacs-love/weblorg][weblorg]] Emacs package.
 
 ** Features & Configuration
@@ -19,8 +19,8 @@ a local copy of the repository. This can be accomplished by running the
 following commands within Emacs:
 
 #+begin_src sh
-git clone https://github.com/ccleberg/cmc.pub && \
-cd cmc.pub && \
+git clone https://github.com/ccleberg/cleberg.net && \
+cd cleberg.net && \
 emacs -nw
 #+end_src
 
@@ -70,7 +70,7 @@ To quickly create a new blog post within Emacs, follow these steps:
    the newly opened file.
 
 This streamlined process allows you to rapidly generate fresh content for
-cmc.pub, taking advantage of the existing template structure and formatting.
+cleberg.net, taking advantage of the existing template structure and formatting.
 
 ** Contributing & Tasks
 

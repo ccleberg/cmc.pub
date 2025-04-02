@@ -48,7 +48,7 @@ This led to a dead end as my two methods failed:
 At this point, I decided to take a step back and use [[https://github.com/djcb/mu][mu]], a command-line utility
 that would index my files and sync back and forth with Migadu for me.
 
-Using my blog post, [[https://cmc.pub/blog/mu4e.html][Email in Doom Emacs with Mu4e on macOS]], (and skipping the
+Using my blog post, [[https://cleberg.net/blog/mu4e.html][Email in Doom Emacs with Mu4e on macOS]], (and skipping the
 mu4e parts) I was able to set up a minimal directory connected to my Migadu IMAP
 account. Using my terminal, I simply moved all of my messages into the =mu=
 directory and synchronized the account, and voila, my messages synchronized

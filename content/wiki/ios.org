@@ -3,7 +3,7 @@
 
 Related:
 
-- [[https://cmc.pub/wiki/hardware.html][Hardware]]
+- [[https://cleberg.net/wiki/hardware.html][Hardware]]
 
 My primary mobile OS. Currently running iOS 17. This wiki page contains most of
 the apps I have used at one point or another across my different iPhones.

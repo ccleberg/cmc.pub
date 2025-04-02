@@ -11,7 +11,7 @@ desirable features for a modern IRC client. The Lounge supports push
 notifications, link previews, file uploads, always connected, multi-user
 support, and is available as a PWA for mobile devices.
 
-I wanted to write this as I had written a post about [[https://cmc.pub/blog/self-hosting-convos.html][self-hosting Convos]] and
+I wanted to write this as I had written a post about [[https://cleberg.net/blog/self-hosting-convos.html][self-hosting Convos]] and
 have recently migrated over to The Lounge instead.
 
 If you'd like to try a demo first, head over to [[https://demo.thelounge.chat/][the official demo website]].
