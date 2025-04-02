@@ -12,10 +12,10 @@ and the help pane open at the bottomm.
 The themes are =doom-homage-white= and =doom-homage-black=.
 
 #+caption: Doom Emacs Light Mode
-[[https://img.cmc.pub/blog/20240314-doom-emacs/light.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240314-doom-emacs/light.png]]
 
 #+caption: Doom Emacs Dark Mode
-[[https://img.cmc.pub/blog/20240314-doom-emacs/dark.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240314-doom-emacs/dark.png]]
 
 ** Getting Started
 
@@ -183,7 +183,7 @@ been slowly adoping some Python and general web dev tools as well.
 *** Markdown
 
 #+caption: Markdown Preview
-[[https://img.cmc.pub/blog/20240314-doom-emacs/markdown.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240314-doom-emacs/markdown.png]]
 
 Markdown is fairly simple as the syntax is limited, so just make sure the
 =~/.doom.d/init.el= includes the =markdown= declaration in the =:lang= section.
@@ -205,7 +205,7 @@ things like link hiding.
 *** Org-Mode
 
 #+caption: Org-Mode Preview
-[[https://img.cmc.pub/blog/20240314-doom-emacs/org.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240314-doom-emacs/org.png]]
 
 Similar to the markdown section above, ensure that the =~/.doom.d/init.el=
 includes the =org= declaration in the =:lang= section.

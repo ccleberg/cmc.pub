@@ -113,7 +113,7 @@ You can open the included workflow at
 and create a new configuration.
 
 #+caption: n8n Workflow
-[[https://img.cmc.pub/blog/20240825-n8n-sentiment-analysis/workflow.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240825-n8n-sentiment-analysis/workflow.png]]
 
 This workflow contains the following nodes:
 1. Email Trigger (IMAP)
@@ -151,10 +151,10 @@ send yourself a test email!
 After testing each step noted above, n8n provided the results below - it works!
 
 #+caption: Positive Results
-[[https://img.cmc.pub/blog/20240825-n8n-sentiment-analysis/positive_results.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240825-n8n-sentiment-analysis/positive_results.png]]
 
 #+caption: Negative Results
-[[https://img.cmc.pub/blog/20240825-n8n-sentiment-analysis/negative_results.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240825-n8n-sentiment-analysis/negative_results.png]]
 
 While this isn't anything earth-shattering, it does show easy it is to get
 started with n8n and large language models in a self-hosted environment.

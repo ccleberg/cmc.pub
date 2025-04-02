@@ -33,7 +33,7 @@ Open the installer and follow the installation process until the application
 finishes the installation process.
 
 #+caption: Docker Desktop on macOS
-[[https://img.cmc.pub/blog/20240408-docker-local-web-server/docker-desktop.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240408-docker-local-web-server/docker-desktop.png]]
 
 ** Creating an Nginx Container
 
@@ -56,7 +56,7 @@ docker run -it --rm -d -p 8000:80 --name web nginx
 You can navigate to [[http://localhost:8000]] to see the resulting page.
 
 #+caption: Default Nginx Container
-[[https://img.cmc.pub/blog/20240408-docker-local-web-server/default-container.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240408-docker-local-web-server/default-container.png]]
 
 ** Customizing the Nginx Container
 
@@ -102,7 +102,7 @@ server {
 }
 #+end_src
 
-[[https://img.cmc.pub/blog/20240408-docker-local-web-server/custom-container.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240408-docker-local-web-server/custom-container.png]]
 
 * Customizing Deployment Actions
 

@@ -125,22 +125,22 @@ The app is now available on your custom domain!
 ** Screenshots
 
 #+caption: Login
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/login.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/login.png]]
 
 #+caption: Recipes
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/recipes.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/recipes.png]]
 
 #+caption: Meal Plan
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/mealplan.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/mealplan.png]]
 
 #+caption: Shopping Lists
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/shopping.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/shopping.png]]
 
 #+caption: Cook Book
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/cookbook.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/cookbook.png]]
 
 #+caption: Import
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/import.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/import.png]]
 
 #+caption: Administration Panel
-[[https://img.cmc.pub/blog/20250123-self-hosting-tandoor/admin.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250123-self-hosting-tandoor/admin.png]]

@@ -55,7 +55,7 @@ far as I can tell, there is no free tier available. In my opinion, this is a
 good thing as I hesitate to understand how privacy-focused apps make money when
 they offer free services to users.
 
-[[https://img.cmc.pub/blog/20250211-obscura-vpn/payment.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250211-obscura-vpn/payment.png]]
 #+caption: Payment
 
 ** Connection
@@ -64,10 +64,10 @@ Once you've enrolled in either a subscription or one-time payment, Obscura will
 return you to the app and allow you to connect. You can choose a specific server
 location or automatically connect.
 
-[[https://img.cmc.pub/blog/20250211-obscura-vpn/connect.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250211-obscura-vpn/connect.png]]
 #+caption: Initial Connection
 
-[[https://img.cmc.pub/blog/20250211-obscura-vpn/toolbar.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250211-obscura-vpn/toolbar.png]]
 #+caption: Toolbar Utility
 
 ** Speed
@@ -91,7 +91,7 @@ nodes before connecting to your target.
 From the image below, we can see that Mullvad confirmed my traffic to be
 connected through a Mullvad IP address.
 
-[[https://img.cmc.pub/blog/20250211-obscura-vpn/mullvad-check.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20250211-obscura-vpn/mullvad-check.png]]
 #+caption: Mullvad Check
 
 * Final Thoughts

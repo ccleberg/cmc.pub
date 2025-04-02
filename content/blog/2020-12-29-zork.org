@@ -32,7 +32,7 @@ as it was truly intended, you should try to play it without using the
 map.
 
 #+caption: Zork Map
-[[https://img.cmc.pub/blog/20201229-zork/zork_map.jpg]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20201229-zork/zork_map.jpg]]
 
 /[[https://www.filfre.net/2012/01/exploring-zork-part-1/][Map Source]]/
 

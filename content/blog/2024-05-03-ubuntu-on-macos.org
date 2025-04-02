@@ -32,7 +32,7 @@ Once installed, you can launch OrbStack and create a Linux machine in a matter
 of seconds. The creation dialog defaults to Ubuntu.
 
 #+caption: OrbStack's Linux Machine Creation Page
-[[https://img.cmc.pub/blog/20240503-ubuntu-on-macos/create.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240503-ubuntu-on-macos/create.png]]
 
 ** Launching the Machine
 
@@ -62,7 +62,7 @@ In the example below, we can see that the machine is using =Linux ubuntu 6.9.6=
 and operates similar to a fresh Ubuntu install on bare metal.
 
 #+caption: Ubuntu CLI
-[[https://img.cmc.pub/blog/20240503-ubuntu-on-macos/cli.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240503-ubuntu-on-macos/cli.png]]
 
 You can also click the machine's folder icon in OrbStack to open the machine's
 file system within macOS's native Files app. Within Files, you can double-click
@@ -70,13 +70,13 @@ to open any files and they will open in the macOS defaults for those file types
 (e.g., TextEdit).
 
 #+caption: Ubuntu Files
-[[https://img.cmc.pub/blog/20240503-ubuntu-on-macos/files.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240503-ubuntu-on-macos/files.png]]
 
 Here's an example of opening the =test.md= file in the screenshot above, which
 defaults to opening in Xcode on my system.
 
 #+caption: Ubuntu Files
-[[https://img.cmc.pub/blog/20240503-ubuntu-on-macos/xcode.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240503-ubuntu-on-macos/xcode.png]]
 
 *** Test Examples
 
@@ -84,7 +84,7 @@ As a quick example of the system, I installed =neofetch=, switched to the =zsh=
 shell, and ran a few common commands.
 
 #+caption: Test Examples
-[[https://img.cmc.pub/blog/20240503-ubuntu-on-macos/test.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240503-ubuntu-on-macos/test.png]]
 
 ** Thoughts
 

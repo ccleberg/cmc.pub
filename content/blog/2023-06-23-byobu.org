@@ -19,7 +19,7 @@ Take a look below at my current multi-window set-up in byobu while I
 write this blog post:
 
 #+caption: byobu
-[[https://img.cmc.pub/blog/20230623-byobu/byobu.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20230623-byobu/byobu.png]]
 
 *** Keybindings
 

@@ -441,11 +441,11 @@ When visiting the protected domain, you will now be redirected to your
 authentication domain and presented with the Authelia login portal.
 
 #+caption: Authelia Portal
-[[https://img.cmc.pub/blog/20231010-authelia/authelia_portal.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20231010-authelia/authelia_portal.png]]
 
 Once you've successfully authenticated, you can visit your
 authentication domain directly and see that you're currently
 authenticated to any domain protected by Authelia.
 
 #+caption: Authelia Success
-[[https://img.cmc.pub/blog/20231010-authelia/authelia_success.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20231010-authelia/authelia_success.png]]

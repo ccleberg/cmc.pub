@@ -26,7 +26,7 @@ Let's look at everything that fell in place today:
    Slavonic word =въторъ=, meaning "the second."
 5. Written in the classic monospaced, digital font (think of digital
    clocks from the 80s/90s), there is nice symmetry to the numbers
-   ([[https://img.cmc.pub/blog/20220222-tuesday/digital_font.png][view
+   ([[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20220222-tuesday/digital_font.png][view
    the image here]]!).
 6. This one isn't naturally-occurring, but it seems people around the
    world are celebrating the day. For example, a group is putting

@@ -4,7 +4,7 @@
 #+slug: self-hosting-ddns-updater
 
 #+caption: DDNS Updater Web View
-[[https://img.cmc.pub/blog/20240315-ddns-updater/ddns.png]]
+[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240315-ddns-updater/ddns.png]]
 
 [[https://github.com/qdm12/ddns-updater][DDNS Updater]] is a program to keep DNS A and/or AAAA records updated for multiple
 DNS providers.
