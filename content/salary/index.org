@@ -56,7 +56,7 @@ See the graph below for a visualization of each job's salary over time, as well
 as percentage increases or decreases between jobs.
 
 #+caption: Salary Visualization
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/salary/salary.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/salary/salary.png]]
 
 This page was inspired by [[https://xeiaso.net/salary-transparency/][Xe]], and I'm quoting the following wording from them as
 I want to reiterate this piece:

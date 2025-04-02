@@ -277,7 +277,7 @@ and determine what Grafana should do when an alert is triggered.
 ** OnCall
 
 #+caption: OnCall
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/oncall.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/oncall.png]]
 
 Within the Alerts & IRM section of Grafana (=/alerts-and-incidents=), open the
 Users page.
@@ -299,12 +299,12 @@ users and teams to be on call for specific date and time ranges. For my
 purposes, I put myself on-call 24/7 so that I receive all alerts.
 
 #+caption: User Information
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/irm_user_info.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/irm_user_info.png]]
 
 ** Alerting
 
 #+caption: Alerting Insights
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/alerting_insights.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/alerting_insights.png]]
 
 Now that we have defined users and team associated with an on-call schedule and
 configured to receive the proper alerts, let's define a rule that will generate
@@ -323,13 +323,13 @@ evaluation group. This is connected to our Grafana email, but can be associated
 with any notification policy.
 
 #+caption: New Alert Rule
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/new_alert.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/new_alert.png]]
 
 When the alert fires, it will generate an email (or whatever notification policy
 you assigned) and will look something like the following image.
 
 #+caption: Alerting Example
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/email_alert.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/email_alert.png]]
 
 ** Dashboards
 
@@ -337,13 +337,13 @@ As promised above, here are some dashboard screenshots based on the
 configurations above.
 
 #+caption: Nginx Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/dashboard_nginx.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/dashboard_nginx.png]]
 
 #+caption: Node Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/dashboard_node.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/dashboard_node.png]]
 
 #+caption: OnCall Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/dashboard_oncall.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/dashboard_oncall.png]]
 
 #+caption: Prometheus Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240920-prometheus-grafana-cloud/dashboard_prometheus.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240920-prometheus-grafana-cloud/dashboard_prometheus.png]]

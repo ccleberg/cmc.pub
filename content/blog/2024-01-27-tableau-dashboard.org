@@ -11,7 +11,7 @@ them to create the dashboard below. You can view this dashboard interactively
 online here: [[https://public.tableau.com/app/profile/c.c7042/viz/OmahaCrimeData2015-2023/OmahaCrimeData2015-2023#1][Omaha Crime Data (2015 - 2023)]].
 
 #+caption: Tableau Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240127-tableau-dashboard/dashboard.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240127-tableau-dashboard/dashboard.png]]
 
 * Gather the Data
 
@@ -140,4 +140,4 @@ There's a ton of other options available to be used in a dashboard like this,
 but this project shows a quick preview of what you can do in Tableau Public.
 
 #+caption: Tableau Dashboard
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240127-tableau-dashboard/dashboard.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240127-tableau-dashboard/dashboard.png]]

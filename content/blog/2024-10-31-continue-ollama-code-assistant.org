@@ -201,19 +201,19 @@ Continue:
 Below are a few screenshots from my current VS Codium window:
 
 #+caption: Available Continue Commands
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20241031-continue-ollama-code-assistant/continue_commands.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20241031-continue-ollama-code-assistant/continue_commands.png]]
 
 #+caption: Continue Fullscreen Chat Window
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20241031-continue-ollama-code-assistant/continue_fullscreen.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20241031-continue-ollama-code-assistant/continue_fullscreen.png]]
 
 #+caption: Inline Hotkeys
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20241031-continue-ollama-code-assistant/continue_inline_hotkeys.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20241031-continue-ollama-code-assistant/continue_inline_hotkeys.png]]
 
 #+caption: Inline Editing Suggestions
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20241031-continue-ollama-code-assistant/continue_inline.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20241031-continue-ollama-code-assistant/continue_inline.png]]
 
 #+caption: Sidebar Context Window
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20241031-continue-ollama-code-assistant/continue_sidebar.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20241031-continue-ollama-code-assistant/continue_sidebar.png]]
 
 * Conclusion
 

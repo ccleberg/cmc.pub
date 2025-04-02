@@ -44,7 +44,7 @@ Markdown file in plain-text, since it does contain any features to
 preview Markdown as HTML:
 
 #+caption: Plain Text Markdown
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20220302-easy-reliable-note-taking/plain_markdown.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20220302-easy-reliable-note-taking/plain_markdown.png]]
 
 ** Saving & Syncing Files
 :PROPERTIES:
@@ -118,13 +118,13 @@ Here's an example of how my Markdown notes look when opened in
 plain-text mode:
 
 #+caption: Obsidian Markdown Source Mode
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20220302-easy-reliable-note-taking/obsidian_source_mode.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20220302-easy-reliable-note-taking/obsidian_source_mode.png]]
 
 Here's the "live preview" version, where the Markdown is rendered into
 its HTML format:
 
 #+caption: Obsidian Markdown Live Preview
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20220302-easy-reliable-note-taking/obsidian_live_preview.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20220302-easy-reliable-note-taking/obsidian_live_preview.png]]
 
 *** Programming on Desktop
 :PROPERTIES:

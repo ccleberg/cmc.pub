@@ -300,4 +300,4 @@ The home page shows various options and metadata about the account you've
 opened.
 
 #+caption: Mu4e Home Page
-[[https://media.githubusercontent.com/media/ccleberg/img/main/blog/20240418-mu4e/mu4e.png]]
+[[https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/blog/20240418-mu4e/mu4e.png]]
