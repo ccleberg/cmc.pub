@@ -1,6 +1,6 @@
 #+title: Now
 #+slug: index
-#+date: <2025-03-17 Mon 11:42:00>
+#+date: <2025-04-02 Wed 21:55:00>
 
 This is a [[https://nownownow.com/about][/now]] page.
 
@@ -11,6 +11,7 @@ This is a [[https://nownownow.com/about][/now]] page.
   Champions for the North Central business unit.
 - Getting ready for my FY25 engagements at work, with a few new clients this
   year.
+- Getting through a PCAOB inspection.
 
 * Media
 
@@ -18,18 +19,19 @@ This is a [[https://nownownow.com/about][/now]] page.
   - Black Ops 6
   - Dynasty Warriors: Origins
   - Nier: Automata
+  - Rocket League
   - Stellar Blade
 - Watching some shows:
+  - Bad Monkey
   - Ramen Akaneko
   - Sakamoto Days
   - Wilfred
-  - Workaholics
 
 * Tech
 
 - Achieved my GitHub Foundations cert. Very easy.
-- Migrated back to [[https://github.com/ccleberg][GitHub]].
-- Migrated domain from =cleberg.net= to [[https://cleberg.net][cleberg.net]].
+- Migrated source code back to [[https://github.com/ccleberg][GitHub]].
+- Migrated domain back to [[https://cleberg.net][cleberg.net]] from =cmc.pub=.
 - Deleted a bunch of accounts to reduce online footprint. Looking for more ways
   to reduce.
 
@@ -38,7 +40,7 @@ This is a [[https://nownownow.com/about][/now]] page.
 - Still looking for ideas in the tech area as I've been fairly tapped out this
   last year. Feels like most of my innovation happens at work, which I can't
   share online.
-- Weather's warming up, so disc golf frequency is increasing.
-- Meeting new people at the Irish pub nearby.
+- Weather has been warming up, so disc golf frequency is increasing.
+- Meeting new people at the pub nearby.
 
 View the historical [[https://github.com/ccleberg/cleberg.net/commits/main/content/now/index.org][log of changes]] for this page.
