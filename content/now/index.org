@@ -6,12 +6,12 @@ This is a [[https://nownownow.com/about][/now]] page.
 
 * Work
 
-- Recently appointed as the US DevOps SMP (Subject Matter Practitioner) at [[https://kpmg.com/us/en.html][KPMG]].
-  Add that to my list of already being the Automation Champion and one of the AI
-  Champions for the North Central business unit.
+- Recently appointed as the DevOps SMP and the GitLab SMP (Subject Matter
+  Practitioner) at [[https://kpmg.com/us/en.html][KPMG]]. Add that to my list of already being the Automation
+  Champion and one of the AI Champions for the North Central business unit.
 - Getting ready for my FY25 engagements at work, with a few new clients this
   year.
-- Getting through a PCAOB inspection.
+- Finished a PCAOB inspection on one of the new clients I join mid-year in 2024.
 
 * Media
 
@@ -29,6 +29,7 @@ This is a [[https://nownownow.com/about][/now]] page.
 
 * Tech
 
+- Working through some GitLab certifications.
 - Achieved my GitHub Foundations cert. Very easy.
 - Migrated source code back to [[https://github.com/ccleberg][GitHub]].
 - Migrated domain back to [[https://cleberg.net][cleberg.net]] from =cmc.pub=.
