@@ -17,14 +17,6 @@ html {
      ========================================================================== */
 
 /**
-   * Remove the margin in all browsers.
-   */
-
-body {
-    margin: 0;
-}
-
-/**
    * Render the `main` element consistently in IE.
    */
 
@@ -54,16 +46,6 @@ hr {
     box-sizing: content-box; /* 1 */
     height: 0; /* 1 */
     overflow: visible; /* 2 */
-}
-
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
-
-pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -98,18 +80,6 @@ strong {
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
-
-code,
-kbd,
-samp {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
-}
-
-/**
    * Add the correct font size in all browsers.
    */
 
@@ -136,17 +106,6 @@ sub {
 
 sup {
     top: -0.5em;
-}
-
-/* Embedded content
-     ========================================================================== */
-
-/**
-   * Remove the border on images inside links in IE 10.
-   */
-
-img {
-    border-style: none;
 }
 
 /* Forms
@@ -312,25 +271,6 @@ textarea {
     font: inherit; /* 2 */
 }
 
-/* Interactive
-     ========================================================================== */
-
-/*
-   * Add the correct display in Edge, IE 10+, and Firefox.
-   */
-
-details {
-    display: block;
-}
-
-/*
-   * Add the correct display in all browsers.
-   */
-
-summary {
-    display: list-item;
-}
-
 /* Misc
      ========================================================================== */
 
@@ -378,6 +318,7 @@ body {
         monospace;
     font-size: 0.9rem;
     line-height: 1.5;
+    margin: 0;
     max-width: 50em;
     margin: 0 auto;
     padding: 0 1rem;
@@ -435,6 +376,7 @@ a:hover {
 }
 
 img {
+    border-style: none;
     width: 100%;
 }
 
@@ -460,6 +402,7 @@ td {
     padding: 0.25rem;
 }
 
+pre,
 pre > code,
 time,
 code {
@@ -539,10 +482,12 @@ blockquote p {
 }
 
 details {
+    display: block;
     margin-top: 1rem;
 }
 
 summary {
+    display: list-item;
     font-weight: bold;
 }
 
