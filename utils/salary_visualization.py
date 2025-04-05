@@ -10,10 +10,11 @@ from pandas import read_csv as pd_read_csv
 import pandas as pd
 import plotly.graph_objs as go
 
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 # Read the CSV file
-df = pd_read_csv('~/git/cleberg.net/theme/static/salary.csv')
+df = pd_read_csv("~/git/cleberg.net/theme/static/salary.csv")
+
 
 def format_currency(value: float) -> str:
     """
@@ -27,11 +28,13 @@ def format_currency(value: float) -> str:
     """
     return f"${value:,.2f}"
 
+
 # Reverse the order of the DataFrame
 df = df.iloc[::-1].reset_index(drop=True)
 
 # Calculate the percentage increase
-df['Percentage Increase'] = df['Salary'].pct_change() * 100
+df["Percentage Increase"] = df["Salary"].pct_change() * 100
+
 
 def create_trace(row: pd.Series) -> go.Scatter:
     """
@@ -44,19 +47,20 @@ def create_trace(row: pd.Series) -> go.Scatter:
         go.Scatter: The created scatter plot trace.
     """
     title_company = f"{row['Title']} ({row['Company']})"
-    salary_formatted = format_currency(row['Salary'])
-    if pd.notna(row['Percentage Increase']):
+    salary_formatted = format_currency(row["Salary"])
+    if pd.notna(row["Percentage Increase"]):
         text = f"{salary_formatted} ({row['Percentage Increase']:.2f}%)"
     else:
         text = salary_formatted
     return go.Scatter(
-        x=[row['Start'], row['End']],
-        y=[row['Salary'], row['Salary']],
+        x=[row["Start"], row["End"]],
+        y=[row["Salary"], row["Salary"]],
         text=[text],
-        mode='lines+text',
+        mode="lines+text",
         name=title_company,
-        textposition='top center'
+        textposition="top center",
     )
+
 
 # Initialize the plot
 fig = go.Figure()
@@ -70,16 +74,16 @@ fig.update_layout(
     title="Salary Data Over Time (annualized)",
     xaxis_title="Time",
     yaxis_title="Salary",
-    font={"family": 'monospace', "size": 16},
+    font={"family": "monospace", "size": 16},
     margin={"l": 50, "r": 50, "t": 50, "b": 100},
     legend={
-	"orientation": 'h',
-	"yanchor": 'top',
-	"y": -0.3,
-	"xanchor": 'center',
-	"x": 0.5
+        "orientation": "h",
+        "yanchor": "top",
+        "y": -0.3,
+        "xanchor": "center",
+        "x": 0.5,
     },
-    height=800
+    height=800,
 )
 
 # Display the plot
