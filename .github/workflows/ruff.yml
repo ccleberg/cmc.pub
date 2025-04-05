@@ -31,21 +31,21 @@ jobs:
         ruff check --fix
         ruff format
     - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
-  with:
-    add: '.'
-    author_name: Author Name
-    author_email: mail@example.com
-    commit: --signoff
-    committer_name: Committer Name
-    committer_email: mail@example.com
-    cwd: '.'
-    default_author: github_actions
-    fetch: false
-    message: 'Commit from GitHub Actions (astral-sh/ruff-action)'
-    # new_branch: custom-new-branch
-    pathspec_error_handling: ignore
-    # pull: '--rebase --autostash ...'
-    # push: false
-    # remove: './dir/old_file.js'
-    # tag: 'v1.0.0 --force'
-    # tag_push: '--force'
+      with:
+        add: '.'
+        author_name: Author Name
+        author_email: mail@example.com
+        commit: --signoff
+        committer_name: Committer Name
+        committer_email: mail@example.com
+        cwd: '.'
+        default_author: github_actions
+        fetch: false
+        message: 'Commit from GitHub Actions (astral-sh/ruff-action)'
+        # new_branch: custom-new-branch
+        pathspec_error_handling: ignore
+        # pull: '--rebase --autostash ...'
+        # push: false
+        # remove: './dir/old_file.js'
+        # tag: 'v1.0.0 --force'
+        # tag_push: '--force'
