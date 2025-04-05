@@ -10,34 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.x"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
         ref: ${{ github.event.pull_request.head.ref }}
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pandas plotly
-    # - name: Analysing the code with pylint
-    #   run: |
-    #     pylint $(git ls-files '*.py')
     - name: Install Ruff
       uses: astral-sh/ruff-action@v3.2.2
     - name: Ruff Actions
       run: |
         ruff check --fix
         ruff format
-    # - name: Git Checkout
-    #   env:
-    #     BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-    #   run: |
-    #     git checkout $BRANCH_NAME
     - name: Add and Commit
       uses: EndBug/add-and-commit@v9
       env:
