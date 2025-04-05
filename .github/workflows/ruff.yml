@@ -2,8 +2,8 @@ name: Ruff
 
 on:
   push:
-    paths:
-      - '**.py'
+    # paths:
+    #   - '**.py'
 
 jobs:
   build:
