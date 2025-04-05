@@ -31,7 +31,7 @@
         | <a href="ethereum:0x11255046Ccd637f1ACc78ae7c8849870f85638B3">ETH</a>
         | <a href="bitcoin:bc1qw4rg9rsxru2j6kvda3ehl5uc38tygdnd5tu5j2">BTC</a>
         </p>
-        <p>Last build: &lt;{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}&gt;</p>
+        <p>Last build: &lt;<time datetime="{{ now() | strftime("%Y-%m-%d") }}">{{ now() | strftime("%Y-%m-%d %a %H:%M:%S") }}</time>&gt;</p>
 		<p>
             <a href="https://stats.uptimerobot.com/OwOWs7HU0z">Status</a> &middot;
 			<a href="https://github.com/ccleberg/cleberg.net" target="_blank"
