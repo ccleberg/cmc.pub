@@ -1,0 +1,104 @@
+#+date: <2025-04-05 Sat 23:04:54>
+#+title: Mirroring my Repositories from GitHub to GitLab
+#+description: Read to learn how I was able to efficiently make sure all of my repositories are mirrored from GitHub to GitLab.
+#+filetags: :git:
+#+slug: git-mirror
+
+This is a short post detailing how I maintained repositories on GitHub and
+mirrors on GitLab - including both public and private repositories.
+
+Since GitLab locks pull-only mirrors behing their Premium and Ultimate tiers, I
+found a different solution.
+
+* Creating Mirrors
+
+I'll skip the setup and just hit the bullet points:
+
+- I have a plethora of GitHub repositories.
+- I used GitLab's mass-import functionality to do the initial import of my
+  repositories from GitHub.
+- I made sure all of my GitHub repositories were cloned locally in my =~/git=
+  directory.
+
+* Setting up Mirror Connections
+
+To start, I navigated to the =~/git= directory, which holds all of the
+repositories I have on GitHub and created a shell script.
+
+#+begin_src shell
+cd ~/git
+nano setup_mirrors.sh
+#+end_src
+
+Within this shell script, I created a loop that will open each repository and
+add both the GitHub and GitLab SSH-style clone URIs to the =origin= remote.
+
+#+begin_src shell
+for repo in */
+do
+    cd $repo
+    git remote set-url origin --push --add git@github.com:ccleberg/${repo%*/}.git
+    git remote set-url origin --push --add git@gitlab.com:ccleberg/${repo%*/}.git
+    git remote -v
+    cd ..
+done
+#+end_src
+
+Once complete, I created another shell script to open each repository, pull any
+remote commits, and push local commits to both remotes.
+
+#+begin_src shell
+nano mirror.sh
+#+end_src
+
+#+begin_src shell
+for repo in */;
+do
+    cd $repo
+    git pull --rebase origin HEAD
+    git push
+    cd ..
+done
+#+end_src
+
+Finally, enable execution of both scripts before moving on.
+
+#+begin_src shell
+chmod +x setup_mirrors.sh
+chmod +x mirror.sh
+#+end_src
+
+* Initialize Mirrors
+
+To use the =setup_mirrors.sh= script above, simply execute it from a terminal.
+
+#+begin_src shell
+./setup_mirrors.sh
+#+end_src
+
+Once complete, each repository /should/ have one fetch URI (GitHub) and two push
+URIs (GitHub & GitLab). At this point, any =git pull= or =git fetch= commands
+will pull from GitHub and any =git push= commands will send updates to both
+GitHub and GitLab.
+
+* Schedule Periodic Checks
+
+To utilize the =mirror.sh= script from the previous step, let's use crontab.
+
+#+begin_src shell
+crontab -e
+#+end_src
+
+Within crontab, I used the schedule below to ensure the script is executed
+daily.
+
+#+begin_src text
+0 0 * * * /Users/cmc/git/mirror.sh
+#+end_src
+
+This ensures that the =mirror.sh= file is executed daily and will push any local
+or GitHub commits to GitLab.
+
+I have tested this by manually running =mirror.sh= and watching the results.
+There are edge cases where I will need to intervene and manually resolve merge
+conflicts, but it's largely autonomous, so I'm happy with the results.
