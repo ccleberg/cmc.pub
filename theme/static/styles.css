@@ -380,6 +380,7 @@ img {
 }
 
 table {
+    border: 1px solid var(--border);
     border-collapse: collapse;
     color: var(--fg);
     border-color: var(--bg-bright);
