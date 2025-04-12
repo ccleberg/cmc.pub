@@ -32,7 +32,7 @@ Note: When in a role that gives periodic raises, I will create a new record with
 the new base salary in the table below. See the KPMG records for an example of a
 raise while in the same role.
 
-This table is a cmopressed version of the data, so that it can fit reliably on
+This table is a compressed version of the data, so that it can fit reliably on
 screens. For the full dataset with all fields, open the =source data= link below
 the table.
 
