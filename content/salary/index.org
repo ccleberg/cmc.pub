@@ -36,19 +36,19 @@ This table is a compressed version of the data, so that it can fit reliably on
 screens. For the full dataset with all fields, open the =source data= link below
 the table.
 
-| Title                                          | Company                | Year | Salary   |
-|------------------------------------------------+------------------------+------+----------|
-| Manager, Technology Assurance - Audit          | KPMG                   | 2024 | $141,200 |
-| Senior Associate, Technology Assurance - Audit | KPMG                   | 2023 | $116,700 |
-| Senior Associate, Technology Assurance - Audit | KPMG                   | 2022 | $110,000 |
-| Senior Technology Risk Consultant              | Ernst & Young          | 2021 | $89,500  |
-| Senior IT Auditor                              | Ameritas               | 2021 | $72,000  |
-| IT Auditor                                     | Ameritas               | 2020 | $65,000  |
-| IS Auditor II                                  | Nelnet                 | 2019 | $58,000  |
-| IS Auditor I                                   | Nelnet                 | 2019 | $20/hour |
-| Internal Audit Intern                          | Ameritas               | 2018 | $16/hour |
-| Teaching Assistant                             | University of Nebraska | 2017 | $7/hour  |
-| Community Management Intern                    | Walgreens              | 2017 | $14/hour |
+| Title                       | Company   | Year | Salary   |
+|-----------------------------+-----------+------+----------|
+| Manager, TA - Audit         | [[https:https://kpmg.com/us/][KPMG]]      | 2024 | $141,200 |
+| Senior, TA - Audit          | [[https://kpmg.com/us/][KPMG]]      | 2023 | $116,700 |
+| Senior, TA - Audit          | [[https://kpmg.com/us/][KPMG]]      | 2022 | $110,000 |
+| Senior Tech Risk Consultant | [[https://www.ey.com/en_us][EY]]        | 2021 | $89,500  |
+| Senior IT Auditor           | [[https://www.ameritas.com/][Ameritas]]  | 2021 | $72,000  |
+| IT Auditor                  | [[https://www.ameritas.com/][Ameritas]]  | 2020 | $65,000  |
+| IS Auditor II               | [[https://nelnetinc.com/][Nelnet]]    | 2019 | $58,000  |
+| IS Auditor I                | [[https://nelnetinc.com/][Nelnet]]    | 2019 | $20/hour |
+| Internal Audit Intern       | [[https://www.ameritas.com/][Ameritas]]  | 2018 | $16/hour |
+| Teaching Assistant          | [[https://www.unl.edu/][UNL]]       | 2017 | $7/hour  |
+| Community Management Intern | [[https://www.walgreensbootsalliance.com/][Walgreens]] | 2017 | $14/hour |
 
 [[[https://cleberg.net/salary.csv][source data]]]
 
