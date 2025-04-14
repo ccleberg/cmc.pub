@@ -38,7 +38,7 @@ the table.
 
 | Title                       | Company   | Year | Salary   |
 |-----------------------------+-----------+------+----------|
-| Manager, TA - Audit         | [[https:https://kpmg.com/us/][KPMG]]      | 2024 | $141,200 |
+| Manager, TA - Audit         | [[https://kpmg.com/us/][KPMG]]      | 2024 | $141,200 |
 | Senior, TA - Audit          | [[https://kpmg.com/us/][KPMG]]      | 2023 | $116,700 |
 | Senior, TA - Audit          | [[https://kpmg.com/us/][KPMG]]      | 2022 | $110,000 |
 | Senior Tech Risk Consultant | [[https://www.ey.com/en_us][EY]]        | 2021 | $89,500  |
